@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty — Trident School of Business Administration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0 }
+    :root { --navy:#0B1F3A; --gold:#C8962A; --white:#fff; --muted:#5A6378; --line:#E5DED0; --shadow:0 18px 45px rgba(11,31,58,.12) }
+    body { font-family:'DM Sans',sans-serif; color:var(--navy); background:linear-gradient(180deg,#f8f6f1 0%,#F5F3EE 55%); min-height:100vh }
+    a { color:inherit; text-decoration:none }
+    .topbar { background:var(--navy); color:rgba(255,255,255,.78); padding:10px 5%; display:flex; justify-content:space-between }
+    .page-header { position:sticky; top:18px; margin-top:18px; z-index:1000; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(14,34,62,.08) }
+    .header-inner { width:min(1180px,92%); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:72px }
+    .brand { display:flex; gap:12px; align-items:center }
+    .brand-mark { width:46px; height:46px; border-radius:50%; background:var(--navy); color:var(--gold); display:grid; place-items:center; font-family:'Playfair Display',serif }
+    .nav-links { display:flex; gap:18px; align-items:center }
+    .nav-links a { text-transform:uppercase; font-weight:700; font-size:13px; color:var(--navy) }
+    .hero { width:min(1180px,92%); margin:36px auto 0 }
+    .section { width:min(1180px,92%); margin:36px auto }
+    .section-head h2 { font-family:'Playfair Display',serif; font-size:28px; color:var(--navy); margin-bottom:8px }
+    .faculty-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
+    .faculty-card { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px; box-shadow:var(--shadow) }
+    .faculty-photo { width:100%; height:180px; background:linear-gradient(135deg,#0f2852,#163154); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--white); font-family:'Playfair Display',serif; font-size:28px }
+    .faculty-name { font-weight:700; margin-top:12px }
+    .faculty-role { color:var(--muted); font-size:13px; margin-top:6px }
+    .faculty-bio { color:var(--muted); margin-top:10px; font-size:14px; line-height:1.6 }
+    @media (max-width:780px) { .faculty-grid { grid-template-columns:1fr } .header-inner{padding:0 5%} }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>Trident School of Business Administration · Bhubaneswar</span>
+    <span><a href="index.html">Back to Home</a></span>
+  </div>
+
+  <header class="page-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">TS</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--navy)">Trident School of Business</div>
+          <div style="font-size:11px;color:var(--gold);letter-spacing:.12em">Administration · Est. 2005</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="mba-fulltime.html">MBA Full-Time</a>
+        <a href="faculty.html" class="active">Faculty</a>
+        <a href="index.html#admissions">Admissions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div style="width:min(1180px,92%); margin:28px auto 0; background:linear-gradient(145deg, rgba(11,31,58,.95) 0%, rgba(18,47,82,.9) 100%); color:#fff; padding:36px; border-radius:18px; box-shadow:var(--shadow)">
+        <span style="display:inline-block;background:rgba(232,184,75,.18);padding:6px 12px;border-radius:999px;color:var(--gold);font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.12em">Faculty</span>
+        <h1 style="font-family:'Playfair Display',serif;font-size:34px;margin-top:12px">Meet Our Faculty & Mentors</h1>
+        <p style="color:rgba(255,255,255,.9);margin-top:8px;max-width:780px">Experienced academicians and industry practitioners who combine research expertise with applied teaching to coach the next generation of leaders.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Core Faculty</h2>
+        <p style="color:var(--muted)">Our core faculty bring academic rigor and industry experience across strategy, finance, marketing, and operations.</p>
+      </div>
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="faculty-photo">AS</div>
+          <div class="faculty-name">Dr. A. N. Sharma</div>
+          <div class="faculty-role">Professor — Strategy & Innovation</div>
+          <div class="faculty-bio">Dr. Sharma's research focuses on strategic renewal and digital transformation. He has published in top-tier journals and consults for several Fortune 500 firms.</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-photo">LR</div>
+          <div class="faculty-name">Prof. L. K. Rao</div>
+          <div class="faculty-role">Associate Professor — Finance</div>
+          <div class="faculty-bio">Prof. Rao specialises in corporate finance, valuations, and capital markets. He teaches advanced corporate finance and leads the finance lab.</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-photo">PS</div>
+          <div class="faculty-name">Ms. Priya Sen</div>
+          <div class="faculty-role">Industry Mentor — Marketing</div>
+          <div class="faculty-bio">Priya brings 15+ years of brand and digital marketing experience from top FMCG companies; she mentors students on industry projects and placements.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Visiting Faculty & Industry Mentors</h2>
+        <p style="color:var(--muted)">A rotating roster of visiting scholars and leaders who enrich our programs with current industry best practices and case studies.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px">
+        <div class="faculty-card"><div style="font-weight:700">Dr. R. K. Nair</div><div style="color:var(--muted);margin-top:6px">Visiting — Operations</div><div style="margin-top:8px;color:var(--muted)">Expert in supply chain analytics and lean operations with consultancy experience across manufacturing.</div></div>
+        <div class="faculty-card"><div style="font-weight:700">Ms. S. Gupta</div><div style="color:var(--muted);margin-top:6px">Mentor — HR & Leadership</div><div style="margin-top:8px;color:var(--muted)">Leadership coach focusing on talent strategy, organisational design, and executive coaching.</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Research & Publications</h2>
+        <p style="color:var(--muted)">Our faculty publish in leading journals and engage in collaborative industry research projects that inform teaching.</p>
+      </div>
+      <div style="display:grid; gap:12px">
+        <div style="background:var(--white); border:1px solid var(--line); padding:12px; border-radius:8px">Recent paper: "Digital Transformation in Indian SMEs" — Journal of Management Studies, 2025.</div>
+        <div style="background:var(--white); border:1px solid var(--line); padding:12px; border-radius:8px">Recent paper: "Sustainable Supply Chains" — International Journal of Operations, 2024.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--navy); color:rgba(255,255,255,.78); padding:24px 5%; text-align:center; margin-top:40px">c 2026 Trident School of Business Administration</footer>
+
+</body>
+</html>
