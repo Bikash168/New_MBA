@@ -1,14 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Trident School of Business Administration</title>
+  <title>About Us — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy: #0B1F3A;
+      --navy-light: #152E4D;
       --gold: #C8962A;
       --gold-soft: #E8B84B;
       --white: #FFFFFF;
@@ -16,644 +17,1104 @@
       --text: #1A1A2E;
       --muted: #5A6378;
       --line: #E5DED0;
-      --shadow: 0 18px 45px rgba(11, 31, 58, 0.12);
+      --shadow: 0 18px 45px rgba(11, 31, 58, 0.08);
+      --shadow-hover: 0 24px 60px rgba(11, 31, 58, 0.15);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --nav-h: 72px;
     }
+    
     html { scroll-behavior: smooth; }
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #f8f6f1 0%, var(--offwhite) 55%, #f2eee5 100%);
-      min-height: 100vh;
+      background: var(--offwhite);
+      overflow-x: hidden;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(200,150,42,.14), transparent 24%),
-                  radial-gradient(circle at 20% 14%, rgba(11,31,58,.08), transparent 10%);
-      pointer-events: none;
-      z-index: -1;
-    }
-    a { text-decoration: none; color: inherit; }
+    
+    /* Topbar matching index.html */
     .topbar {
       background: var(--navy);
-      color: rgba(255,255,255,.78);
+      color: #aab4c8;
       font-size: 12px;
-      padding: 10px 5%;
+      font-weight: 500;
+      letter-spacing: .04em;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-    }
-    .topbar a { color: var(--gold); }
-    .page-header {
-      position: sticky;
-      top: 18px;
-      margin-top: 18px;
-      z-index: 1000;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(14, 34, 62, .08);
-    }
-    .header-inner {
-      width: min(1180px, 92%);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 80px;
-      padding: 0 0 0 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: 18px;
-      box-shadow: 0 0 0 3px rgba(200,150,42,.18);
-    }
-    .brand-text {
-      display: grid;
-      gap: 4px;
-    }
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--navy);
-    }
-    .brand-tag {
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
+      padding: 8px 48px;
+      gap: 8px;
       flex-wrap: wrap;
     }
-    .nav-links a {
-      color: var(--navy);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      transition: color .25s ease;
+    .topbar-left { display: flex; gap: 16px; }
+    .topbar-right a { color: var(--gold-soft); text-decoration: none; margin-left: 14px; font-weight: 600; }
+    .topbar-right a:hover { color: var(--white); }
+
+    /* Sticky Navbar matching index.html */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      box-shadow: 0 2px 18px rgba(11,31,58,.12);
+      border-bottom: 3px solid var(--gold);
     }
-    .nav-links a.active,
-    .nav-links a:hover { color: var(--gold); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .logo-emblem {
+      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
+      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-soft);
+    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
+
+    .nav-menu { display: flex; align-items: center; list-style: none; gap: 2px; }
+    .nav-menu > li { position: relative; }
+    .nav-menu > li > a {
+      display: flex; align-items: center; padding: 12px 18px; min-height: 44px;
+      font-size: 12.5px; font-weight: 600; color: var(--navy);
+      text-decoration: none; letter-spacing: .02em; border-radius: 4px;
+      white-space: nowrap; transition: var(--transition);
+    }
+    .nav-menu > li > a:hover,
+    .nav-menu > li:hover > a { background: var(--navy); color: var(--gold-soft); }
+    .has-drop > a::after { content: ' ▾'; font-size: 9px; opacity: .55; }
+
+    .dropdown {
+      display: none; position: absolute; top: calc(100% + 6px); left: 0;
+      background: var(--white); min-width: 205px; border-top: 3px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(11,31,58,.15);
+      border-radius: 0 0 8px 8px; list-style: none; z-index: 200;
+      animation: fadeDown .18s ease;
+    }
+    .dropdown::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: transparent;
+    }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-6px) } to { opacity: 1; transform: none } }
+    .nav-menu > li:hover .dropdown { display: block; }
+    .dropdown li a {
+      display: block; padding: 14px 18px; font-size: 12px; font-weight: 500;
+      color: var(--text); text-decoration: none; border-bottom: 1px solid #f0ece4;
+      transition: var(--transition);
+    }
+    .dropdown li a:hover { background: var(--offwhite); color: var(--navy); padding-left: 22px; }
+
     .nav-button {
-      background: var(--gold);
-      color: var(--navy);
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 12px 22px;
-      letter-spacing: .04em;
-      transition: transform .2s, box-shadow .2s;
+      background: var(--gold) !important; color: var(--navy) !important;
+      font-weight: 700 !important; padding: 9px 18px !important;
+      border-radius: 4px !important; letter-spacing: .04em;
+      font-size: 12.5px; text-decoration: none; display: flex; align-items: center;
+      transition: var(--transition);
     }
-    .nav-button:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(200,150,42,.2); }
+    .nav-button:hover { background: var(--navy) !important; color: var(--gold-soft) !important; }
+
     .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
     }
-    .hamburger span {
-      width: 26px;
-      height: 2.5px;
-      background: var(--navy);
-      border-radius: 999px;
-      transition: transform .3s, opacity .3s;
-    }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: transform .3s, opacity .3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile Drawer */
     .mobile-nav {
-      position: fixed;
-      inset: 0;
-      background: var(--navy);
-      z-index: 1100;
-      overflow-y: auto;
-      padding: 100px 24px 24px;
-      transform: translateX(100%);
-      opacity: 0;
-      visibility: hidden;
+      display: none; position: fixed; inset: 0;
+      background: var(--navy); z-index: 1050; overflow-y: auto;
+      padding: 80px 24px 40px; transform: translateX(100%);
+      opacity: 0; visibility: hidden;
       transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
     }
-    .mobile-nav.open {
-      transform: translateX(0);
-      opacity: 1;
-      visibility: visible;
+    .mobile-nav.open { transform: translateX(0); opacity: 1; visibility: visible; }
+    .mobile-nav-list { list-style: none; }
+    .mobile-nav-list > li { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-nav-list > li > .mn-row { display: flex; justify-content: space-between; align-items: center; }
+    .mobile-nav-list > li > .mn-row > a {
+      display: flex; align-items: center; width: 100%; padding: 16px 4px;
+      font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none;
     }
-    .mobile-nav-list { list-style: none; display: grid; gap: 16px; }
-    .mobile-nav-list a {
+    .mobile-toggle { background: none; border: none; color: var(--gold-soft); font-size: 22px; cursor: pointer; padding: 10px 8px; }
+    .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
+    .mobile-sub.open { display: block; }
+    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255,255,255,.75); text-decoration: none; }
+    .mobile-sub li a:hover { color: var(--gold-soft); }
+    .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
+
+    /* Redesigned Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 96px 8% 80px;
       color: var(--white);
-      font-size: 18px;
-      font-weight: 700;
-      display: block;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .mobile-nav-list a.active { color: var(--gold); }
-    .hero {
-      width: min(1180px, 92%);
-      margin: 40px auto 0;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 32px;
-      align-items: center;
-    }
-    .hero-copy {
-      background: linear-gradient(145deg, rgba(11,31,58,.95) 0%, rgba(18,47,82,.9) 100%);
-      color: var(--white);
-      border-radius: 28px;
-      padding: 54px;
-      box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
-    .hero-copy::after {
+    .hero-section::after {
       content: '';
       position: absolute;
-      inset: auto -30px -40px auto;
-      width: 180px;
-      height: 180px;
+      top: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
-      background: rgba(255,255,255,.08);
+      background: radial-gradient(circle, rgba(200,150,42,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
     }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(232,184,75,.18);
-      color: var(--gold);
+      background: rgba(200, 150, 42, 0.15);
+      border: 1px solid rgba(200, 150, 42, 0.3);
+      color: var(--gold-soft);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
     }
-    .hero-copy h1 {
+    .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.05;
+      font-size: clamp(34px, 4.5vw, 54px);
+      line-height: 1.15;
+      font-weight: 800;
       margin-bottom: 24px;
+      color: var(--white);
     }
-    .hero-copy p {
-      color: rgba(255,255,255,.82);
-      font-size: 16px;
-      line-height: 1.85;
-      margin-bottom: 24px;
-      max-width: 620px;
+    .hero-title span { color: var(--gold-soft); }
+    .hero-desc {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-    .hero-actions .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold);
-      color: var(--navy);
-      border-radius: 999px;
-      padding: 14px 24px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      transition: transform .2s ease;
-    }
-    .hero-actions .btn-primary:hover { transform: translateY(-2px); }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
     .hero-stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
-    .hero-stat {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 18px 16px;
-      border-radius: 18px;
+    .hero-stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px 16px;
+      border-radius: 12px;
       text-align: center;
+      transition: var(--transition);
     }
-    .hero-stat strong {
+    .hero-stat-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(200, 150, 42, 0.4);
+      transform: translateY(-4px);
+    }
+    .hero-stat-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
-      font-size: 34px;
-      margin-bottom: 8px;
-      color: var(--gold);
+      font-size: 30px;
+      color: var(--gold-soft);
+      margin-bottom: 4px;
     }
-    .hero-stat span {
+    .hero-stat-card span {
       display: block;
-      font-size: 12px;
-      letter-spacing: .1em;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
       text-transform: uppercase;
-      color: rgba(255,255,255,.75);
+      letter-spacing: 0.08em;
     }
-    .hero-media {
-      display: grid;
-      gap: 22px;
-    }
-    .hero-card {
-      position: relative;
-      border-radius: 26px;
+
+    .hero-media-wrap { position: relative; }
+    .hero-frame {
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: var(--shadow);
-      min-height: 380px;
-      background: linear-gradient(180deg, #0f2852 0%, #163154 100%);
-      display: grid;
-      place-items: center;
-      color: var(--white);
-      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      background: var(--navy-light);
     }
-    .hero-card img {
+    .hero-frame img { width: 100%; height: 380px; object-fit: cover; display: block; transition: var(--transition); }
+    .hero-frame:hover img { transform: scale(1.03); }
+    
+    .floating-panel {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      background: var(--white);
+      color: var(--navy);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      max-width: 280px;
+      border-left: 5px solid var(--gold);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .floating-panel h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 6px; color: var(--navy); }
+    .floating-panel p { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+    /* Sections general styles */
+    .section-container {
+      max-width: 1200px;
+      margin: 96px auto;
+      padding: 0 4%;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 56px;
+    }
+    .section-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+    .section-title span { color: var(--gold); }
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+
+    /* Redesigned feature tiles */
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .tile-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 280px;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: block;
+    }
+    .tile-card img {
       width: 100%;
-      min-height: 380px;
+      height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      filter: brightness(0.7) contrast(1.05);
     }
-    .hero-panel {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(11,31,58,.08);
+    .tile-card:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.65) contrast(1.1);
     }
-    .hero-panel h3 {
-      font-size: 24px;
-      margin-bottom: 14px;
+    .tile-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(11,31,58,0) 20%, rgba(11,31,58,0.7) 60%, rgba(11,31,58,0.95) 100%);
+      transition: var(--transition);
+    }
+    .tile-meta { display: flex; flex-direction: column; gap: 8px; }
+    .tile-icon-box {
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      background: rgba(200, 150, 42, 0.2); color: var(--gold-soft); font-size: 20px;
+      border: 1px solid rgba(200, 150, 42, 0.3); transition: var(--transition);
+      align-self: flex-start;
+    }
+    .tile-card:hover .tile-icon-box {
+      background: var(--gold);
       color: var(--navy);
+      transform: rotate(360deg);
     }
-    .hero-panel p {
-      color: var(--muted);
-      line-height: 1.8;
-    }
-    .section {
-      width: min(1180px, 92%);
-      margin: 72px auto 0;
-    }
-    .section-head {
-      max-width: 680px;
-      margin-bottom: 28px;
-    }
-    .section-head h2 {
+    .tile-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(30px, 4vw, 46px);
-      color: var(--navy);
-      margin-bottom: 14px;
-      line-height: 1.08;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
     }
-    .section-head p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
+    .tile-text {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+      margin-top: 4px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
     }
-    .feature-grid {
+    .tile-card:hover .tile-text {
+      max-height: 80px;
+      opacity: 1;
+      margin-top: 8px;
+    }
+    .tile-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Redesigned Core Values */
+    .values-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
     }
-    .feature-card {
+    .value-card {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 16px 40px rgba(11,31,58,.06);
-      min-height: 260px;
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: var(--transition);
+      border-top: 4px solid var(--navy);
     }
-    .feature-card h3 {
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-top-color: var(--gold);
+    }
+    .value-card .value-num {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: rgba(200, 150, 42, 0.15);
+      transition: var(--transition);
+    }
+    .value-card:hover .value-num {
+      color: rgba(200, 150, 42, 0.35);
+      transform: scale(1.1);
+    }
+    .value-card .value-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
       font-size: 22px;
       color: var(--navy);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    .feature-card p {
-      color: var(--muted);
-      line-height: 1.75;
+    .value-card p {
       font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
     }
-    .timeline {
-      display: grid;
-      gap: 18px;
-      margin-top: 14px;
+    .rank-card {
+      transition: var(--transition);
     }
-    .timeline-item {
+    .rank-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--gold) !important;
+    }
+
+    /* Redesigned Vertical Timeline */
+    .timeline-wrapper {
+      position: relative;
+      max-width: 850px;
+      margin: 56px auto 0;
+      padding: 20px 0;
+    }
+    .timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--gold) 50%, var(--gold-soft) 100%);
+      transform: translateX(-50%);
+    }
+    .timeline-node {
+      position: relative;
+      width: 100%;
+      margin-bottom: 48px;
+    }
+    .timeline-node:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 24px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 4px solid var(--white);
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      box-shadow: 0 0 0 4px rgba(200, 150, 42, 0.3);
+      transition: var(--transition);
+    }
+    .timeline-node:hover .timeline-dot {
+      background: var(--navy);
+      box-shadow: 0 0 0 6px rgba(11, 31, 58, 0.25);
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+    .timeline-card {
+      position: relative;
+      width: 44%;
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 24px 26px;
-      box-shadow: 0 14px 38px rgba(11,31,58,.06);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
     }
-    .timeline-item strong {
+    .timeline-node:nth-child(even) .timeline-card {
+      left: 56%;
+    }
+    .timeline-node:nth-child(odd) .timeline-card {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--gold-soft);
+    }
+    .timeline-card strong {
       display: block;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
       color: var(--gold);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-    .timeline-item span {
+    .timeline-card p {
+      font-size: 13.5px;
       color: var(--text);
-      line-height: 1.75;
-      font-size: 14px;
+      line-height: 1.6;
     }
-    .statistics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 36px;
-    }
-    .stat-card {
+
+    /* Key stats board */
+    .stats-section {
       background: var(--navy);
+      padding: 72px 0;
       color: var(--white);
-      border-radius: 22px;
-      padding: 26px;
-      text-align: center;
-      box-shadow: var(--shadow);
+      border-top: 3px solid var(--gold);
     }
-    .stat-card strong {
+    .stats-board-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-board-card {
+      text-align: center;
+      padding: 24px 16px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .stat-board-card:last-child { border-right: none; }
+    .stat-board-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 3vw, 36px);
+      font-size: clamp(34px, 4vw, 48px);
+      color: var(--gold-soft);
       margin-bottom: 10px;
     }
-    .stat-card span {
+    .stat-board-card span {
+      display: block;
       font-size: 11px;
-      letter-spacing: .14em;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
       text-transform: uppercase;
-      color: rgba(255,255,255,.72);
+      letter-spacing: 0.1em;
     }
-    .cta {
-      width: min(1180px, 92%);
-      margin: 72px auto 96px;
-      border-radius: 28px;
-      background: linear-gradient(120deg, rgba(200,150,42,.95) 0%, rgba(232,184,75,.95) 45%, rgba(255,255,255,.95) 100%);
-      padding: 44px 42px;
+
+    /* Redesigned CTA banner */
+    .cta-banner {
+      max-width: 1200px;
+      margin: 96px auto;
+      padding: 0 4%;
+    }
+    .cta-card {
+      background: linear-gradient(120deg, var(--gold) 0%, var(--gold-soft) 40%, #FFF5DF 100%);
+      border-radius: 24px;
+      padding: 56px 64px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      box-shadow: var(--shadow);
+      align-items: center;
+      gap: 40px;
+      box-shadow: 0 20px 45px rgba(200, 150, 42, 0.2);
+      border: 1px solid rgba(200, 150, 42, 0.3);
     }
-    .cta-copy h2 {
+    .cta-content { max-width: 600px; }
+    .cta-content h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: 32px;
+      font-weight: 800;
       color: var(--navy);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-    .cta-copy p {
-      color: rgba(11,31,58,.8);
-      line-height: 1.7;
-      max-width: 620px;
+    .cta-content p {
+      font-size: 14.5px;
+      color: rgba(11, 31, 58, 0.8);
+      line-height: 1.65;
     }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--gold-soft);
+      font-weight: 700;
+      font-size: 13.5px;
+      letter-spacing: 0.05em;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .btn-dark:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(11, 31, 58, 0.25);
+    }
+
+    /* Footer matching index.html */
     .footer {
       background: var(--navy);
-      color: rgba(255,255,255,.78);
-      padding: 28px 5%;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 32px 5%;
       text-align: center;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
+
+    /* Responsive adjustments */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-media { grid-template-columns: 1fr; }
-      .nav-links { gap: 16px; }
-      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .statistics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .cta { flex-direction: column; text-align: center; }
-      .cta-copy { width: 100%; }
+      .hero-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { max-width: 500px; margin: 0 auto; }
+      .hero-media-wrap { max-width: 500px; margin: 0 auto; }
+      .floating-panel { left: 50%; transform: translateX(-50%); bottom: -32px; width: calc(100% - 32px); text-align: center; border-left: none; border-bottom: 5px solid var(--gold); }
+      @keyframes float {
+        0%, 100% { transform: translate(-50%, 0); }
+        50% { transform: translate(-50%, -8px); }
+      }
+      .tile-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: 1fr; gap: 24px; }
+      .stats-board-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .stat-board-card { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      .stat-board-card:nth-child(even) { border-bottom: none; }
+      .cta-card { flex-direction: column; text-align: center; padding: 48px 32px; }
+      .btn-dark { width: 100%; text-align: center; }
     }
-    @media (max-width: 780px) {
-      .header-inner { width: 100%; padding: 0 5%; }
-      .nav-links { display: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .topbar { padding: 8px 24px; }
+      .nav-menu { display: none; }
       .hamburger { display: flex; }
-      .hero { margin-top: 28px; gap: 22px; }
-      .hero-copy { padding: 34px 28px; }
-      .hero-copy h1 { font-size: clamp(32px, 7vw, 48px); }
-      .hero-stats { grid-template-columns: 1fr; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .statistics { grid-template-columns: 1fr; }
-      .cta { padding: 34px 26px; }
-      .hero-card { min-height: 260px; }
-      .topbar { padding: 10px 5%; }
-    }
-    @media (max-width: 520px) {
-      .section { margin-top: 52px; }
-      .hero-copy { padding: 28px 22px; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .nav-button { width: 100%; text-align: center; }
-      .cta { padding: 30px 22px; }
-      .hero-copy p { font-size: 15px; }
+      .mobile-nav { display: block; }
+      .hero-section { padding: 64px 24px 72px; }
+      .section-container { margin: 64px auto; }
+      .tile-grid { grid-template-columns: 1fr; }
+      .timeline-wrapper::before { left: 16px; }
+      .timeline-dot { left: 16px; }
+      .timeline-card { width: calc(100% - 48px); left: 48px !important; text-align: left !important; }
+      .stats-board-grid { grid-template-columns: 1fr; }
+      .stat-board-card { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      .stat-board-card:last-child { border-bottom: none; }
     }
   </style>
 </head>
 <body>
+
+  <!-- TOPBAR -->
   <div class="topbar">
-    <span>Trident School of Business Administration · Bhubaneswar, Odisha</span>
-    <span><a href="index.html">Back to Home</a></span>
-  </div>
-  <main>
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">About TSBA</span>
-        <h1>Where ambitious minds meet industry-ready business education.</h1>
-        <p>Trident School of Business Administration empowers students with a rigorous curriculum, real-world experience, and leadership values that prepare them for the future of business.</p>
-        <p>Our campus combines academic excellence, corporate partnerships, and a strong student community to build professionals who lead with insight and integrity.</p>
-        <div class="hero-actions">
-          <a href="#overview" class="btn-primary">Explore Our Story</a>
-          <a href="index.html#admissions" class="btn-primary">Join Our Next Cohort</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong>20+</strong>
-            <span>Years of teaching</span>
-          </div>
-          <div class="hero-stat">
-            <strong>250+</strong>
-            <span>Industry partners</span>
-          </div>
-          <div class="hero-stat">
-            <strong>98%</strong>
-            <span>Placement success rate</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-media">
-        <div class="hero-card">
-          <img src="Public/Untitled%20design%20(4).png" alt="Students at Trident School of Business Administration">
-        </div>
-        <div class="hero-panel">
-          <h3>TSBA at a glance</h3>
-          <p>Our programs are designed to bridge the gap between classroom theory and professional practice, helping students grow into confident decision-makers.</p>
-          <p>We focus on personalised mentoring, strong industry engagement, and an academic environment that values ethics and innovation.</p>
-        </div>
-      </div>
-    </section>
-
-  <header class="page-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">
-        <div class="brand-mark">TS</div>
-        <div class="brand-text">
-          <div class="brand-name">Trident School of Business</div>
-          <div class="brand-tag">Administration · Est. 2005</div>
-        </div>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="index.html#programs">Programs</a>
-        <a href="index.html#admissions">Admissions</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <a href="index.html#admissions" class="nav-button">Apply Now</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <div class="topbar-left">
+      <span>📞 +91-674-6649600</span> &nbsp;|&nbsp; <span>✉️ info@trident.ac.in</span>
     </div>
-  </header>
+    <div class="topbar-right">
+      <span>Bhubaneswar, Odisha</span>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </div>
 
+  <!-- STICKY NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">TS</div>
+      <div class="logo-text">
+        <span class="school-name">Trident School of Business</span>
+        <span class="tagline">Administration · Est. 2005</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="about.html">About Us</a></li>
+      <li class="has-drop"><a href="#">Programs</a>
+        <ul class="dropdown">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="#">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Admission</a>
+        <ul class="dropdown">
+          <li><a href="#">Apply to MBA</a></li>
+          <li><a href="#">Apply to BBA</a></li>
+          <li><a href="#">Apply to Ph.D</a></li>
+          <li><a href="#">Eligibility &amp; Fees</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Faculty &amp; Research</a>
+        <ul class="dropdown">
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="#">Research &amp; Publications</a></li>
+          <li><a href="#">TSBA Journal</a></li>
+          <li><a href="#">Research Projects</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Recruiters</a>
+        <ul class="dropdown">
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Placement Statistics</a></li>
+          <li><a href="#">Our Recruiters</a></li>
+          <li><a href="#">MDP &amp; Consultancy</a></li>
+          <li><a href="#">Industry Conclaves</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Campus Life</a>
+        <ul class="dropdown">
+          <li><a href="#">Infrastructure</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Sports &amp; Clubs</a></li>
+          <li><a href="#">Events &amp; Fests</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <a href="index.html#admissions" class="nav-button">Apply Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
   <div class="mobile-nav" id="mobileNav">
     <ul class="mobile-nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="index.html#programs">Programs</a></li>
-      <li><a href="index.html#admissions">Admissions</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="index.html#admissions">Apply Now</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li>
+        <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
+        <ul class="mobile-sub" id="sub2">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="#">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Admission</a><button class="mobile-toggle" data-target="sub3">+</button></div>
+        <ul class="mobile-sub" id="sub3">
+          <li><a href="#">Apply to MBA</a></li>
+          <li><a href="#">Apply to BBA</a></li>
+          <li><a href="#">Apply to Ph.D</a></li>
+          <li><a href="#">Eligibility &amp; Fees</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
+        <ul class="mobile-sub" id="sub4">
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="#">Research &amp; Publications</a></li>
+          <li><a href="#">TSBA Journal</a></li>
+          <li><a href="#">Research Projects</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Recruiters</a><button class="mobile-toggle" data-target="sub5">+</button></div>
+        <ul class="mobile-sub" id="sub5">
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Placement Statistics</a></li>
+          <li><a href="#">Our Recruiters</a></li>
+          <li><a href="#">MDP &amp; Consultancy</a></li>
+          <li><a href="#">Industry Conclaves</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Campus Life</a><button class="mobile-toggle" data-target="sub6">+</button></div>
+        <ul class="mobile-sub" id="sub6">
+          <li><a href="#">Infrastructure</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Sports &amp; Clubs</a></li>
+          <li><a href="#">Events &amp; Fests</a></li>
+        </ul>
+      </li>
     </ul>
+    <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
   </div>
 
-    <section id="overview" class="section">
-      <div class="section-head">
-        <span class="eyebrow">Our Approach</span>
-        <h2>A practical business education designed for today’s leaders.</h2>
-        <p>TSBA blends classroom learning with live projects, corporate mentorship, and leadership development. Our students emerge equipped to make strategic decisions from day one.</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>Industry Connected</h3>
-          <p>Strong partnerships with recruiters, research centers, and corporate mentors provide students with real business exposure and placement readiness.</p>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div>
+          <span class="eyebrow">About TSBA</span>
+          <h1 class="hero-title">Where Ambitious Minds Meet <span>Leadership</span> Education</h1>
+          <p class="hero-desc">
+            Trident School of Business Administration (TSBA) is a flagship institution of the Trident Group. We empower students with a rigorous, value-based management curriculum and immersive industry engagements. Headed by SOB Dean <strong>Prof. P. K. Mohanty</strong> (former Head of MBA, Utkal University &amp; Director BPUT), we prepare graduates to lead in a dynamic corporate environment.
+          </p>
+          <div class="hero-actions">
+            <a href="#overview" class="btn-primary">Explore Our Story</a>
+            <a href="index.html#admissions" class="btn-outline">Join Next Cohort</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat-card">
+              <strong>20+</strong>
+              <span>Years Teaching</span>
+            </div>
+            <div class="hero-stat-card">
+              <strong>250+</strong>
+              <span>Corporate Partners</span>
+            </div>
+            <div class="hero-stat-card">
+              <strong>98%</strong>
+              <span>Placement Rate</span>
+            </div>
+          </div>
         </div>
-        <div class="feature-card">
-          <h3>Learning by Doing</h3>
-          <p>We prioritise case studies, simulations, live projects and internships that sharpen analytical thinking and practical judgement.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Leadership Focus</h3>
-          <p>Students are coached on communication, personal branding, teamwork, and ethical leadership so they can drive growth responsibly.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <span class="eyebrow">Our Values</span>
-        <h2>Core principles that guide every decision.</h2>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>Excellence</h3>
-          <p>We set ambitious standards and help students grow through an inspiring academic environment.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Integrity</h3>
-          <p>Ethics and accountability are the foundation of our teaching, culture, and campus life.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Collaboration</h3>
-          <p>We cultivate teamwork, mentorship, and strong industry relationships to build supportive career pathways.</p>
+        <div class="hero-media-wrap">
+          <div class="hero-frame">
+            <img src="Public/Untitled design (4).png" alt="Trident School of Business Administration Students">
+          </div>
+          <div class="floating-panel">
+            <h4>TSBA at a Glance</h4>
+            <p>Our programs bridge the gap between classroom theory and real-world executive practice, fostering ethical decision-making.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <span class="eyebrow">Our Journey</span>
-        <h2>Progress built on purpose and momentum.</h2>
+    <!-- OVERVIEW SECTION -->
+    <section id="overview" class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Our Pedagogy</span>
+        <h2 class="section-title">An Immersive <span>Management Experience</span></h2>
+        <p class="section-desc">We blend case study methodologies, active corporate mentorships, and state-of-the-art laboratory learning to deliver a practical education that makes you stand out from day one.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <strong>2005</strong>
-          <span>Trident School of Business Administration launched with a commitment to high-quality management education.</span>
+
+      <div class="tile-grid">
+        <!-- Faculty Tile -->
+        <div class="tile-card">
+          <img src="Public/Untitled design (4).png" alt="Expert Faculty">
+          <div class="tile-overlay">
+            <div class="tile-meta">
+              <div class="tile-icon-box">👨‍🏫</div>
+              <h3 class="tile-title">Faculty</h3>
+              <p class="tile-text">Strength of 16 core faculty members, including 10 PhD holders, led by Prof. P. K. Mohanty.</p>
+            </div>
+          </div>
         </div>
-        <div class="timeline-item">
-          <strong>2013</strong>
-          <span>Introduced expanded corporate partnerships and live learning initiatives to improve student readiness.</span>
+
+        <!-- Campus Life Tile -->
+        <div class="tile-card">
+          <img src="Public/Untitled design.png" alt="Campus Life">
+          <div class="tile-overlay">
+            <div class="tile-meta">
+              <div class="tile-icon-box">🎓</div>
+              <h3 class="tile-title">Campus Life</h3>
+              <p class="tile-text">Active student engagement with 10 business clubs focusing on Strategy, BFSI, FinTech, and Analytics.</p>
+            </div>
+          </div>
         </div>
-        <div class="timeline-item">
-          <strong>2019</strong>
-          <span>Strengthened research, placement outreach, and campus development for a future-ready academic experience.</span>
+
+        <!-- Corporate Interaction Tile -->
+        <div class="tile-card">
+          <img src="Public/Untitled design (1).png" alt="Corporate Exposure">
+          <div class="tile-overlay">
+            <div class="tile-meta">
+              <div class="tile-icon-box">🤝</div>
+              <h3 class="tile-title">Corporate Interaction</h3>
+              <p class="tile-text">Round-the-year seminars, business games, executive mentorship, and regular industrial visits.</p>
+            </div>
+          </div>
         </div>
-        <div class="timeline-item">
-          <strong>Today</strong>
-          <span>TSBA is a dynamic business school with a focus on ethical leadership, industry relevance, and student success.</span>
+
+        <!-- Placement Tile -->
+        <div class="tile-card">
+          <img src="Public/Untitled design (2).png" alt="Career Placements">
+          <div class="tile-overlay">
+            <div class="tile-meta">
+              <div class="tile-icon-box">💼</div>
+              <h3 class="tile-title">Placements</h3>
+              <p class="tile-text">Consistently strong campus hiring record with average salaries showing an 18% annual growth.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="statistics">
-        <div class="stat-card">
+    <!-- MISSION & VISION & CORE VALUES SECTION -->
+    <section id="mission" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div class="section-header">
+        <span class="section-subtitle">Our Purpose</span>
+        <h2 class="section-title">Mission, Vision &amp; <span>Core Values</span></h2>
+        <p class="section-desc">TSBA operates on a defined path of excellence, guided by a clear vision for the future, a structured mission for the present, and deep values at our core.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-bottom: 56px;">
+        <div style="background: var(--white); border: 1px solid var(--line); padding: 40px 32px; border-radius: 16px; border-left: 5px solid var(--navy); box-shadow: var(--shadow);">
+          <div style="font-size: 36px; margin-bottom: 16px;">👁️</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 12px;">Our Vision</h3>
+          <p style="font-size: 14.5px; color: var(--muted); line-height: 1.75;">To be a globally recognized center of excellence in management education, fostering innovative leadership, research, and sustainable business practices that empower individuals to serve society and the industry with integrity.</p>
+        </div>
+        <div style="background: var(--white); border: 1px solid var(--line); padding: 40px 32px; border-radius: 16px; border-left: 5px solid var(--gold); box-shadow: var(--shadow);">
+          <div style="font-size: 36px; margin-bottom: 16px;">🎯</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 12px;">Our Mission</h3>
+          <p style="font-size: 14.5px; color: var(--muted); line-height: 1.75;">To deliver rigorous, industry-relevant management education that combines academic theory with practical application; to nurture talent and develop socially responsible business leaders; and to cultivate thought leadership through impactful research and consultancy.</p>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-num">01</span>
+          <span class="value-icon">💎</span>
+          <h3>Academic Excellence</h3>
+          <p>We set ambitious educational standards and support students through an inspiring, case-driven learning environment.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-num">02</span>
+          <span class="value-icon">⚖️</span>
+          <h3>Ethical Integrity</h3>
+          <p>Responsibility, ethics, and accountability represent the foundational pillars of our teaching and campus life.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-num">03</span>
+          <span class="value-icon">🚀</span>
+          <h3>Collaborative Growth</h3>
+          <p>We promote active peer learning, executive mentorship, and corporate alliances to build supportive career pathways.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENESIS & HISTORY SECTION -->
+    <section id="genesis" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div class="section-header">
+        <span class="section-subtitle">Our Heritage</span>
+        <h2 class="section-title">Genesis &amp; <span>History</span></h2>
+        <p class="section-desc">Established in 2005, Trident School of Business Administration (TSBA) was founded with a vision to provide world-class management education in Odisha. Over the past two decades, TSBA has grown from a pioneering local institute into one of the state's premier business schools, continually evolving its pedagogy and infrastructure to meet global corporate demands.</p>
+      </div>
+
+      <div class="timeline-wrapper">
+        <!-- Node 1 -->
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <strong>2005</strong>
+            <p>Trident School of Business Administration is founded under the aegis of the Trident Group of Institutions, with a goal of offering premium value-centric business training.</p>
+          </div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <strong>2013</strong>
+            <p>Expanded corporate partnerships, introduced executive seminars, and integrated structured internships into the core MBA and BBA pedagogical curriculums.</p>
+          </div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <strong>2019</strong>
+            <p>Accredited by the Government of India's prestigious National Board of Accreditation (NBA) for overall teaching excellence and program infrastructure.</p>
+          </div>
+        </div>
+
+        <!-- Node 4 -->
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <strong>Today</strong>
+            <p>A leading, dynamic business school in Odisha featuring state-of-the-art Finance, Analytics, and Communication laboratories with strong Fortune 500 placements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANKINGS & RECOGNITION SECTION -->
+    <section id="rankings" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div class="section-header">
+        <span class="section-subtitle">Accolades</span>
+        <h2 class="section-title">Rankings &amp; <span>Recognition</span></h2>
+        <p class="section-desc">Our commitment to excellence is validated by national accreditation bodies, industry surveys, and academic rankings.</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div style="background: var(--white); padding: 32px 24px; border-radius: 16px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow);" class="rank-card">
+          <div style="font-size: 40px; margin-bottom: 16px;">🏆</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px;">NBA Accredited</h3>
+          <p style="font-size: 13.5px; color: var(--muted); line-height: 1.6;">Accredited by Govt of India's National Board of Accreditation (NBA) for outstanding quality of education, faculty, and academic infrastructure.</p>
+        </div>
+        
+        <div style="background: var(--white); padding: 32px 24px; border-radius: 16px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow);" class="rank-card">
+          <div style="font-size: 40px; margin-bottom: 16px;">🏅</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px;">Top 5 B-School</h3>
+          <p style="font-size: 13.5px; color: var(--muted); line-height: 1.6;">Consistently ranked among the Top 5 Business Schools in Odisha in private and government-led surveys for placement and pedagogy.</p>
+        </div>
+        
+        <div style="background: var(--white); padding: 32px 24px; border-radius: 16px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow);" class="rank-card">
+          <div style="font-size: 40px; margin-bottom: 16px;">🏛️</div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px;">AICTE Approved</h3>
+          <p style="font-size: 13.5px; color: var(--muted); line-height: 1.6;">Approved by the All India Council for Technical Education (AICTE), Ministry of Education, following strict academic standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT TRIDENT GROUP SECTION -->
+    <section id="trident-group" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center;">
+        <div>
+          <span class="section-subtitle">Our Parent Group</span>
+          <h2 class="section-title">About <span>Trident Group</span> of Institutions</h2>
+          <p class="section-desc" style="margin-bottom: 20px;">Trident Group of Institutions, established in 2005 in Bhubaneswar, is one of the leading educational conglomerates in Odisha. Offering courses in Engineering (TAT), Management (TSBA), Computer Applications (TCA), and Biotechnology, the group is renowned for its academic rigor, research initiatives, and massive recruitment networks.</p>
+          <p class="section-desc">With a sprawling green campus, state-of-the-art labs, and over 15,000 alumni worldwide, the Trident Group continues to shape student success and create future-ready tech and management leaders.</p>
+        </div>
+        <div style="position: relative;">
+          <div style="border-radius: 20px; overflow: hidden; border: 3px solid rgba(11,31,58,0.1); box-shadow: var(--shadow);">
+            <img src="Public/Untitled design (3).png" alt="Trident Group Campus" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNATIONAL TIE-UPS SECTION -->
+    <section id="international" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px; margin-bottom: 96px;">
+      <div class="section-header">
+        <span class="section-subtitle">Global Reach</span>
+        <h2 class="section-title">International <span>Tie-ups</span></h2>
+        <p class="section-desc">We collaborate with global universities, research associations, and international corporations to expose our students and faculty to world-class practices.</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; text-align: center;">
+        <div style="background: var(--white); padding: 32px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow);">
+          <div style="font-size: 32px; margin-bottom: 12px;">🌏</div>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 8px;">Global Immersion</h4>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Short-term study tours, university exchanges, and global leadership workshops to provide direct international perspective.</p>
+        </div>
+        
+        <div style="background: var(--white); padding: 32px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow);">
+          <div style="font-size: 32px; margin-bottom: 12px;">🔬</div>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 8px;">Collaborative Research</h4>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Joint publications, international conferences, and exchange of research scholars with foreign academic partners.</p>
+        </div>
+        
+        <div style="background: var(--white); padding: 32px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow);">
+          <div style="font-size: 32px; margin-bottom: 12px;">🏢</div>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 8px;">MNC Certifications</h4>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Global certification pathways partnered with tech and business giants to add worldwide credentials to your resume.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS ROW BOARD -->
+    <section class="stats-section">
+      <div class="stats-board-grid">
+        <div class="stat-board-card">
           <strong>1500+</strong>
-          <span>Alumni professionals</span>
+          <span>Alumni Network</span>
         </div>
-        <div class="stat-card">
-          <strong>30+</strong>
-          <span>Recruiting companies</span>
+        <div class="stat-board-card">
+          <strong>250+</strong>
+          <span>Recruiting Partners</span>
         </div>
-        <div class="stat-card">
-          <strong>25</strong>
-          <span>Expert faculty</span>
+        <div class="stat-board-card">
+          <strong>16</strong>
+          <span>Expert Core Faculty</span>
         </div>
-        <div class="stat-card">
+        <div class="stat-board-card">
           <strong>100%</strong>
-          <span>Career support</span>
+          <span>Placement Support</span>
         </div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="cta-copy">
-        <h2>Ready to learn more about TSBA?</h2>
-        <p>Explore the main campus experience, program details, and admission options on our homepage.</p>
+    <!-- CTA SECTION -->
+    <section class="cta-banner">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h2>Ready to Start Your Management Journey?</h2>
+          <p>Explore admission criteria, application deadlines, and program details on our homepage or get in touch with our admissions department.</p>
+        </div>
+        <a href="index.html#admissions" class="btn-dark">Apply Now</a>
       </div>
-      <a href="index.html" class="btn">Back to Home</a>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     © 2026 Trident School of Business Administration · Bhubaneswar, Odisha
   </footer>
 
   <script>
+    /* Mobile navbar interactions */
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
+
     hamburger.addEventListener('click', () => {
       const open = mobileNav.classList.toggle('open');
       hamburger.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-      link.addEventListener('click', () => {
+
+    document.querySelectorAll('.mobile-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        const sub = document.getElementById(btn.dataset.target);
+        const isOpen = sub.classList.toggle('open');
+        btn.textContent = isOpen ? '−' : '+';
+      });
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(a => {
+      a.addEventListener('click', () => {
         mobileNav.classList.remove('open');
         hamburger.classList.remove('open');
         document.body.style.overflow = '';

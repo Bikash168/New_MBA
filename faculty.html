@@ -7,17 +7,224 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin:0; padding:0 }
-    :root { --navy:#0B1F3A; --gold:#C8962A; --white:#fff; --muted:#5A6378; --line:#E5DED0; --shadow:0 18px 45px rgba(11,31,58,.12) }
+    :root { --navy:#0B1F3A; --gold:#C8962A; --white:#fff; --muted:#5A6378; --line:#E5DED0; --shadow:0 18px 45px rgba(11,31,58,.12); --gold-soft: #E8B84B; --gold-lt: #E8B84B; --offwhite: #F5F3EE; --text: #1A1A2E; --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); --nav-h: 72px; }
     body { font-family:'DM Sans',sans-serif; color:var(--navy); background:linear-gradient(180deg,#f8f6f1 0%,#F5F3EE 55%); min-height:100vh }
     a { color:inherit; text-decoration:none }
-    .topbar { background:var(--navy); color:rgba(255,255,255,.78); padding:10px 5%; display:flex; justify-content:space-between }
-    .page-header { position:sticky; top:18px; margin-top:18px; z-index:1000; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(14,34,62,.08) }
-    .header-inner { width:min(1180px,92%); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:72px }
-    .brand { display:flex; gap:12px; align-items:center }
-    .brand-mark { width:46px; height:46px; border-radius:50%; background:var(--navy); color:var(--gold); display:grid; place-items:center; font-family:'Playfair Display',serif }
-    .nav-links { display:flex; gap:18px; align-items:center }
-    .nav-links a { text-transform:uppercase; font-weight:700; font-size:13px; color:var(--navy) }
-    .hero { width:min(1180px,92%); margin:36px auto 0 }
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--navy);
+      color: #aab4c8;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 48px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--gold-lt);
+      text-decoration: none;
+      margin-left: 14px;
+    }
+    .topbar a:hover {
+      color: var(--white);
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      box-shadow: 0 2px 18px rgba(11, 31, 58, .12);
+      border-bottom: 3px solid var(--gold);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-emblem {
+      width: 46px;
+      height: 46px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--gold);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--gold-lt);
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .logo-text .school-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .logo-text .tagline {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* Desktop menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2px;
+    }
+    .nav-menu>li {
+      position: relative;
+    }
+    .nav-menu>li>a {
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      min-height: 44px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: .02em;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+    .nav-menu>li>a:hover,
+    .nav-menu>li:hover>a {
+      background: var(--navy);
+      color: var(--gold-lt);
+    }
+    .nav-menu>li>a.active {
+      color: var(--gold);
+    }
+    .has-drop>a::after {
+      content: ' ▾';
+      font-size: 9px;
+      opacity: .55;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--white);
+      min-width: 205px;
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(11, 31, 58, .15);
+      border-radius: 0 0 8px 8px;
+      list-style: none;
+      z-index: 200;
+      animation: fadeDown .18s ease;
+    }
+    .dropdown::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: transparent;
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-6px) }
+      to { opacity: 1; transform: none }
+    }
+    .nav-menu>li:hover .dropdown {
+      display: block;
+    }
+    .dropdown li a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0ece4;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+    .dropdown li a:hover {
+      background: var(--offwhite);
+      color: var(--navy);
+      padding-left: 22px;
+    }
+    .dropdown li a.active {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .nav-button {
+      background: var(--gold) !important; color: var(--navy) !important;
+      font-weight: 700 !important; padding: 9px 18px !important;
+      border-radius: 4px !important; letter-spacing: .04em;
+      font-size: 12.5px; text-decoration: none; display: flex; align-items: center;
+      transition: var(--transition);
+    }
+    .nav-button:hover { background: var(--navy) !important; color: var(--gold-soft) !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0;
+      background: var(--navy); z-index: 1050; overflow-y: auto;
+      padding: 80px 24px 40px; transform: translateX(100%);
+      opacity: 0; visibility: hidden;
+      transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
+    }
+    .mobile-nav.open { transform: translateX(0); opacity: 1; visibility: visible; }
+    .mobile-nav-list { list-style: none; }
+    .mobile-nav-list>li { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-nav-list>li>.mn-row { display: flex; justify-content: space-between; align-items: center; }
+    .mobile-nav-list>li>.mn-row>a { display: flex; align-items: center; width: 100%; padding: 16px 4px; font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; touch-action: manipulation; }
+    .mobile-toggle { background: none; border: none; color: var(--gold-lt); font-size: 22px; line-height: 1; cursor: pointer; padding: 10px 8px; }
+    .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
+    .mobile-sub.open { display: block; }
+    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255,255,255,.75); text-decoration: none; touch-action: manipulation; }
+    .mobile-sub li a:hover { color: var(--gold-lt); }
+    .mobile-sub li a.active { color: var(--gold-lt); font-weight: 700; }
+    .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .topbar { padding: 8px 24px; }
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+      .faculty-grid { grid-template-columns: 1fr; }
+    }
     .section { width:min(1180px,92%); margin:36px auto }
     .section-head h2 { font-family:'Playfair Display',serif; font-size:28px; color:var(--navy); margin-bottom:8px }
     .faculty-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
@@ -30,29 +237,134 @@
   </style>
 </head>
 <body>
+  <!-- TOPBAR -->
   <div class="topbar">
-    <span>Trident School of Business Administration · Bhubaneswar</span>
-    <span><a href="index.html">Back to Home</a></span>
+    <div class="topbar-left">
+      <span>📞 +91-674-6649600</span> &nbsp;|&nbsp; <span>✉️ info@trident.ac.in</span>
+    </div>
+    <div class="topbar-right">
+      <span>Bhubaneswar, Odisha</span>
+      <a href="index.html">Back to Home</a>
+    </div>
   </div>
 
-  <header class="page-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">
-        <div class="brand-mark">TS</div>
-        <div>
-          <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--navy)">Trident School of Business</div>
-          <div style="font-size:11px;color:var(--gold);letter-spacing:.12em">Administration · Est. 2005</div>
-        </div>
-      </a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="mba-fulltime.html">MBA Full-Time</a>
-        <a href="faculty.html" class="active">Faculty</a>
-        <a href="index.html#admissions">Admissions</a>
-      </nav>
-    </div>
-  </header>
+  <!-- STICKY NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">TS</div>
+      <div class="logo-text">
+        <span class="school-name">Trident School of Business</span>
+        <span class="tagline">Administration · Est. 2005</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="about.html">About Us</a></li>
+      <li class="has-drop"><a href="#">Programs</a>
+        <ul class="dropdown">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="#">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Admission</a>
+        <ul class="dropdown">
+          <li><a href="#">Apply to MBA</a></li>
+          <li><a href="#">Apply to BBA</a></li>
+          <li><a href="#">Apply to Ph.D</a></li>
+          <li><a href="#">Eligibility &amp; Fees</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Faculty &amp; Research</a>
+        <ul class="dropdown">
+          <li><a href="faculty.html" class="active">Faculty</a></li>
+          <li><a href="#">Research &amp; Publications</a></li>
+          <li><a href="#">TSBA Journal</a></li>
+          <li><a href="#">Research Projects</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Recruiters</a>
+        <ul class="dropdown">
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Placement Statistics</a></li>
+          <li><a href="#">Our Recruiters</a></li>
+          <li><a href="#">MDP &amp; Consultancy</a></li>
+          <li><a href="#">Industry Conclaves</a></li>
+        </ul>
+      </li>
+      <li class="has-drop"><a href="#">Campus Life</a>
+        <ul class="dropdown">
+          <li><a href="#">Infrastructure</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Sports &amp; Clubs</a></li>
+          <li><a href="#">Events &amp; Fests</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <a href="index.html#admissions" class="nav-button">Apply Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li><a href="about.html">About Us</a></li>
+      <li>
+        <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
+        <ul class="mobile-sub" id="sub2">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="#">Ph.D Program</a></li>
+          <li><a href="#">Executive MBA</a></li>
+          <li><a href="#">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Admission</a><button class="mobile-toggle" data-target="sub3">+</button></div>
+        <ul class="mobile-sub" id="sub3">
+          <li><a href="#">Apply to MBA</a></li>
+          <li><a href="#">Apply to BBA</a></li>
+          <li><a href="#">Apply to Ph.D</a></li>
+          <li><a href="#">Eligibility &amp; Fees</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
+        <ul class="mobile-sub" id="sub4">
+          <li><a href="faculty.html" class="active">Faculty</a></li>
+          <li><a href="#">Research &amp; Publications</a></li>
+          <li><a href="#">TSBA Journal</a></li>
+          <li><a href="#">Research Projects</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Recruiters</a><button class="mobile-toggle" data-target="sub5">+</button></div>
+        <ul class="mobile-sub" id="sub5">
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Placement Statistics</a></li>
+          <li><a href="#">Our Recruiters</a></li>
+          <li><a href="#">MDP &amp; Consultancy</a></li>
+          <li><a href="#">Industry Conclaves</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="mn-row"><a href="#">Campus Life</a><button class="mobile-toggle" data-target="sub6">+</button></div>
+        <ul class="mobile-sub" id="sub6">
+          <li><a href="#">Infrastructure</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Sports &amp; Clubs</a></li>
+          <li><a href="#">Events &amp; Fests</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
+  </div>
 
   <main>
     <section class="hero">
@@ -69,10 +381,16 @@
         <p style="color:var(--muted)">Our core faculty bring academic rigor and industry experience across strategy, finance, marketing, and operations.</p>
       </div>
       <div class="faculty-grid">
+        <div class="faculty-card" style="border: 2px solid var(--gold);">
+          <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">PM</div>
+          <div class="faculty-name">Prof. P. K. Mohanty</div>
+          <div class="faculty-role">Dean — School of Business (SOB)</div>
+          <div class="faculty-bio">Former Head of the Department of MBA, Utkal University and Director (CD) BPUT, Odisha. Heading a stellar management faculty of 16, including 10 PhD holders.</div>
+        </div>
         <div class="faculty-card">
           <div class="faculty-photo">AS</div>
           <div class="faculty-name">Dr. A. N. Sharma</div>
-          <div class="faculty-role">Professor — Strategy & Innovation</div>
+          <div class="faculty-role">Professor — Strategy &amp; Innovation</div>
           <div class="faculty-bio">Dr. Sharma's research focuses on strategic renewal and digital transformation. He has published in top-tier journals and consults for several Fortune 500 firms.</div>
         </div>
         <div class="faculty-card">
@@ -80,12 +398,6 @@
           <div class="faculty-name">Prof. L. K. Rao</div>
           <div class="faculty-role">Associate Professor — Finance</div>
           <div class="faculty-bio">Prof. Rao specialises in corporate finance, valuations, and capital markets. He teaches advanced corporate finance and leads the finance lab.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo">PS</div>
-          <div class="faculty-name">Ms. Priya Sen</div>
-          <div class="faculty-role">Industry Mentor — Marketing</div>
-          <div class="faculty-bio">Priya brings 15+ years of brand and digital marketing experience from top FMCG companies; she mentors students on industry projects and placements.</div>
         </div>
       </div>
     </section>
@@ -115,5 +427,36 @@
 
   <footer style="background:var(--navy); color:rgba(255,255,255,.78); padding:24px 5%; text-align:center; margin-top:40px">c 2026 Trident School of Business Administration</footer>
 
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-toggle, .mn-row > a[href="#"]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        const row = el.closest('.mn-row');
+        const btn = row.querySelector('.mobile-toggle');
+        const sub = document.getElementById(btn.dataset.target);
+        const isOpen = sub.classList.toggle('open');
+        btn.textContent = isOpen ? '−' : '+';
+      });
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(a => {
+      if (a.getAttribute('href') !== '#') {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          hamburger.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
