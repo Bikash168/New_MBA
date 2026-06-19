@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BBA Full-Time — Trident School of Business Administration</title>
+  <title>Admissions 2026 — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,9 +105,6 @@
       background: var(--navy);
       color: var(--gold-lt);
     }
-    .nav-menu>li>a.active {
-      color: var(--gold);
-    }
     .has-drop>a::after {
       content: ' ▾';
       font-size: 9px;
@@ -208,16 +205,8 @@
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
       padding: 96px 8% 80px;
       color: var(--white);
+      text-align: center;
       position: relative;
-      overflow: hidden;
-    }
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: center;
     }
     .eyebrow {
       display: inline-flex;
@@ -246,81 +235,14 @@
       font-size: 15.5px;
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 32px;
-    }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .hero-stat-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      padding: 20px 16px;
-      border-radius: 12px;
-      text-align: center;
-      transition: var(--transition);
-    }
-    .hero-stat-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(200, 150, 42, 0.4);
-      transform: translateY(-4px);
-    }
-    .hero-stat-card strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: var(--gold-soft);
-      margin-bottom: 4px;
-    }
-    .hero-stat-card span {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.7);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    /* Program Snapshot details */
-    .snapshot-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 36px;
-      box-shadow: var(--shadow);
-      border-top: 5px solid var(--gold);
-    }
-    .snapshot-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-    .snapshot-box p {
-      font-size: 13.5px;
-      color: var(--muted);
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 12px;
-    }
-    .snapshot-item {
-      background: linear-gradient(180deg, #fff, #f8f6f1);
-      padding: 16px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      margin-bottom: 12px;
-      font-size: 13.5px;
-      line-height: 1.6;
-    }
-    .snapshot-item:last-child { margin-bottom: 0; }
-
-    /* Sections general styles */
+    /* Program details cards */
     .section-container {
       max-width: 1200px;
-      margin: 96px auto;
+      margin: 80px auto;
       padding: 0 4%;
     }
     .section-header {
@@ -352,39 +274,63 @@
       line-height: 1.7;
     }
 
-    /* Vision & Mission style */
-    .vm-grid {
+    /* Main Grid for Next-Gen MBA */
+    .mba-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 32px;
+      margin-bottom: 56px;
     }
-    .vm-card {
+    .mba-card {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 40px 32px;
+      border-radius: 20px;
+      padding: 40px;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      border-top: 4px solid var(--navy);
+      border-top: 5px solid var(--navy);
     }
-    .vm-card:hover {
+    .mba-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-hover);
+      border-top-color: var(--gold);
     }
-    .vm-card:last-child { border-top-color: var(--gold); }
-    .vm-card .icon { font-size: 36px; margin-bottom: 16px; display: inline-block; }
-    .vm-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 16px; }
-    .vm-card p { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
-    .vm-list { list-style: none; margin-top: 12px; }
-    .vm-list li {
-      position: relative;
-      padding-left: 24px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.65;
+    .mba-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--navy);
       margin-bottom: 12px;
     }
-    .vm-list li::before {
+    .mba-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .prospects-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
+    }
+    .prospects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      list-style: none;
+    }
+    .prospects-list li {
+      font-size: 13px;
+      color: var(--muted);
+      position: relative;
+      padding-left: 16px;
+      line-height: 1.4;
+    }
+    .prospects-list li::before {
       content: '✓';
       position: absolute;
       left: 0;
@@ -392,63 +338,56 @@
       font-weight: 700;
     }
 
-    /* POs & LOs grids */
-    .po-grid {
+    /* Intake and specialisations section */
+    .intake-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      margin-bottom: 80px;
     }
-    .po-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 32px 24px;
+    .highlight-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 40px;
       box-shadow: var(--shadow);
-      transition: var(--transition);
+      border-left: 5px solid var(--gold);
     }
-    .po-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--gold-soft);
-    }
-    .po-card strong {
-      display: inline-block;
-      background: rgba(200, 150, 42, 0.15);
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .po-card h4 {
+    .highlight-box h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      color: var(--navy);
-      margin-bottom: 12px;
+      font-size: 24px;
+      margin-bottom: 14px;
+      color: var(--gold-soft);
     }
-    .po-card p {
-      font-size: 13.5px;
-      color: var(--muted);
-      line-height: 1.6;
+    .highlight-box p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 20px;
     }
-
-    /* Program details cards */
-    .detail-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
+    .entrance-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    .detail-card {
+    .ent-badge {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .specs-box {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 20px;
+      padding: 40px;
       box-shadow: var(--shadow);
     }
-    .detail-card h3 {
+    .specs-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
       color: var(--navy);
@@ -457,73 +396,163 @@
       padding-bottom: 8px;
       display: inline-block;
     }
-    .detail-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 14px;
+    .specs-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .specs-list li {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .specs-list li::before {
+      content: '⚡';
+      color: var(--gold);
     }
 
-    /* Admissions card */
-    .admissions-box {
+    /* Eligibility and Selection Section */
+    .details-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+    .details-card {
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: 20px;
       padding: 40px;
       box-shadow: var(--shadow);
     }
-    .admissions-box h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 16px; }
-    .admissions-box ol { padding-left: 20px; }
-    .admissions-box ol li { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
-
-    /* CTA Section */
-    .cta-banner {
-      max-width: 1200px;
-      margin: 96px auto;
-      padding: 0 4%;
-    }
-    .cta-card {
-      background: linear-gradient(120deg, var(--gold) 0%, var(--gold-soft) 40%, #FFF5DF 100%);
-      border-radius: 24px;
-      padding: 56px 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      box-shadow: 0 20px 45px rgba(200, 150, 42, 0.2);
-      border: 1px solid rgba(200, 150, 42, 0.3);
-    }
-    .cta-content { max-width: 600px; }
-    .cta-content h2 {
+    .details-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      font-weight: 800;
+      font-size: 22px;
       color: var(--navy);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
     }
-    .cta-content p {
+    .details-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .criteria-box {
+      background: #fdfcf9;
+      border: 1px solid var(--line);
+      padding: 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* Contact & Admission Desk Section */
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .contact-info-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .contact-info-block p {
       font-size: 14.5px;
-      color: rgba(11, 31, 58, 0.8);
-      line-height: 1.65;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
     }
-    .btn-dark {
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .contact-icon {
+      font-size: 22px;
+      width: 44px;
+      height: 44px;
+      background: rgba(200, 150, 42, 0.1);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-detail h5 {
+      font-size: 13.5px;
+      color: var(--navy);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .contact-detail a, .contact-detail span {
+      font-size: 14.5px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .contact-detail a:hover {
+      color: var(--gold);
+    }
+    .hod-block {
+      background: linear-gradient(180deg, #FBF9F5, #F5F3EE);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+    .hod-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
       background: var(--navy);
       color: var(--gold-soft);
+      display: grid;
+      place-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
       font-weight: 700;
-      font-size: 13.5px;
-      letter-spacing: 0.05em;
-      padding: 16px 36px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: var(--transition);
-      display: inline-block;
-      white-space: nowrap;
+      margin: 0 auto 16px;
     }
-    .btn-dark:hover {
-      background: var(--navy-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(11, 31, 58, 0.25);
+    .hod-block h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .hod-block .role {
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .hod-phone {
+      font-size: 15px;
+      color: var(--navy-light);
+      font-weight: 700;
+      text-decoration: none;
     }
 
     /* Footer matching index.html */
@@ -540,15 +569,10 @@
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .hero-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { max-width: 500px; margin: 0 auto; }
-      .snapshot-box { max-width: 500px; margin: 0 auto; }
-      .vm-grid { grid-template-columns: 1fr; }
-      .po-grid { grid-template-columns: 1fr; }
-      .detail-columns { grid-template-columns: 1fr; }
-      .cta-card { flex-direction: column; text-align: center; padding: 48px 32px; }
-      .btn-dark { width: 100%; text-align: center; }
+      .mba-grid { grid-template-columns: 1fr; }
+      .intake-row { grid-template-columns: 1fr; }
+      .details-row { grid-template-columns: 1fr; }
+      .contact-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -558,6 +582,7 @@
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
       .section-container { margin: 64px auto; }
+      .prospects-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -589,11 +614,11 @@
       <li class="has-drop"><a href="#">Programs</a>
         <ul class="dropdown">
           <li><a href="mba-fulltime.html">MBA Full Time</a></li>
-          <li><a href="bba-fulltime.html" class="active">BBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
           <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
         </ul>
       </li>
-      <li><a href="admission.html">Admission</a></li>
+      <li><a href="admission.html" class="active">Admission</a></li>
       <li class="has-drop"><a href="#">Faculty &amp; Research</a>
         <ul class="dropdown">
           <li><a href="faculty.html">Faculty</a></li>
@@ -636,13 +661,13 @@
         <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
         <ul class="mobile-sub" id="sub2">
           <li><a href="mba-fulltime.html">MBA Full Time</a></li>
-          <li><a href="bba-fulltime.html" class="active">BBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
           <li><a href="#">Ph.D Program</a></li>
           <li><a href="#">Executive MBA</a></li>
           <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
         </ul>
       </li>
-      <li><a href="admission.html">Admission</a></li>
+      <li><a href="admission.html" class="active">Admission</a></li>
       <li>
         <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
         <ul class="mobile-sub" id="sub4">
@@ -678,167 +703,194 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section">
-      <div class="hero-container">
-        <div>
-          <span class="eyebrow">Program Overview</span>
-          <h1 class="hero-title">Bachelor of Business <span>Administration</span> (BBA)</h1>
-          <p class="hero-desc">
-            Established in 2008, the Trident School of Business offers a three-year full-time BBA programme approved by AICTE &amp; Government of Odisha, and affiliated to BPUT. We provide a solid foundation in core business management to cultivate young, industry-ready professionals.
+      <span class="eyebrow">Join Trident School of Business</span>
+      <h1 class="hero-title">TSBA <span>MBA Admissions 2026</span></h1>
+      <p class="hero-desc">
+        Take the next step in your management career. Explore our AICTE-approved, industry-connected MBA specializations and enrollment procedures.
+      </p>
+    </section>
+
+    <!-- PROGRAM ANNOUNCEMENTS SECTION -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">Next-Gen Offerings</span>
+        <h2 class="section-title">AICTE Approved <span>Specialist MBA Programs</span></h2>
+        <p class="section-desc">Choose a dynamic pathway structured for modern venture creation or environmental sustainability.</p>
+      </div>
+
+      <div class="mba-grid">
+        <!-- MBA IEV -->
+        <div class="mba-card">
+          <span style="font-size: 32px; display: inline-block; margin-bottom: 12px;">🚀</span>
+          <h3>MBA IEV (Innovation, Entrepreneurship &amp; Venture Development)</h3>
+          <p>
+            A 2-year specialized program focusing on innovation methodologies, business startup workflows, and value creation. Ideal for developing leaders capable of launching and running dynamic business ventures or driving corporate change.
           </p>
-          <div class="hero-actions">
-            <a href="#vision-mission" class="btn-primary">Vision &amp; Mission</a>
-            <a href="#curriculum" class="btn-outline">Curriculum Details</a>
-          </div>
-          <div class="hero-stats">
-            <div class="hero-stat-card">
-              <strong>60 Seats</strong>
-              <span>Approved Intake</span>
-            </div>
-            <div class="hero-stat-card">
-              <strong>BPUT</strong>
-              <span>Affiliated</span>
-            </div>
-            <div class="hero-stat-card">
-              <strong>3-Year</strong>
-              <span>Full-Time Mode</span>
-            </div>
-          </div>
+          <div class="prospects-title">Career Prospects</div>
+          <ul class="prospects-list">
+            <li>New Venture Creation</li>
+            <li>Innovation Management</li>
+            <li>Managing Startups</li>
+            <li>Venture Capital (VC)</li>
+            <li>Angel Investing</li>
+            <li>Management Consulting</li>
+            <li>Corporate Innovation</li>
+            <li>Product Management</li>
+          </ul>
         </div>
-        <div class="snapshot-box" id="curriculum">
-          <h3>Program Snapshot</h3>
-          <p>Undergraduate management curriculum focusing on core concepts and applied training.</p>
-          <div class="snapshot-item">
-            <strong>Intake Capacity:</strong> Approved intake of 60 students per batch.
-          </div>
-          <div class="snapshot-item">
-            <strong>Duration &amp; Affiliation:</strong> 3-year full-time study, affiliated with Biju Patnaik University of Technology.
-          </div>
-          <div class="snapshot-item">
-            <strong>Key Specializations:</strong> Curriculums covering core functional areas: Marketing, Finance, Human Resource Management, and Business Systems.
-          </div>
+
+        <!-- MBA Environmental Management -->
+        <div class="mba-card">
+          <span style="font-size: 32px; display: inline-block; margin-bottom: 12px;">🌱</span>
+          <h3>MBA in Environmental Management (EM)</h3>
+          <p>
+            A 2-year specialized program designed to integrate social development, environmental risk assessment, and resource management to preserve ecological balance while driving sustainable corporate growth.
+          </p>
+          <div class="prospects-title">Career Prospects</div>
+          <ul class="prospects-list">
+            <li>Environmental Consulting</li>
+            <li>Corporate Sustainability</li>
+            <li>Policy &amp; Advocacy</li>
+            <li>Compliance Management</li>
+            <li>Sustainable Development</li>
+            <li>Renewable Energy</li>
+            <li>Resource Management</li>
+            <li>Eco-Education &amp; Outreach</li>
+          </ul>
+          <p style="margin-top: 16px; font-weight: 700; color: var(--navy); font-size: 13.5px;">
+            💼 Starting Salary Range: Rs. 5 Lakhs to Rs. 10 Lakhs p.a.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- VISION & MISSION SECTION -->
-    <section id="vision-mission" class="section-container">
-      <div class="vm-grid">
-        <!-- Vision -->
-        <div class="vm-card">
-          <span class="icon">👁️</span>
-          <h3>VISION</h3>
-          <p>To be a premier undergraduate management institute shaping the next generation of impactful business leaders capable of transforming industries for sustainable growth.</p>
+    <!-- INTAKE & SPECIALISATIONS -->
+    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div class="intake-row">
+        <!-- Intake capacity -->
+        <div class="highlight-box">
+          <h3>Sanctioned Intake Capacity</h3>
+          <p>
+            Trident has a sanctioned strength of <strong>60 seats</strong> for admission in the 2026 academic batch. The management will admit all 60 candidates based on scores obtained in national/state entrance tests.
+          </p>
+          <div class="entrance-badges">
+            <span class="ent-badge">OJEE 2026</span>
+            <span class="ent-badge">MAT</span>
+            <span class="ent-badge">CAT</span>
+            <span class="ent-badge">XAT</span>
+            <span class="ent-badge">CMAT</span>
+            <span class="ent-badge">ATMA</span>
+          </div>
+          <p style="font-size: 12px; margin-top: 24px; opacity: 0.8; font-style: italic;">
+            * TSBA is fully approved by AICTE and affiliated with Biju Patnaik University of Technology (BPUT), Odisha.
+          </p>
         </div>
-        <!-- Mission -->
-        <div class="vm-card">
-          <span class="icon">🎯</span>
-          <h3>MISSION</h3>
-          <ul class="vm-list">
-            <li>Empower students with a solid foundation in business principles and leadership values with integrity.</li>
-            <li>Nurture critical thinking and problem-solving skills through hands-on learning, internships, and project work.</li>
-            <li>Develop socially responsible and industry-ready young professionals prepared for global complexity.</li>
+
+        <!-- Specialisations -->
+        <div class="specs-box">
+          <h3>Core Specialisations</h3>
+          <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 20px;">
+            Dual specialization opportunities are available across functional business streams:
+          </p>
+          <ul class="specs-list">
+            <li>HR Management</li>
+            <li>Finance Management</li>
+            <li>Marketing Management</li>
+            <li>Systems Management</li>
+            <li>International Business</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- PROGRAM DETAILS SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Academic Architecture</span>
-        <h2 class="section-title">Foundational &amp; <span>Applied Approach</span></h2>
-        <p class="section-desc">Integrating academic theory with practical projects to prepare undergraduates for immediate entry into corporate executive lines.</p>
-      </div>
+    <!-- ELIGIBILITY & SELECTION -->
+    <section id="eligibility" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div class="details-row">
+        <!-- Eligibility Criteria -->
+        <div class="details-card">
+          <h3>Eligibility Criteria</h3>
+          <p>Candidates must satisfy one of the following academic paths:</p>
+          
+          <div class="criteria-box">
+            <strong>Three-Year Bachelor's Degree:</strong> Passed or appearing in 2026 for a minimum three-year Bachelor's degree examination from any University of Odisha or recognized UGC/AICTE institute.
+          </div>
+          
+          <div class="criteria-box" style="margin-top: 12px;">
+            <strong>Engineering / Tech / Pharmacy:</strong> Passed or appearing in 2026 for a minimum four/five year Bachelor's degree in Engineering, Technology, or Pharmacy from any Odisha or recognized UGC/AICTE institute.
+          </div>
 
-      <div class="detail-columns">
-        <!-- Infrastructure -->
-        <div class="detail-card">
-          <h3>Centrally Air-Conditioned Campus</h3>
-          <p>The academic environment is strengthened through modern infrastructure, including a centrally air-conditioned academic block with spacious lecture theatres.</p>
-          <p>Each theatre is equipped with advanced audio-visual teaching aids and intranet facilities for seamless access to online learning resources and student portals.</p>
-        </div>
-
-        <!-- Pedagogy -->
-        <div class="detail-card">
-          <h3>Pedagogy and Exposure</h3>
-          <p>The program integrates case study methodologies, internships, corporate visits, and peer mentorship to ensure both conceptual clarity and application capabilities.</p>
-          <p>Our experienced faculty members guide students through individual assignments and field visits to build corporate readiness early on.</p>
-        </div>
-      </div>
-      
-      <div class="detail-columns">
-        <!-- Co-curricular -->
-        <div class="detail-card">
-          <h3>Professional Development</h3>
-          <p>Students actively participate in various co-curricular activities such as Inter B-School competitions, paper presentations, and business simulation challenges.</p>
-          <p>These exercises develop key communication skills, public presentation abilities, and collaborative competencies beyond the university textbooks.</p>
+          <p style="font-size: 13.5px; color: var(--text); font-weight: 700; margin-top: 16px;">
+            ⚠️ Minimum Marks: 50% in aggregate (45% for SC/ST category) at the qualifying examination.
+          </p>
+          <p style="font-size: 13px; color: var(--gold); font-weight: 600; margin-top: 8px;">
+            🕒 Age Limit: There is no age limit for taking admission into the MBA course.
+          </p>
         </div>
 
-        <!-- Student-driven clubs -->
-        <div class="detail-card">
-          <h3>Experiential Learning Clubs</h3>
-          <p>The department encourages holistic development through active engagement in student-driven clubs including the Fintech Club, Strategy Club, Business Analytics Club, Communication Club, and Cultural Club.</p>
-          <p>These clubs provide platforms for experiential learning, teamwork, creativity, and leadership enhancement.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- POs SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Core Objectives</span>
-        <h2 class="section-title">Program Outcomes <span>(POs)</span> &amp; LOs</h2>
-        <p class="section-desc">Defining the specific professional competencies that BBA graduates will master upon completing the program.</p>
-      </div>
-
-      <div class="po-grid">
-        <!-- PO1 -->
-        <div class="po-card">
-          <strong>PO1 &amp; LO1</strong>
-          <h4>Business Foundations</h4>
-          <p>Acquire foundational knowledge of core business disciplines (Marketing, Finance, HR, and Operations).</p>
-        </div>
-        <!-- PO2 -->
-        <div class="po-card">
-          <strong>PO2 &amp; LO2</strong>
-          <h4>Managerial Competencies</h4>
-          <p>Develop communication, leadership, and analytical skills to work effectively in corporate teams.</p>
-        </div>
-        <!-- PO3 -->
-        <div class="po-card">
-          <strong>PO3 &amp; LO3</strong>
-          <h4>Professional Readiness</h4>
-          <p>Gain practical exposure through internships, field visits, and project work to be industry-ready from day one.</p>
+        <!-- Selection Procedure -->
+        <div class="details-card">
+          <h3>Selection Procedure</h3>
+          <p>
+            Admission to the MBA (Full time 2 year) program is strictly based on performance and ranks in entrance tests.
+          </p>
+          <div class="criteria-box" style="border-left: 4px solid var(--gold);">
+            <strong>Entrance Exam Ranks:</strong> Candidate selection follows counseling guidelines set by OJEE, BPUT, and the Govt. of Odisha, utilizing scores from:
+            <ul style="margin-top: 10px; padding-left: 20px;">
+              <li>OJEE 2026 (Odisha Joint Entrance Exam)</li>
+              <li>MAT (Management Aptitude Test)</li>
+              <li>CAT / XAT / CMAT / ATMA</li>
+            </ul>
+          </div>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 20px;">
+            Shortlisted candidates are required to register on the OJEE counseling portal or approach the TSBA admission desk with valid scorecards and certificates.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ADMISSIONS SECTION -->
+    <!-- CONTACT DESK & OFFICE INFO -->
     <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Enrollment</span>
-        <h2 class="section-title">Admissions <span>Procedure</span></h2>
-        <p class="section-desc">Apply online for the 3-year full-time BBA program. Selection is based on academic merit in the 10+2 qualifying examinations.</p>
-      </div>
+      <div class="contact-card">
+        <div class="contact-info-block">
+          <h3>Admission Helpdesk</h3>
+          <p>
+            Get in touch with our admissions coordinators to verify vacancy details, eligibility routes, fee payments, and counseling support.
+          </p>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <h5>Campus Address</h5>
+              <span>Trident Academy of Technology, F-2, Chandaka Industrial Estate, In front of Infocity, Patia, Bhubaneswar, Odisha, 751024</span>
+            </div>
+          </div>
 
-      <div class="admissions-box">
-        <h4>How to Apply:</h4>
-        <ol>
-          <li>Complete the online application form on our homepage.</li>
-          <li>Upload academic transcripts of class 10 and 12, along with certification.</li>
-          <li>Shortlisted candidates will be invited for a personal verification and interview rounds.</li>
-        </ol>
-      </div>
-    </section>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-detail">
+              <h5>Email Desk</h5>
+              <a href="mailto:info@trident.ac.in">info@trident.ac.in</a>
+            </div>
+          </div>
 
-    <!-- CTA SECTION -->
-    <section class="cta-banner">
-      <div class="cta-card">
-        <div class="cta-content">
-          <h2>Ready to Join Trident School of Business?</h2>
-          <p>Embark on your journey towards becoming a competent, ethical, and industry-ready management professional.</p>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail">
+              <h5>Admissions Officer</h5>
+              <a href="tel:+919861191195">+91 98611 91195</a>, &nbsp;<a href="tel:+917008443255">+91 70084 43255</a>
+            </div>
+          </div>
         </div>
-        <a href="index.html#admissions" class="btn-dark">Apply Now</a>
+
+        <div class="hod-block">
+          <div class="hod-avatar">MM</div>
+          <h4>Dr. Munmun Mohanty</h4>
+          <div class="role">HOD MBA Department</div>
+          <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">
+            Reach out directly to the Head of Department for academic counseling, dual specialization insights, and syllabus queries.
+          </p>
+          <a href="tel:+918763001410" class="hod-phone">📞 +91 87630 01410</a>
+        </div>
       </div>
     </section>
   </main>
