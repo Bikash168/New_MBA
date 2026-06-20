@@ -246,48 +246,89 @@
       padding: 0 4%;
     }
 
-    /* Statistics row styles */
+    /* Statistics Row Redesigned as a Unified Band (No separate boxes) */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 0;
       margin-top: -40px;
       margin-bottom: 64px;
       position: relative;
       z-index: 10;
+      background: var(--navy);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
     }
+    
     .stat-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
       padding: 32px 24px;
       text-align: center;
-      box-shadow: var(--shadow);
       transition: var(--transition);
-      border-bottom: 4px solid var(--navy);
     }
+    
     .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-bottom-color: var(--gold);
+      background: rgba(255, 255, 255, 0.03) !important;
     }
+    
     .stat-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: var(--gold);
+      font-size: 34px;
+      color: var(--gold-soft);
       margin-bottom: 8px;
+      transition: transform 0.3s ease;
     }
+    
+    .stat-card:hover strong {
+      transform: scale(1.05);
+    }
+    
     .stat-card span {
       display: block;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    /* Info Column Details */
+    @media (min-width: 1025px) {
+      .stat-card:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .stat-card:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+      .stat-card:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats-row {
+        grid-template-columns: 1fr !important;
+        margin-top: -20px;
+      }
+      .stat-card:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      }
+    }
+
+    /* Info Column Details - Clean Typographic Layout */
     .info-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -295,16 +336,16 @@
       margin-bottom: 80px;
     }
     .info-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      padding: 0;
+      box-shadow: none;
     }
     .info-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
       color: var(--navy);
+      margin-top: 0;
       margin-bottom: 16px;
       border-bottom: 2px solid var(--gold);
       padding-bottom: 8px;
@@ -317,12 +358,11 @@
       margin-bottom: 20px;
     }
     .mission-box {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      color: var(--white);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-      border-left: 5px solid var(--gold);
+      background: transparent;
+      color: var(--text);
+      border-left: 4px solid var(--gold);
+      padding: 16px 24px;
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -330,29 +370,31 @@
     .mission-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      color: var(--gold-soft);
-      margin-bottom: 16px;
+      color: var(--navy);
+      margin-top: 0;
+      margin-bottom: 12px;
     }
     .mission-box blockquote {
-      font-size: 14.5px;
-      line-height: 1.75;
-      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
       font-style: italic;
+      margin: 0;
     }
 
-    /* Recruiter Logos Grid */
+    /* Recruiter Logos Section - Clean Borderless Layout */
     .recruiters-section {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 48px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      padding: 32px 0;
+      box-shadow: none;
       margin-bottom: 80px;
     }
     .recruiters-section h3 {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
       color: var(--navy);
+      margin-top: 0;
       margin-bottom: 32px;
       text-align: center;
     }
@@ -402,7 +444,6 @@
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .stats-row { grid-template-columns: 1fr 1fr; gap: 20px; }
       .info-grid { grid-template-columns: 1fr; }
       .rec-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -415,8 +456,6 @@
       .hero-section { padding: 64px 24px 72px; }
       .section-container { margin: 64px auto; }
       .rec-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-row { grid-template-columns: 1fr; gap: 16px; margin-top: -20px; }
-      .recruiters-section { padding: 32px 24px; }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
