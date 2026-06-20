@@ -206,10 +206,11 @@
     /* Hero Section */
     .hero-section {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      padding: 96px 8% 80px;
+      padding: 120px 8% 180px;
       color: var(--white);
       position: relative;
       overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
     }
     .hero-container {
       max-width: 1200px;
@@ -285,39 +286,96 @@
     }
 
     /* Program Snapshot details */
-    .snapshot-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 36px;
-      box-shadow: var(--shadow);
-      border-top: 5px solid var(--gold);
-      color: var(--text);
+    .admission-snapshot-box {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 16px 0;
+      box-shadow: none;
+      color: var(--white);
     }
-    .snapshot-box h3 {
+    .admission-snapshot-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      color: var(--navy);
+      color: var(--gold-soft);
       margin-bottom: 12px;
     }
-    .snapshot-box p {
+    .admission-snapshot-box p {
       font-size: 13.5px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 20px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 12px;
     }
     .snapshot-item {
-      background: linear-gradient(180deg, #fff, #f8f6f1);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 16px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
+      border-radius: 8px;
       margin-bottom: 12px;
       font-size: 13.5px;
       line-height: 1.6;
-      color: var(--text);
+      color: rgba(255, 255, 255, 0.9);
     }
     .snapshot-item:last-child { margin-bottom: 0; }
+
+    /* Full-Width Layered Sections */
+    .full-width-section {
+      width: 100%;
+      margin: 0;
+      padding: 96px 0 128px;
+      position: relative;
+    }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4%;
+    }
+
+    /* Section Bottom Shapes (Clips) */
+    .shape-slant {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+      padding-bottom: 160px !important;
+    }
+    .shape-chevron {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+      padding-bottom: 150px !important;
+    }
+
+    /* Section Background Colors */
+    .bg-navy {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      color: var(--white) !important;
+    }
+    .bg-warm {
+      background-color: #faf8f5 !important;
+    }
+    .bg-blue {
+      background-color: #f0f4f8 !important;
+    }
+    .bg-gold {
+      background-color: #fffcf2 !important;
+    }
+    .bg-gray {
+      background-color: #f4f4f6 !important;
+    }
+    .bg-offwhite {
+      background-color: #fdfdfc !important;
+    }
+
+    /* Contrast enhancements on dark background */
+    .bg-navy .section-title {
+      color: var(--white) !important;
+    }
+    .bg-navy .section-title span {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-subtitle {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-desc {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
 
     /* Sections general styles */
     .section-container {
@@ -682,7 +740,7 @@
             </div>
           </div>
         </div>
-        <div class="snapshot-box" id="curriculum">
+        <div class="admission-snapshot-box" id="curriculum">
           <h3>Program Snapshot</h3>
           <p>Undergraduate management curriculum focusing on core concepts and applied training.</p>
           <div class="snapshot-item">
@@ -699,124 +757,134 @@
     </section>
 
     <!-- VISION & MISSION SECTION -->
-    <section id="vision-mission" class="section-container">
-      <div class="vm-grid">
-        <!-- Vision -->
-        <div class="vm-card">
-          <span class="icon">👁️</span>
-          <h3>VISION</h3>
-          <p>To be a premier undergraduate management institute shaping the next generation of impactful business leaders capable of transforming industries for sustainable growth.</p>
-        </div>
-        <!-- Mission -->
-        <div class="vm-card">
-          <span class="icon">🎯</span>
-          <h3>MISSION</h3>
-          <ul class="vm-list">
-            <li>Empower students with a solid foundation in business principles and leadership values with integrity.</li>
-            <li>Nurture critical thinking and problem-solving skills through hands-on learning, internships, and project work.</li>
-            <li>Develop socially responsible and industry-ready young professionals prepared for global complexity.</li>
-          </ul>
+    <section id="vision-mission" class="full-width-section shape-chevron bg-warm">
+      <div class="section-inner">
+        <div class="vm-grid">
+          <!-- Vision -->
+          <div class="vm-card scroll-reveal stagger-1">
+            <span class="icon">👁️</span>
+            <h3>VISION</h3>
+            <p>To be a premier undergraduate management institute shaping the next generation of impactful business leaders capable of transforming industries for sustainable growth.</p>
+          </div>
+          <!-- Mission -->
+          <div class="vm-card scroll-reveal stagger-2">
+            <span class="icon">🎯</span>
+            <h3>MISSION</h3>
+            <ul class="vm-list">
+              <li>Empower students with a solid foundation in business principles and leadership values with integrity.</li>
+              <li>Nurture critical thinking and problem-solving skills through hands-on learning, internships, and project work.</li>
+              <li>Develop socially responsible and industry-ready young professionals prepared for global complexity.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- PROGRAM DETAILS SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Academic Architecture</span>
-        <h2 class="section-title">Foundational &amp; <span>Applied Approach</span></h2>
-        <p class="section-desc">Integrating academic theory with practical projects to prepare undergraduates for immediate entry into corporate executive lines.</p>
-      </div>
-
-      <div class="detail-columns">
-        <!-- Infrastructure -->
-        <div class="detail-card">
-          <h3>Centrally Air-Conditioned Campus</h3>
-          <p>The academic environment is strengthened through modern infrastructure, including a centrally air-conditioned academic block with spacious lecture theatres.</p>
-          <p>Each theatre is equipped with advanced audio-visual teaching aids and intranet facilities for seamless access to online learning resources and student portals.</p>
+    <section class="full-width-section shape-slant bg-blue">
+      <div class="section-inner">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Academic Architecture</span>
+          <h2 class="section-title">Foundational &amp; <span>Applied Approach</span></h2>
+          <p class="section-desc">Integrating academic theory with practical projects to prepare undergraduates for immediate entry into corporate executive lines.</p>
         </div>
 
-        <!-- Pedagogy -->
-        <div class="detail-card">
-          <h3>Pedagogy and Exposure</h3>
-          <p>The program integrates case study methodologies, internships, corporate visits, and peer mentorship to ensure both conceptual clarity and application capabilities.</p>
-          <p>Our experienced faculty members guide students through individual assignments and field visits to build corporate readiness early on.</p>
-        </div>
-      </div>
-      
-      <div class="detail-columns">
-        <!-- Co-curricular -->
-        <div class="detail-card">
-          <h3>Professional Development</h3>
-          <p>Students actively participate in various co-curricular activities such as Inter B-School competitions, paper presentations, and business simulation challenges.</p>
-          <p>These exercises develop key communication skills, public presentation abilities, and collaborative competencies beyond the university textbooks.</p>
-        </div>
+        <div class="detail-columns">
+          <!-- Infrastructure -->
+          <div class="detail-card scroll-reveal stagger-1">
+            <h3>Centrally Air-Conditioned Campus</h3>
+            <p>The academic environment is strengthened through modern infrastructure, including a centrally air-conditioned academic block with spacious lecture theatres.</p>
+            <p>Each theatre is equipped with advanced audio-visual teaching aids and intranet facilities for seamless access to online learning resources and student portals.</p>
+          </div>
 
-        <!-- Student-driven clubs -->
-        <div class="detail-card">
-          <h3>Experiential Learning Clubs</h3>
-          <p>The department encourages holistic development through active engagement in student-driven clubs including the Fintech Club, Strategy Club, Business Analytics Club, Communication Club, and Cultural Club.</p>
-          <p>These clubs provide platforms for experiential learning, teamwork, creativity, and leadership enhancement.</p>
+          <!-- Pedagogy -->
+          <div class="detail-card scroll-reveal stagger-2">
+            <h3>Pedagogy and Exposure</h3>
+            <p>The program integrates case study methodologies, internships, corporate visits, and peer mentorship to ensure both conceptual clarity and application capabilities.</p>
+            <p>Our experienced faculty members guide students through individual assignments and field visits to build corporate readiness early on.</p>
+          </div>
+        </div>
+        
+        <div class="detail-columns" style="margin-top: 40px; margin-bottom: 0;">
+          <!-- Co-curricular -->
+          <div class="detail-card scroll-reveal stagger-1">
+            <h3>Professional Development</h3>
+            <p>Students actively participate in various co-curricular activities such as Inter B-School competitions, paper presentations, and business simulation challenges.</p>
+            <p>These exercises develop key communication skills, public presentation abilities, and collaborative competencies beyond the university textbooks.</p>
+          </div>
+
+          <!-- Student-driven clubs -->
+          <div class="detail-card scroll-reveal stagger-2">
+            <h3>Experiential Learning Clubs</h3>
+            <p>The department encourages holistic development through active engagement in student-driven clubs including the Fintech Club, Strategy Club, Business Analytics Club, Communication Club, and Cultural Club.</p>
+            <p>These clubs provide platforms for experiential learning, teamwork, creativity, and leadership enhancement.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- POs SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Core Objectives</span>
-        <h2 class="section-title">Program Outcomes <span>(POs)</span> &amp; LOs</h2>
-        <p class="section-desc">Defining the specific professional competencies that BBA graduates will master upon completing the program.</p>
-      </div>
+    <section class="full-width-section shape-chevron bg-gold">
+      <div class="section-inner">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Core Objectives</span>
+          <h2 class="section-title">Program Outcomes <span>(POs)</span> &amp; LOs</h2>
+          <p class="section-desc">Defining the specific professional competencies that BBA graduates will master upon completing the program.</p>
+        </div>
 
-      <div class="po-grid">
-        <!-- PO1 -->
-        <div class="po-card">
-          <strong>PO1 &amp; LO1</strong>
-          <h4>Business Foundations</h4>
-          <p>Acquire foundational knowledge of core business disciplines (Marketing, Finance, HR, and Operations).</p>
-        </div>
-        <!-- PO2 -->
-        <div class="po-card">
-          <strong>PO2 &amp; LO2</strong>
-          <h4>Managerial Competencies</h4>
-          <p>Develop communication, leadership, and analytical skills to work effectively in corporate teams.</p>
-        </div>
-        <!-- PO3 -->
-        <div class="po-card">
-          <strong>PO3 &amp; LO3</strong>
-          <h4>Professional Readiness</h4>
-          <p>Gain practical exposure through internships, field visits, and project work to be industry-ready from day one.</p>
+        <div class="po-grid">
+          <!-- PO1 -->
+          <div class="po-card scroll-reveal stagger-1">
+            <strong>PO1 &amp; LO1</strong>
+            <h4>Business Foundations</h4>
+            <p>Acquire foundational knowledge of core business disciplines (Marketing, Finance, HR, and Operations).</p>
+          </div>
+          <!-- PO2 -->
+          <div class="po-card scroll-reveal stagger-2">
+            <strong>PO2 &amp; LO2</strong>
+            <h4>Managerial Competencies</h4>
+            <p>Develop communication, leadership, and analytical skills to work effectively in corporate teams.</p>
+          </div>
+          <!-- PO3 -->
+          <div class="po-card scroll-reveal stagger-3">
+            <strong>PO3 &amp; LO3</strong>
+            <h4>Professional Readiness</h4>
+            <p>Gain practical exposure through internships, field visits, and project work to be industry-ready from day one.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ADMISSIONS SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Enrollment</span>
-        <h2 class="section-title">Admissions <span>Procedure</span></h2>
-        <p class="section-desc">Apply online for the 3-year full-time BBA program. Selection is based on academic merit in the 10+2 qualifying examinations.</p>
-      </div>
+    <section class="full-width-section shape-slant bg-gray">
+      <div class="section-inner">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Enrollment</span>
+          <h2 class="section-title">Admissions <span>Procedure</span></h2>
+          <p class="section-desc">Apply online for the 3-year full-time BBA program. Selection is based on academic merit in the 10+2 qualifying examinations.</p>
+        </div>
 
-      <div class="admissions-box">
-        <h4>How to Apply:</h4>
-        <ol>
-          <li>Complete the online application form on our homepage.</li>
-          <li>Upload academic transcripts of class 10 and 12, along with certification.</li>
-          <li>Shortlisted candidates will be invited for a personal verification and interview rounds.</li>
-        </ol>
+        <div class="admissions-box scroll-reveal">
+          <h4>How to Apply:</h4>
+          <ol>
+            <li>Complete the online application form on our homepage.</li>
+            <li>Upload academic transcripts of class 10 and 12, along with certification.</li>
+            <li>Shortlisted candidates will be invited for a personal verification and interview rounds.</li>
+          </ol>
+        </div>
       </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="cta-banner">
-      <div class="cta-card">
-        <div class="cta-content">
-          <h2>Ready to Join Trident School of Business?</h2>
-          <p>Embark on your journey towards becoming a competent, ethical, and industry-ready management professional.</p>
+    <section class="full-width-section bg-offwhite" style="padding: 40px 0 96px;">
+      <div class="section-inner">
+        <div class="cta-card scroll-reveal">
+          <div class="cta-content">
+            <h2>Ready to Join Trident School of Business?</h2>
+            <p>Embark on your journey towards becoming a competent, ethical, and industry-ready management professional.</p>
+          </div>
+          <a href="index.html#admissions" class="btn-dark">Apply Now</a>
         </div>
-        <a href="index.html#admissions" class="btn-dark">Apply Now</a>
       </div>
     </section>
   </main>

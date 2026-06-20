@@ -203,10 +203,11 @@
     /* Hero Section */
     .hero-section {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      padding: 80px 8% 60px;
+      padding: 120px 8% 180px;
       color: var(--white);
       text-align: center;
       position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
     }
     .eyebrow {
       display: inline-flex;
@@ -241,50 +242,58 @@
 
     /* Program Tab Selector Container */
     .tab-section {
-      max-width: 1200px;
-      margin: 40px auto 80px;
-      padding: 0 4%;
+      width: 100%;
+      margin: 40px auto 0;
+      padding: 0;
+      text-align: center;
     }
     .tabs-nav {
-      display: flex;
+      display: inline-flex;
       justify-content: center;
-      gap: 16px;
-      border-bottom: 2px solid var(--line);
-      margin-bottom: 40px;
+      gap: 8px;
+      background: rgba(11, 31, 58, 0.05);
+      padding: 6px;
+      border-radius: 40px !important;
+      border: 1px solid rgba(11, 31, 58, 0.08);
+      margin: 0 auto 40px;
     }
     .tab-btn {
       font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--muted);
-      background: none;
+      background: transparent;
       border: none;
-      padding: 16px 24px;
+      padding: 10px 24px;
       cursor: pointer;
+      border-radius: 30px !important;
+      transition: var(--transition-quick);
       position: relative;
-      transition: var(--transition);
     }
     .tab-btn:hover {
       color: var(--navy);
     }
     .tab-btn.active {
-      color: var(--gold);
+      background: var(--navy) !important;
+      color: var(--gold-soft) !important;
+      box-shadow: 0 4px 12px rgba(11, 31, 58, 0.15);
     }
+    /* Disable the line border in tabs-nav since we are using a pill selector */
     .tab-btn.active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gold);
-      border-radius: 3px;
+      display: none !important;
     }
 
     /* Tab Content Grid Layout */
     .tab-content {
       display: none;
       animation: fadeIn .4s ease;
+      /* Override theme.css global card override */
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      overflow: visible !important;
+      padding: 0 !important;
     }
     .tab-content.active {
       display: block;
@@ -294,15 +303,65 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Section Inner Styling */
-    .content-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-      margin-bottom: 40px;
+    /* Full-Width Layered Sections */
+    .full-width-section {
+      width: 100%;
+      margin: 0;
+      padding: 96px 0 128px;
+      position: relative;
+      text-align: left;
     }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4%;
+    }
+
+    /* Section Bottom Shapes (Clips) */
+    .shape-slant {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+      padding-bottom: 160px !important;
+    }
+    .shape-chevron {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+      padding-bottom: 150px !important;
+    }
+
+    /* Section Background Colors */
+    .bg-navy {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      color: var(--white) !important;
+    }
+    .bg-warm {
+      background-color: #faf8f5 !important;
+    }
+    .bg-blue {
+      background-color: #f0f4f8 !important;
+    }
+    .bg-gold {
+      background-color: #fffcf2 !important;
+    }
+    .bg-gray {
+      background-color: #f4f4f6 !important;
+    }
+    .bg-offwhite {
+      background-color: #fdfdfc !important;
+    }
+
+    /* Contrast enhancements on dark background */
+    .bg-navy .section-title {
+      color: var(--white) !important;
+    }
+    .bg-navy .section-title span {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-subtitle {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-desc {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
     .card-title {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
