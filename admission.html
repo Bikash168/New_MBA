@@ -203,10 +203,11 @@
     /* Hero Section */
     .hero-section {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      padding: 96px 8% 80px;
+      padding: 120px 8% 180px;
       color: var(--white);
       text-align: center;
       position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
     }
     .eyebrow {
       display: inline-flex;
@@ -239,12 +240,64 @@
       margin: 0 auto;
     }
 
-    /* Program details cards */
-    .section-container {
+    /* Full-Width Layered Sections */
+    .full-width-section {
+      width: 100%;
+      margin: 0;
+      padding: 96px 0 128px;
+      position: relative;
+    }
+    .section-inner {
       max-width: 1200px;
-      margin: 80px auto;
+      margin: 0 auto;
       padding: 0 4%;
     }
+
+    /* Section Bottom Shapes (Clips) */
+    .shape-slant {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+      padding-bottom: 160px !important;
+    }
+    .shape-chevron {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+      padding-bottom: 150px !important;
+    }
+
+    /* Section Background Colors */
+    .bg-navy {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      color: var(--white) !important;
+    }
+    .bg-warm {
+      background-color: #faf8f5 !important;
+    }
+    .bg-blue {
+      background-color: #f0f4f8 !important;
+    }
+    .bg-gold {
+      background-color: #fffcf2 !important;
+    }
+    .bg-gray {
+      background-color: #f4f4f6 !important;
+    }
+    .bg-offwhite {
+      background-color: #fdfdfc !important;
+    }
+
+    /* Contrast enhancements on dark background */
+    .bg-navy .section-title {
+      color: var(--white) !important;
+    }
+    .bg-navy .section-title span {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-subtitle {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-desc {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
     .section-header {
       text-align: center;
       max-width: 700px;
@@ -732,193 +785,201 @@
     </section>
 
     <!-- PROGRAM ANNOUNCEMENTS SECTION -->
-    <section class="section-container dot-matrix-section" style="padding: 48px 4%; border-radius: var(--radius-lg); margin-top: 48px; margin-bottom: 48px;">
-      <div class="section-header">
-        <span class="section-subtitle">Next-Gen Offerings</span>
-        <h2 class="section-title">AICTE Approved <span>Specialist MBA Programs</span></h2>
-        <p class="section-desc">Choose a dynamic pathway structured for modern venture creation or environmental sustainability.</p>
-      </div>
-
-      <div class="mba-grid">
-        <!-- MBA IEV -->
-        <div class="mba-card">
-          <div class="program-num">01 <span style="font-size: 28px; vertical-align: middle; margin-left: 14px;">🚀</span></div>
-          <h3>MBA IEV (Innovation, Entrepreneurship &amp; Venture Development)</h3>
-          <p>
-            A 2-year specialized program focusing on innovation methodologies, business startup workflows, and value creation. Ideal for developing leaders capable of launching and running dynamic business ventures or driving corporate change.
-          </p>
-          <div class="prospects-title">Career Prospects</div>
-          <ul class="prospects-list">
-            <li>New Venture Creation</li>
-            <li>Innovation Management</li>
-            <li>Managing Startups</li>
-            <li>Venture Capital (VC)</li>
-            <li>Angel Investing</li>
-            <li>Management Consulting</li>
-            <li>Corporate Innovation</li>
-            <li>Product Management</li>
-          </ul>
+    <section class="full-width-section bg-warm shape-chevron dot-matrix-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle">Next-Gen Offerings</span>
+          <h2 class="section-title">AICTE Approved <span>Specialist MBA Programs</span></h2>
+          <p class="section-desc">Choose a dynamic pathway structured for modern venture creation or environmental sustainability.</p>
         </div>
 
-        <!-- MBA Environmental Management -->
-        <div class="mba-card">
-          <div class="program-num">02 <span style="font-size: 28px; vertical-align: middle; margin-left: 14px;">🌱</span></div>
-          <h3>MBA in Environmental Management (EM)</h3>
-          <p>
-            A 2-year specialized program designed to integrate social development, environmental risk assessment, and resource management to preserve ecological balance while driving sustainable corporate growth.
-          </p>
-          <div class="prospects-title">Career Prospects</div>
-          <ul class="prospects-list">
-            <li>Environmental Consulting</li>
-            <li>Corporate Sustainability</li>
-            <li>Policy &amp; Advocacy</li>
-            <li>Compliance Management</li>
-            <li>Sustainable Development</li>
-            <li>Renewable Energy</li>
-            <li>Resource Management</li>
-            <li>Eco-Education &amp; Outreach</li>
-          </ul>
-          <p style="margin-top: 16px; font-weight: 700; color: var(--navy); font-size: 13.5px;">
-            💼 Starting Salary Range: Rs. 5 Lakhs to Rs. 10 Lakhs p.a.
-          </p>
+        <div class="mba-grid">
+          <!-- MBA IEV -->
+          <div class="mba-card">
+            <div class="program-num">01 <span style="font-size: 28px; vertical-align: middle; margin-left: 14px;">🚀</span></div>
+            <h3>MBA IEV (Innovation, Entrepreneurship &amp; Venture Development)</h3>
+            <p>
+              A 2-year specialized program focusing on innovation methodologies, business startup workflows, and value creation. Ideal for developing leaders capable of launching and running dynamic business ventures or driving corporate change.
+            </p>
+            <div class="prospects-title">Career Prospects</div>
+            <ul class="prospects-list">
+              <li>New Venture Creation</li>
+              <li>Innovation Management</li>
+              <li>Managing Startups</li>
+              <li>Venture Capital (VC)</li>
+              <li>Angel Investing</li>
+              <li>Management Consulting</li>
+              <li>Corporate Innovation</li>
+              <li>Product Management</li>
+            </ul>
+          </div>
+
+          <!-- MBA Environmental Management -->
+          <div class="mba-card">
+            <div class="program-num">02 <span style="font-size: 28px; vertical-align: middle; margin-left: 14px;">🌱</span></div>
+            <h3>MBA in Environmental Management (EM)</h3>
+            <p>
+              A 2-year specialized program designed to integrate social development, environmental risk assessment, and resource management to preserve ecological balance while driving sustainable corporate growth.
+            </p>
+            <div class="prospects-title">Career Prospects</div>
+            <ul class="prospects-list">
+              <li>Environmental Consulting</li>
+              <li>Corporate Sustainability</li>
+              <li>Policy &amp; Advocacy</li>
+              <li>Compliance Management</li>
+              <li>Sustainable Development</li>
+              <li>Renewable Energy</li>
+              <li>Resource Management</li>
+              <li>Eco-Education &amp; Outreach</li>
+            </ul>
+            <p style="margin-top: 16px; font-weight: 700; color: var(--navy); font-size: 13.5px;">
+              💼 Starting Salary Range: Rs. 5 Lakhs to Rs. 10 Lakhs p.a.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- INTAKE & SPECIALISATIONS -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="intake-row">
-        <!-- Intake capacity -->
-        <div class="highlight-box">
-          <h3>Sanctioned Intake Capacity</h3>
-          <p>
-            Trident has a sanctioned strength of <strong>60 seats</strong> for admission in the 2026 academic batch. The management will admit all 60 candidates based on scores obtained in national/state entrance tests.
-          </p>
-          <div class="entrance-badges">
-            <span class="ent-badge">OJEE 2026</span>
-            <span class="ent-badge">MAT</span>
-            <span class="ent-badge">CAT</span>
-            <span class="ent-badge">XAT</span>
-            <span class="ent-badge">CMAT</span>
-            <span class="ent-badge">ATMA</span>
+    <section class="full-width-section bg-blue shape-slant">
+      <div class="section-inner">
+        <div class="intake-row">
+          <!-- Intake capacity -->
+          <div class="highlight-box">
+            <h3>Sanctioned Intake Capacity</h3>
+            <p>
+              Trident has a sanctioned strength of <strong>60 seats</strong> for admission in the 2026 academic batch. The management will admit all 60 candidates based on scores obtained in national/state entrance tests.
+            </p>
+            <div class="entrance-badges">
+              <span class="ent-badge">OJEE 2026</span>
+              <span class="ent-badge">MAT</span>
+              <span class="ent-badge">CAT</span>
+              <span class="ent-badge">XAT</span>
+              <span class="ent-badge">CMAT</span>
+              <span class="ent-badge">ATMA</span>
+            </div>
+            <p style="font-size: 12px; margin-top: 24px; opacity: 0.8; font-style: italic;">
+              * TSBA is fully approved by AICTE and affiliated with Biju Patnaik University of Technology (BPUT), Odisha.
+            </p>
           </div>
-          <p style="font-size: 12px; margin-top: 24px; opacity: 0.8; font-style: italic;">
-            * TSBA is fully approved by AICTE and affiliated with Biju Patnaik University of Technology (BPUT), Odisha.
-          </p>
-        </div>
 
-        <!-- Specialisations -->
-        <div class="specs-box">
-          <h3>Core Specialisations</h3>
-          <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 20px;">
-            Dual specialization opportunities are available across functional business streams:
-          </p>
-          <ul class="specs-list">
-            <li>HR Management</li>
-            <li>Finance Management</li>
-            <li>Marketing Management</li>
-            <li>Systems Management</li>
-            <li>International Business</li>
-          </ul>
+          <!-- Specialisations -->
+          <div class="specs-box">
+            <h3>Core Specialisations</h3>
+            <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 20px;">
+              Dual specialization opportunities are available across functional business streams:
+            </p>
+            <ul class="specs-list">
+              <li>HR Management</li>
+              <li>Finance Management</li>
+              <li>Marketing Management</li>
+              <li>Systems Management</li>
+              <li>International Business</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ELIGIBILITY & SELECTION -->
-    <section id="eligibility" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="details-row">
-        <!-- Eligibility Criteria -->
-        <div class="details-card">
-          <h3>Eligibility Criteria</h3>
-          <p>Candidates must satisfy one of the following academic paths:</p>
-          
-          <div class="criteria-box">
-            <strong>Three-Year Bachelor's Degree:</strong> Passed or appearing in 2026 for a minimum three-year Bachelor's degree examination from any University of Odisha or recognized UGC/AICTE institute.
-          </div>
-          
-          <div class="criteria-box" style="margin-top: 12px;">
-            <strong>Engineering / Tech / Pharmacy:</strong> Passed or appearing in 2026 for a minimum four/five year Bachelor's degree in Engineering, Technology, or Pharmacy from any Odisha or recognized UGC/AICTE institute.
+    <section id="eligibility" class="full-width-section bg-gold shape-chevron">
+      <div class="section-inner">
+        <div class="details-row">
+          <!-- Eligibility Criteria -->
+          <div class="details-card">
+            <h3>Eligibility Criteria</h3>
+            <p>Candidates must satisfy one of the following academic paths:</p>
+            
+            <div class="criteria-box">
+              <strong>Three-Year Bachelor's Degree:</strong> Passed or appearing in 2026 for a minimum three-year Bachelor's degree examination from any University of Odisha or recognized UGC/AICTE institute.
+            </div>
+            
+            <div class="criteria-box" style="margin-top: 12px;">
+              <strong>Engineering / Tech / Pharmacy:</strong> Passed or appearing in 2026 for a minimum four/five year Bachelor's degree in Engineering, Technology, or Pharmacy from any Odisha or recognized UGC/AICTE institute.
+            </div>
+
+            <p style="font-size: 13.5px; color: var(--text); font-weight: 700; margin-top: 16px;">
+              ⚠️ Minimum Marks: 50% in aggregate (45% for SC/ST category) at the qualifying examination.
+            </p>
+            <p style="font-size: 13px; color: var(--gold); font-weight: 600; margin-top: 8px;">
+              🕒 Age Limit: There is no age limit for taking admission into the MBA course.
+            </p>
           </div>
 
-          <p style="font-size: 13.5px; color: var(--text); font-weight: 700; margin-top: 16px;">
-            ⚠️ Minimum Marks: 50% in aggregate (45% for SC/ST category) at the qualifying examination.
-          </p>
-          <p style="font-size: 13px; color: var(--gold); font-weight: 600; margin-top: 8px;">
-            🕒 Age Limit: There is no age limit for taking admission into the MBA course.
-          </p>
-        </div>
-
-        <!-- Selection Procedure -->
-        <div class="details-card">
-          <h3>Selection Procedure</h3>
-          <p>
-            Admission to the MBA (Full time 2 year) program is strictly based on performance and ranks in entrance tests.
-          </p>
-          <div class="criteria-box">
-            <strong>Entrance Exam Ranks:</strong> Candidate selection follows counseling guidelines set by OJEE, BPUT, and the Govt. of Odisha, utilizing scores from:
-            <ul style="margin-top: 10px; padding-left: 20px;">
-              <li>OJEE 2026 (Odisha Joint Entrance Exam)</li>
-              <li>MAT (Management Aptitude Test)</li>
-              <li>CAT / XAT / CMAT / ATMA</li>
-            </ul>
+          <!-- Selection Procedure -->
+          <div class="details-card">
+            <h3>Selection Procedure</h3>
+            <p>
+              Admission to the MBA (Full time 2 year) program is strictly based on performance and ranks in entrance tests.
+            </p>
+            <div class="criteria-box">
+              <strong>Entrance Exam Ranks:</strong> Candidate selection follows counseling guidelines set by OJEE, BPUT, and the Govt. of Odisha, utilizing scores from:
+              <ul style="margin-top: 10px; padding-left: 20px;">
+                <li>OJEE 2026 (Odisha Joint Entrance Exam)</li>
+                <li>MAT (Management Aptitude Test)</li>
+                <li>CAT / XAT / CMAT / ATMA</li>
+              </ul>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 20px;">
+              Shortlisted candidates are required to register on the OJEE counseling portal or approach the TSBA admission desk with valid scorecards and certificates.
+            </p>
           </div>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 20px;">
-            Shortlisted candidates are required to register on the OJEE counseling portal or approach the TSBA admission desk with valid scorecards and certificates.
-          </p>
         </div>
       </div>
     </section>
 
     <!-- SCHOLARSHIPS & GD SLOTS SECTION (FROM ADMISSIONS FLYER) -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Financial Aid &amp; Incentives</span>
-        <h2 class="section-title">Merit <span>Scholarships &amp; Fee Waivers</span></h2>
-        <p class="section-desc">
-          TSBA offers lucrative scholarship schemes and fee waivers based on academic merit and performance in selection rounds.
-        </p>
-      </div>
-
-      <div class="flyer-row">
-        <!-- Left Column: Image -->
-        <div style="padding: 0; background: transparent;">
-          <a href="Public/admission_flyer.jpg" target="_blank" title="Click to view full-size flyer">
-            <img src="Public/admission_flyer.jpg" alt="Trident MBA Admissions flyer details" style="width: 100%; border-radius: var(--radius-md); display: block; box-shadow: var(--shadow-md); transition: var(--transition-smooth);">
-          </a>
-          <span style="display: block; font-size: 11.5px; text-align: center; color: var(--muted); margin-top: 12px; font-weight: 500;">
-            🔍 Click on the flyer to open full-size in a new tab
-          </span>
+    <section class="full-width-section bg-gray shape-slant">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle">Financial Aid &amp; Incentives</span>
+          <h2 class="section-title">Merit <span>Scholarships &amp; Fee Waivers</span></h2>
+          <p class="section-desc">
+            TSBA offers lucrative scholarship schemes and fee waivers based on academic merit and performance in selection rounds.
+          </p>
         </div>
 
-        <!-- Right Column: Extracted Guidelines -->
-        <div>
-          <!-- Merit Scholarships card -->
-          <div style="background: transparent; border: none; box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 40px; border-left: 4px solid var(--gold); padding-left: 24px;">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 16px;">1st Year Merit Scholarships</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; padding: 0;">
-              <li style="font-size: 14.5px; line-height: 1.6; color: var(--text);">
-                <strong style="color: var(--gold); font-size: 15px;">Rs. 50,000/- Scholarship:</strong> Scored <strong>above 70%</strong> marks in each of Class-X, Class-XII, and Graduation.
-              </li>
-              <li style="font-size: 14.5px; line-height: 1.6; color: var(--text);">
-                <strong style="color: var(--gold); font-size: 15px;">Rs. 30,000/- Scholarship:</strong> Scored <strong>between 60% and 70%</strong> in each of Class-X, Class-XII, and Graduation.
-              </li>
-              <li style="font-size: 14.5px; line-height: 1.6; color: var(--text);">
-                <strong style="color: var(--gold); font-size: 15px;">Rs. 25,000/- Scholarship:</strong> Average percentage across Class-X, Class-XII, and Graduation <strong>exceeds 60%</strong>.
-              </li>
-            </ul>
+        <div class="flyer-row">
+          <!-- Left Column: Image -->
+          <div style="padding: 0; background: transparent;">
+            <a href="Public/admission_flyer.jpg" target="_blank" title="Click to view full-size flyer">
+              <img src="Public/admission_flyer.jpg" alt="Trident MBA Admissions flyer details" style="width: 100%; border-radius: var(--radius-md); display: block; box-shadow: var(--shadow-md); transition: var(--transition-smooth);">
+            </a>
+            <span style="display: block; font-size: 11.5px; text-align: center; color: var(--muted); margin-top: 12px; font-weight: 500;">
+              🔍 Click on the flyer to open full-size in a new tab
+            </span>
           </div>
 
-          <!-- GD Slots card -->
-          <div style="background: transparent; border: none; box-shadow: none; border-radius: 0; padding: 0; border-left: 4px solid var(--navy); padding-left: 24px;">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 12px;">GD &amp; Interview Slot Booking</h3>
-            <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">
-              Candidates selected through the group discussion and interview process will qualify for an <strong>additional 50% Fee waiver</strong> in the first year.
-            </p>
-            <div style="background: rgba(11, 31, 58, 0.03); padding: 20px; border-radius: var(--radius-sm); border: none;">
-              <span style="display: block; font-size: 13.5px; color: var(--text); font-weight: 700; margin-bottom: 6px;">How to participate:</span>
-              <span style="font-size: 13.5px; color: var(--muted); display: block; line-height: 1.5;">
-                Send your softcopy biodata to <a href="mailto:scholar@tat.ac.in" style="color: var(--navy); font-weight: 700; text-decoration: none;">scholar@tat.ac.in</a> to register.
-              </span>
+          <!-- Right Column: Extracted Guidelines -->
+          <div>
+            <!-- Merit Scholarships card -->
+            <div style="background: transparent; border: none; box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 40px; border-left: 4px solid var(--gold); padding-left: 24px;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 16px;">1st Year Merit Scholarships</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; padding: 0;">
+                <li style="font-size: 14.5px; line-height: 1.6; color: var(--text);">
+                  <strong style="color: var(--gold); font-size: 15px;">Rs. 50,000/- Scholarship:</strong> Scored <strong>above 70%</strong> marks in each of Class-X, Class-XII, and Graduation.
+                </li>
+                <li style="font-size: 14.5px; line-height: 1.6; color: var(--text);">
+                  <strong style="color: var(--gold); font-size: 15px;">Rs. 30,000/- Scholarship:</strong> Scored <strong>between 60% and 70%</strong> in each of Class-X, Class-XII, and Graduation.
+                </li>
+                <li style="font-size: 14.5px; line-height: 1.6; color: var(--text);">
+                  <strong style="color: var(--gold); font-size: 15px;">Rs. 25,000/- Scholarship:</strong> Average percentage across Class-X, Class-XII, and Graduation <strong>exceeds 60%</strong>.
+                </li>
+              </ul>
+            </div>
+
+            <!-- GD Slots card -->
+            <div style="background: transparent; border: none; box-shadow: none; border-radius: 0; padding: 0; border-left: 4px solid var(--navy); padding-left: 24px;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 12px;">GD &amp; Interview Slot Booking</h3>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">
+                Candidates selected through the group discussion and interview process will qualify for an <strong>additional 50% Fee waiver</strong> in the first year.
+              </p>
+              <div style="background: rgba(11, 31, 58, 0.03); padding: 20px; border-radius: var(--radius-sm); border: none;">
+                <span style="display: block; font-size: 13.5px; color: var(--text); font-weight: 700; margin-bottom: 6px;">How to participate:</span>
+                <span style="font-size: 13.5px; color: var(--muted); display: block; line-height: 1.5;">
+                  Send your softcopy biodata to <a href="mailto:scholar@tat.ac.in" style="color: var(--navy); font-weight: 700; text-decoration: none;">scholar@tat.ac.in</a> to register.
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -926,47 +987,49 @@
     </section>
 
     <!-- CONTACT DESK & OFFICE INFO -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="admission-contact-row scroll-reveal">
-        <div class="contact-info-block">
-          <h3>Admission Helpdesk</h3>
-          <p>
-            Get in touch with our admissions coordinators to verify vacancy details, eligibility routes, fee payments, and counseling support.
-          </p>
-          
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div class="contact-detail">
-              <h5>Campus Address</h5>
-              <span>Trident Academy of Technology, F-2, Chandaka Industrial Estate, In front of Infocity, Patia, Bhubaneswar, Odisha, 751024</span>
+    <section class="full-width-section bg-offwhite">
+      <div class="section-inner">
+        <div class="admission-contact-row scroll-reveal">
+          <div class="contact-info-block">
+            <h3>Admission Helpdesk</h3>
+            <p>
+              Get in touch with our admissions coordinators to verify vacancy details, eligibility routes, fee payments, and counseling support.
+            </p>
+            
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-detail">
+                <h5>Campus Address</h5>
+                <span>Trident Academy of Technology, F-2, Chandaka Industrial Estate, In front of Infocity, Patia, Bhubaneswar, Odisha, 751024</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-detail">
+                <h5>Email Desk</h5>
+                <a href="mailto:info@trident.ac.in">info@trident.ac.in</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-detail">
+                <h5>Admissions Officer</h5>
+                <a href="tel:+919861191195">+91 98611 91195</a>, &nbsp;<a href="tel:+917008443255">+91 70084 43255</a>
+              </div>
             </div>
           </div>
 
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div class="contact-detail">
-              <h5>Email Desk</h5>
-              <a href="mailto:info@trident.ac.in">info@trident.ac.in</a>
-            </div>
+          <div class="hod-block">
+            <div class="hod-avatar">MM</div>
+            <h4>Dr. Munmun Mohanty</h4>
+            <div class="role">HOD MBA Department</div>
+            <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">
+              Reach out directly to the Head of Department for academic counseling, dual specialization insights, and syllabus queries.
+            </p>
+            <a href="tel:+918763001410" class="hod-phone">📞 +91 87630 01410</a>
           </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div class="contact-detail">
-              <h5>Admissions Officer</h5>
-              <a href="tel:+919861191195">+91 98611 91195</a>, &nbsp;<a href="tel:+917008443255">+91 70084 43255</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hod-block">
-          <div class="hod-avatar">MM</div>
-          <h4>Dr. Munmun Mohanty</h4>
-          <div class="role">HOD MBA Department</div>
-          <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">
-            Reach out directly to the Head of Department for academic counseling, dual specialization insights, and syllabus queries.
-          </p>
-          <a href="tel:+918763001410" class="hod-phone">📞 +91 87630 01410</a>
         </div>
       </div>
     </section>

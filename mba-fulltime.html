@@ -206,10 +206,11 @@
     /* Hero Section */
     .hero-section {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      padding: 96px 8% 80px;
+      padding: 120px 8% 180px;
       color: var(--white);
       position: relative;
       overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
     }
     .hero-container {
       max-width: 1200px;
@@ -284,47 +285,104 @@
       letter-spacing: 0.08em;
     }
 
-    /* Program Snapshot details */
-    .snapshot-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 36px;
-      box-shadow: var(--shadow);
-      border-top: 5px solid var(--gold);
-      color: var(--text);
+    /* Dot-matrix section background utility */
+    .dot-matrix-section {
+      background-image: radial-gradient(rgba(11, 31, 58, 0.04) 1.5px, transparent 1.5px) !important;
+      background-size: 24px 24px !important;
     }
-    .snapshot-box h3 {
+
+    /* Program Snapshot details */
+    .admission-snapshot-box {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 16px 0;
+      box-shadow: none;
+      color: var(--white);
+    }
+    .admission-snapshot-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      color: var(--navy);
+      color: var(--gold-soft);
       margin-bottom: 12px;
     }
-    .snapshot-box p {
+    .admission-snapshot-box p {
       font-size: 13.5px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 20px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 12px;
     }
     .snapshot-item {
-      background: linear-gradient(180deg, #fff, #f8f6f1);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 16px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
+      border-radius: 8px;
       margin-bottom: 12px;
       font-size: 13.5px;
       line-height: 1.6;
-      color: var(--text);
+      color: rgba(255, 255, 255, 0.9);
     }
     .snapshot-item:last-child { margin-bottom: 0; }
 
-    /* Sections general styles */
-    .section-container {
+    /* Full-Width Layered Sections */
+    .full-width-section {
+      width: 100%;
+      margin: 0;
+      padding: 96px 0 128px;
+      position: relative;
+    }
+    .section-inner {
       max-width: 1200px;
-      margin: 96px auto;
+      margin: 0 auto;
       padding: 0 4%;
     }
+
+    /* Section Bottom Shapes (Clips) */
+    .shape-slant {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+      padding-bottom: 160px !important;
+    }
+    .shape-chevron {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+      padding-bottom: 150px !important;
+    }
+
+    /* Section Background Colors */
+    .bg-navy {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      color: var(--white) !important;
+    }
+    .bg-warm {
+      background-color: #faf8f5 !important;
+    }
+    .bg-blue {
+      background-color: #f0f4f8 !important;
+    }
+    .bg-gold {
+      background-color: #fffcf2 !important;
+    }
+    .bg-gray {
+      background-color: #f4f4f6 !important;
+    }
+    .bg-offwhite {
+      background-color: #fdfdfc !important;
+    }
+
+    /* Contrast enhancements on dark background */
+    .bg-navy .section-title {
+      color: var(--white) !important;
+    }
+    .bg-navy .section-title span {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-subtitle {
+      color: var(--gold-soft) !important;
+    }
+    .bg-navy .section-desc {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
     .section-header {
       text-align: center;
       max-width: 700px;
@@ -358,22 +416,16 @@
     .vm-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 64px;
     }
     .vm-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 40px 32px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
       transition: var(--transition);
-      border-top: 4px solid var(--navy);
     }
-    .vm-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-    }
-    .vm-card:last-child { border-top-color: var(--gold); }
     .vm-card .icon { font-size: 36px; margin-bottom: 16px; display: inline-block; }
     .vm-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 16px; }
     .vm-card p { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
@@ -398,31 +450,27 @@
     .po-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 48px;
     }
     .po-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 32px 24px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
       transition: var(--transition);
-    }
-    .po-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--gold-soft);
     }
     .po-card strong {
       display: inline-block;
-      background: rgba(200, 150, 42, 0.15);
-      color: var(--gold);
+      background: rgba(200, 150, 42, 0.1) !important;
+      color: var(--gold) !important;
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 4px;
       text-transform: uppercase;
       margin-bottom: 16px;
+      border: 1px solid rgba(200, 150, 42, 0.2);
     }
     .po-card h4 {
       font-family: 'Playfair Display', serif;
@@ -440,15 +488,15 @@
     .detail-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 64px;
       margin-bottom: 40px;
     }
     .detail-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
     }
     .detail-card h3 {
       font-family: 'Playfair Display', serif;
@@ -460,9 +508,9 @@
       display: inline-block;
     }
     .detail-card p {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: 14px;
     }
 
@@ -470,20 +518,18 @@
     .faculty-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 48px;
     }
-    .faculty-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
+    .mba-faculty-card {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 24px 16px;
       text-align: center;
       transition: var(--transition);
     }
-    .faculty-card:hover {
+    .mba-faculty-card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
     }
     .fac-avatar {
       width: 80px; height: 80px; border-radius: 50%;
@@ -491,21 +537,43 @@
       color: var(--white); display: grid; place-items: center;
       font-family: 'Playfair Display', serif; font-size: 24px;
       margin: 0 auto 16px;
+      box-shadow: var(--shadow-sm);
     }
-    .faculty-card strong { display: block; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
-    .faculty-card div { font-size: 13px; color: var(--muted); }
+    .mba-faculty-card strong { display: block; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+    .mba-faculty-card div { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 
     /* Admissions card */
     .admissions-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-left: 3px solid var(--gold) !important;
+      border-radius: 0 !important;
+      padding: 8px 0 8px 24px !important;
+      box-shadow: none !important;
     }
     .admissions-box h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 16px; }
     .admissions-box ol { padding-left: 20px; }
-    .admissions-box ol li { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
+    .admissions-box ol li { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
+
+    /* Desktop column vertical dividers */
+    @media (min-width: 1025px) {
+      .vm-card:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
+      .detail-card:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
+      .po-card:not(:last-child) {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 32px !important;
+      }
+      .mba-faculty-card:not(:last-child) {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 32px !important;
+      }
+    }
 
     /* CTA Section */
     .cta-banner {
@@ -574,7 +642,7 @@
       .hero-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
       .hero-actions { justify-content: center; }
       .hero-stats { max-width: 500px; margin: 0 auto; }
-      .snapshot-box { max-width: 500px; margin: 0 auto; }
+      .admission-snapshot-box { max-width: 500px; margin: 0 auto; }
       .vm-grid { grid-template-columns: 1fr; }
       .po-grid { grid-template-columns: 1fr; }
       .detail-columns { grid-template-columns: 1fr; }
@@ -713,7 +781,7 @@
             </div>
           </div>
         </div>
-        <div class="snapshot-box" id="curriculum">
+        <div class="admission-snapshot-box scroll-reveal" id="curriculum">
           <h3>Program Snapshot</h3>
           <p>Outcome-based education standards affiliated with BPUT and recognized by AICTE.</p>
           <div class="snapshot-item">
@@ -730,140 +798,150 @@
     </section>
 
     <!-- VISION & MISSION SECTION -->
-    <section id="vision-mission" class="section-container">
-      <div class="vm-grid">
-        <!-- Vision -->
-        <div class="vm-card">
-          <span class="icon">👁️</span>
-          <h3>VISION</h3>
-          <p>To be a premier management institute shaping the next generation of impactful business leaders capable of transforming industries for sustainable growth.</p>
-        </div>
-        <!-- Mission -->
-        <div class="vm-card">
-          <span class="icon">🎯</span>
-          <h3>MISSION</h3>
-          <ul class="vm-list">
-            <li>Empower students to create value for business and society with integrity.</li>
-            <li>Cultivate management professionals to navigate complexity and drive innovation in a rapidly evolving global economy.</li>
-            <li>Prepare future leaders who embrace diversity and inspire change for a sustainable future.</li>
-          </ul>
+    <section id="vision-mission" class="full-width-section bg-warm shape-chevron dot-matrix-section">
+      <div class="section-inner">
+        <div class="vm-grid">
+          <!-- Vision -->
+          <div class="vm-card scroll-reveal">
+            <span class="icon">👁️</span>
+            <h3>VISION</h3>
+            <p>To be a premier management institute shaping the next generation of impactful business leaders capable of transforming industries for sustainable growth.</p>
+          </div>
+          <!-- Mission -->
+          <div class="vm-card scroll-reveal">
+            <span class="icon">🎯</span>
+            <h3>MISSION</h3>
+            <ul class="vm-list">
+              <li>Empower students to create value for business and society with integrity.</li>
+              <li>Cultivate management professionals to navigate complexity and drive innovation in a rapidly evolving global economy.</li>
+              <li>Prepare future leaders who embrace diversity and inspire change for a sustainable future.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- PROGRAM DETAILS SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Academic Architecture</span>
-        <h2 class="section-title"> Rigorous &amp; <span>Pedagogical Approach</span></h2>
-        <p class="section-desc">Delivering outcome-based education practices in management studies that align academic rigor with industry standards.</p>
-      </div>
-
-      <div class="detail-columns">
-        <!-- Infrastructure -->
-        <div class="detail-card">
-          <h3>Centrally Air-Conditioned Campus</h3>
-          <p>The academic environment is strengthened through modern infrastructure, including a centrally air-conditioned academic block with spacious lecture theatres.</p>
-          <p>Each theatre is equipped with advanced audio-visual teaching aids and intranet facilities for seamless access to online learning resources and student portals.</p>
+    <section class="full-width-section bg-blue shape-slant">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle">Academic Architecture</span>
+          <h2 class="section-title"> Rigorous &amp; <span>Pedagogical Approach</span></h2>
+          <p class="section-desc">Delivering outcome-based education practices in management studies that align academic rigor with industry standards.</p>
         </div>
 
-        <!-- Pedagogy -->
-        <div class="detail-card">
-          <h3>Innovative Pedagogies</h3>
-          <p>To enhance the effectiveness of management education, the MBA programme integrates fieldwork, case study analysis, live projects, internships, and instrumented feedback.</p>
-          <p>Our experienced faculty members actively emphasize both conceptual clarity and practical application to shape competent and ethical management professionals.</p>
-        </div>
-      </div>
-      
-      <div class="detail-columns">
-        <!-- Co-curricular -->
-        <div class="detail-card">
-          <h3>Professional Development</h3>
-          <p>Students actively participate in various co-curricular activities such as Inter B-School competitions, paper presentations, budget analysis contests, and field studies.</p>
-          <p>These exercises develop key leadership qualities, analytical thinking, and managerial competencies beyond the prescribed university curriculum.</p>
-        </div>
+        <div class="detail-columns">
+          <!-- Infrastructure -->
+          <div class="detail-card scroll-reveal">
+            <h3>Centrally Air-Conditioned Campus</h3>
+            <p>The academic environment is strengthened through modern infrastructure, including a centrally air-conditioned academic block with spacious lecture theatres.</p>
+            <p>Each theatre is equipped with advanced audio-visual teaching aids and intranet facilities for seamless access to online learning resources and student portals.</p>
+          </div>
 
-        <!-- Student-driven clubs -->
-        <div class="detail-card">
-          <h3>Experiential Learning Clubs</h3>
-          <p>The department encourages holistic development through active engagement in student-driven clubs including the Fintech Club, Strategy Club, Business Analytics Club, Communication Club, and Cultural Club.</p>
-          <p>These clubs provide platforms for experiential learning, teamwork, creativity, and leadership enhancement.</p>
+          <!-- Pedagogy -->
+          <div class="detail-card scroll-reveal">
+            <h3>Innovative Pedagogies</h3>
+            <p>To enhance the effectiveness of management education, the MBA programme integrates fieldwork, case study analysis, live projects, internships, and instrumented feedback.</p>
+            <p>Our experienced faculty members actively emphasize both conceptual clarity and practical application to shape competent and ethical management professionals.</p>
+          </div>
+        </div>
+        
+        <div class="detail-columns">
+          <!-- Co-curricular -->
+          <div class="detail-card scroll-reveal">
+            <h3>Professional Development</h3>
+            <p>Students actively participate in various co-curricular activities such as Inter B-School competitions, paper presentations, budget analysis contests, and field studies.</p>
+            <p>These exercises develop key leadership qualities, analytical thinking, and managerial competencies beyond the prescribed university curriculum.</p>
+          </div>
+
+          <!-- Student-driven clubs -->
+          <div class="detail-card scroll-reveal">
+            <h3>Experiential Learning Clubs</h3>
+            <p>The department encourages holistic development through active engagement in student-driven clubs including the Fintech Club, Strategy Club, Business Analytics Club, Communication Club, and Cultural Club.</p>
+            <p>These clubs provide platforms for experiential learning, teamwork, creativity, and leadership enhancement.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- POs SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Core Objectives</span>
-        <h2 class="section-title">Program Outcomes <span>(POs)</span> &amp; LOs</h2>
-        <p class="section-desc">Defining specific professional competencies and targets that graduates will master upon completing the program.</p>
-      </div>
+    <section class="full-width-section bg-gold shape-chevron">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle">Core Objectives</span>
+          <h2 class="section-title">Program Outcomes <span>(POs)</span> &amp; LOs</h2>
+          <p class="section-desc">Defining specific professional competencies and targets that graduates will master upon completing the program.</p>
+        </div>
 
-      <div class="po-grid">
-        <!-- PO1 -->
-        <div class="po-card">
-          <strong>PO1 &amp; LO1</strong>
-          <h4>Strategic Leadership</h4>
-          <p>Develop strategic thinking and leadership skills to manage teams and organisations effectively.</p>
-        </div>
-        <!-- PO2 -->
-        <div class="po-card">
-          <strong>PO2 &amp; LO2</strong>
-          <h4>Entrepreneurial Drive</h4>
-          <p>Imbibe entrepreneurial competencies to succeed in the start-up ecosystem.</p>
-        </div>
-        <!-- PO3 -->
-        <div class="po-card">
-          <strong>PO3 &amp; LO3</strong>
-          <h4>Design Thinking</h4>
-          <p>Cultivate design thinking abilities to address real-world business challenges and drive innovation.</p>
+        <div class="po-grid">
+          <!-- PO1 -->
+          <div class="po-card scroll-reveal">
+            <strong>PO1 &amp; LO1</strong>
+            <h4>Strategic Leadership</h4>
+            <p>Develop strategic thinking and leadership skills to manage teams and organisations effectively.</p>
+          </div>
+          <!-- PO2 -->
+          <div class="po-card scroll-reveal">
+            <strong>PO2 &amp; LO2</strong>
+            <h4>Entrepreneurial Drive</h4>
+            <p>Imbibe entrepreneurial competencies to succeed in the start-up ecosystem.</p>
+          </div>
+          <!-- PO3 -->
+          <div class="po-card scroll-reveal">
+            <strong>PO3 &amp; LO3</strong>
+            <h4>Design Thinking</h4>
+            <p>Cultivate design thinking abilities to address real-world business challenges and drive innovation.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FACULTY SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Our Scholars</span>
-        <h2 class="section-title">Core Faculty &amp; <span>Mentors</span></h2>
-        <p class="section-desc">Our department is supported by qualified and experienced faculty members actively engaged in teaching, academic mentoring, research, and industry interaction.</p>
-      </div>
+    <section class="full-width-section bg-gray shape-slant">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle">Our Scholars</span>
+          <h2 class="section-title">Core Faculty &amp; <span>Mentors</span></h2>
+          <p class="section-desc">Our department is supported by qualified and experienced faculty members actively engaged in teaching, academic mentoring, research, and industry interaction.</p>
+        </div>
 
-      <div class="faculty-grid">
-        <div class="faculty-card">
-          <div class="fac-avatar">PM</div>
-          <strong>Prof. P. K. Mohanty</strong>
-          <div>Dean SOB (Former Head of MBA, Utkal University &amp; Director BPUT)</div>
-        </div>
-        <div class="faculty-card">
-          <div class="fac-avatar">AS</div>
-          <strong>Dr. A. N. Sharma</strong>
-          <div>Professor — Strategy &amp; Innovation</div>
-        </div>
-        <div class="faculty-card">
-          <div class="fac-avatar">LR</div>
-          <strong>Prof. L. K. Rao</strong>
-          <div>Associate Professor — Finance</div>
+        <div class="faculty-grid">
+          <div class="mba-faculty-card scroll-reveal">
+            <div class="fac-avatar">PM</div>
+            <strong>Prof. P. K. Mohanty</strong>
+            <div>Dean SOB (Former Head of MBA, Utkal University &amp; Director BPUT)</div>
+          </div>
+          <div class="mba-faculty-card scroll-reveal">
+            <div class="fac-avatar">AS</div>
+            <strong>Dr. A. N. Sharma</strong>
+            <div>Professor — Strategy &amp; Innovation</div>
+          </div>
+          <div class="mba-faculty-card scroll-reveal">
+            <div class="fac-avatar">LR</div>
+            <strong>Prof. L. K. Rao</strong>
+            <div>Associate Professor — Finance</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ADMISSIONS SECTION -->
-    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="section-header">
-        <span class="section-subtitle">Enrollment</span>
-        <h2 class="section-title">Admissions <span>Procedure</span></h2>
-        <p class="section-desc">Apply online for the 2-year full-time MBA program. Merit scholarships are available for deserving candidates.</p>
-      </div>
+    <section class="full-width-section bg-offwhite">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle">Enrollment</span>
+          <h2 class="section-title">Admissions <span>Procedure</span></h2>
+          <p class="section-desc">Apply online for the 2-year full-time MBA program. Merit scholarships are available for deserving candidates.</p>
+        </div>
 
-      <div class="admissions-box">
-        <h4>How to Apply:</h4>
-        <ol>
-          <li>Complete the online application form on our homepage.</li>
-          <li>Upload academic transcripts, scorecard (MAT/CAT/XAT/OJEE), and certificates.</li>
-          <li>Shortlisted candidates will be invited for a personal interview and group discussion.</li>
-        </ol>
+        <div class="admissions-box scroll-reveal">
+          <h4>How to Apply:</h4>
+          <ol>
+            <li>Complete the online application form on our homepage.</li>
+            <li>Upload academic transcripts, scorecard (MAT/CAT/XAT/OJEE), and certificates.</li>
+            <li>Shortlisted candidates will be invited for a personal interview and group discussion.</li>
+          </ol>
+        </div>
       </div>
     </section>
 
