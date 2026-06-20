@@ -293,9 +293,12 @@ html {
 /* Beautiful drop-downs with rounded items */
 .dropdown {
   border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
-  overflow: hidden;
   border-top: 3px solid var(--gold) !important;
   box-shadow: var(--shadow-lg) !important;
+}
+
+.dropdown li:last-child a {
+  border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
 }
 
 /* Navbar active state dot */
