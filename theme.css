@@ -387,3 +387,27 @@ html {
   transition: var(--transition-smooth) !important;
   animation: float 4s ease-in-out infinite !important; /* Preserve original float animation */
 }
+
+/* Navigation Logo enhancements */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 52px; /* Set height to fit nicely inside the 72px navbar */
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition-smooth) !important;
+}
+
+.nav-logo:hover .logo-img {
+  transform: scale(1.05); /* Soft premium hover scaling */
+}
+
+/* Hide old logo emblem placeholder circle */
+.logo-emblem {
+  display: none !important;
+}
