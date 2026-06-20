@@ -71,46 +71,77 @@ html {
   box-shadow: var(--shadow-md) !important;
 }
 
-/* Universal Soft Rounded Edges for Cards & Sections */
-.notice-card,
-.testi-card,
-.rec-logo-card,
-.editorial-card,
-.highlights-box,
-.pdf-viewer-section,
-.pdf-viewer-container,
-.snapshot-box,
+/* 1. Portrait Arch / Portal Shape (framing media/profile containers) */
 .faculty-card,
-.contact-card,
-.tile-card,
-.hero-stat-card,
-.badge-float,
-.curriculum-card,
-.program-card,
-.hero-frame,
-.floating-panel,
 .infrastructure-card,
 .club-card,
 .infra-item,
 .sports-card,
 .fest-card,
-.tab-content,
 .about-img-wrap,
 .about-img,
-.admission-card {
-  border-radius: var(--radius-lg) !important;
+.gallery-card {
+  border-radius: 120px 120px 24px 24px !important;
   overflow: hidden;
   border: 1px solid rgba(11, 31, 58, 0.07) !important;
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth) !important;
 }
 
-/* Inline card grids */
+/* 2. Asymmetric Quote Speech Bubble (for testimonials) */
+.testi-card {
+  border-radius: 36px 36px 8px 36px !important;
+  overflow: hidden;
+  border: 1px solid rgba(11, 31, 58, 0.07) !important;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth) !important;
+}
+
+/* 3. Alternating Leaf / Petal Shapes (for strengths grids and highlight panels) */
+.strengths-grid > div:nth-child(odd) {
+  border-radius: 48px 12px 48px 12px !important;
+}
+.strengths-grid > div:nth-child(even) {
+  border-radius: 12px 48px 12px 48px !important;
+}
 .strengths-grid > div,
 .snapshot-grid > div {
-  border-radius: var(--radius-lg) !important;
-  transition: var(--transition-smooth) !important;
+  overflow: hidden;
+  border: 1px solid rgba(11, 31, 58, 0.07) !important;
   box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth) !important;
+}
+.highlights-box,
+.editorial-card {
+  border-radius: 48px 16px 48px 16px !important;
+  overflow: hidden;
+  border: 1px solid rgba(11, 31, 58, 0.07) !important;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth) !important;
+}
+
+/* 4. Slanted Bottom Wave Shape (for text-rich panels, notice boards, and curriculums) */
+.notice-card,
+.admission-card,
+.contact-card,
+.curriculum-card,
+.pdf-viewer-section,
+.pdf-viewer-container,
+.snapshot-box,
+.tile-card,
+.hero-stat-card,
+.program-card,
+.tab-content {
+  border-radius: 24px 24px 80px 24px / 24px 24px 40px 24px !important;
+  overflow: hidden;
+  border: 1px solid rgba(11, 31, 58, 0.07) !important;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth) !important;
+}
+
+/* Recruiter cards custom soft asymmetry */
+.rec-logo-card {
+  border-radius: 20px 8px 20px 8px !important;
 }
 
 /* ==========================================================================
@@ -321,4 +352,38 @@ html {
   transform: translateY(-3px) !important;
   box-shadow: var(--shadow-md) !important;
   border-color: var(--gold) !important;
+}
+
+/* Dedicated premium styles for About page Hero Media section */
+.hero-media-wrap {
+  position: relative;
+  overflow: visible !important; /* Allow floating-panel to pop out of bounds */
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.hero-frame {
+  border-radius: 48px 12px 48px 12px !important; /* Elegant Leaf shape */
+  border: 3px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: var(--shadow-lg) !important;
+  overflow: hidden;
+  transition: var(--transition-smooth) !important;
+}
+
+.hero-frame img {
+  border-radius: 44px 8px 44px 8px !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.floating-panel {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-left: 5px solid var(--gold) !important;
+  border-radius: 20px 4px 20px 4px !important; /* Matching asymmetric leaf shapes */
+  box-shadow: var(--shadow-lg) !important;
+  transition: var(--transition-smooth) !important;
+  animation: float 4s ease-in-out infinite !important; /* Preserve original float animation */
 }
