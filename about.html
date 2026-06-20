@@ -488,13 +488,55 @@
         gap: 12px;
       }
     }
-    .rank-card {
+    .rankings-row-clean {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 48px;
+    }
+    .rank-col-clean {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px;
       transition: var(--transition);
     }
-    .rank-card:hover {
+    .rank-col-clean:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--gold) !important;
+    }
+    .rank-badge-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(200, 150, 42, 0.08);
+      border: 1.5px solid rgba(200, 150, 42, 0.3);
+      display: grid;
+      place-items: center;
+      font-size: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 20px rgba(200, 150, 42, 0.05);
+      transition: var(--transition);
+    }
+    .rank-col-clean:hover .rank-badge-circle {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: scale(1.1) rotate(360deg);
+      box-shadow: 0 12px 28px rgba(200, 150, 42, 0.25);
+    }
+    .rank-col-clean h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--navy);
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .rank-col-clean p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
     }
 
     /* Redesigned Vertical Timeline */
@@ -1008,23 +1050,23 @@
         <p class="section-desc">Our commitment to excellence is validated by national accreditation bodies, industry surveys, and academic rankings.</p>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-        <div style="background: var(--white); padding: 32px 24px; border-radius: 16px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow);" class="rank-card">
-          <div style="font-size: 40px; margin-bottom: 16px;">🏆</div>
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px;">NBA Accredited</h3>
-          <p style="font-size: 13.5px; color: var(--muted); line-height: 1.6;">Accredited by Govt of India's National Board of Accreditation (NBA) for outstanding quality of education, faculty, and academic infrastructure.</p>
+      <div class="rankings-row-clean">
+        <div class="rank-col-clean">
+          <div class="rank-badge-circle">🏆</div>
+          <h3>NBA Accredited</h3>
+          <p>Accredited by Govt of India's National Board of Accreditation (NBA) for outstanding quality of education, faculty, and academic infrastructure.</p>
         </div>
         
-        <div style="background: var(--white); padding: 32px 24px; border-radius: 16px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow);" class="rank-card">
-          <div style="font-size: 40px; margin-bottom: 16px;">🏅</div>
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px;">Top 5 B-School</h3>
-          <p style="font-size: 13.5px; color: var(--muted); line-height: 1.6;">Consistently ranked among the Top 5 Business Schools in Odisha in private and government-led surveys for placement and pedagogy.</p>
+        <div class="rank-col-clean">
+          <div class="rank-badge-circle">🏅</div>
+          <h3>Top 5 B-School</h3>
+          <p>Consistently ranked among the Top 5 Business Schools in Odisha in private and government-led surveys for placement and pedagogy.</p>
         </div>
         
-        <div style="background: var(--white); padding: 32px 24px; border-radius: 16px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow);" class="rank-card">
-          <div style="font-size: 40px; margin-bottom: 16px;">🏛️</div>
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 10px;">AICTE Approved</h3>
-          <p style="font-size: 13.5px; color: var(--muted); line-height: 1.6;">Approved by the All India Council for Technical Education (AICTE), Ministry of Education, following strict academic standards.</p>
+        <div class="rank-col-clean">
+          <div class="rank-badge-circle">🏛️</div>
+          <h3>AICTE Approved</h3>
+          <p>Approved by the All India Council for Technical Education (AICTE), Ministry of Education, following strict academic standards.</p>
         </div>
       </div>
     </section>
