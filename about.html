@@ -539,6 +539,100 @@
       margin: 0;
     }
 
+    /* International Tie-ups Section Redesign */
+    .international-card-clean {
+      background-image: radial-gradient(rgba(200, 150, 42, 0.12) 1.5px, transparent 1.5px), 
+                        linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      background-size: 24px 24px !important;
+      border-radius: 24px;
+      padding: 64px 48px;
+      border: 1px solid rgba(200, 150, 42, 0.2);
+      box-shadow: 0 20px 50px rgba(11, 31, 58, 0.15);
+      margin-top: 48px;
+      text-align: center;
+    }
+    
+    .international-card-clean .section-header {
+      margin-bottom: 48px;
+    }
+    
+    .international-card-clean .section-subtitle {
+      color: var(--gold-soft);
+    }
+    
+    .international-card-clean .section-title {
+      color: var(--white);
+    }
+    
+    .international-card-clean .section-desc {
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 700px;
+      margin: 14px auto 0 auto;
+    }
+
+    .tieups-row-clean {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+    
+    .tieup-col-clean {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px;
+      transition: var(--transition);
+    }
+    
+    .tieup-col-clean:hover {
+      transform: translateY(-6px);
+    }
+    
+    .tieup-badge-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(200, 150, 42, 0.3);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(11, 31, 58, 0.2);
+      transition: var(--transition);
+    }
+    
+    .tieup-col-clean:hover .tieup-badge-circle {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: scale(1.1) rotate(360deg);
+      box-shadow: 0 12px 28px rgba(200, 150, 42, 0.35);
+    }
+    
+    .tieup-col-clean h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    .tieup-col-clean p {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .international-card-clean {
+        padding: 40px 24px;
+      }
+    }
+
     /* Redesigned Vertical Timeline */
     .timeline-wrapper {
       position: relative;
@@ -1090,29 +1184,31 @@
 
     <!-- INTERNATIONAL TIE-UPS SECTION -->
     <section id="international" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px; margin-bottom: 96px;">
-      <div class="section-header">
-        <span class="section-subtitle">Global Reach</span>
-        <h2 class="section-title">International <span>Tie-ups</span></h2>
-        <p class="section-desc">We collaborate with global universities, research associations, and international corporations to expose our students and faculty to world-class practices.</p>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; text-align: center;">
-        <div style="background: var(--white); padding: 32px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow);">
-          <div style="font-size: 32px; margin-bottom: 12px;">🌏</div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 8px;">Global Immersion</h4>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Short-term study tours, university exchanges, and global leadership workshops to provide direct international perspective.</p>
+      <div class="international-card-clean">
+        <div class="section-header">
+          <span class="section-subtitle">Global Reach</span>
+          <h2 class="section-title">International <span>Tie-ups</span></h2>
+          <p class="section-desc">We collaborate with global universities, research associations, and international corporations to expose our students and faculty to world-class practices.</p>
         </div>
         
-        <div style="background: var(--white); padding: 32px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow);">
-          <div style="font-size: 32px; margin-bottom: 12px;">🔬</div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 8px;">Collaborative Research</h4>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Joint publications, international conferences, and exchange of research scholars with foreign academic partners.</p>
-        </div>
-        
-        <div style="background: var(--white); padding: 32px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow);">
-          <div style="font-size: 32px; margin-bottom: 12px;">🏢</div>
-          <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 8px;">MNC Certifications</h4>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Global certification pathways partnered with tech and business giants to add worldwide credentials to your resume.</p>
+        <div class="tieups-row-clean">
+          <div class="tieup-col-clean">
+            <div class="tieup-badge-circle">🌏</div>
+            <h4>Global Immersion</h4>
+            <p>Short-term study tours, university exchanges, and global leadership workshops to provide direct international perspective.</p>
+          </div>
+          
+          <div class="tieup-col-clean">
+            <div class="tieup-badge-circle">🔬</div>
+            <h4>Collaborative Research</h4>
+            <p>Joint publications, international conferences, and exchange of research scholars with foreign academic partners.</p>
+          </div>
+          
+          <div class="tieup-col-clean">
+            <div class="tieup-badge-circle">🏢</div>
+            <h4>MNC Certifications</h4>
+            <p>Global certification pathways partnered with tech and business giants to add worldwide credentials to your resume.</p>
+          </div>
         </div>
       </div>
     </section>
