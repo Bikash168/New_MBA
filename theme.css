@@ -96,18 +96,82 @@ html {
 }
 
 /* 3. Alternating Leaf / Petal Shapes (for strengths grids and highlight panels) */
-.strengths-grid > div:nth-child(odd) {
-  border-radius: 48px 12px 48px 12px !important;
-}
-.strengths-grid > div:nth-child(even) {
-  border-radius: 12px 48px 12px 48px !important;
-}
-.strengths-grid > div,
 .snapshot-grid > div {
   overflow: hidden;
   border: 1px solid rgba(11, 31, 58, 0.07) !important;
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth) !important;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.strengths-grid > div {
+  overflow: visible;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 24px 16px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition-smooth) !important;
+}
+
+@media (min-width: 992px) {
+  .strengths-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0 !important;
+  }
+  .strengths-grid > div {
+    padding: 16px 32px !important;
+  }
+  .strengths-grid > div:not(:last-child) {
+    border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0 !important;
+  }
+  .strengths-grid > div {
+    padding: 28px !important;
+  }
+  .strengths-grid > div:nth-child(odd) {
+    border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+  }
+  .strengths-grid > div:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(11, 31, 58, 0.12) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .strengths-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .strengths-grid > div {
+    padding: 24px 8px !important;
+  }
+  .strengths-grid > div:not(:last-child) {
+    border-bottom: 1px solid rgba(11, 31, 58, 0.08) !important;
+  }
+}
+
+.strengths-grid .strength-icon {
+  font-size: 32px;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.strengths-grid > div:hover .strength-icon {
+  transform: scale(1.15) translateY(-4px);
 }
 .highlights-box,
 .editorial-card {
@@ -159,11 +223,14 @@ html {
 .club-card:hover,
 .sports-card:hover,
 .fest-card:hover,
-.admission-card:hover,
-.strengths-grid > div:hover {
+.admission-card:hover {
   transform: translateY(-6px) !important;
   box-shadow: var(--shadow-lg) !important;
   border-color: rgba(200, 150, 42, 0.25) !important;
+}
+
+.strengths-grid > div:hover {
+  transform: translateY(-4px) !important;
 }
 
 /* Recruiter cards hover */
@@ -410,4 +477,11 @@ html {
 /* Hide old logo emblem placeholder circle */
 .logo-emblem {
   display: none !important;
+}
+
+/* Strengths Section Texture */
+.strengths-section {
+  background-color: #faf9f6 !important;
+  background-image: radial-gradient(rgba(11, 31, 58, 0.05) 1.5px, transparent 1.5px) !important;
+  background-size: 24px 24px !important;
 }
