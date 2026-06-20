@@ -555,6 +555,15 @@
       text-decoration: none;
     }
 
+    /* Admission Flyer Section */
+    .flyer-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
     /* Footer matching index.html */
     .footer {
       background: var(--navy);
@@ -573,6 +582,7 @@
       .intake-row { grid-template-columns: 1fr; }
       .details-row { grid-template-columns: 1fr; }
       .contact-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+      .flyer-row { grid-template-columns: 1fr; gap: 32px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -818,6 +828,62 @@
           <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 20px;">
             Shortlisted candidates are required to register on the OJEE counseling portal or approach the TSBA admission desk with valid scorecards and certificates.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHOLARSHIPS & GD SLOTS SECTION (FROM ADMISSIONS FLYER) -->
+    <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
+      <div class="section-header">
+        <span class="section-subtitle">Financial Aid &amp; Incentives</span>
+        <h2 class="section-title">Merit <span>Scholarships &amp; Fee Waivers</span></h2>
+        <p class="section-desc">
+          TSBA offers lucrative scholarship schemes and fee waivers based on academic merit and performance in selection rounds.
+        </p>
+      </div>
+
+      <div class="flyer-row">
+        <!-- Left Column: Image -->
+        <div style="background: var(--white); padding: 16px; border-radius: 20px; border: 1px solid var(--line); box-shadow: var(--shadow);">
+          <a href="Public/admission_flyer.jpg" target="_blank" title="Click to view full-size flyer">
+            <img src="Public/admission_flyer.jpg" alt="Trident MBA Admissions flyer details" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: var(--transition);">
+          </a>
+          <span style="display: block; font-size: 11.5px; text-align: center; color: var(--muted); margin-top: 12px; font-weight: 500;">
+            🔍 Click on the flyer to open full-size in a new tab
+          </span>
+        </div>
+
+        <!-- Right Column: Extracted Guidelines -->
+        <div>
+          <!-- Merit Scholarships card -->
+          <div style="background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 32px; box-shadow: var(--shadow); margin-bottom: 28px; border-left: 5px solid var(--gold);">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 16px;">1st Year Merit Scholarships</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; padding: 0;">
+              <li style="font-size: 14px; line-height: 1.6; color: var(--text);">
+                <strong style="color: var(--gold); font-size: 15px;">Rs. 50,000/- Scholarship:</strong> Scored <strong>above 70%</strong> marks in each of Class-X, Class-XII, and Graduation.
+              </li>
+              <li style="font-size: 14px; line-height: 1.6; color: var(--text);">
+                <strong style="color: var(--gold); font-size: 15px;">Rs. 30,000/- Scholarship:</strong> Scored <strong>between 60% and 70%</strong> in each of Class-X, Class-XII, and Graduation.
+              </li>
+              <li style="font-size: 14px; line-height: 1.6; color: var(--text);">
+                <strong style="color: var(--gold); font-size: 15px;">Rs. 25,000/- Scholarship:</strong> Average percentage across Class-X, Class-XII, and Graduation <strong>exceeds 60%</strong>.
+              </li>
+            </ul>
+          </div>
+
+          <!-- GD Slots card -->
+          <div style="background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 32px; box-shadow: var(--shadow); border-left: 5px solid var(--navy);">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 12px;">GD &amp; Interview Slot Booking</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">
+              Candidates selected through the group discussion and interview process will qualify for an <strong>additional 50% Fee waiver</strong> in the first year.
+            </p>
+            <div style="background: var(--offwhite); padding: 20px; border-radius: 12px; border: 1px solid var(--line);">
+              <span style="display: block; font-size: 13.5px; color: var(--text); font-weight: 700; margin-bottom: 6px;">How to participate:</span>
+              <span style="font-size: 13.5px; color: var(--muted); display: block; line-height: 1.5;">
+                Send your softcopy biodata to <a href="mailto:scholar@tat.ac.in" style="color: var(--navy); font-weight: 700; text-decoration: none;">scholar@tat.ac.in</a> to register.
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
