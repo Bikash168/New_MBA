@@ -702,8 +702,8 @@
     </section>
 
     <!-- TABBED CONTENT SECTION -->
-    <section class="tab-section">
-      <div class="tabs-nav">
+    <div class="tab-section">
+      <div class="tabs-nav scroll-reveal">
         <button class="tab-btn active" onclick="switchTab('bba')">BBA Curriculum</button>
         <button class="tab-btn" onclick="switchTab('mba-1')">MBA First Year</button>
         <button class="tab-btn" onclick="switchTab('mba-2')">MBA Second Year</button>
@@ -711,261 +711,279 @@
 
       <!-- BBA CURRICULUM TAB -->
       <div id="bba" class="tab-content active">
-        <div class="content-card">
-          <div class="card-title">
-            <h3>Bachelor in Business Administration (BBA)</h3>
-            <span>120 - 160 Credits</span>
-          </div>
-          <p style="font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.7;">
-            The undergraduate curriculum follows the AICTE Model Syllabus (2024 Guidelines) offering a flexible duration of 3 to 4 years (6 or 8 Semesters) with multiple entry and exit points. A balanced mix of Core, Ability Enhancement, Skill Enhancement, and Discipline Specific Elective courses prepares students for modern corporate challenges.
-          </p>
-
-          <div class="pdf-actions">
-            <a href="BBA New Syllabus 2024.pdf" download class="btn-pdf">
-              <span>📥 Download BBA Syllabus PDF</span>
-            </a>
-            <a href="BBA New Syllabus 2024.pdf" target="_blank" class="btn-pdf-outline">
-              <span>👁️ View PDF In New Tab</span>
-            </a>
-          </div>
-
-          <!-- BBA SEMESTERS GRID -->
-          <div class="semester-grid">
-            <!-- Semester I -->
-            <div class="semester-box">
-              <div class="sem-header">
-                <h4>Semester I</h4>
-                <span class="sem-credits">20 Credits</span>
-              </div>
-              <ul class="course-list">
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC101</span>
-                    <span class="course-name">Principles and Practices of Management</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">AEC101</span>
-                    <span class="course-name">Business Communication-I</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC102</span>
-                    <span class="course-name">Financial Accounting</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC103</span>
-                    <span class="course-name">Business Statistics and Logic</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">AEC102</span>
-                    <span class="course-name">General English</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MDE101</span>
-                    <span class="course-name">Indian Knowledge System</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">VAC101</span>
-                    <span class="course-name">Environmental Science and Sustainability</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-              </ul>
+        <!-- Intro / Syllabus Download -->
+        <div class="full-width-section shape-slant bg-warm">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Undergraduate Program</span>
+              <h2 class="section-title">Bachelor of Business <span>Administration (BBA)</span></h2>
+              <p class="section-desc" style="max-width: 800px; margin: 14px auto 0;">
+                The undergraduate curriculum follows the AICTE Model Syllabus (2024 Guidelines) offering a flexible duration of 3 to 4 years (6 or 8 Semesters) with multiple entry and exit points. A balanced mix of Core, Ability Enhancement, Skill Enhancement, and Discipline Specific Elective courses prepares students for modern corporate challenges.
+              </p>
             </div>
-
-            <!-- Semester II -->
-            <div class="semester-box">
-              <div class="sem-header">
-                <h4>Semester II</h4>
-                <span class="sem-credits">20 Credits</span>
-              </div>
-              <ul class="course-list">
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC201</span>
-                    <span class="course-name">Human Behaviour and Organization</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC202</span>
-                    <span class="course-name">Marketing Management</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC203</span>
-                    <span class="course-name">Business Economics</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">SEC201</span>
-                    <span class="course-name">Emerging Technologies and Applications</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MDE201</span>
-                    <span class="course-name">Media Literacy and Critical Thinking</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">VAC201</span>
-                    <span class="course-name">Indian Constitution</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">AEC201</span>
-                    <span class="course-name">Business Communication-II</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Semester III -->
-            <div class="semester-box">
-              <div class="sem-header">
-                <h4>Semester III</h4>
-                <span class="sem-credits">20 Credits</span>
-              </div>
-              <ul class="course-list">
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC301</span>
-                    <span class="course-name">Cost and Management Accounting</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC302</span>
-                    <span class="course-name">Legal and Ethical Issues in Business</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC303</span>
-                    <span class="course-name">Human Resource Management</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MDE301</span>
-                    <span class="course-name">Indian Systems of Health and Wellness</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">SEC301</span>
-                    <span class="course-name">Management Information System (MIS)</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">VAC301</span>
-                    <span class="course-name">Yoga / Physical Fitness / NCC / NSS</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Semester IV -->
-            <div class="semester-box">
-              <div class="sem-header">
-                <h4>Semester IV</h4>
-                <span class="sem-credits">20 Credits</span>
-              </div>
-              <ul class="course-list">
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC401</span>
-                    <span class="course-name">Entrepreneurship and Startup Ecosystem</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC402</span>
-                    <span class="course-name">Operations Management</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC403</span>
-                    <span class="course-name">Financial Management</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC404</span>
-                    <span class="course-name">Business Research Methodology</span>
-                  </div>
-                  <span class="course-credits">4 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">VAC401</span>
-                    <span class="course-name">Business Env. / Enterprise Systems / Geopolitics</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">CC405</span>
-                    <span class="course-name">International Business</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">SEC401</span>
-                    <span class="course-name">Design Thinking and Innovation</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-              </ul>
+            <div class="pdf-actions scroll-reveal" style="justify-content: center;">
+              <a href="BBA New Syllabus 2024.pdf" download class="btn-pdf">
+                <span>📥 Download BBA Syllabus PDF</span>
+              </a>
+              <a href="BBA New Syllabus 2024.pdf" target="_blank" class="btn-pdf-outline">
+                <span>👁️ View PDF In New Tab</span>
+              </a>
             </div>
           </div>
+        </div>
 
-          <!-- BBA Electives Overview -->
-          <div style="margin-top: 30px;">
-            <h4 style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 12px;">Discipline Specific Electives (DSE)</h4>
-            <p style="font-size: 13.5px; color: var(--muted); margin-bottom: 16px;">Students select electives starting in Semester V and VI from the following functional streams:</p>
-            <div class="electives-grid">
+        <!-- BBA Semesters Grid -->
+        <div class="full-width-section shape-chevron bg-blue">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Academic Roadmap</span>
+              <h2 class="section-title">Semester-wise <span>Curriculum Structure</span></h2>
+              <p class="section-desc">Course breakdowns for the initial semesters focusing on management foundations and core concepts.</p>
+            </div>
+
+            <div class="semester-grid">
+              <!-- Semester I -->
+              <div class="semester-box scroll-reveal stagger-1">
+                <div class="sem-header">
+                  <h4>Semester I</h4>
+                  <span class="sem-credits">20 Credits</span>
+                </div>
+                <ul class="course-list">
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC101</span>
+                      <span class="course-name">Principles and Practices of Management</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">AEC101</span>
+                      <span class="course-name">Business Communication-I</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC102</span>
+                      <span class="course-name">Financial Accounting</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC103</span>
+                      <span class="course-name">Business Statistics and Logic</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">AEC102</span>
+                      <span class="course-name">General English</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MDE101</span>
+                      <span class="course-name">Indian Knowledge System</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">VAC101</span>
+                      <span class="course-name">Environmental Science and Sustainability</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Semester II -->
+              <div class="semester-box scroll-reveal stagger-2">
+                <div class="sem-header">
+                  <h4>Semester II</h4>
+                  <span class="sem-credits">20 Credits</span>
+                </div>
+                <ul class="course-list">
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC201</span>
+                      <span class="course-name">Human Behaviour and Organization</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC202</span>
+                      <span class="course-name">Marketing Management</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC203</span>
+                      <span class="course-name">Business Economics</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">SEC201</span>
+                      <span class="course-name">Emerging Technologies and Applications</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MDE201</span>
+                      <span class="course-name">Media Literacy and Critical Thinking</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">VAC201</span>
+                      <span class="course-name">Indian Constitution</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">AEC201</span>
+                      <span class="course-name">Business Communication-II</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Semester III -->
+              <div class="semester-box scroll-reveal stagger-1">
+                <div class="sem-header">
+                  <h4>Semester III</h4>
+                  <span class="sem-credits">20 Credits</span>
+                </div>
+                <ul class="course-list">
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC301</span>
+                      <span class="course-name">Cost and Management Accounting</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC302</span>
+                      <span class="course-name">Legal and Ethical Issues in Business</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC303</span>
+                      <span class="course-name">Human Resource Management</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MDE301</span>
+                      <span class="course-name">Indian Systems of Health and Wellness</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">SEC301</span>
+                      <span class="course-name">Management Information System (MIS)</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">VAC301</span>
+                      <span class="course-name">Yoga / Physical Fitness / NCC / NSS</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Semester IV -->
+              <div class="semester-box scroll-reveal stagger-2">
+                <div class="sem-header">
+                  <h4>Semester IV</h4>
+                  <span class="sem-credits">20 Credits</span>
+                </div>
+                <ul class="course-list">
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC401</span>
+                      <span class="course-name">Entrepreneurship and Startup Ecosystem</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC402</span>
+                      <span class="course-name">Operations Management</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC403</span>
+                      <span class="course-name">Financial Management</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC404</span>
+                      <span class="course-name">Business Research Methodology</span>
+                    </div>
+                    <span class="course-credits">4 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">VAC401</span>
+                      <span class="course-name">Business Env. / Enterprise Systems / Geopolitics</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">CC405</span>
+                      <span class="course-name">International Business</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">SEC401</span>
+                      <span class="course-name">Design Thinking and Innovation</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BBA Electives Overview & PDF -->
+        <div class="full-width-section bg-gold">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Specializations</span>
+              <h2 class="section-title">Discipline Specific <span>Electives (DSE)</span></h2>
+              <p class="section-desc">Students select electives starting in Semester V and VI from the following functional streams:</p>
+            </div>
+            
+            <div class="electives-grid scroll-reveal stagger-1">
               <div class="elective-card">
                 <h5>Finance</h5>
                 <ul class="elective-sub-list">
@@ -997,330 +1015,379 @@
                 </ul>
               </div>
             </div>
-          </div>
 
-          <!-- Embed PDF -->
-          <div class="pdf-viewer-container">
-            <iframe src="BBA New Syllabus 2024.pdf" width="100%" height="100%" style="border:none;"></iframe>
+            <!-- Embed PDF -->
+            <div class="pdf-viewer-container scroll-reveal stagger-2" style="margin-top: 56px;">
+              <iframe src="BBA New Syllabus 2024.pdf" width="100%" height="100%" style="border:none;"></iframe>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- MBA 1ST YEAR CURRICULUM TAB -->
       <div id="mba-1" class="tab-content">
-        <div class="content-card">
-          <div class="card-title">
-            <h3>MBA - First Year (Core Foundation)</h3>
-            <span>51 Credits</span>
-          </div>
-          <p style="font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.7;">
-            The first year of the MBA programme at TSBA focuses on building a solid managerial foundation. Formulated for the admission batch of 2024-25, the curriculum covers core business functions, quantitative analytics, communication, and basic artificial intelligence skills.
-          </p>
-
-          <div class="pdf-actions">
-            <a href="MB01(1st year).pdf" download class="btn-pdf">
-              <span>📥 Download MBA 1st Year PDF</span>
-            </a>
-            <a href="MB01(1st year).pdf" target="_blank" class="btn-pdf-outline">
-              <span>👁️ View PDF In New Tab</span>
-            </a>
-          </div>
-
-          <div class="semester-grid">
-            <!-- Semester I -->
-            <div class="semester-box">
-              <div class="sem-header">
-                <h4>MBA Semester I</h4>
-                <span class="sem-credits">29 Credits</span>
-              </div>
-              <ul class="course-list">
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1001</span>
-                    <span class="course-name">Management Principles &amp; Organizational Behaviour</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1002</span>
-                    <span class="course-name">Marketing Management</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1003</span>
-                    <span class="course-name">Financial Accounting and Analysis</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1001</span>
-                    <span class="course-name">Managerial Economics</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBQT1001</span>
-                    <span class="course-name">Quantitative Techniques</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1002</span>
-                    <span class="course-name">Business Communication</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1003</span>
-                    <span class="course-name">Universal Human Values, Ethics &amp; Env.</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1004</span>
-                    <span class="course-name">Entrepreneurship &amp; Legal Environment</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1201</span>
-                    <span class="course-name">IT Skills for Managers (Lab)</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1005</span>
-                    <span class="course-name">Management Lessons from Ancient India</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1201</span>
-                    <span class="course-name">Business Communication Lab</span>
-                  </div>
-                  <span class="course-credits">1 Credit</span>
-                </li>
-              </ul>
+        <!-- Intro / Syllabus Download -->
+        <div class="full-width-section shape-slant bg-warm">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Postgraduate Program</span>
+              <h2 class="section-title">MBA - First Year <span>(Core Foundation)</span></h2>
+              <p class="section-desc" style="max-width: 800px; margin: 14px auto 0;">
+                The first year of the MBA programme at TSBA focuses on building a solid managerial foundation. Formulated for the admission batch of 2024-25, the curriculum covers core business functions, quantitative analytics, communication, and basic artificial intelligence skills.
+              </p>
             </div>
-
-            <!-- Semester II -->
-            <div class="semester-box">
-              <div class="sem-header">
-                <h4>MBA Semester II</h4>
-                <span class="sem-credits">22 Credits</span>
-              </div>
-              <ul class="course-list">
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1004</span>
-                    <span class="course-name">Corporate Finance</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1005</span>
-                    <span class="course-name">Cost and Management Accounting</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1006</span>
-                    <span class="course-name">Human Resources Management</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBQT1002</span>
-                    <span class="course-name">Business Research</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1007</span>
-                    <span class="course-name">Operations Management</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1008</span>
-                    <span class="course-name">Business Analytics</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1009</span>
-                    <span class="course-name">Management Information System</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1010</span>
-                    <span class="course-name">Strategic Management</span>
-                  </div>
-                  <span class="course-credits">3 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBPC1011</span>
-                    <span class="course-name">Introduction to AI</span>
-                  </div>
-                  <span class="course-credits">2 Credits</span>
-                </li>
-                <li class="course-item">
-                  <div class="course-details">
-                    <span class="course-code">MBEV1202</span>
-                    <span class="course-name">Health &amp; Wellness (Lab)</span>
-                  </div>
-                  <span class="course-credits">1 Credit</span>
-                </li>
-              </ul>
+            <div class="pdf-actions scroll-reveal" style="justify-content: center;">
+              <a href="MB01(1st year).pdf" download class="btn-pdf">
+                <span>📥 Download MBA 1st Year PDF</span>
+              </a>
+              <a href="MB01(1st year).pdf" target="_blank" class="btn-pdf-outline">
+                <span>👁️ View PDF In New Tab</span>
+              </a>
             </div>
           </div>
+        </div>
 
-          <!-- Embed PDF -->
-          <div class="pdf-viewer-container">
-            <iframe src="MB01(1st year).pdf" width="100%" height="100%" style="border:none;"></iframe>
+        <!-- MBA Semesters Grid -->
+        <div class="full-width-section shape-chevron bg-blue">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Academic Roadmap</span>
+              <h2 class="section-title">Semester-wise <span>Curriculum Structure</span></h2>
+              <p class="section-desc">Detailed syllabus modules spanning across Core business courses and foundational computer tools.</p>
+            </div>
+
+            <div class="semester-grid">
+              <!-- Semester I -->
+              <div class="semester-box scroll-reveal stagger-1">
+                <div class="sem-header">
+                  <h4>MBA Semester I</h4>
+                  <span class="sem-credits">29 Credits</span>
+                </div>
+                <ul class="course-list">
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1001</span>
+                      <span class="course-name">Management Principles &amp; Organizational Behaviour</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1002</span>
+                      <span class="course-name">Marketing Management</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1003</span>
+                      <span class="course-name">Financial Accounting and Analysis</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1001</span>
+                      <span class="course-name">Managerial Economics</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBQT1001</span>
+                      <span class="course-name">Quantitative Techniques</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1002</span>
+                      <span class="course-name">Business Communication</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1003</span>
+                      <span class="course-name">Universal Human Values, Ethics &amp; Env.</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1004</span>
+                      <span class="course-name">Entrepreneurship &amp; Legal Environment</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1201</span>
+                      <span class="course-name">IT Skills for Managers (Lab)</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1005</span>
+                      <span class="course-name">Management Lessons from Ancient India</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1201</span>
+                      <span class="course-name">Business Communication Lab</span>
+                    </div>
+                    <span class="course-credits">1 Credit</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Semester II -->
+              <div class="semester-box scroll-reveal stagger-2">
+                <div class="sem-header">
+                  <h4>MBA Semester II</h4>
+                  <span class="sem-credits">22 Credits</span>
+                </div>
+                <ul class="course-list">
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1004</span>
+                      <span class="course-name">Corporate Finance</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1005</span>
+                      <span class="course-name">Cost and Management Accounting</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1006</span>
+                      <span class="course-name">Human Resources Management</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBQT1002</span>
+                      <span class="course-name">Business Research</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1007</span>
+                      <span class="course-name">Operations Management</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1008</span>
+                      <span class="course-name">Business Analytics</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1009</span>
+                      <span class="course-name">Management Information System</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1010</span>
+                      <span class="course-name">Strategic Management</span>
+                    </div>
+                    <span class="course-credits">3 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBPC1011</span>
+                      <span class="course-name">Introduction to AI</span>
+                    </div>
+                    <span class="course-credits">2 Credits</span>
+                  </li>
+                  <li class="course-item">
+                    <div class="course-details">
+                      <span class="course-code">MBEV1202</span>
+                      <span class="course-name">Health &amp; Wellness (Lab)</span>
+                    </div>
+                    <span class="course-credits">1 Credit</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MBA PDF View -->
+        <div class="full-width-section bg-gold">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Syllabus Preview</span>
+              <h2 class="section-title">MBA 1st Year <span>Official Document</span></h2>
+              <p class="section-desc">Interactive reader showing detailed credit matrix guidelines and rules.</p>
+            </div>
+            
+            <!-- Embed PDF -->
+            <div class="pdf-viewer-container scroll-reveal">
+              <iframe src="MB01(1st year).pdf" width="100%" height="100%" style="border:none;"></iframe>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- MBA 2ND YEAR CURRICULUM TAB -->
       <div id="mba-2" class="tab-content">
-        <div class="content-card">
-          <div class="card-title">
-            <h3>MBA - Second Year (Specializations)</h3>
-            <span>36 Credits (Third Sem)</span>
-          </div>
-          <p style="font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.7;">
-            The Second Year (Semester III) is primarily dedicated to elective specializations. Students must choose any **two** specializations from the specified groups. In addition, students complete the Summer Internship Project sessional practical.
-          </p>
-
-          <div class="pdf-actions">
-            <a href="MB01-(2nd-yr-3rd-sem).pdf" download class="btn-pdf">
-              <span>📥 Download MBA 2nd Year PDF</span>
-            </a>
-            <a href="MB01-(2nd-yr-3rd-sem).pdf" target="_blank" class="btn-pdf-outline">
-              <span>👁️ View PDF In New Tab</span>
-            </a>
-          </div>
-
-          <div class="semester-box" style="margin-bottom: 30px;">
-            <div class="sem-header">
-              <h4>MBA Semester III Sessional / Practical</h4>
-              <span class="sem-credits">6 Credits</span>
+        <!-- Intro / Syllabus Download -->
+        <div class="full-width-section shape-slant bg-warm">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Specialized Electives</span>
+              <h2 class="section-title">MBA - Second Year <span>(Specializations)</span></h2>
+              <p class="section-desc" style="max-width: 800px; margin: 14px auto 0;">
+                The Second Year (Semester III) is primarily dedicated to elective specializations. Students must choose any **two** specializations from the specified groups. In addition, students complete the Summer Internship Project sessional practical.
+              </p>
             </div>
-            <ul class="course-list">
-              <li class="course-item">
-                <div class="course-details">
-                  <span class="course-code">MBPS3201</span>
-                  <span class="course-name">Summer Internship Project (8 Weeks in Industry)</span>
-                </div>
-                <span class="course-credits">6 Credits</span>
-              </li>
-            </ul>
-          </div>
-
-          <h4 style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 20px;">Specialization Electives (Theory - 3 Credits each)</h4>
-          <div class="spec-grid">
-            <div class="spec-box">
-              <h4>Marketing Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3001: Digital Marketing</li>
-                <li>MBPC3002: Sales &amp; Distribution Management</li>
-                <li>MBPC3003: Retail Management</li>
-                <li>MBPC3004: Services Marketing</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>Finance Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3005: Security Analysis &amp; Portfolio Management</li>
-                <li>MBPC3006: Derivatives and Risk Management</li>
-                <li>MBPC3007: Indian Financial System and Services (IFSS)</li>
-                <li>MBPC3008: Project Appraisal and Financing</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>Human Resources Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3009: Manpower Planning and Development</li>
-                <li>MBPC3010: Performance Management System</li>
-                <li>MBPC3011: HR Analytics and HRIS</li>
-                <li>MBPC3012: Industrial Relations and Labour Legislations</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>Operations Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3013: Supply Chain Management &amp; Logistics</li>
-                <li>MBPC3014: Project Management</li>
-                <li>MBPC3015: Operations Strategy</li>
-                <li>MBPC3016: Total Quality Management</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>System Management Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3017: Data Mining for Business Decisions</li>
-                <li>MBPC3018: Managing Digital Innovation and Transformation</li>
-                <li>MBPC3019: E-Commerce and Digital Markets</li>
-                <li>MBPC3020: Managing Digital Platforms</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>Logistics &amp; Supply Chain Management</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3037: Logistics Management</li>
-                <li>MBPC3038: International Logistics</li>
-                <li>MBPC3039: Retail Supply Chain Management</li>
-                <li>MBPC3040: Procurement, Storage and Warehouse Management</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>International Business Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3029: International Business</li>
-                <li>MBPC3030: International Finance</li>
-                <li>MBPC3031: International HRM</li>
-                <li>MBPC3032: International Marketing</li>
-              </ul>
-            </div>
-            <div class="spec-box">
-              <h4>Retail Management Specialization</h4>
-              <ul class="elective-sub-list">
-                <li>MBPC3033: Retail Marketing Management</li>
-                <li>MBPC3034: Retail Integrated Communications</li>
-                <li>MBPC3035: Visual Merchandising</li>
-                <li>MBPC3036: Inventory &amp; Logistic Management</li>
-              </ul>
+            <div class="pdf-actions scroll-reveal" style="justify-content: center;">
+              <a href="MB01-(2nd-yr-3rd-sem).pdf" download class="btn-pdf">
+                <span>📥 Download MBA 2nd Year PDF</span>
+              </a>
+              <a href="MB01-(2nd-yr-3rd-sem).pdf" target="_blank" class="btn-pdf-outline">
+                <span>👁️ View PDF In New Tab</span>
+              </a>
             </div>
           </div>
+        </div>
 
-          <!-- Embed PDF -->
-          <div class="pdf-viewer-container">
-            <iframe src="MB01-(2nd-yr-3rd-sem).pdf" width="100%" height="100%" style="border:none;"></iframe>
+        <!-- Practical & Specialization Electives -->
+        <div class="full-width-section shape-chevron bg-blue">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Core Sessional</span>
+              <h2 class="section-title">Summer Internship <span>&amp; Elective Streams</span></h2>
+              <p class="section-desc">Sessional modules and advanced management focus areas chosen for business specializations.</p>
+            </div>
+
+            <div class="semester-box scroll-reveal stagger-1" style="max-width: 600px; margin: 0 auto 48px;">
+              <div class="sem-header">
+                <h4>MBA Semester III Sessional / Practical</h4>
+                <span class="sem-credits">6 Credits</span>
+              </div>
+              <ul class="course-list">
+                <li class="course-item">
+                  <div class="course-details">
+                    <span class="course-code">MBPS3201</span>
+                    <span class="course-name">Summer Internship Project (8 Weeks in Industry)</span>
+                  </div>
+                  <span class="course-credits">6 Credits</span>
+                </li>
+              </ul>
+            </div>
+
+            <h4 class="scroll-reveal stagger-2" style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 24px; text-align: center; font-size: 20px;">Specialization Electives (Theory - 3 Credits each)</h4>
+            
+            <div class="spec-grid scroll-reveal stagger-3">
+              <div class="spec-box">
+                <h4>Marketing Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3001: Digital Marketing</li>
+                  <li>MBPC3002: Sales &amp; Distribution Management</li>
+                  <li>MBPC3003: Retail Management</li>
+                  <li>MBPC3004: Services Marketing</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>Finance Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3005: Security Analysis &amp; Portfolio Management</li>
+                  <li>MBPC3006: Derivatives and Risk Management</li>
+                  <li>MBPC3007: Indian Financial System and Services (IFSS)</li>
+                  <li>MBPC3008: Project Appraisal and Financing</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>Human Resources Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3009: Manpower Planning and Development</li>
+                  <li>MBPC3010: Performance Management System</li>
+                  <li>MBPC3011: HR Analytics and HRIS</li>
+                  <li>MBPC3012: Industrial Relations and Labour Legislations</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>Operations Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3013: Supply Chain Management &amp; Logistics</li>
+                  <li>MBPC3014: Project Management</li>
+                  <li>MBPC3015: Operations Strategy</li>
+                  <li>MBPC3016: Total Quality Management</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>System Management Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3017: Data Mining for Business Decisions</li>
+                  <li>MBPC3018: Managing Digital Innovation and Transformation</li>
+                  <li>MBPC3019: E-Commerce and Digital Markets</li>
+                  <li>MBPC3020: Managing Digital Platforms</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>Logistics &amp; Supply Chain Management</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3037: Logistics Management</li>
+                  <li>MBPC3038: International Logistics</li>
+                  <li>MBPC3039: Retail Supply Chain Management</li>
+                  <li>MBPC3040: Procurement, Storage and Warehouse Management</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>International Business Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3029: International Business</li>
+                  <li>MBPC3030: International Finance</li>
+                  <li>MBPC3031: International HRM</li>
+                  <li>MBPC3032: International Marketing</li>
+                </ul>
+              </div>
+              <div class="spec-box">
+                <h4>Retail Management Specialization</h4>
+                <ul class="elective-sub-list">
+                  <li>MBPC3033: Retail Marketing Management</li>
+                  <li>MBPC3034: Retail Integrated Communications</li>
+                  <li>MBPC3035: Visual Merchandising</li>
+                  <li>MBPC3036: Inventory &amp; Logistic Management</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MBA PDF View -->
+        <div class="full-width-section bg-gold">
+          <div class="section-inner">
+            <div class="section-header scroll-reveal">
+              <span class="section-subtitle">Syllabus Preview</span>
+              <h2 class="section-title">MBA 2nd Year <span>Official Document</span></h2>
+              <p class="section-desc">Interactive reader showing elective descriptions and project templates.</p>
+            </div>
+            
+            <!-- Embed PDF -->
+            <div class="pdf-viewer-container scroll-reveal">
+              <iframe src="MB01-(2nd-yr-3rd-sem).pdf" width="100%" height="100%" style="border:none;"></iframe>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
