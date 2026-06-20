@@ -416,22 +416,16 @@
     .vm-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 64px;
     }
     .vm-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 40px 32px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
       transition: var(--transition);
-      border-top: 4px solid var(--navy);
     }
-    .vm-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-    }
-    .vm-card:last-child { border-top-color: var(--gold); }
     .vm-card .icon { font-size: 36px; margin-bottom: 16px; display: inline-block; }
     .vm-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 16px; }
     .vm-card p { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
@@ -456,31 +450,27 @@
     .po-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 48px;
     }
     .po-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 32px 24px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
       transition: var(--transition);
-    }
-    .po-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--gold-soft);
     }
     .po-card strong {
       display: inline-block;
-      background: rgba(200, 150, 42, 0.15);
-      color: var(--gold);
+      background: rgba(200, 150, 42, 0.1) !important;
+      color: var(--gold) !important;
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 4px;
       text-transform: uppercase;
       margin-bottom: 16px;
+      border: 1px solid rgba(200, 150, 42, 0.2);
     }
     .po-card h4 {
       font-family: 'Playfair Display', serif;
@@ -498,15 +488,15 @@
     .detail-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 64px;
       margin-bottom: 40px;
     }
     .detail-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
     }
     .detail-card h3 {
       font-family: 'Playfair Display', serif;
@@ -518,23 +508,40 @@
       display: inline-block;
     }
     .detail-card p {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: 14px;
     }
 
     /* Admissions card */
     .admissions-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-left: 3px solid var(--gold) !important;
+      border-radius: 0 !important;
+      padding: 8px 0 8px 24px !important;
+      box-shadow: none !important;
     }
     .admissions-box h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 16px; }
     .admissions-box ol { padding-left: 20px; }
     .admissions-box ol li { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
+
+    /* Desktop column vertical dividers */
+    @media (min-width: 1025px) {
+      .vm-card:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
+      .detail-card:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
+      .po-card:not(:last-child) {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 32px !important;
+      }
+    }
 
     /* CTA Section */
     .cta-banner {
@@ -740,7 +747,7 @@
             </div>
           </div>
         </div>
-        <div class="admission-snapshot-box" id="curriculum">
+        <div class="admission-snapshot-box scroll-reveal" id="curriculum">
           <h3>Program Snapshot</h3>
           <p>Undergraduate management curriculum focusing on core concepts and applied training.</p>
           <div class="snapshot-item">
@@ -757,7 +764,7 @@
     </section>
 
     <!-- VISION & MISSION SECTION -->
-    <section id="vision-mission" class="full-width-section shape-chevron bg-warm">
+    <section id="vision-mission" class="full-width-section shape-chevron bg-warm dot-matrix-section">
       <div class="section-inner">
         <div class="vm-grid">
           <!-- Vision -->
