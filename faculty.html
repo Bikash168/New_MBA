@@ -233,7 +233,84 @@
     .faculty-name { font-weight:700; margin-top:12px }
     .faculty-role { color:var(--muted); font-size:13px; margin-top:6px }
     .faculty-bio { color:var(--muted); margin-top:10px; font-size:14px; line-height:1.6 }
-    @media (max-width:780px) { .faculty-grid { grid-template-columns:1fr } .header-inner{padding:0 5%} }
+    
+    /* Tab controls & directory tables */
+    .tab-btn {
+      background: transparent;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      padding: 12px 32px;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--navy);
+      color: var(--gold-soft);
+      border-color: var(--navy);
+    }
+    .dept-content {
+      display: none;
+    }
+    .dept-content.active {
+      display: block;
+      animation: fadeIn .4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      margin-top: 24px;
+    }
+    .faculty-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+    }
+    .faculty-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px;
+      font-weight: 600;
+      border-bottom: 2px solid var(--gold);
+    }
+    .faculty-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+    }
+    .faculty-table tr:last-child td {
+      border-bottom: none;
+    }
+    .faculty-table tr:nth-child(even) {
+      background: #faf8f5;
+    }
+    .faculty-table tr:hover {
+      background: #f4f0e6;
+    }
+    .faculty-table code {
+      background: #f0ebe4;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--navy);
+    }
+
+    @media (max-width:780px) { 
+      .faculty-grid { grid-template-columns:1fr } 
+      .header-inner{padding:0 5%} 
+      .tab-btn { padding: 10px 20px; font-size: 13.5px; }
+    }
   </style>
 </head>
 <body>
@@ -332,43 +409,373 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <h2>Core Faculty</h2>
-        <p style="color:var(--muted)">Our core faculty bring academic rigor and industry experience across strategy, finance, marketing, and operations.</p>
-      </div>
-      <div class="faculty-grid">
-        <div class="faculty-card" style="border: 2px solid var(--gold);">
-          <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">PM</div>
-          <div class="faculty-name">Prof. P. K. Mohanty</div>
-          <div class="faculty-role">Dean — School of Business (SOB)</div>
-          <div class="faculty-bio">Former Head of the Department of MBA, Utkal University and Director (CD) BPUT, Odisha. Heading a stellar management faculty of 16, including 10 PhD holders.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo">AS</div>
-          <div class="faculty-name">Dr. A. N. Sharma</div>
-          <div class="faculty-role">Professor — Strategy &amp; Innovation</div>
-          <div class="faculty-bio">Dr. Sharma's research focuses on strategic renewal and digital transformation. He has published in top-tier journals and consults for several Fortune 500 firms.</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-photo">LR</div>
-          <div class="faculty-name">Prof. L. K. Rao</div>
-          <div class="faculty-role">Associate Professor — Finance</div>
-          <div class="faculty-bio">Prof. Rao specialises in corporate finance, valuations, and capital markets. He teaches advanced corporate finance and leads the finance lab.</div>
-        </div>
-      </div>
-    </section>
+    <!-- Tab Selector -->
+    <div style="display:flex; justify-content:center; gap:16px; margin: 32px 0 48px 0; flex-wrap: wrap;">
+      <button class="tab-btn active" onclick="switchDept('mba')">MBA Department</button>
+      <button class="tab-btn" onclick="switchDept('bba')">BBA Department</button>
+    </div>
 
-    <section class="section">
-      <div class="section-head">
-        <h2>Visiting Faculty & Industry Mentors</h2>
-        <p style="color:var(--muted)">A rotating roster of visiting scholars and leaders who enrich our programs with current industry best practices and case studies.</p>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px">
-        <div class="faculty-card"><div style="font-weight:700">Dr. R. K. Nair</div><div style="color:var(--muted);margin-top:6px">Visiting — Operations</div><div style="margin-top:8px;color:var(--muted)">Expert in supply chain analytics and lean operations with consultancy experience across manufacturing.</div></div>
-        <div class="faculty-card"><div style="font-weight:700">Ms. S. Gupta</div><div style="color:var(--muted);margin-top:6px">Mentor — HR & Leadership</div><div style="margin-top:8px;color:var(--muted)">Leadership coach focusing on talent strategy, organisational design, and executive coaching.</div></div>
-      </div>
-    </section>
+    <!-- MBA DEPARTMENT -->
+    <div id="mba-dept" class="dept-content active">
+      <section class="section">
+        <div class="section-head">
+          <h2>MBA Department Senior Faculty</h2>
+          <p style="color:var(--muted)">Our senior MBA leadership bringing extensive research, policy guidance, and academic administration experience.</p>
+        </div>
+        <div class="faculty-grid">
+          <div class="faculty-card" style="border: 2px solid var(--gold);">
+            <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">PM</div>
+            <div class="faculty-name">Dr. Pravat Kumar Mohanty</div>
+            <div class="faculty-role">Professor &amp; Dean SOB</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T250626604 | <strong>Joined:</strong> 15/12/2022<br>
+              Former Head of the Dept of MBA, Utkal University &amp; Director (CD) BPUT. Qualification: Ph.D. Guides academic standards and research.
+            </div>
+          </div>
+          <div class="faculty-card" style="border: 2px solid var(--gold);">
+            <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">MM</div>
+            <div class="faculty-name">Dr. Munmun Mohanty</div>
+            <div class="faculty-role">Professor &amp; HOD</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T250626605 | <strong>Joined:</strong> 31/08/2024<br>
+              Leading the MBA department. Qualification: Ph.D (MBA). Directs specialization tracks, academic delivery, and student mentoring.
+            </div>
+          </div>
+          <div class="faculty-card">
+            <div class="faculty-photo">NB</div>
+            <div class="faculty-name">Dr. Nargis Begum</div>
+            <div class="faculty-role">Associate Professor</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T106326601 | <strong>Joined:</strong> 08/09/2009<br>
+              Academic mentor. Qualification: Ph.D. Focuses on marketing and management fundamentals.
+            </div>
+          </div>
+          <div class="faculty-card">
+            <div class="faculty-photo">SD</div>
+            <div class="faculty-name">Dr. Sabyasachi Dey</div>
+            <div class="faculty-role">Associate Professor</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T230626607 | <strong>Joined:</strong> 06/06/2023<br>
+              Specialises in supply chain analytics and quantitative methods. Qualification: Ph.D.
+            </div>
+          </div>
+          <div class="faculty-card">
+            <div class="faculty-photo">DS</div>
+            <div class="faculty-name">Dr. Dipti Mayee Sahoo</div>
+            <div class="faculty-role">Associate Professor</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T126726601 | <strong>Joined:</strong> 05/01/2012<br>
+              Guides corporate valuations, banking analytics, and finance courses. Qualification: Ph.D.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MBA Full Faculty Directory Table -->
+      <section class="section" style="margin-top: 56px;">
+        <div class="section-head">
+          <h2>MBA Faculty Directory</h2>
+          <p style="color:var(--muted)">Complete register of the MBA department academic members.</p>
+        </div>
+        <div class="table-responsive">
+          <table class="faculty-table">
+            <thead>
+              <tr>
+                <th>Sl. No.</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Date of Joining</th>
+                <th>Qualification</th>
+                <th>BPUT ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>Dr. Pravat Kumar Mohanty</strong></td>
+                <td>Professor</td>
+                <td>15/12/2022</td>
+                <td>Ph.D</td>
+                <td><code>T250626604</code></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Dr. Munmun Mohanty</strong></td>
+                <td>Professor &amp; HOD</td>
+                <td>31/08/2024</td>
+                <td>Ph.D</td>
+                <td><code>T250626605</code></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Dr. Nargis Begum</strong></td>
+                <td>Associate Professor</td>
+                <td>08/09/2009</td>
+                <td>Ph.D</td>
+                <td><code>T106326601</code></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Dr. Sabyasachi Dey</strong></td>
+                <td>Associate Professor</td>
+                <td>06/06/2023</td>
+                <td>Ph.D</td>
+                <td><code>T230626607</code></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>Dr. Dipti Mayee Sahoo</strong></td>
+                <td>Associate Professor</td>
+                <td>05/01/2012</td>
+                <td>Ph.D</td>
+                <td><code>T126726601</code></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><strong>Mrs. Evani Pattnaik</strong></td>
+                <td>Assistant Professor</td>
+                <td>08/02/2009</td>
+                <td>MBA</td>
+                <td><code>T096226601</code></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><strong>Mrs. Chandramalli Mishra</strong></td>
+                <td>Assistant Professor</td>
+                <td>10/08/2022</td>
+                <td>MBA</td>
+                <td><code>T106126601</code></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><strong>Mr. Soumyakanta Samantasinghar</strong></td>
+                <td>Assistant Professor</td>
+                <td>11/04/2012</td>
+                <td>M.Phil</td>
+                <td><code>T130526601</code></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><strong>Mrs. Bandita Swain</strong></td>
+                <td>Assistant Professor</td>
+                <td>09/01/2020</td>
+                <td>MBA</td>
+                <td><code>T240626602</code></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><strong>Mr. Ashok Kumar Sarangi</strong></td>
+                <td>Assistant Professor</td>
+                <td>10/11/2020</td>
+                <td>MBA</td>
+                <td><code>T240626603</code></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><strong>Mr. Srichandan Swain</strong></td>
+                <td>Assistant Professor</td>
+                <td>05/12/2022</td>
+                <td>MBA</td>
+                <td><code>T230626605</code></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><strong>Mr. Tushar Ranjan Panda</strong></td>
+                <td>Assistant Professor</td>
+                <td>05/02/2023</td>
+                <td>MBA</td>
+                <td><code>T230626601</code></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><strong>Mr. Bikash Jethy</strong></td>
+                <td>Assistant Professor</td>
+                <td>29/08/2024</td>
+                <td>MBA</td>
+                <td><code>T240626609</code></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td><strong>Mr. Sarbeswar Panda</strong></td>
+                <td>Assistant Professor</td>
+                <td>26/09/2024</td>
+                <td>MBA</td>
+                <td><code>T250626601</code></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td><strong>Mr. Rudra Pratap Mohanty</strong></td>
+                <td>Assistant Professor</td>
+                <td>03/10/2024</td>
+                <td>PGDM</td>
+                <td><code>T250626602</code></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td><strong>Ms. Nang Trishangi Chanmai</strong></td>
+                <td>Assistant Professor</td>
+                <td>30/09/2024</td>
+                <td>MBA</td>
+                <td><code>T250626603</code></td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td><strong>Mr. Susil Kumar Mohanty</strong></td>
+                <td>Assistant Professor</td>
+                <td>31/12/2025</td>
+                <td>MBA</td>
+                <td><code>T250626606</code></td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td><strong>Mr. Umesh Kumar Parimanik</strong></td>
+                <td>Assistant Professor</td>
+                <td>18/04/2026</td>
+                <td>MBA</td>
+                <td><code>T250626607</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- BBA DEPARTMENT -->
+    <div id="bba-dept" class="dept-content">
+      <section class="section">
+        <div class="section-head">
+          <h2>BBA Department Senior Faculty</h2>
+          <p style="color:var(--muted)">Our senior BBA leadership directing core business administration and allied theory programs.</p>
+        </div>
+        <div class="faculty-grid">
+          <div class="faculty-card" style="border: 2px solid var(--gold);">
+            <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">AR</div>
+            <div class="faculty-name">Dr. Ashok Kumar Rath</div>
+            <div class="faculty-role">Professor</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T166224704 | <strong>Joined:</strong> 01/09/2023<br>
+              Drives foundational business principles and leadership programs in BBA studies. Qualification: Ph.D.
+            </div>
+          </div>
+          <div class="faculty-card">
+            <div class="faculty-photo">SS</div>
+            <div class="faculty-name">Dr. Sonam Subhadarshini</div>
+            <div class="faculty-role">Associate Professor</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T086328901 | <strong>Joined:</strong> 07/08/2008<br>
+              Teaches organizational design, corporate behavior, and team competencies. Qualification: Ph.D.
+            </div>
+          </div>
+          <div class="faculty-card">
+            <div class="faculty-photo">JD</div>
+            <div class="faculty-name">Mr. Jaydev Das</div>
+            <div class="faculty-role">Associate Professor</div>
+            <div class="faculty-bio">
+              <strong>BPUT ID:</strong> T250628901 | <strong>Joined:</strong> 01/10/2024<br>
+              Guides corporate law, commercial mathematics, and core valuations courses. Qualification: MBA.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BBA Full Faculty Directory Table -->
+      <section class="section" style="margin-top: 56px;">
+        <div class="section-head">
+          <h2>BBA Faculty Directory</h2>
+          <p style="color:var(--muted)">Complete register of the BBA department academic members.</p>
+        </div>
+        <div class="table-responsive">
+          <table class="faculty-table">
+            <thead>
+              <tr>
+                <th>Sl. No.</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Date of Joining</th>
+                <th>Qualification</th>
+                <th>BPUT ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>Dr. Ashok Kumar Rath</strong></td>
+                <td>Professor</td>
+                <td>01/09/2023</td>
+                <td>Ph.D</td>
+                <td><code>T166224704</code></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Dr. Sonam Subhadarshini</strong></td>
+                <td>Associate Professor</td>
+                <td>07/08/2008</td>
+                <td>Ph.D</td>
+                <td><code>T086328901</code></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Mr. Jaydev Das</strong></td>
+                <td>Associate Professor</td>
+                <td>01/10/2024</td>
+                <td>MBA</td>
+                <td><code>T250628901</code></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Mr. Asish Kumar Khadanga</strong></td>
+                <td>Assistant Professor</td>
+                <td>27/11/2007</td>
+                <td>MBA</td>
+                <td><code>T250628911</code></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>Mr. Bimal Prasad Mohapatra</strong></td>
+                <td>Assistant Professor</td>
+                <td>01/07/2016</td>
+                <td>MBA</td>
+                <td><code>T175289001</code></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><strong>Dr. Ankita Nayak</strong></td>
+                <td>Assistant Professor</td>
+                <td>15/11/2023</td>
+                <td>Ph.D</td>
+                <td><code>T240628902</code></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><strong>Mr. Bharat Bhusan Pati</strong></td>
+                <td>Assistant Professor</td>
+                <td>25/09/2024</td>
+                <td>MBA</td>
+                <td><code>T230128908</code></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><strong>Mr. Ramesh Chandra Sahoo</strong></td>
+                <td>Assistant Professor</td>
+                <td>19/02/2020</td>
+                <td>MBA</td>
+                <td><code>T250628903</code></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><strong>Mr. Manasa Beura</strong></td>
+                <td>Assistant Professor</td>
+                <td>08/10/2007</td>
+                <td>MBA</td>
+                <td><code>T210528922</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Visiting Faculty / Mentors section removed and integrated directly into directories -->
 
     <section class="section">
       <div class="section-head">
@@ -414,6 +821,14 @@
         });
       }
     });
+
+    function switchDept(deptId) {
+      document.querySelectorAll('.dept-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      document.getElementById(deptId + '-dept').classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
   </script>
 </body>
 </html>
