@@ -470,12 +470,12 @@
     }
 
     /* Contact & Admission Desk Section */
-    .contact-card {
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 32px 0 !important;
-      box-shadow: none !important;
+    .admission-contact-row {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 32px 0;
+      box-shadow: none;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 64px;
@@ -616,7 +616,7 @@
       .mba-grid { grid-template-columns: 1fr; }
       .intake-row { grid-template-columns: 1fr; }
       .details-row { grid-template-columns: 1fr; }
-      .contact-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+      .admission-contact-row { grid-template-columns: 1fr; gap: 32px; padding: 16px 0; }
       .flyer-row { grid-template-columns: 1fr; gap: 32px; }
     }
     @media (max-width: 768px) {
@@ -927,7 +927,7 @@
 
     <!-- CONTACT DESK & OFFICE INFO -->
     <section class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div class="contact-card">
+      <div class="admission-contact-row scroll-reveal">
         <div class="contact-info-block">
           <h3>Admission Helpdesk</h3>
           <p>
