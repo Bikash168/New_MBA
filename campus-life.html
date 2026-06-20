@@ -272,6 +272,18 @@
       display: inline-block;
       margin-bottom: 16px;
     }
+    .campus-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 16px 0 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+    .campus-card:hover .campus-img {
+      transform: scale(1.02);
+    }
     .campus-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
@@ -462,6 +474,7 @@
         <div class="campus-card">
           <span class="icon">🏢</span>
           <h3>Academic Infrastructure</h3>
+          <img class="campus-img" src="Public/campus_1.jpg" alt="Academic Infrastructure">
           <p>
             Trident features centrally air-conditioned academic blocks and tiered lecture theatres designed for modern pedagogy. Interactive displays, high-speed intranet terminals, and visual aids keep classrooms fully connected for outcome-based studies.
           </p>
@@ -477,6 +490,7 @@
         <div class="campus-card">
           <span class="icon">📖</span>
           <h3>TSBA Knowledge Hub (Library)</h3>
+          <img class="campus-img" src="Public/campus_3.jpg" alt="TSBA Knowledge Hub Library">
           <p>
             The library acts as a core learning repository, housing thousands of physical textbooks, business cases, and references. Students have digital portal subscriptions to leading international management journals, databases, and e-books.
           </p>
@@ -492,6 +506,7 @@
         <div class="campus-card">
           <span class="icon">🤝</span>
           <h3>Clubs &amp; Recreation</h3>
+          <img class="campus-img" src="Public/campus_4.jpg" alt="Clubs &amp; Recreation">
           <p>
             A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the campus.
           </p>
@@ -507,6 +522,7 @@
         <div class="campus-card">
           <span class="icon">🎉</span>
           <h3>Annual Conclaves &amp; Fests</h3>
+          <img class="campus-img" src="Public/campus_2.jpg" alt="Annual Conclaves &amp; Fests">
           <p>
             Students drive major events annually, including National Marketing, HR, and Finance Conclaves. The fests provide platform for creative expressions, budget presentations, inter-institutional games, and cultural performances.
           </p>
