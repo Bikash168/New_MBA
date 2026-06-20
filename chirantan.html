@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirantan — Biannual Newsletter — Trident School of Business Administration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A;
+      --navy-light: #152E4D;
+      --gold: #C8962A;
+      --gold-soft: #E8B84B;
+      --gold-lt: #E8B84B;
+      --white: #FFFFFF;
+      --offwhite: #F5F3EE;
+      --text: #1A1A2E;
+      --muted: #5A6378;
+      --line: #E5DED0;
+      --shadow: 0 18px 45px rgba(11, 31, 58, 0.08);
+      --shadow-hover: 0 24px 60px rgba(11, 31, 58, 0.15);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --nav-h: 72px;
+    }
+    
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--offwhite);
+      overflow-x: hidden;
+    }
+    
+    /* Topbar matching index.html */
+    .topbar {
+      background: var(--navy);
+      color: #aab4c8;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 48px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .topbar-left { display: flex; gap: 16px; }
+    .topbar-right a { color: var(--gold-soft); text-decoration: none; margin-left: 14px; font-weight: 600; }
+    .topbar-right a:hover { color: var(--white); }
+
+    /* Sticky Navbar matching index.html */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      box-shadow: 0 2px 18px rgba(11, 31, 58, .12);
+      border-bottom: 3px solid var(--gold);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .logo-emblem {
+      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
+      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-lt);
+    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
+
+    /* Desktop menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2px;
+    }
+    .nav-menu>li {
+      position: relative;
+    }
+    .nav-menu>li>a {
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      min-height: 44px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: .02em;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+    .nav-menu>li>a:hover,
+    .nav-menu>li:hover>a {
+      background: var(--navy);
+      color: var(--gold-lt);
+    }
+    .has-drop>a::after {
+      content: ' ▾';
+      font-size: 9px;
+      opacity: .55;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--white);
+      min-width: 205px;
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(11, 31, 58, .15);
+      border-radius: 0 0 8px 8px;
+      list-style: none;
+      z-index: 200;
+      animation: fadeDown .18s ease;
+    }
+    .dropdown::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: transparent;
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-6px) }
+      to { opacity: 1; transform: none }
+    }
+    .nav-menu>li:hover .dropdown {
+      display: block;
+    }
+    .dropdown li a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0ece4;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+    .dropdown li a:hover {
+      background: var(--offwhite);
+      color: var(--navy);
+      padding-left: 22px;
+    }
+    .dropdown li a.active {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .nav-button {
+      background: var(--gold) !important; color: var(--navy) !important;
+      font-weight: 700 !important; padding: 9px 18px !important;
+      border-radius: 4px !important; letter-spacing: .04em;
+      font-size: 12.5px; text-decoration: none; display: flex; align-items: center;
+      transition: var(--transition);
+    }
+    .nav-button:hover { background: var(--navy) !important; color: var(--gold-soft) !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0;
+      background: var(--navy); z-index: 1050; overflow-y: auto;
+      padding: 80px 24px 40px; transform: translateX(100%);
+      opacity: 0; visibility: hidden;
+      transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
+    }
+    .mobile-nav.open { transform: translateX(0); opacity: 1; visibility: visible; }
+    .mobile-nav-list { list-style: none; }
+    .mobile-nav-list>li { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-nav-list>li>.mn-row { display: flex; justify-content: space-between; align-items: center; }
+    .mobile-nav-list>li>.mn-row>a { display: flex; align-items: center; width: 100%; padding: 16px 4px; font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; touch-action: manipulation; }
+    .mobile-toggle { background: none; border: none; color: var(--gold-lt); font-size: 22px; line-height: 1; cursor: pointer; padding: 10px 8px; }
+    .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
+    .mobile-sub.open { display: block; }
+    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255,255,255,.75); text-decoration: none; touch-action: manipulation; }
+    .mobile-sub li a:hover { color: var(--gold-lt); }
+    .mobile-sub li a.active { color: var(--gold-lt); font-weight: 700; }
+    .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 96px 8% 80px;
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200, 150, 42, 0.15);
+      border: 1px solid rgba(200, 150, 42, 0.3);
+      color: var(--gold-soft);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 4.5vw, 54px);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+    .hero-title span { color: var(--gold-soft); }
+    .hero-desc {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 800px;
+      margin: 20px auto 0;
+    }
+
+    /* Program details cards */
+    .section-container {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 4%;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 56px;
+    }
+    .section-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-title span { color: var(--gold); }
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Layout grid */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      margin-bottom: 64px;
+      align-items: start;
+    }
+
+    .editorial-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+    }
+    .editorial-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .editorial-card p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .highlights-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .highlights-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .highlight-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+    }
+    .highlight-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .highlight-num {
+      width: 32px;
+      height: 32px;
+      background: rgba(200, 150, 42, 0.1);
+      border-radius: 50%;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .highlight-text h4 {
+      font-size: 14.5px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .highlight-text p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* PDF Viewer section */
+    .pdf-viewer-section {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .pdf-viewer-container {
+      width: 100%;
+      height: 720px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      margin: 28px 0;
+    }
+    .btn-download {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .05em;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(200, 150, 42, 0.2);
+      transition: var(--transition);
+    }
+    .btn-download:hover {
+      background: var(--navy);
+      color: var(--gold-soft);
+      box-shadow: 0 4px 15px rgba(11, 31, 58, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Footer matching index.html */
+    .footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 32px 5%;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 96px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .layout-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .topbar { padding: 8px 24px; }
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+      .hero-section { padding: 64px 24px 72px; }
+      .section-container { margin: 64px auto; }
+      .pdf-viewer-section { padding: 32px 20px; }
+      .pdf-viewer-container { height: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📞 +91-674-6649600</span> &nbsp;|&nbsp; <span>✉️ info@trident.ac.in</span>
+    </div>
+    <div class="topbar-right">
+      <span>Bhubaneswar, Odisha</span>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">TS</div>
+      <div class="logo-text">
+        <span class="school-name">Trident School of Business</span>
+        <span class="tagline">Administration · Est. 2005</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="about.html">About Us</a></li>
+      <li class="has-drop"><a href="#">Programs</a>
+        <ul class="dropdown">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li><a href="admission.html">Admission</a></li>
+      <li class="has-drop"><a href="#">Faculty &amp; Research</a>
+        <ul class="dropdown">
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="chirantan.html" class="active">Chirantan – Biannual Newsletter</a></li>
+          <li><a href="#">Journal of Business Governance</a></li>
+          <li><a href="#">MOU</a></li>
+          <li><a href="#">Management Development Programme (MDP)</a></li>
+          <li><a href="#">Life Membership</a></li>
+          <li><a href="#">Nodal Center of Research</a></li>
+          <li><a href="#">Teaching Innovation</a></li>
+        </ul>
+      </li>
+      <li><a href="placement.html">Placement</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
+    </ul>
+
+    <a href="index.html#admissions" class="nav-button">Apply Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li><a href="about.html">About Us</a></li>
+      <li>
+        <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
+        <ul class="mobile-sub" id="sub2">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li><a href="admission.html">Admission</a></li>
+      <li>
+        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
+        <ul class="mobile-sub" id="sub4">
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="chirantan.html" class="active">Chirantan – Biannual Newsletter</a></li>
+          <li><a href="#">Journal of Business Governance</a></li>
+          <li><a href="#">MOU</a></li>
+          <li><a href="#">Management Development Programme (MDP)</a></li>
+          <li><a href="#">Life Membership</a></li>
+          <li><a href="#">Nodal Center of Research</a></li>
+          <li><a href="#">Teaching Innovation</a></li>
+        </ul>
+      </li>
+      <li><a href="placement.html">Placement</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
+    </ul>
+    <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <span class="eyebrow">TSBA Publications</span>
+      <h1 class="hero-title">Chirantan — <span>Biannual Newsletter</span></h1>
+      <p class="hero-desc">
+        Connecting students, faculty, and industry through biannual reflections of academic breakthroughs, event chronicles, and business research.
+      </p>
+    </section>
+
+    <!-- CONTENT LAYOUT -->
+    <section class="section-container">
+      <div class="layout-grid">
+        <!-- Left: About & Editorials -->
+        <div>
+          <div class="editorial-card">
+            <h3>About Chirantan</h3>
+            <p>
+              <strong>Chirantan</strong> is the flagship biannual newsletter of the Trident School of Business Administration. Designed to highlight the ongoing academic accomplishments, student innovations, and campus milestones of our departments, it serves as a central chronicle connecting peer studies with active corporate partners.
+            </p>
+            <p>
+              Each issue is curated by a collaborative editorial desk of student executives and faculty coordinators, headed by SOB Dean <strong>Prof. P. K. Mohanty</strong>. The publication captures the active intellectual culture at TSBA, reflecting our values of research-backed pedagogy and outcome-based professional development.
+            </p>
+          </div>
+
+          <div class="editorial-card">
+            <h3>Editor's Note: Jan - Jun 2025 Issue</h3>
+            <p>
+              In this current issue of Chirantan, we celebrate the theme of <strong>"Strategic Leadership in the Era of AI & Sustainability"</strong>. Over the past six months, TSBA has pushed boundaries across technical alliances, academic specializations, and career achievements.
+            </p>
+            <p>
+              From the successful launch of next-gen specialization tracks to our students securing top-tier positions during the campus recruitment cycles, this issue summarizes the energy that shapes our Bhubaneswar campus day-to-day.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Highlights inside this issue -->
+        <div class="highlights-box">
+          <h3>Inside This Issue</h3>
+          
+          <div class="highlight-item">
+            <div class="highlight-num">1</div>
+            <div class="highlight-text">
+              <h4>Academic Alliance Milestones</h4>
+              <p>Special coverage of our newly formed SAP Academic Alliance and Finance Lab facilities.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-num">2</div>
+            <div class="highlight-text">
+              <h4>Student Research Corner</h4>
+              <p>Highlights of recent papers and articles authored by student-faculty teams on SME digitalization.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-num">3</div>
+            <div class="highlight-text">
+              <h4>Placements & Recruiter Reviews</h4>
+              <p>Details of recruiters visiting TSBA (PwC, Loreal, ICICI, etc.) and average salary highlights.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-num">4</div>
+            <div class="highlight-text">
+              <h4>Campus Conclave Records</h4>
+              <p>Revisiting the HR and Marketing conclaves, fests, and traditional Odissi dance recitals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Embedded PDF Viewer Section -->
+      <div class="pdf-viewer-section">
+        <span class="section-subtitle">Chirantan JAN - JUN 2025</span>
+        <h2 class="section-title">View Current <span>Newsletter Issue</span></h2>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">
+          Scroll through the embedded reader below to explore the full PDF issue or download the document directly to your device.
+        </p>
+
+        <!-- Embedded Viewer -->
+        <div class="pdf-viewer-container">
+          <iframe src="Chirantan Magazine JAN - JUN 2025.pdf#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
+
+        <!-- Action downloads -->
+        <a href="Chirantan Magazine JAN - JUN 2025.pdf" class="btn-download" download>
+          <span>📥 Download Chirantan (PDF)</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Trident School of Business Administration · Bhubaneswar, Odisha
+  </footer>
+
+  <script>
+    /* Mobile nav triggers */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-toggle, .mn-row > a[href="#"]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        const row = el.closest('.mn-row');
+        const btn = row.querySelector('.mobile-toggle');
+        const sub = document.getElementById(btn.dataset.target);
+        const isOpen = sub.classList.toggle('open');
+        btn.textContent = isOpen ? '−' : '+';
+      });
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(a => {
+      if (a.getAttribute('href') !== '#') {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          hamburger.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
