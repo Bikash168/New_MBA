@@ -78,8 +78,6 @@ html {
 .infra-item,
 .sports-card,
 .fest-card,
-.about-img-wrap,
-.about-img,
 .gallery-card {
   border-radius: 120px 120px 24px 24px !important;
   overflow: hidden;
@@ -363,7 +361,8 @@ html {
   border-radius: 0 !important;
 }
 
-.hero-frame {
+.hero-frame,
+.about-img-wrap {
   border-radius: 48px 12px 48px 12px !important; /* Elegant Leaf shape */
   border: 3px solid rgba(255, 255, 255, 0.15) !important;
   box-shadow: var(--shadow-lg) !important;
@@ -371,7 +370,8 @@ html {
   transition: var(--transition-smooth) !important;
 }
 
-.hero-frame img {
+.hero-frame img,
+.about-img {
   border-radius: 44px 8px 44px 8px !important;
   transition: var(--transition-smooth) !important;
 }
