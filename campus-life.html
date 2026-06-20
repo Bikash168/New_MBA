@@ -246,74 +246,120 @@
       padding: 0 4%;
     }
 
-    /* Campus Grid Layout */
-    .campus-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      margin-bottom: 56px;
-    }
-    .campus-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border-top: 5px solid var(--navy);
-    }
-    .campus-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-top-color: var(--gold);
-    }
-    .campus-card .icon {
-      font-size: 36px;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-    .campus-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin: 16px 0 20px 0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: var(--transition);
-    }
-    .campus-card:hover .campus-img {
-      transform: scale(1.02);
-    }
-    .campus-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-    .campus-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-    .features-list {
-      list-style: none;
-      margin-top: 20px;
+    /* Redesigned Campus Showcase Layout (Non-grid, Alternating layout) */
+    .campus-showcase-container {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 96px;
+      margin-bottom: 96px;
     }
-    .features-list li {
-      font-size: 13.5px;
-      color: var(--text);
-      font-weight: 500;
+    
+    .campus-showcase-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 64px;
     }
-    .features-list li::before {
-      content: '✔';
-      color: var(--gold);
+    
+    .campus-showcase-item.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .showcase-media {
+      flex: 1.1;
+      position: relative;
+      border-radius: 24px !important;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 3px solid rgba(11, 31, 58, 0.05);
+      transition: var(--transition);
+    }
+    
+    .showcase-media::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 31, 58, 0.05);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    
+    .showcase-media img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .campus-showcase-item:hover .showcase-media img {
+      transform: scale(1.04);
+    }
+    
+    .showcase-info {
+      flex: 0.9;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+    
+    .showcase-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .showcase-icon {
+      font-size: 36px;
+    }
+    
+    .showcase-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--navy);
+      margin: 0;
       font-weight: 700;
+    }
+    
+    .showcase-info p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+    
+    .showcase-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    
+    .showcase-features li {
+      font-size: 13.5px;
+      color: var(--text);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .showcase-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 16px;
+    }
+    
+    @media (max-width: 992px) {
+      .campus-showcase-item, .campus-showcase-item.reverse {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .showcase-media img {
+        height: 280px;
+      }
     }
 
     /* Callout Box */
@@ -471,69 +517,93 @@
 
     <!-- CAMPUS LIFE GRID -->
     <section class="section-container">
-      <div class="campus-grid">
+      <div class="campus-showcase-container">
         <!-- Infrastructure -->
-        <div class="campus-card">
-          <span class="icon">🏢</span>
-          <h3>Academic Infrastructure</h3>
-          <img class="campus-img" src="Public/campus_1.jpg" alt="Academic Infrastructure">
-          <p>
-            Trident features centrally air-conditioned academic blocks and tiered lecture theatres designed for modern pedagogy. Interactive displays, high-speed intranet terminals, and visual aids keep classrooms fully connected for outcome-based studies.
-          </p>
-          <ul class="features-list">
-            <li>Centrally Air-Conditioned Blocks</li>
-            <li>Spacious Tiered Lecture Theatres</li>
-            <li>Digitized Audio-Visual Teaching Aids</li>
-            <li>Intranet Access &amp; Portal Terminals</li>
-          </ul>
+        <div class="campus-showcase-item">
+          <div class="showcase-media scroll-reveal-scale">
+            <img src="Public/campus_1.jpg" alt="Academic Infrastructure">
+          </div>
+          <div class="showcase-info scroll-reveal stagger-1">
+            <div class="showcase-header">
+              <span class="showcase-icon">🏢</span>
+              <h3>Academic Infrastructure</h3>
+            </div>
+            <p>
+              Trident features centrally air-conditioned academic blocks and tiered lecture theatres designed for modern pedagogy. Interactive displays, high-speed intranet terminals, and visual aids keep classrooms fully connected for outcome-based studies.
+            </p>
+            <ul class="showcase-features">
+              <li>Centrally Air-Conditioned Blocks</li>
+              <li>Spacious Tiered Lecture Theatres</li>
+              <li>Digitized Audio-Visual Teaching Aids</li>
+              <li>Intranet Access &amp; Portal Terminals</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Library -->
-        <div class="campus-card">
-          <span class="icon">📖</span>
-          <h3>TSBA Knowledge Hub (Library)</h3>
-          <img class="campus-img" src="Public/campus_3.jpg" alt="TSBA Knowledge Hub Library">
-          <p>
-            The library acts as a core learning repository, housing thousands of physical textbooks, business cases, and references. Students have digital portal subscriptions to leading international management journals, databases, and e-books.
-          </p>
-          <ul class="features-list">
-            <li>Extensive Management Reference Catalog</li>
-            <li>Subscribed International &amp; National Journals</li>
-            <li>Electronic Databases &amp; E-Books Portals</li>
-            <li>Silent Collaborative Study Zone</li>
-          </ul>
+        <div class="campus-showcase-item reverse">
+          <div class="showcase-media scroll-reveal-scale">
+            <img src="Public/campus_3.jpg" alt="TSBA Knowledge Hub Library">
+          </div>
+          <div class="showcase-info scroll-reveal stagger-1">
+            <div class="showcase-header">
+              <span class="showcase-icon">📖</span>
+              <h3>TSBA Knowledge Hub (Library)</h3>
+            </div>
+            <p>
+              The library acts as a core learning repository, housing thousands of physical textbooks, business cases, and references. Students have digital portal subscriptions to leading international management journals, databases, and e-books.
+            </p>
+            <ul class="showcase-features">
+              <li>Extensive Management Reference Catalog</li>
+              <li>Subscribed International &amp; National Journals</li>
+              <li>Electronic Databases &amp; E-Books Portals</li>
+              <li>Silent Collaborative Study Zone</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Sports & Clubs -->
-        <div class="campus-card">
-          <span class="icon">🤝</span>
-          <h3>Clubs &amp; Recreation</h3>
-          <img class="campus-img" src="Public/campus_4.jpg" alt="Clubs &amp; Recreation">
-          <p>
-            A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the campus.
-          </p>
-          <ul class="features-list">
-            <li>Fintech, BFSI, &amp; Strategy Clubs</li>
-            <li>Business Analytics &amp; Digitalization Clubs</li>
-            <li>Communication &amp; Cultural Activity Hubs</li>
-            <li>Outdoor &amp; Indoor Sports Courts</li>
-          </ul>
+        <div class="campus-showcase-item">
+          <div class="showcase-media scroll-reveal-scale">
+            <img src="Public/campus_4.jpg" alt="Clubs &amp; Recreation">
+          </div>
+          <div class="showcase-info scroll-reveal stagger-1">
+            <div class="showcase-header">
+              <span class="showcase-icon">🤝</span>
+              <h3>Clubs &amp; Recreation</h3>
+            </div>
+            <p>
+              A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the campus.
+            </p>
+            <ul class="showcase-features">
+              <li>Fintech, BFSI, &amp; Strategy Clubs</li>
+              <li>Business Analytics &amp; Digitalization Clubs</li>
+              <li>Communication &amp; Cultural Activity Hubs</li>
+              <li>Outdoor &amp; Indoor Sports Courts</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Conclaves & Fests -->
-        <div class="campus-card">
-          <span class="icon">🎉</span>
-          <h3>Annual Conclaves &amp; Fests</h3>
-          <img class="campus-img" src="Public/campus_2.jpg" alt="Annual Conclaves &amp; Fests">
-          <p>
-            Students drive major events annually, including National Marketing, HR, and Finance Conclaves. The fests provide platform for creative expressions, budget presentations, inter-institutional games, and cultural performances.
-          </p>
-          <ul class="features-list">
-            <li>National Specialization Conclaves</li>
-            <li>Inter B-School Budgeting &amp; Business Contests</li>
-            <li>Creative &amp; Performing Arts Festivals</li>
-            <li>Corporate Expert &amp; Guest Seminars</li>
-          </ul>
+        <div class="campus-showcase-item reverse">
+          <div class="showcase-media scroll-reveal-scale">
+            <img src="Public/campus_2.jpg" alt="Annual Conclaves &amp; Fests">
+          </div>
+          <div class="showcase-info scroll-reveal stagger-1">
+            <div class="showcase-header">
+              <span class="showcase-icon">🎉</span>
+              <h3>Annual Conclaves &amp; Fests</h3>
+            </div>
+            <p>
+              Students drive major events annually, including National Marketing, HR, and Finance Conclaves. The fests provide platform for creative expressions, budget presentations, inter-institutional games, and cultural performances.
+            </p>
+            <ul class="showcase-features">
+              <li>National Specialization Conclaves</li>
+              <li>Inter B-School Budgeting &amp; Business Contests</li>
+              <li>Creative &amp; Performing Arts Festivals</li>
+              <li>Corporate Expert &amp; Guest Seminars</li>
+            </ul>
+          </div>
         </div>
       </div>
 
