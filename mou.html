@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Life — Trident School of Business Administration</title>
+  <title>MoU — Memorandums of Understanding — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,11 +65,14 @@
       border-bottom: 3px solid var(--gold);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-    .logo-emblem {
-      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
-      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-lt);
+    .logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+    .nav-logo:hover .logo-img {
+      transform: scale(1.05);
     }
     .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
     .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
@@ -228,7 +231,6 @@
       font-size: clamp(34px, 4.5vw, 54px);
       line-height: 1.15;
       font-weight: 800;
-      margin-bottom: 24px;
     }
     .hero-title span { color: var(--gold-soft); }
     .hero-desc {
@@ -236,7 +238,7 @@
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.85);
       max-width: 800px;
-      margin: 0 auto;
+      margin: 20px auto 0;
     }
 
     /* Program details cards */
@@ -245,146 +247,82 @@
       margin: 80px auto;
       padding: 0 4%;
     }
-
-    /* Redesigned Campus Showcase Layout (Non-grid, Alternating layout) */
-    .campus-showcase-container {
-      display: flex;
-      flex-direction: column;
-      gap: 96px;
-      margin-bottom: 96px;
-    }
     
-    .campus-showcase-item {
-      display: flex;
-      align-items: center;
+    /* Layout grid */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 64px;
-    }
-    
-    .campus-showcase-item.reverse {
-      flex-direction: row-reverse;
-    }
-    
-    .showcase-media {
-      flex: 1.1;
-      position: relative;
-      border-radius: 24px !important;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 3px solid rgba(11, 31, 58, 0.05);
-      transition: var(--transition);
-    }
-    
-    .showcase-media::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(11, 31, 58, 0.05);
-      mix-blend-mode: multiply;
-      pointer-events: none;
-    }
-    
-    .showcase-media img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    
-    .campus-showcase-item:hover .showcase-media img {
-      transform: scale(1.04);
-    }
-    
-    .showcase-info {
-      flex: 0.9;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: left;
-    }
-    
-    .showcase-header {
-      display: flex;
+      margin-bottom: 64px;
       align-items: center;
-      gap: 16px;
     }
-    
-    .showcase-icon {
-      font-size: 36px;
+
+    .mou-content-box {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
     }
-    
-    .showcase-info h3 {
+    .mou-content-box h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 28px;
+      font-size: 26px;
       color: var(--navy);
-      margin: 0;
-      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
     }
-    
-    .showcase-info p {
-      font-size: 14.5px;
+    .mou-content-box p {
+      font-size: 15px;
       color: var(--muted);
       line-height: 1.8;
-      margin: 0;
-    }
-    
-    .showcase-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    
-    .showcase-features li {
-      font-size: 13.5px;
-      color: var(--text);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .showcase-features li::before {
-      content: '✓';
-      color: var(--gold);
-      font-weight: 800;
-      font-size: 16px;
-    }
-    
-    @media (max-width: 992px) {
-      .campus-showcase-item, .campus-showcase-item.reverse {
-        flex-direction: column;
-        gap: 32px;
-      }
-      .showcase-media img {
-        height: 280px;
-      }
+      margin-bottom: 24px;
     }
 
-    /* Callout Box */
-    .callout-box {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      color: var(--white);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+    .mou-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+    .mou-list li {
+      position: relative;
+      padding-left: 28px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.75;
+      margin-bottom: 16px;
+      transition: var(--transition);
+    }
+    .mou-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .mou-list li:hover {
+      transform: translateX(4px);
+      color: var(--gold);
+    }
+
+    .mou-media-box {
       text-align: center;
-      border: 1px solid rgba(200, 150, 42, 0.3);
-      margin-bottom: 80px;
     }
-    .callout-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      color: var(--gold-soft);
-      margin-bottom: 12px;
-    }
-    .callout-box p {
-      font-size: 14.5px;
-      line-height: 1.7;
-      max-width: 800px;
+    .mou-img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: block;
       margin: 0 auto;
-      color: rgba(255,255,255,0.85);
+    }
+    .mou-img:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
     }
 
     /* Footer matching index.html */
@@ -399,9 +337,18 @@
       margin-top: 96px;
     }
 
+    /* Desktop column vertical dividers */
+    @media (min-width: 1025px) {
+      .layout-grid > div:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
-      .campus-grid { grid-template-columns: 1fr; }
+      .layout-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mou-img { max-width: 400px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -411,7 +358,6 @@
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
       .section-container { margin: 64px auto; }
-      .campus-card { padding: 32px 24px; }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -455,7 +401,7 @@
           <li><a href="faculty.html">Faculty</a></li>
           <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
           <li><a href="#">Journal of Business Governance</a></li>
-          <li><a href="mou.html">MOU</a></li>
+          <li><a href="mou.html" class="active">MOU</a></li>
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
           <li><a href="#">Life Membership</a></li>
           <li><a href="#">Nodal Center of Research</a></li>
@@ -463,7 +409,7 @@
         </ul>
       </li>
       <li><a href="placement.html">Placement</a></li>
-      <li><a href="campus-life.html" class="active">Campus Life</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
     </ul>
 
     <a href="index.html#admissions" class="nav-button">Apply Now</a>
@@ -492,7 +438,7 @@
           <li><a href="faculty.html">Faculty</a></li>
           <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
           <li><a href="#">Journal of Business Governance</a></li>
-          <li><a href="mou.html">MOU</a></li>
+          <li><a href="mou.html" class="active">MOU</a></li>
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
           <li><a href="#">Life Membership</a></li>
           <li><a href="#">Nodal Center of Research</a></li>
@@ -500,7 +446,7 @@
         </ul>
       </li>
       <li><a href="placement.html">Placement</a></li>
-      <li><a href="campus-life.html" class="active">Campus Life</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
     </ul>
     <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
   </div>
@@ -508,111 +454,36 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section">
-      <span class="eyebrow">Student Environment</span>
-      <h1 class="hero-title">Life at <span>Trident Campus</span></h1>
+      <span class="eyebrow">Academic Alliances</span>
+      <h1 class="hero-title">Memorandums of <span>Understanding</span> (MoUs)</h1>
       <p class="hero-desc">
-        Explore academic resources, centrally air-conditioned spaces, sports platforms, and dynamic student-led conclaves.
+        Strengthening institutional excellence, student engagement, and professional training through strategic partnerships with top organizations.
       </p>
     </section>
 
-    <!-- CAMPUS LIFE GRID -->
+    <!-- CONTENT LAYOUT -->
     <section class="section-container">
-      <div class="campus-showcase-container">
-        <!-- Infrastructure -->
-        <div class="campus-showcase-item">
-          <div class="showcase-media scroll-reveal-scale">
-            <img src="Public/campus_1.jpg" alt="Academic Infrastructure">
-          </div>
-          <div class="showcase-info scroll-reveal stagger-1">
-            <div class="showcase-header">
-              <span class="showcase-icon">🏢</span>
-              <h3>Academic Infrastructure</h3>
-            </div>
-            <p>
-              Trident features centrally air-conditioned academic blocks and tiered lecture theatres designed for modern pedagogy. Interactive displays, high-speed intranet terminals, and visual aids keep classrooms fully connected for outcome-based studies.
-            </p>
-            <ul class="showcase-features">
-              <li>Centrally Air-Conditioned Blocks</li>
-              <li>Spacious Tiered Lecture Theatres</li>
-              <li>Digitized Audio-Visual Teaching Aids</li>
-              <li>Intranet Access &amp; Portal Terminals</li>
-            </ul>
-          </div>
+      <div class="layout-grid">
+        <!-- Left Column: Content and List -->
+        <div class="mou-content-box scroll-reveal stagger-1">
+          <h3>Industry &amp; Institutional MoUs</h3>
+          <p>
+            The department has signed Memorandums of Understanding (MoUs) with the following organizations to promote student engagement initiatives, experiential learning opportunities, and faculty development programs.
+          </p>
+          <ul class="mou-list">
+            <li>National Institute of Personnel Management (NIPM)</li>
+            <li>Indian Society for Training and Development (ISTD)</li>
+            <li>FM University, Balasore</li>
+            <li>Centre for Environment and Development (CED)</li>
+            <li>National Buildings Construction Corporation Limited (NBCC)</li>
+            <li>Livelihood Alternatives (LA)</li>
+          </ul>
         </div>
 
-        <!-- Library -->
-        <div class="campus-showcase-item reverse">
-          <div class="showcase-media scroll-reveal-scale">
-            <img src="Public/campus_3.jpg" alt="TSBA Knowledge Hub Library">
-          </div>
-          <div class="showcase-info scroll-reveal stagger-1">
-            <div class="showcase-header">
-              <span class="showcase-icon">📖</span>
-              <h3>TSBA Knowledge Hub (Library)</h3>
-            </div>
-            <p>
-              The library acts as a core learning repository, housing thousands of physical textbooks, business cases, and references. Students have digital portal subscriptions to leading international management journals, databases, and e-books.
-            </p>
-            <ul class="showcase-features">
-              <li>Extensive Management Reference Catalog</li>
-              <li>Subscribed International &amp; National Journals</li>
-              <li>Electronic Databases &amp; E-Books Portals</li>
-              <li>Silent Collaborative Study Zone</li>
-            </ul>
-          </div>
+        <!-- Right Column: Logos Image -->
+        <div class="mou-media-box scroll-reveal stagger-2">
+          <img src="Public/mou_logos.png" alt="MoU Partner Logos" class="mou-img">
         </div>
-
-        <!-- Sports & Clubs -->
-        <div class="campus-showcase-item">
-          <div class="showcase-media scroll-reveal-scale">
-            <img src="Public/campus_4.jpg" alt="Clubs &amp; Recreation">
-          </div>
-          <div class="showcase-info scroll-reveal stagger-1">
-            <div class="showcase-header">
-              <span class="showcase-icon">🤝</span>
-              <h3>Clubs &amp; Recreation</h3>
-            </div>
-            <p>
-              A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the campus.
-            </p>
-            <ul class="showcase-features">
-              <li>Fintech, BFSI, &amp; Strategy Clubs</li>
-              <li>Business Analytics &amp; Digitalization Clubs</li>
-              <li>Communication &amp; Cultural Activity Hubs</li>
-              <li>Outdoor &amp; Indoor Sports Courts</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Conclaves & Fests -->
-        <div class="campus-showcase-item reverse">
-          <div class="showcase-media scroll-reveal-scale">
-            <img src="Public/campus_2.jpg" alt="Annual Conclaves &amp; Fests">
-          </div>
-          <div class="showcase-info scroll-reveal stagger-1">
-            <div class="showcase-header">
-              <span class="showcase-icon">🎉</span>
-              <h3>Annual Conclaves &amp; Fests</h3>
-            </div>
-            <p>
-              Students drive major events annually, including National Marketing, HR, and Finance Conclaves. The fests provide platform for creative expressions, budget presentations, inter-institutional games, and cultural performances.
-            </p>
-            <ul class="showcase-features">
-              <li>National Specialization Conclaves</li>
-              <li>Inter B-School Budgeting &amp; Business Contests</li>
-              <li>Creative &amp; Performing Arts Festivals</li>
-              <li>Corporate Expert &amp; Guest Seminars</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Callout Box -->
-      <div class="callout-box">
-        <h3>A Complete Executive Experience</h3>
-        <p>
-          At Trident, campus life is structured to balance conceptual management clarity with actual social, cultural, and leadership development — preparing students to launch successfully in dynamic corporate workspaces globally.
-        </p>
       </div>
     </section>
   </main>
@@ -623,6 +494,7 @@
   </footer>
 
   <script>
+    /* Mobile nav triggers */
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
 
