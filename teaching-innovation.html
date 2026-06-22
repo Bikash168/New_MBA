@@ -281,34 +281,65 @@
       margin-bottom: 28px;
     }
 
-    /* Detail blocks */
-    .innovation-blocks {
+    /* Detail blocks - Premium 2x2 Grid */
+    .innovation-grid-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .innovation-card-premium {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 12px;
     }
-    .innovation-block {
-      background: rgba(11, 31, 58, 0.02);
-      border-left: 4px solid var(--navy);
-      border-radius: 0 12px 12px 0;
-      padding: 24px;
+    .innovation-card-premium::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
       transition: var(--transition);
+      opacity: 0.8;
     }
-    .innovation-block:hover {
-      transform: translateX(6px);
-      background: rgba(200, 150, 42, 0.05);
-      border-left-color: var(--gold);
+    .innovation-card-premium:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(200, 150, 42, 0.25);
     }
-    .innovation-block h4 {
+    .innovation-card-premium:hover::before {
+      background: var(--navy);
+      width: 6px;
+    }
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .innovation-card-premium:hover .card-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+    .innovation-card-premium h4 {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       color: var(--navy);
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin-bottom: 0;
     }
-    .innovation-block p {
-      font-size: 14px;
+    .innovation-card-premium p {
+      font-size: 13px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.6;
+      margin: 0;
     }
 
     .innovation-media-box {
@@ -362,6 +393,7 @@
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
       .section-container { margin: 64px auto; }
+      .innovation-grid-box { grid-template-columns: 1fr !important; }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -477,32 +509,36 @@
             The MBA Department of Trident Academy of Technology employs several active teaching strategies designed to bridge the gap between classroom concept maps and industry-ready execution.
           </p>
           
-          <div class="innovation-blocks">
-            <div class="innovation-block">
+          <div class="innovation-grid-box">
+            <div class="innovation-card-premium">
+              <span class="card-icon">📚</span>
               <h4>Case Study Methodology</h4>
               <p>
-                Classroom theories are applied directly to actual corporate challenges. Using case studies from Harvard Business Publishing, Ivey, and leading national journals, scholars learn critical thinking, corporate analysis, and out-of-the-box business problem-solving.
+                Classroom theories are applied directly to actual corporate challenges. Using case studies from Harvard Business Publishing, Ivey, and leading national journals, scholars learn critical thinking and out-of-the-box business problem-solving.
               </p>
             </div>
             
-            <div class="innovation-block">
-              <h4>Fieldwork &amp; Experiential Projects</h4>
+            <div class="innovation-card-premium">
+              <span class="card-icon">🗺️</span>
+              <h4>Fieldwork &amp; Experiential</h4>
               <p>
-                Students participate in mandatory summer internships (SIP) and regular industrial visits. The program integrates live industry survey projects where students compile data on local business trends, market behaviors, and SME digitization.
+                Students participate in summer internships and regular industrial visits. The program integrates live industry survey projects where students compile data on local business trends and market behaviors.
               </p>
             </div>
             
-            <div class="innovation-block">
-              <h4>Instrumented Feedback Systems</h4>
+            <div class="innovation-card-premium">
+              <span class="card-icon">📊</span>
+              <h4>Instrumented Feedback</h4>
               <p>
                 Continuous performance monitoring through structured feedback loops, peer performance evaluations, and individual assignments. This ensures tailored developmental support for every scholar.
               </p>
             </div>
 
-            <div class="innovation-block">
-              <h4>Co-curricular Action Learning</h4>
+            <div class="innovation-card-premium">
+              <span class="card-icon">🏆</span>
+              <h4>Co-curricular Action</h4>
               <p>
-                Active participation in national budget analysis competitions, inter-B-school paper presentations, HR conclaves, and corporate conclave fests to foster team management, communication, and executive execution skills.
+                Active participation in national budget analysis competitions, inter-B-school paper presentations, HR conclaves, and corporate conclave fests to foster team management and communication.
               </p>
             </div>
           </div>
