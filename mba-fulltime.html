@@ -514,33 +514,77 @@
       margin-bottom: 14px;
     }
 
-    /* Faculty section */
-    .faculty-grid {
+    /* Certifications section */
+    .certifications-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+      gap: 30px;
+      margin-top: 40px;
     }
-    .mba-faculty-card {
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      padding: 24px 16px;
-      text-align: center;
-      transition: var(--transition);
+    .cert-card {
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-radius: var(--radius-md, 16px);
+      padding: 32px 24px;
+      text-align: left;
+      box-shadow: 0 12px 32px rgba(11, 31, 58, 0.05);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
     }
-    .mba-faculty-card:hover {
-      transform: translateY(-4px);
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fac-avatar {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy), var(--gold));
-      color: var(--white); display: grid; place-items: center;
-      font-family: 'Playfair Display', serif; font-size: 24px;
-      margin: 0 auto 16px;
-      box-shadow: var(--shadow-sm);
+    .cert-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(11, 31, 58, 0.1);
+      border-color: rgba(200, 150, 42, 0.25);
     }
-    .mba-faculty-card strong { display: block; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
-    .mba-faculty-card div { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+    .cert-card:hover::before {
+      background: var(--navy);
+      width: 6px;
+    }
+    .cert-icon {
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .cert-card:hover .cert-icon {
+      transform: scale(1.18) rotate(5deg);
+    }
+    .cert-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--navy);
+      font-weight: 700;
+      margin: 0;
+    }
+    .cert-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 992px) {
+      .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     /* Admissions card */
     .admissions-box {
@@ -898,30 +942,33 @@
       </div>
     </section>
 
-    <!-- FACULTY SECTION -->
+    <!-- VALUE-ADDED CERTIFICATIONS & SKILL DEVELOPMENT -->
     <section class="full-width-section bg-gray shape-slant">
       <div class="section-inner">
         <div class="section-header">
-          <span class="section-subtitle">Our Scholars</span>
-          <h2 class="section-title">Core Faculty &amp; <span>Mentors</span></h2>
-          <p class="section-desc">Our department is supported by qualified and experienced faculty members actively engaged in teaching, academic mentoring, research, and industry interaction.</p>
+          <span class="section-subtitle">Skill Development</span>
+          <h2 class="section-title">Value-Added <span>Professional Certifications</span></h2>
+          <p class="section-desc">To ensure our management graduates are day-one productive in modern corporate roles, we embed structured industry certifications and hands-on laboratory modules into the core MBA experience.</p>
         </div>
 
-        <div class="faculty-grid">
-          <div class="mba-faculty-card scroll-reveal">
-            <div class="fac-avatar">PM</div>
-            <strong>Prof. P. K. Mohanty</strong>
-            <div>Dean SOB (Former Head of MBA, Utkal University &amp; Director BPUT)</div>
+        <div class="certifications-grid">
+          <!-- SAP ERP Training -->
+          <div class="cert-card scroll-reveal">
+            <span class="cert-icon">📊</span>
+            <h3>SAP ERP Training &amp; Analytics</h3>
+            <p>Hands-on operational training utilizing licensed SAP ERP suites within the Business Analytics Lab to build enterprise planning, database query, and resource scheduling competencies.</p>
           </div>
-          <div class="mba-faculty-card scroll-reveal">
-            <div class="fac-avatar">AS</div>
-            <strong>Dr. A. N. Sharma</strong>
-            <div>Professor — Strategy &amp; Innovation</div>
+          <!-- Financial Market Terminal -->
+          <div class="cert-card scroll-reveal stagger-1">
+            <span class="cert-icon">📈</span>
+            <h3>Financial Market Analytics</h3>
+            <p>Practical sessions on real-time Koyfin and Trading View terminals inside the Finance Lab, focusing on equity research, corporate valuation, credit analysis, and portfolio modeling.</p>
           </div>
-          <div class="mba-faculty-card scroll-reveal">
-            <div class="fac-avatar">LR</div>
-            <strong>Prof. L. K. Rao</strong>
-            <div>Associate Professor — Finance</div>
+          <!-- Corporate Communication Wordsworth -->
+          <div class="cert-card scroll-reveal stagger-2">
+            <span class="cert-icon">💬</span>
+            <h3>Corporate Communication Suite</h3>
+            <p>Intensive communication training utilizing specialized WordWorth software packages to master executive presentation delivery, business pitch construction, and group debate formats.</p>
           </div>
         </div>
       </div>
