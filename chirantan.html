@@ -275,17 +275,17 @@
     .layout-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
+      gap: 64px;
       margin-bottom: 64px;
       align-items: start;
     }
 
     .editorial-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
       margin-bottom: 32px;
     }
     .editorial-card h3 {
@@ -305,11 +305,11 @@
     }
 
     .highlights-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
     }
     .highlights-box h3 {
       font-family: 'Playfair Display', serif;
@@ -358,20 +358,17 @@
 
     /* PDF Viewer section */
     .pdf-viewer-section {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 48px;
-      box-shadow: var(--shadow);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 48px 0 !important;
+      box-shadow: none !important;
       text-align: center;
       margin-bottom: 80px;
     }
     .pdf-viewer-container {
       width: 100%;
       height: 720px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--line);
       margin: 28px 0;
     }
     .btn-download {
@@ -394,6 +391,14 @@
       color: var(--gold-soft);
       box-shadow: 0 4px 15px rgba(11, 31, 58, 0.2);
       transform: translateY(-2px);
+    }
+
+    /* Desktop column vertical dividers */
+    @media (min-width: 1025px) {
+      .layout-grid > div:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
     }
 
     /* Footer matching index.html */
@@ -530,7 +535,7 @@
       <div class="layout-grid">
         <!-- Left: About & Editorials -->
         <div>
-          <div class="editorial-card">
+          <div class="editorial-card scroll-reveal stagger-1">
             <h3>About Chirantan</h3>
             <p>
               <strong>Chirantan</strong> is the flagship biannual newsletter of the Trident School of Business Administration. Designed to highlight the ongoing academic accomplishments, student innovations, and campus milestones of our departments, it serves as a central chronicle connecting peer studies with active corporate partners.
@@ -540,7 +545,7 @@
             </p>
           </div>
 
-          <div class="editorial-card">
+          <div class="editorial-card scroll-reveal stagger-2">
             <h3>Editor's Note: Jan - Jun 2025 Issue</h3>
             <p>
               In this current issue of Chirantan, we celebrate the theme of <strong>"Strategic Leadership in the Era of AI & Sustainability"</strong>. Over the past six months, TSBA has pushed boundaries across technical alliances, academic specializations, and career achievements.
@@ -552,7 +557,7 @@
         </div>
 
         <!-- Right: Highlights inside this issue -->
-        <div class="highlights-box">
+        <div class="highlights-box scroll-reveal stagger-3">
           <h3>Inside This Issue</h3>
           
           <div class="highlight-item">
@@ -590,7 +595,7 @@
       </div>
 
       <!-- Embedded PDF Viewer Section -->
-      <div class="pdf-viewer-section">
+      <div class="pdf-viewer-section scroll-reveal stagger-1">
         <span class="section-subtitle">Chirantan JAN - JUN 2025</span>
         <h2 class="section-title">View Current <span>Newsletter Issue</span></h2>
         <p class="section-desc" style="max-width: 600px; margin: 0 auto;">
@@ -598,7 +603,7 @@
         </p>
 
         <!-- Embedded Viewer -->
-        <div class="pdf-viewer-container">
+        <div class="pdf-viewer-container scroll-reveal stagger-2">
           <iframe src="Chirantan Magazine JAN - JUN 2025.pdf#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
         </div>
 
