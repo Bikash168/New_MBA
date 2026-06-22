@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — Trident School of Business Administration</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
       --navy: #0B1F3A;
       --navy-light: #152E4D;
@@ -22,15 +32,18 @@
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       --nav-h: 72px;
     }
-    
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
       background: var(--offwhite);
       overflow-x: hidden;
     }
-    
+
     /* Topbar matching index.html */
     .topbar {
       background: var(--navy);
@@ -45,9 +58,22 @@
       gap: 8px;
       flex-wrap: wrap;
     }
-    .topbar-left { display: flex; gap: 16px; }
-    .topbar-right a { color: var(--gold-soft); text-decoration: none; margin-left: 14px; font-weight: 600; }
-    .topbar-right a:hover { color: var(--white); }
+
+    .topbar-left {
+      display: flex;
+      gap: 16px;
+    }
+
+    .topbar-right a {
+      color: var(--gold-soft);
+      text-decoration: none;
+      margin-left: 14px;
+      font-weight: 600;
+    }
+
+    .topbar-right a:hover {
+      color: var(--white);
+    }
 
     /* Sticky Navbar matching index.html */
     nav {
@@ -60,39 +86,108 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 48px;
-      box-shadow: 0 2px 18px rgba(11,31,58,.12);
+      box-shadow: 0 2px 18px rgba(11, 31, 58, .12);
       border-bottom: 3px solid var(--gold);
     }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-    .logo-emblem {
-      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
-      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-soft);
-    }
-    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-    .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
-    .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
 
-    .nav-menu { display: flex; align-items: center; list-style: none; gap: 2px; }
-    .nav-menu > li { position: relative; }
-    .nav-menu > li > a {
-      display: flex; align-items: center; padding: 12px 18px; min-height: 44px;
-      font-size: 12.5px; font-weight: 600; color: var(--navy);
-      text-decoration: none; letter-spacing: .02em; border-radius: 4px;
-      white-space: nowrap; transition: var(--transition);
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
     }
-    .nav-menu > li > a:hover,
-    .nav-menu > li:hover > a { background: var(--navy); color: var(--gold-soft); }
-    .has-drop > a::after { content: ' ▾'; font-size: 9px; opacity: .55; }
+
+    .logo-emblem {
+      width: 46px;
+      height: 46px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--gold);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--gold-soft);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-text .school-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .logo-text .tagline {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2px;
+    }
+
+    .nav-menu>li {
+      position: relative;
+    }
+
+    .nav-menu>li>a {
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      min-height: 44px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: .02em;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .nav-menu>li>a:hover,
+    .nav-menu>li:hover>a {
+      background: var(--navy);
+      color: var(--gold-soft);
+    }
+
+    .has-drop>a::after {
+      content: ' ▾';
+      font-size: 9px;
+      opacity: .55;
+    }
 
     .dropdown {
-      display: none; position: absolute; top: calc(100% + 6px); left: 0;
-      background: var(--white); min-width: 205px; border-top: 3px solid var(--gold);
-      box-shadow: 0 12px 40px rgba(11,31,58,.15);
-      border-radius: 0 0 8px 8px; list-style: none; z-index: 200;
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--white);
+      min-width: 205px;
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(11, 31, 58, .15);
+      border-radius: 0 0 8px 8px;
+      list-style: none;
+      z-index: 200;
       animation: fadeDown .18s ease;
     }
+
     .dropdown::before {
       content: '';
       position: absolute;
@@ -102,55 +197,179 @@
       height: 8px;
       background: transparent;
     }
-    @keyframes fadeDown { from { opacity: 0; transform: translateY(-6px) } to { opacity: 1; transform: none } }
-    .nav-menu > li:hover .dropdown { display: block; }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .nav-menu>li:hover .dropdown {
+      display: block;
+    }
+
     .dropdown li a {
-      display: block; padding: 14px 18px; font-size: 12px; font-weight: 500;
-      color: var(--text); text-decoration: none; border-bottom: 1px solid #f0ece4;
+      display: block;
+      padding: 14px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0ece4;
       transition: var(--transition);
     }
-    .dropdown li a:hover { background: var(--offwhite); color: var(--navy); padding-left: 22px; }
+
+    .dropdown li a:hover {
+      background: var(--offwhite);
+      color: var(--navy);
+      padding-left: 22px;
+    }
 
     .nav-button {
-      background: var(--gold) !important; color: var(--navy) !important;
-      font-weight: 700 !important; padding: 9px 18px !important;
-      border-radius: 4px !important; letter-spacing: .04em;
-      font-size: 12.5px; text-decoration: none; display: flex; align-items: center;
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      padding: 9px 18px !important;
+      border-radius: 4px !important;
+      letter-spacing: .04em;
+      font-size: 12.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
       transition: var(--transition);
     }
-    .nav-button:hover { background: var(--navy) !important; color: var(--gold-soft) !important; }
+
+    .nav-button:hover {
+      background: var(--navy) !important;
+      color: var(--gold-soft) !important;
+    }
 
     .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 4px;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
     }
-    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: transform .3s, opacity .3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
 
     /* Mobile Drawer */
     .mobile-nav {
-      display: none; position: fixed; inset: 0;
-      background: var(--navy); z-index: 1050; overflow-y: auto;
-      padding: 80px 24px 40px; transform: translateX(100%);
-      opacity: 0; visibility: hidden;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 1050;
+      overflow-y: auto;
+      padding: 80px 24px 40px;
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
       transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
     }
-    .mobile-nav.open { transform: translateX(0); opacity: 1; visibility: visible; }
-    .mobile-nav-list { list-style: none; }
-    .mobile-nav-list > li { border-bottom: 1px solid rgba(255,255,255,.08); }
-    .mobile-nav-list > li > .mn-row { display: flex; justify-content: space-between; align-items: center; }
-    .mobile-nav-list > li > .mn-row > a {
-      display: flex; align-items: center; width: 100%; padding: 16px 4px;
-      font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none;
+
+    .mobile-nav.open {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
-    .mobile-toggle { background: none; border: none; color: var(--gold-soft); font-size: 22px; cursor: pointer; padding: 10px 8px; }
-    .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
-    .mobile-sub.open { display: block; }
-    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255,255,255,.75); text-decoration: none; }
-    .mobile-sub li a:hover { color: var(--gold-soft); }
-    .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
+
+    .mobile-nav-list {
+      list-style: none;
+    }
+
+    .mobile-nav-list>li {
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .mobile-nav-list>li>.mn-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-nav-list>li>.mn-row>a {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 16px 4px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .mobile-toggle {
+      background: none;
+      border: none;
+      color: var(--gold-soft);
+      font-size: 22px;
+      cursor: pointer;
+      padding: 10px 8px;
+    }
+
+    .mobile-sub {
+      display: none;
+      list-style: none;
+      padding: 0 0 10px 16px;
+    }
+
+    .mobile-sub.open {
+      display: block;
+    }
+
+    .mobile-sub li a {
+      display: block;
+      padding: 12px 6px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      text-decoration: none;
+    }
+
+    .mobile-sub li a:hover {
+      color: var(--gold-soft);
+    }
+
+    .mobile-apply {
+      display: block;
+      margin-top: 24px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      padding: 14px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
 
     /* Redesigned Hero Section */
     .hero-section {
@@ -160,6 +379,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero-section::after {
       content: '';
       position: absolute;
@@ -168,9 +388,10 @@
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,150,42,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(200, 150, 42, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -179,6 +400,7 @@
       gap: 56px;
       align-items: center;
     }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -194,6 +416,7 @@
       border-radius: 20px;
       margin-bottom: 24px;
     }
+
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(34px, 4.5vw, 54px);
@@ -202,19 +425,31 @@
       margin-bottom: 24px;
       color: var(--white);
     }
-    .hero-title span { color: var(--gold-soft); }
+
+    .hero-title span {
+      color: var(--gold-soft);
+    }
+
     .hero-desc {
       font-size: 15.5px;
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.85);
       margin-bottom: 32px;
     }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
+
     .hero-stat-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -224,11 +459,13 @@
       text-align: center;
       transition: var(--transition);
     }
+
     .hero-stat-card:hover {
       background: rgba(255, 255, 255, 0.08);
       border-color: rgba(200, 150, 42, 0.4);
       transform: translateY(-4px);
     }
+
     .hero-stat-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
@@ -236,6 +473,7 @@
       color: var(--gold-soft);
       margin-bottom: 4px;
     }
+
     .hero-stat-card span {
       display: block;
       font-size: 11px;
@@ -245,7 +483,10 @@
       letter-spacing: 0.08em;
     }
 
-    .hero-media-wrap { position: relative; }
+    .hero-media-wrap {
+      position: relative;
+    }
+
     .hero-frame {
       border-radius: 20px;
       overflow: hidden;
@@ -253,9 +494,19 @@
       border: 3px solid rgba(255, 255, 255, 0.1);
       background: var(--navy-light);
     }
-    .hero-frame img { width: 100%; height: 380px; object-fit: cover; display: block; transition: var(--transition); }
-    .hero-frame:hover img { transform: scale(1.03); }
-    
+
+    .hero-frame img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .hero-frame:hover img {
+      transform: scale(1.03);
+    }
+
     .floating-panel {
       position: absolute;
       bottom: -24px;
@@ -269,12 +520,31 @@
       border-left: 5px solid var(--gold);
       animation: float 4s ease-in-out infinite;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
-    .floating-panel h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 6px; color: var(--navy); }
-    .floating-panel p { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+    .floating-panel h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .floating-panel p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
 
     /* Sections general styles */
     .section-container {
@@ -282,11 +552,13 @@
       margin: 96px auto;
       padding: 0 4%;
     }
+
     .section-header {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 56px;
     }
+
     .section-subtitle {
       font-size: 11px;
       font-weight: 700;
@@ -296,6 +568,7 @@
       margin-bottom: 12px;
       display: block;
     }
+
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(26px, 3.5vw, 40px);
@@ -303,7 +576,11 @@
       color: var(--navy);
       line-height: 1.25;
     }
-    .section-title span { color: var(--gold); }
+
+    .section-title span {
+      color: var(--gold);
+    }
+
     .section-desc {
       font-size: 14.5px;
       color: var(--muted);
@@ -317,6 +594,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
+
     .tile-card {
       position: relative;
       border-radius: 16px;
@@ -327,6 +605,7 @@
       transition: var(--transition);
       display: block;
     }
+
     .tile-card img {
       width: 100%;
       height: 100%;
@@ -335,10 +614,12 @@
       transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
       filter: brightness(0.7) contrast(1.05);
     }
+
     .tile-card:hover img {
       transform: scale(1.08);
       filter: brightness(0.65) contrast(1.1);
     }
+
     .tile-overlay {
       position: absolute;
       inset: 0;
@@ -346,27 +627,43 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 24px;
-      background: linear-gradient(180deg, rgba(11,31,58,0) 20%, rgba(11,31,58,0.7) 60%, rgba(11,31,58,0.95) 100%);
+      background: linear-gradient(180deg, rgba(11, 31, 58, 0) 20%, rgba(11, 31, 58, 0.7) 60%, rgba(11, 31, 58, 0.95) 100%);
       transition: var(--transition);
     }
-    .tile-meta { display: flex; flex-direction: column; gap: 8px; }
+
+    .tile-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
     .tile-icon-box {
-      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-      background: rgba(200, 150, 42, 0.2); color: var(--gold-soft); font-size: 20px;
-      border: 1px solid rgba(200, 150, 42, 0.3); transition: var(--transition);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(200, 150, 42, 0.2);
+      color: var(--gold-soft);
+      font-size: 20px;
+      border: 1px solid rgba(200, 150, 42, 0.3);
+      transition: var(--transition);
       align-self: flex-start;
     }
+
     .tile-card:hover .tile-icon-box {
       background: var(--gold);
       color: var(--navy);
       transform: rotate(360deg);
     }
+
     .tile-title {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 700;
       color: var(--white);
     }
+
     .tile-text {
       font-size: 12.5px;
       color: rgba(255, 255, 255, 0.8);
@@ -377,11 +674,13 @@
       opacity: 0;
       transition: all 0.4s ease;
     }
+
     .tile-card:hover .tile-text {
       max-height: 80px;
       opacity: 1;
       margin-top: 8px;
     }
+
     .tile-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
@@ -396,32 +695,38 @@
       margin-bottom: 64px;
       text-align: left;
     }
+
     .vm-column {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
+
     .vm-header {
       display: flex;
       align-items: center;
       gap: 14px;
     }
+
     .vm-icon {
       font-size: 36px;
     }
+
     .vm-column h3 {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
       color: var(--navy);
       margin: 0;
     }
+
     .vm-column p {
       font-size: 14.5px;
       color: var(--muted);
       line-height: 1.8;
       margin: 0;
     }
+
     .vm-divider-line {
       width: 1px;
       background: rgba(11, 31, 58, 0.12);
@@ -436,6 +741,7 @@
       margin: 56px auto 0 auto;
       text-align: left;
     }
+
     .value-item-clean {
       display: flex;
       align-items: flex-start;
@@ -444,12 +750,15 @@
       border-bottom: 1px solid rgba(11, 31, 58, 0.08);
       transition: var(--transition);
     }
+
     .value-item-clean:last-child {
       border-bottom: none;
     }
+
     .value-item-clean:hover {
       transform: translateX(4px);
     }
+
     .val-num {
       font-family: 'Playfair Display', serif;
       font-size: 36px;
@@ -458,6 +767,7 @@
       line-height: 1;
       min-width: 50px;
     }
+
     .val-content h3 {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
@@ -465,6 +775,7 @@
       margin-top: 0;
       margin-bottom: 8px;
     }
+
     .val-content p {
       font-size: 14.5px;
       color: var(--muted);
@@ -477,23 +788,27 @@
         flex-direction: column;
         gap: 32px;
       }
+
       .vm-divider-line {
         width: 100%;
         height: 1px;
       }
     }
+
     @media (max-width: 576px) {
       .value-item-clean {
         flex-direction: column;
         gap: 12px;
       }
     }
+
     .rankings-row-clean {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
       margin-top: 48px;
     }
+
     .rank-col-clean {
       display: flex;
       flex-direction: column;
@@ -502,9 +817,11 @@
       padding: 16px;
       transition: var(--transition);
     }
+
     .rank-col-clean:hover {
       transform: translateY(-6px);
     }
+
     .rank-badge-circle {
       width: 80px;
       height: 80px;
@@ -518,12 +835,14 @@
       box-shadow: 0 8px 20px rgba(200, 150, 42, 0.05);
       transition: var(--transition);
     }
+
     .rank-col-clean:hover .rank-badge-circle {
       background: var(--gold);
       border-color: var(--gold);
       transform: scale(1.1) rotate(360deg);
       box-shadow: 0 12px 28px rgba(200, 150, 42, 0.25);
     }
+
     .rank-col-clean h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
@@ -532,6 +851,7 @@
       margin-bottom: 12px;
       font-weight: 700;
     }
+
     .rank-col-clean p {
       font-size: 14px;
       color: var(--muted);
@@ -541,8 +861,8 @@
 
     /* International Tie-ups Section Redesign */
     .international-card-clean {
-      background-image: radial-gradient(rgba(200, 150, 42, 0.12) 1.5px, transparent 1.5px), 
-                        linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      background-image: radial-gradient(rgba(200, 150, 42, 0.12) 1.5px, transparent 1.5px),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
       background-size: 24px 24px !important;
       border-radius: 24px;
       padding: 64px 48px;
@@ -551,19 +871,19 @@
       margin-top: 48px;
       text-align: center;
     }
-    
+
     .international-card-clean .section-header {
       margin-bottom: 48px;
     }
-    
+
     .international-card-clean .section-subtitle {
       color: var(--gold-soft);
     }
-    
+
     .international-card-clean .section-title {
       color: var(--white);
     }
-    
+
     .international-card-clean .section-desc {
       color: rgba(255, 255, 255, 0.75);
       max-width: 700px;
@@ -575,7 +895,7 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 40px;
     }
-    
+
     .tieup-col-clean {
       display: flex;
       flex-direction: column;
@@ -584,11 +904,11 @@
       padding: 16px;
       transition: var(--transition);
     }
-    
+
     .tieup-col-clean:hover {
       transform: translateY(-6px);
     }
-    
+
     .tieup-badge-circle {
       width: 72px;
       height: 72px;
@@ -602,14 +922,14 @@
       box-shadow: 0 8px 20px rgba(11, 31, 58, 0.2);
       transition: var(--transition);
     }
-    
+
     .tieup-col-clean:hover .tieup-badge-circle {
       background: var(--gold);
       border-color: var(--gold);
       transform: scale(1.1) rotate(360deg);
       box-shadow: 0 12px 28px rgba(200, 150, 42, 0.35);
     }
-    
+
     .tieup-col-clean h4 {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
@@ -619,7 +939,7 @@
       font-weight: 700;
       letter-spacing: 0.5px;
     }
-    
+
     .tieup-col-clean p {
       font-size: 13.5px;
       color: rgba(255, 255, 255, 0.7);
@@ -640,6 +960,7 @@
       margin: 56px auto 0;
       padding: 20px 0;
     }
+
     .timeline-wrapper::before {
       content: '';
       position: absolute;
@@ -650,12 +971,17 @@
       background: linear-gradient(180deg, var(--navy) 0%, var(--gold) 50%, var(--gold-soft) 100%);
       transform: translateX(-50%);
     }
+
     .timeline-node {
       position: relative;
       width: 100%;
       margin-bottom: 48px;
     }
-    .timeline-node:last-child { margin-bottom: 0; }
+
+    .timeline-node:last-child {
+      margin-bottom: 0;
+    }
+
     .timeline-dot {
       position: absolute;
       left: 50%;
@@ -670,11 +996,13 @@
       box-shadow: 0 0 0 4px rgba(200, 150, 42, 0.3);
       transition: var(--transition);
     }
+
     .timeline-node:hover .timeline-dot {
       background: var(--navy);
       box-shadow: 0 0 0 6px rgba(11, 31, 58, 0.25);
       transform: translate(-50%, -50%) scale(1.2);
     }
+
     .timeline-card {
       position: relative;
       width: 44%;
@@ -685,18 +1013,22 @@
       box-shadow: var(--shadow);
       transition: var(--transition);
     }
+
     .timeline-node:nth-child(even) .timeline-card {
       left: 56%;
     }
+
     .timeline-node:nth-child(odd) .timeline-card {
       left: 0;
       text-align: right;
     }
+
     .timeline-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
       border-color: var(--gold-soft);
     }
+
     .timeline-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
@@ -704,6 +1036,7 @@
       color: var(--gold);
       margin-bottom: 8px;
     }
+
     .timeline-card p {
       font-size: 13.5px;
       color: var(--text);
@@ -717,6 +1050,7 @@
       color: var(--white);
       border-top: 3px solid var(--gold);
     }
+
     .stats-board-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -725,12 +1059,17 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
+
     .stat-board-card {
       text-align: center;
       padding: 24px 16px;
       border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .stat-board-card:last-child { border-right: none; }
+
+    .stat-board-card:last-child {
+      border-right: none;
+    }
+
     .stat-board-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
@@ -738,6 +1077,7 @@
       color: var(--gold-soft);
       margin-bottom: 10px;
     }
+
     .stat-board-card span {
       display: block;
       font-size: 11px;
@@ -753,6 +1093,7 @@
       margin: 96px auto;
       padding: 0 4%;
     }
+
     .cta-card {
       background: linear-gradient(120deg, var(--gold) 0%, var(--gold-soft) 40%, #FFF5DF 100%);
       border-radius: 24px;
@@ -764,7 +1105,11 @@
       box-shadow: 0 20px 45px rgba(200, 150, 42, 0.2);
       border: 1px solid rgba(200, 150, 42, 0.3);
     }
-    .cta-content { max-width: 600px; }
+
+    .cta-content {
+      max-width: 600px;
+    }
+
     .cta-content h2 {
       font-family: 'Playfair Display', serif;
       font-size: 32px;
@@ -772,11 +1117,13 @@
       color: var(--navy);
       margin-bottom: 12px;
     }
+
     .cta-content p {
       font-size: 14.5px;
       color: rgba(11, 31, 58, 0.8);
       line-height: 1.65;
     }
+
     .btn-dark {
       background: var(--navy);
       color: var(--gold-soft);
@@ -791,6 +1138,7 @@
       display: inline-block;
       white-space: nowrap;
     }
+
     .btn-dark:hover {
       background: var(--navy-light);
       transform: translateY(-2px);
@@ -810,44 +1158,147 @@
 
     /* Responsive adjustments */
     @media (max-width: 1024px) {
-      .hero-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { max-width: 500px; margin: 0 auto; }
-      .hero-media-wrap { max-width: 500px; margin: 0 auto; }
-      .floating-panel { left: 50%; transform: translateX(-50%); bottom: -32px; width: calc(100% - 32px); text-align: center; border-left: none; border-bottom: 5px solid var(--gold); }
-      @keyframes float {
-        0%, 100% { transform: translate(-50%, 0); }
-        50% { transform: translate(-50%, -8px); }
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        text-align: center;
       }
-      .tile-grid { grid-template-columns: repeat(2, 1fr); }
-      .values-grid { grid-template-columns: 1fr; gap: 24px; }
-      .stats-board-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-      .stat-board-card { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-      .stat-board-card:nth-child(even) { border-bottom: none; }
-      .cta-card { flex-direction: column; text-align: center; padding: 48px 32px; }
-      .btn-dark { width: 100%; text-align: center; }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .hero-media-wrap {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .floating-panel {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -32px;
+        width: calc(100% - 32px);
+        text-align: center;
+        border-left: none;
+        border-bottom: 5px solid var(--gold);
+      }
+
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translate(-50%, 0);
+        }
+
+        50% {
+          transform: translate(-50%, -8px);
+        }
+      }
+
+      .tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .stats-board-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      .stat-board-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-board-card:nth-child(even) {
+        border-bottom: none;
+      }
+
+      .cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 48px 32px;
+      }
+
+      .btn-dark {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .topbar { padding: 8px 24px; }
-      .nav-menu { display: none; }
-      .hamburger { display: flex; }
-      .mobile-nav { display: block; }
-      .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 64px auto; }
-      .tile-grid { grid-template-columns: 1fr; }
-      .timeline-wrapper::before { left: 16px; }
-      .timeline-dot { left: 16px; }
-      .timeline-card { width: calc(100% - 48px); left: 48px !important; text-align: left !important; }
-      .stats-board-grid { grid-template-columns: 1fr; }
-      .stat-board-card { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-      .stat-board-card:last-child { border-bottom: none; }
+      nav {
+        padding: 0 24px;
+      }
+
+      .topbar {
+        padding: 8px 24px;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .hero-section {
+        padding: 64px 24px 72px;
+      }
+
+      .section-container {
+        margin: 64px auto;
+      }
+
+      .tile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-wrapper::before {
+        left: 16px;
+      }
+
+      .timeline-dot {
+        left: 16px;
+      }
+
+      .timeline-card {
+        width: calc(100% - 48px);
+        left: 48px !important;
+        text-align: left !important;
+      }
+
+      .stats-board-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-board-card {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-board-card:last-child {
+        border-bottom: none;
+      }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
   <script src="animations.js" defer></script>
 </head>
+
 <body>
 
   <!-- TOPBAR -->
@@ -919,7 +1370,8 @@
       </li>
       <li><a href="admission.html">Admission</a></li>
       <li>
-        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
+        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle"
+            data-target="sub4">+</button></div>
         <ul class="mobile-sub" id="sub4">
           <li><a href="faculty.html">Faculty</a></li>
           <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
@@ -946,7 +1398,10 @@
           <span class="eyebrow">About TSBA</span>
           <h1 class="hero-title">Where Ambitious Minds Meet <span>Leadership</span> Education</h1>
           <p class="hero-desc">
-            Trident School of Business Administration (TSBA) is a flagship institution of the Trident Group. We empower students with a rigorous, value-based management curriculum and immersive industry engagements. Headed by SOB Dean <strong>Prof. P. K. Mohanty</strong> (former Head of MBA, Utkal University &amp; Director BPUT), we prepare graduates to lead in a dynamic corporate environment.
+            Trident School of Business Administration (TSBA) is a flagship institution of the Trident Group. We empower
+            students with a rigorous, value-based management curriculum and immersive industry engagements. Headed by
+            SOB Dean <strong>Prof. P. K. Mohanty</strong> (former Head of MBA, Utkal University &amp; Director BPUT), we
+            prepare graduates to lead in a dynamic corporate environment.
           </p>
           <div class="hero-actions">
             <a href="#overview" class="btn-primary">Explore Our Story</a>
@@ -973,7 +1428,8 @@
           </div>
           <div class="floating-panel">
             <h4>TSBA at a Glance</h4>
-            <p>Our programs bridge the gap between classroom theory and real-world executive practice, fostering ethical decision-making.</p>
+            <p>Our programs bridge the gap between classroom theory and real-world executive practice, fostering ethical
+              decision-making.</p>
           </div>
         </div>
       </div>
@@ -984,7 +1440,8 @@
       <div class="section-header">
         <span class="section-subtitle">Our Pedagogy</span>
         <h2 class="section-title">An Immersive <span>Management Experience</span></h2>
-        <p class="section-desc">We blend case study methodologies, active corporate mentorships, and state-of-the-art laboratory learning to deliver a practical education that makes you stand out from day one.</p>
+        <p class="section-desc">We blend case study methodologies, active corporate mentorships, and state-of-the-art
+          laboratory learning to deliver a practical education that makes you stand out from day one.</p>
       </div>
 
       <div class="tile-grid">
@@ -995,7 +1452,8 @@
             <div class="tile-meta">
               <div class="tile-icon-box">👨‍🏫</div>
               <h3 class="tile-title">Faculty</h3>
-              <p class="tile-text">Strength of 16 core faculty members, including 10 PhD holders, led by Prof. P. K. Mohanty.</p>
+              <p class="tile-text">Strength of 16 core faculty members, including 10 PhD holders, led by Prof. P. K.
+                Mohanty.</p>
             </div>
           </div>
         </div>
@@ -1007,7 +1465,8 @@
             <div class="tile-meta">
               <div class="tile-icon-box">🎓</div>
               <h3 class="tile-title">Campus Life</h3>
-              <p class="tile-text">Active student engagement with 10 business clubs focusing on Strategy, BFSI, FinTech, and Analytics.</p>
+              <p class="tile-text">Active student engagement with 10 business clubs focusing on Strategy, BFSI, FinTech,
+                and Analytics.</p>
             </div>
           </div>
         </div>
@@ -1019,7 +1478,8 @@
             <div class="tile-meta">
               <div class="tile-icon-box">🤝</div>
               <h3 class="tile-title">Corporate Interaction</h3>
-              <p class="tile-text">Round-the-year seminars, business games, executive mentorship, and regular industrial visits.</p>
+              <p class="tile-text">Round-the-year seminars, business games, executive mentorship, and regular industrial
+                visits.</p>
             </div>
           </div>
         </div>
@@ -1031,7 +1491,8 @@
             <div class="tile-meta">
               <div class="tile-icon-box">💼</div>
               <h3 class="tile-title">Placements</h3>
-              <p class="tile-text">Consistently strong campus hiring record with average salaries showing an 18% annual growth.</p>
+              <p class="tile-text">Consistently strong campus hiring record with average salaries showing an 18% annual
+                growth.</p>
             </div>
           </div>
         </div>
@@ -1043,7 +1504,8 @@
       <div class="section-header">
         <span class="section-subtitle">Our Purpose</span>
         <h2 class="section-title">Mission, Vision &amp; <span>Core Values</span></h2>
-        <p class="section-desc">TSBA operates on a defined path of excellence, guided by a clear vision for the future, a structured mission for the present, and deep values at our core.</p>
+        <p class="section-desc">TSBA operates on a defined path of excellence, guided by a clear vision for the future,
+          a structured mission for the present, and deep values at our core.</p>
       </div>
 
       <!-- Vision & Mission columns -->
@@ -1053,7 +1515,9 @@
             <span class="vm-icon">👁️</span>
             <h3>Our Vision</h3>
           </div>
-          <p>To be a globally recognized center of excellence in management education, fostering innovative leadership, research, and sustainable business practices that empower individuals to serve society and the industry with integrity.</p>
+          <p>To be a globally recognized center of excellence in management education, fostering innovative leadership,
+            research, and sustainable business practices that empower individuals to serve society and the industry with
+            integrity.</p>
         </div>
         <div class="vm-divider-line"></div>
         <div class="vm-column">
@@ -1061,7 +1525,9 @@
             <span class="vm-icon">🎯</span>
             <h3>Our Mission</h3>
           </div>
-          <p>To deliver rigorous, industry-relevant management education that combines academic theory with practical application; to nurture talent and develop socially responsible business leaders; and to cultivate thought leadership through impactful research and consultancy.</p>
+          <p>To deliver rigorous, industry-relevant management education that combines academic theory with practical
+            application; to nurture talent and develop socially responsible business leaders; and to cultivate thought
+            leadership through impactful research and consultancy.</p>
         </div>
       </div>
 
@@ -1071,21 +1537,24 @@
           <span class="val-num">01</span>
           <div class="val-content">
             <h3>Academic Excellence</h3>
-            <p>We set ambitious educational standards and support students through an inspiring, case-driven learning environment.</p>
+            <p>We set ambitious educational standards and support students through an inspiring, case-driven learning
+              environment.</p>
           </div>
         </div>
         <div class="value-item-clean">
           <span class="val-num">02</span>
           <div class="val-content">
             <h3>Ethical Integrity</h3>
-            <p>Responsibility, ethics, and accountability represent the foundational pillars of our teaching and campus life.</p>
+            <p>Responsibility, ethics, and accountability represent the foundational pillars of our teaching and campus
+              life.</p>
           </div>
         </div>
         <div class="value-item-clean">
           <span class="val-num">03</span>
           <div class="val-content">
             <h3>Collaborative Growth</h3>
-            <p>We promote active peer learning, executive mentorship, and corporate alliances to build supportive career pathways.</p>
+            <p>We promote active peer learning, executive mentorship, and corporate alliances to build supportive career
+              pathways.</p>
           </div>
         </div>
       </div>
@@ -1096,7 +1565,10 @@
       <div class="section-header">
         <span class="section-subtitle">Our Heritage</span>
         <h2 class="section-title">Genesis &amp; <span>History</span></h2>
-        <p class="section-desc">Established in 2005, Trident School of Business Administration (TSBA) was founded with a vision to provide world-class management education in Odisha. Over the past two decades, TSBA has grown from a pioneering local institute into one of the state's premier business schools, continually evolving its pedagogy and infrastructure to meet global corporate demands.</p>
+        <p class="section-desc">Established in 2005, Trident School of Business Administration (TSBA) was founded with a
+          vision to provide world-class management education in Odisha. Over the past two decades, TSBA has grown from a
+          pioneering local institute into one of the state's premier business schools, continually evolving its pedagogy
+          and infrastructure to meet global corporate demands.</p>
       </div>
 
       <div class="timeline-wrapper">
@@ -1105,7 +1577,8 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <strong>2005</strong>
-            <p>Trident School of Business Administration is founded under the aegis of the Trident Group of Institutions, with a goal of offering premium value-centric business training.</p>
+            <p>Trident School of Business Administration is founded under the aegis of the Trident Group of
+              Institutions, with a goal of offering premium value-centric business training.</p>
           </div>
         </div>
 
@@ -1114,7 +1587,8 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <strong>2013</strong>
-            <p>Expanded corporate partnerships, introduced executive seminars, and integrated structured internships into the core MBA and BBA pedagogical curriculums.</p>
+            <p>Expanded corporate partnerships, introduced executive seminars, and integrated structured internships
+              into the core MBA and BBA pedagogical curriculums.</p>
           </div>
         </div>
 
@@ -1123,7 +1597,8 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <strong>2019</strong>
-            <p>Accredited by the Government of India's prestigious National Board of Accreditation (NBA) for overall teaching excellence and program infrastructure.</p>
+            <p>Accredited by the Government of India's prestigious National Board of Accreditation (NBA) for overall
+              teaching excellence and program infrastructure.</p>
           </div>
         </div>
 
@@ -1132,7 +1607,8 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <strong>Today</strong>
-            <p>A leading, dynamic business school in Odisha featuring state-of-the-art Finance, Analytics, and Communication laboratories with strong Fortune 500 placements.</p>
+            <p>A leading, dynamic business school in Odisha featuring state-of-the-art Finance, Analytics, and
+              Communication laboratories with strong Fortune 500 placements.</p>
           </div>
         </div>
       </div>
@@ -1143,73 +1619,90 @@
       <div class="section-header">
         <span class="section-subtitle">Accolades</span>
         <h2 class="section-title">Rankings &amp; <span>Recognition</span></h2>
-        <p class="section-desc">Our commitment to excellence is validated by national accreditation bodies, industry surveys, and academic rankings.</p>
+        <p class="section-desc">Our commitment to excellence is validated by national accreditation bodies, industry
+          surveys, and academic rankings.</p>
       </div>
-      
+
       <div class="rankings-row-clean">
         <div class="rank-col-clean">
           <div class="rank-badge-circle">🏆</div>
           <h3>NBA Accredited</h3>
-          <p>Accredited by Govt of India's National Board of Accreditation (NBA) for outstanding quality of education, faculty, and academic infrastructure.</p>
+          <p>Accredited by Govt of India's National Board of Accreditation (NBA) for outstanding quality of education,
+            faculty, and academic infrastructure.</p>
         </div>
-        
+
         <div class="rank-col-clean">
           <div class="rank-badge-circle">🏅</div>
           <h3>Top 5 B-School</h3>
-          <p>Consistently ranked among the Top 5 Business Schools in Odisha in private and government-led surveys for placement and pedagogy.</p>
+          <p>Consistently ranked among the Top 5 Business Schools in Odisha in private and government-led surveys for
+            placement and pedagogy.</p>
         </div>
-        
+
         <div class="rank-col-clean">
           <div class="rank-badge-circle">🏛️</div>
           <h3>AICTE Approved</h3>
-          <p>Approved by the All India Council for Technical Education (AICTE), Ministry of Education, following strict academic standards.</p>
+          <p>Approved by the All India Council for Technical Education (AICTE), Ministry of Education, following strict
+            academic standards.</p>
         </div>
       </div>
     </section>
 
     <!-- ABOUT TRIDENT GROUP SECTION -->
     <section id="trident-group" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center;">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center;">
         <div>
           <span class="section-subtitle">Our Parent Group</span>
           <h2 class="section-title">About <span>Trident Group</span> of Institutions</h2>
-          <p class="section-desc" style="margin-bottom: 20px;">Trident Group of Institutions, established in 2005 in Bhubaneswar, is one of the leading educational conglomerates in Odisha. Offering courses in Engineering (TAT), Management (TSBA), Computer Applications (TCA), and Biotechnology, the group is renowned for its academic rigor, research initiatives, and massive recruitment networks.</p>
-          <p class="section-desc">With a sprawling green campus, state-of-the-art labs, and over 15,000 alumni worldwide, the Trident Group continues to shape student success and create future-ready tech and management leaders.</p>
+          <p class="section-desc" style="margin-bottom: 20px;">Trident Group of Institutions, established in 2005 in
+            Bhubaneswar, is one of the leading educational conglomerates in Odisha. Offering courses in Engineering,
+            Management, Computer Applications, and Biotechnology, the group is renowned for its academic rigor, research
+            initiatives, and massive recruitment networks.</p>
+          <p class="section-desc">With a sprawling green campus, state-of-the-art labs, and over 15,000 alumni
+            worldwide, the Trident Group continues to shape student success and create future-ready tech and management
+            leaders.</p>
         </div>
         <div style="position: relative;">
-          <div style="border-radius: 20px; overflow: hidden; border: 3px solid rgba(11,31,58,0.1); box-shadow: var(--shadow);">
-            <img src="Public/Untitled design (3).png" alt="Trident Group Campus" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+          <div
+            style="border-radius: 20px; overflow: hidden; border: 3px solid rgba(11,31,58,0.1); box-shadow: var(--shadow);">
+            <img src="Public/Untitled design (3).png" alt="Trident Group Campus"
+              style="width: 100%; height: 320px; object-fit: cover; display: block;">
           </div>
         </div>
       </div>
     </section>
 
     <!-- INTERNATIONAL TIE-UPS SECTION -->
-    <section id="international" class="section-container" style="border-top: 1px solid var(--line); padding-top: 80px; margin-bottom: 96px;">
+    <section id="international" class="section-container"
+      style="border-top: 1px solid var(--line); padding-top: 80px; margin-bottom: 96px;">
       <div class="international-card-clean">
         <div class="section-header">
           <span class="section-subtitle">Global Reach</span>
           <h2 class="section-title">International <span>Tie-ups</span></h2>
-          <p class="section-desc">We collaborate with global universities, research associations, and international corporations to expose our students and faculty to world-class practices.</p>
+          <p class="section-desc">We collaborate with global universities, research associations, and international
+            corporations to expose our students and faculty to world-class practices.</p>
         </div>
-        
+
         <div class="tieups-row-clean">
           <div class="tieup-col-clean">
             <div class="tieup-badge-circle">🌏</div>
             <h4>Global Immersion</h4>
-            <p>Short-term study tours, university exchanges, and global leadership workshops to provide direct international perspective.</p>
+            <p>Short-term study tours, university exchanges, and global leadership workshops to provide direct
+              international perspective.</p>
           </div>
-          
+
           <div class="tieup-col-clean">
             <div class="tieup-badge-circle">🔬</div>
             <h4>Collaborative Research</h4>
-            <p>Joint publications, international conferences, and exchange of research scholars with foreign academic partners.</p>
+            <p>Joint publications, international conferences, and exchange of research scholars with foreign academic
+              partners.</p>
           </div>
-          
+
           <div class="tieup-col-clean">
             <div class="tieup-badge-circle">🏢</div>
             <h4>MNC Certifications</h4>
-            <p>Global certification pathways partnered with tech and business giants to add worldwide credentials to your resume.</p>
+            <p>Global certification pathways partnered with tech and business giants to add worldwide credentials to
+              your resume.</p>
           </div>
         </div>
       </div>
@@ -1242,7 +1735,8 @@
       <div class="cta-card">
         <div class="cta-content">
           <h2>Ready to Start Your Management Journey?</h2>
-          <p>Explore admission criteria, application deadlines, and program details on our homepage or get in touch with our admissions department.</p>
+          <p>Explore admission criteria, application deadlines, and program details on our homepage or get in touch with
+            our admissions department.</p>
         </div>
         <a href="index.html#admissions" class="btn-dark">Apply Now</a>
       </div>
@@ -1283,4 +1777,5 @@
     });
   </script>
 </body>
+
 </html>
