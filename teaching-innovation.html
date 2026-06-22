@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Innovation — Academic Excellence — Trident School of Business Administration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1F3A;
+      --navy-light: #152E4D;
+      --gold: #C8962A;
+      --gold-soft: #E8B84B;
+      --gold-lt: #E8B84B;
+      --white: #FFFFFF;
+      --offwhite: #F5F3EE;
+      --text: #1A1A2E;
+      --muted: #5A6378;
+      --line: #E5DED0;
+      --shadow: 0 18px 45px rgba(11, 31, 58, 0.08);
+      --shadow-hover: 0 24px 60px rgba(11, 31, 58, 0.15);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --nav-h: 72px;
+    }
+    
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--offwhite);
+      overflow-x: hidden;
+    }
+    
+    /* Topbar matching index.html */
+    .topbar {
+      background: var(--navy);
+      color: #aab4c8;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 48px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .topbar-left { display: flex; gap: 16px; }
+    .topbar-right a { color: var(--gold-soft); text-decoration: none; margin-left: 14px; font-weight: 600; }
+    .topbar-right a:hover { color: var(--white); }
+
+    /* Sticky Navbar matching index.html */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      box-shadow: 0 2px 18px rgba(11, 31, 58, .12);
+      border-bottom: 3px solid var(--gold);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+    .nav-logo:hover .logo-img {
+      transform: scale(1.05);
+    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
+
+    /* Desktop menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2px;
+    }
+    .nav-menu>li {
+      position: relative;
+    }
+    .nav-menu>li>a {
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      min-height: 44px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: .02em;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+    .nav-menu>li>a:hover,
+    .nav-menu>li:hover>a {
+      background: var(--navy);
+      color: var(--gold-lt);
+    }
+    .has-drop>a::after {
+      content: ' ▾';
+      font-size: 9px;
+      opacity: .55;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--white);
+      min-width: 205px;
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(11, 31, 58, .15);
+      border-radius: 0 0 8px 8px;
+      list-style: none;
+      z-index: 200;
+      animation: fadeDown .18s ease;
+    }
+    .dropdown::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: transparent;
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-6px) }
+      to { opacity: 1; transform: none }
+    }
+    .nav-menu>li:hover .dropdown {
+      display: block;
+    }
+    .dropdown li a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0ece4;
+      transition: var(--transition);
+      touch-action: manipulation;
+    }
+    .dropdown li a:hover {
+      background: var(--offwhite);
+      color: var(--navy);
+      padding-left: 22px;
+    }
+    .dropdown li a.active {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .nav-button {
+      background: var(--gold) !important; color: var(--navy) !important;
+      font-weight: 700 !important; padding: 9px 18px !important;
+      border-radius: 4px !important; letter-spacing: .04em;
+      font-size: 12.5px; text-decoration: none; display: flex; align-items: center;
+      transition: var(--transition);
+    }
+    .nav-button:hover { background: var(--navy) !important; color: var(--gold-soft) !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile Drawer */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0;
+      background: var(--navy); z-index: 1050; overflow-y: auto;
+      padding: 80px 24px 40px; transform: translateX(100%);
+      opacity: 0; visibility: hidden;
+      transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
+    }
+    .mobile-nav.open { transform: translateX(0); opacity: 1; visibility: visible; }
+    .mobile-nav-list { list-style: none; }
+    .mobile-nav-list>li { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-nav-list>li>.mn-row { display: flex; justify-content: space-between; align-items: center; }
+    .mobile-nav-list>li>.mn-row>a { display: flex; align-items: center; width: 100%; padding: 16px 4px; font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; touch-action: manipulation; }
+    .mobile-toggle { background: none; border: none; color: var(--gold-lt); font-size: 22px; line-height: 1; cursor: pointer; padding: 10px 8px; }
+    .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
+    .mobile-sub.open { display: block; }
+    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255, 255, 255, .75); text-decoration: none; touch-action: manipulation; }
+    .mobile-sub li a:hover { color: var(--gold-lt); }
+    .mobile-sub li a.active { color: var(--gold-lt); font-weight: 700; }
+    .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 96px 8% 80px;
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200, 150, 42, 0.15);
+      border: 1px solid rgba(200, 150, 42, 0.3);
+      color: var(--gold-soft);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 4.5vw, 54px);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+    .hero-title span { color: var(--gold-soft); }
+    .hero-desc {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 800px;
+      margin: 20px auto 0;
+    }
+
+    /* Program details cards */
+    .section-container {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 4%;
+    }
+    
+    /* Layout grid */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px;
+      margin-bottom: 64px;
+      align-items: start;
+    }
+
+    .innovation-content-box {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
+    }
+    .innovation-content-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    
+    .innovation-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    /* Detail blocks */
+    .innovation-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .innovation-block {
+      background: rgba(11, 31, 58, 0.02);
+      border-left: 4px solid var(--navy);
+      border-radius: 0 12px 12px 0;
+      padding: 24px;
+      transition: var(--transition);
+    }
+    .innovation-block:hover {
+      transform: translateX(6px);
+      background: rgba(200, 150, 42, 0.05);
+      border-left-color: var(--gold);
+    }
+    .innovation-block h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .innovation-block p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .innovation-media-box {
+      text-align: center;
+    }
+    .innovation-img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: block;
+      margin: 0 auto;
+    }
+    .innovation-img:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Footer matching index.html */
+    .footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 32px 5%;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 96px;
+    }
+
+    /* Desktop column vertical dividers */
+    @media (min-width: 1025px) {
+      .layout-grid > div:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .layout-grid { grid-template-columns: 1fr; gap: 48px; }
+      .innovation-img { max-width: 400px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .topbar { padding: 8px 24px; }
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+      .hero-section { padding: 64px 24px 72px; }
+      .section-container { margin: 64px auto; }
+    }
+  </style>
+  <link rel="stylesheet" href="theme.css">
+  <script src="animations.js" defer></script>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📞 +91-674-6649600</span> &nbsp;|&nbsp; <span>✉️ info@trident.ac.in</span>
+    </div>
+    <div class="topbar-right">
+      <span>Bhubaneswar, Odisha</span>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Trident School of Business Logo" class="logo-img">
+      <div class="logo-text">
+        <span class="school-name">Trident School of Business</span>
+        <span class="tagline">Administration · Est. 2005</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="about.html">About Us</a></li>
+      <li class="has-drop"><a href="#">Programs</a>
+        <ul class="dropdown">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li><a href="admission.html">Admission</a></li>
+      <li class="has-drop"><a href="#">Faculty &amp; Research</a>
+        <ul class="dropdown">
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
+          <li><a href="#">Journal of Business Governance</a></li>
+          <li><a href="mou.html">MOU</a></li>
+          <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
+          <li><a href="life-membership.html">Life Membership</a></li>
+          <li><a href="nodal-research.html">Nodal Center of Research</a></li>
+          <li><a href="teaching-innovation.html" class="active">Teaching Innovation</a></li>
+        </ul>
+      </li>
+      <li><a href="placement.html">Placement</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
+    </ul>
+
+    <a href="index.html#admissions" class="nav-button">Apply Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li><a href="about.html">About Us</a></li>
+      <li>
+        <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
+        <ul class="mobile-sub" id="sub2">
+          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
+          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
+          <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
+        </ul>
+      </li>
+      <li><a href="admission.html">Admission</a></li>
+      <li>
+        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
+        <ul class="mobile-sub" id="sub4">
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
+          <li><a href="#">Journal of Business Governance</a></li>
+          <li><a href="mou.html">MOU</a></li>
+          <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
+          <li><a href="life-membership.html">Life Membership</a></li>
+          <li><a href="nodal-research.html">Nodal Center of Research</a></li>
+          <li><a href="teaching-innovation.html" class="active">Teaching Innovation</a></li>
+        </ul>
+      </li>
+      <li><a href="placement.html">Placement</a></li>
+      <li><a href="campus-life.html">Campus Life</a></li>
+    </ul>
+    <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <span class="eyebrow">Academic Excellence</span>
+      <h1 class="hero-title">Teaching &amp; <span>Pedagogical Innovation</span></h1>
+      <p class="hero-desc">
+        Bridging theoretical frameworks with active corporate application through case-study analyses, fieldwork initiatives, and state-of-the-art resources.
+      </p>
+    </section>
+
+    <!-- CONTENT LAYOUT -->
+    <section class="section-container">
+      <div class="layout-grid">
+        <!-- Left Column: Content -->
+        <div class="innovation-content-box scroll-reveal stagger-1">
+          <h3>Teaching Innovations &amp; Pedagogy</h3>
+          <p class="innovation-desc">
+            The MBA Department of Trident Academy of Technology employs several active teaching strategies designed to bridge the gap between classroom concept maps and industry-ready execution.
+          </p>
+          
+          <div class="innovation-blocks">
+            <div class="innovation-block">
+              <h4>Case Study Methodology</h4>
+              <p>
+                Classroom theories are applied directly to actual corporate challenges. Using case studies from Harvard Business Publishing, Ivey, and leading national journals, scholars learn critical thinking, corporate analysis, and out-of-the-box business problem-solving.
+              </p>
+            </div>
+            
+            <div class="innovation-block">
+              <h4>Fieldwork &amp; Experiential Projects</h4>
+              <p>
+                Students participate in mandatory summer internships (SIP) and regular industrial visits. The program integrates live industry survey projects where students compile data on local business trends, market behaviors, and SME digitization.
+              </p>
+            </div>
+            
+            <div class="innovation-block">
+              <h4>Instrumented Feedback Systems</h4>
+              <p>
+                Continuous performance monitoring through structured feedback loops, peer performance evaluations, and individual assignments. This ensures tailored developmental support for every scholar.
+              </p>
+            </div>
+
+            <div class="innovation-block">
+              <h4>Co-curricular Action Learning</h4>
+              <p>
+                Active participation in national budget analysis competitions, inter-B-school paper presentations, HR conclaves, and corporate conclave fests to foster team management, communication, and executive execution skills.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Media Photo -->
+        <div class="innovation-media-box scroll-reveal stagger-2">
+          <img src="Public/campus_1.jpg" alt="Trident Academic Block Campus" class="innovation-img">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Trident School of Business Administration · Bhubaneswar, Odisha
+  </footer>
+
+  <script>
+    /* Mobile nav triggers */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-toggle, .mn-row > a[href="#"]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        const row = el.closest('.mn-row');
+        const btn = row.querySelector('.mobile-toggle');
+        const sub = document.getElementById(btn.dataset.target);
+        const isOpen = sub.classList.toggle('open');
+        btn.textContent = isOpen ? '−' : '+';
+      });
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(a => {
+      if (a.getAttribute('href') !== '#') {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          hamburger.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
