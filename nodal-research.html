@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Membership — Professional Memberships — Trident School of Business Administration</title>
+  <title>Nodal Center of Research — Research & Doctoral Programme — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -257,14 +257,14 @@
       align-items: start;
     }
 
-    .membership-content-box {
+    .research-content-box {
       background: transparent !important;
       border: none !important;
       border-radius: 0 !important;
       padding: 16px 0 !important;
       box-shadow: none !important;
     }
-    .membership-content-box h3 {
+    .research-content-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 26px;
       color: var(--navy);
@@ -274,7 +274,7 @@
       display: inline-block;
     }
     
-    .membership-desc {
+    .research-desc {
       font-size: 15px;
       color: var(--muted);
       line-height: 1.8;
@@ -282,49 +282,68 @@
     }
 
     /* Detail blocks */
-    .membership-blocks {
+    .research-blocks {
       display: flex;
       flex-direction: column;
       gap: 24px;
     }
-    .member-block {
+    .research-block {
       background: rgba(11, 31, 58, 0.02);
       border-left: 4px solid var(--navy);
       border-radius: 0 12px 12px 0;
       padding: 24px;
       transition: var(--transition);
     }
-    .member-block:hover {
+    .research-block:hover {
       transform: translateX(6px);
       background: rgba(200, 150, 42, 0.05);
       border-left-color: var(--gold);
     }
-    .member-block h4 {
+    .research-block h4 {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       color: var(--navy);
       margin-bottom: 8px;
     }
-    .member-block p {
+    .research-block p {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.7;
     }
+    .research-block ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .research-block ul li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .research-block ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1;
+    }
 
-    .membership-media-box {
+    .research-media-box {
       text-align: center;
     }
-    .membership-img {
+    .research-img {
       width: 100%;
       max-width: 480px;
       height: auto;
-      border-radius: 20px;
+      border-radius: 24px;
       box-shadow: var(--shadow);
       transition: var(--transition);
       display: block;
       margin: 0 auto;
     }
-    .membership-img:hover {
+    .research-img:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
     }
@@ -352,7 +371,7 @@
     /* Responsive */
     @media (max-width: 1024px) {
       .layout-grid { grid-template-columns: 1fr; gap: 48px; }
-      .membership-img { max-width: 400px; }
+      .research-img { max-width: 400px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -407,8 +426,8 @@
           <li><a href="#">Journal of Business Governance</a></li>
           <li><a href="mou.html">MOU</a></li>
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
-          <li><a href="life-membership.html" class="active">Life Membership</a></li>
-          <li><a href="nodal-research.html">Nodal Center of Research</a></li>
+          <li><a href="life-membership.html">Life Membership</a></li>
+          <li><a href="nodal-research.html" class="active">Nodal Center of Research</a></li>
           <li><a href="#">Teaching Innovation</a></li>
         </ul>
       </li>
@@ -444,8 +463,8 @@
           <li><a href="#">Journal of Business Governance</a></li>
           <li><a href="mou.html">MOU</a></li>
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
-          <li><a href="life-membership.html" class="active">Life Membership</a></li>
-          <li><a href="nodal-research.html">Nodal Center of Research</a></li>
+          <li><a href="life-membership.html">Life Membership</a></li>
+          <li><a href="nodal-research.html" class="active">Nodal Center of Research</a></li>
           <li><a href="#">Teaching Innovation</a></li>
         </ul>
       </li>
@@ -458,10 +477,10 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section">
-      <span class="eyebrow">Professional Connect</span>
-      <h1 class="hero-title">Professional <span>Life Memberships</span></h1>
+      <span class="eyebrow">Research &amp; Doctoral Programme</span>
+      <h1 class="hero-title">BPUT Nodal Center of <span>Research</span> (NCR)</h1>
       <p class="hero-desc">
-        Connecting our academic programs, students, and faculty with leading national management associations to drive leadership and institutional excellence.
+        Pioneering quality academic research, doctoral guidance, and sustainable business insights as an officially recognized research center.
       </p>
     </section>
 
@@ -469,39 +488,43 @@
     <section class="section-container">
       <div class="layout-grid">
         <!-- Left Column: Content -->
-        <div class="membership-content-box scroll-reveal stagger-1">
-          <h3>Professional Memberships</h3>
-          <p class="membership-desc">
-            The MBA Department is a life member of the following prestigious professional bodies, establishing direct pathways for industry networking, institutional benchmarking, and professional qualifications.
+        <div class="research-content-box scroll-reveal stagger-1">
+          <h3>Research &amp; Doctoral Programme</h3>
+          <p class="research-desc">
+            The MBA Department of Trident Academy of Technology has been recognized as a Nodal Center of Research (NCR) by Biju Patnaik University of Technology (BPUT) in 2023. This prestigious recognition highlights our commitment to promoting quality research, innovation, and academic excellence in the field of management studies.
           </p>
           
-          <div class="membership-blocks">
-            <div class="member-block">
-              <h4>Association of Indian Management Schools (AIMS)</h4>
+          <div class="research-blocks">
+            <div class="research-block">
+              <h4>Doctoral Scholars Guidance</h4>
               <p>
-                AIMS is one of the largest networking organizations of business schools in the world. Life membership provides our students and faculty with resources for management research, regional case-writing seminars, and access to national management education benchmark standards.
+                At present, eight research scholars are actively enrolled in the Ph.D. programme under the guidance of our experienced and qualified faculty members. The center provides a highly supportive academic environment, facilitating structured coursework, review boards, and scholarly mentorship.
               </p>
             </div>
             
-            <div class="member-block">
-              <h4>National Human Resource Development Network (NHRDN)</h4>
-              <p>
-                NHRDN is the premier national body committed to grooming human capital leaders in India. Our partnership offers direct interaction with corporate directors, local HR chapter workshops, and leadership development programs to keep our students aligned with global talent trends.
-              </p>
+            <div class="research-block">
+              <h4>Research Thrust Areas</h4>
+              <ul>
+                <li>Human Resource Management &amp; Green HR Initiatives</li>
+                <li>Marketing &amp; Digital SME Transformations</li>
+                <li>Corporate Finance &amp; Financial Risk Valuations</li>
+                <li>Operations Strategy &amp; Logistics Management</li>
+                <li>Sustainable Business Practices &amp; Entrepreneurship</li>
+              </ul>
             </div>
             
-            <div class="member-block">
-              <h4>Indian Society for Training &amp; Development (ISTD)</h4>
+            <div class="research-block">
+              <h4>Academic Contribution &amp; Industry Alignment</h4>
               <p>
-                ISTD is the national forum for HR trainers and learning coordinators. Membership provides our faculty with training materials and resources for advanced methodologies, and opens opportunities for students to obtain diplomas in training and development.
+                The department actively encourages collaborative research, publications in reputed journals, and paper presentations at national and international conferences. Through these initiatives, the center aims to contribute meaningful business insights for policymakers, researchers, and the corporate community.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Logos Image -->
-        <div class="membership-media-box scroll-reveal stagger-2">
-          <img src="Public/membership_logos.png" alt="Life Membership Organizations" class="membership-img">
+        <!-- Right Column: Media Photo Gallery -->
+        <div class="research-media-box scroll-reveal stagger-2">
+          <img src="Public/research_photos.png" alt="Doctoral Scholar Presentations" class="research-img">
         </div>
       </div>
     </section>
