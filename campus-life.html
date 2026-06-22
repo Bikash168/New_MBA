@@ -250,7 +250,7 @@
     .campus-showcase-container {
       display: flex;
       flex-direction: column;
-      gap: 96px;
+      gap: 110px;
       margin-bottom: 96px;
     }
     
@@ -267,32 +267,32 @@
     .showcase-media {
       flex: 1.1;
       position: relative;
-      border-radius: 24px !important;
+      border-radius: var(--radius-lg) !important;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-md);
       border: 3px solid rgba(11, 31, 58, 0.05);
-      transition: var(--transition);
+      transition: var(--transition-smooth);
     }
     
     .showcase-media::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(11, 31, 58, 0.05);
+      background: rgba(11, 31, 58, 0.03);
       mix-blend-mode: multiply;
       pointer-events: none;
     }
     
     .showcase-media img {
       width: 100%;
-      height: 380px;
+      height: 400px;
       object-fit: cover;
       display: block;
       transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
     .campus-showcase-item:hover .showcase-media img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
     
     .showcase-info {
@@ -306,11 +306,38 @@
     .showcase-header {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
+    }
+    
+    .showcase-icon-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(200, 150, 42, 0.08);
+      border: 1px solid rgba(200, 150, 42, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
     }
     
     .showcase-icon {
-      font-size: 36px;
+      font-size: 28px;
+      line-height: 1;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .campus-showcase-item:hover .showcase-icon-wrap {
+      background: var(--navy);
+      border-color: var(--navy);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .campus-showcase-item:hover .showcase-icon {
+      transform: scale(1.15) rotate(8deg);
+      color: var(--gold-soft);
     }
     
     .showcase-info h3 {
@@ -328,28 +355,271 @@
       margin: 0;
     }
     
+    /* Showcase Features - Styled Grid of Chips */
     .showcase-features {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
       margin-top: 8px;
     }
     
     .showcase-features li {
-      font-size: 13.5px;
-      color: var(--text);
+      font-size: 13px;
+      color: var(--navy);
       font-weight: 600;
       display: flex;
       align-items: center;
       gap: 10px;
+      background: rgba(11, 31, 58, 0.02);
+      border: 1px solid rgba(11, 31, 58, 0.05);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition-quick);
     }
     
     .showcase-features li::before {
       content: '✓';
       color: var(--gold);
-      font-weight: 800;
+      font-weight: 900;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: rgba(200, 150, 42, 0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    .campus-showcase-item:hover .showcase-features li {
+      background: var(--white);
+      border-color: rgba(200, 150, 42, 0.2);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    /* SIP & Placement Domain grids */
+    .sip-domains-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .sip-domain-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-quick);
+    }
+    
+    .sip-domain-tag:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Corporate Partner Chips */
+    .company-chips-title {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .company-chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    
+    .company-chip {
+      display: inline-flex;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.08);
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 500;
+      transition: var(--transition-quick);
+      box-shadow: var(--shadow-sm);
+      cursor: default;
+    }
+    
+    .company-chip:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Seminars Left-bordered Cards */
+    .seminar-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    
+    .seminar-card {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    
+    .seminar-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+      transition: var(--transition-smooth);
+    }
+    
+    .seminar-card.in-house::before {
+      background: var(--gold);
+    }
+    
+    .seminar-card.national::before {
+      background: var(--navy);
+    }
+    
+    .seminar-card:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(200, 150, 42, 0.2);
+    }
+    
+    .seminar-card.in-house:hover::before {
+      width: 6px;
+      background: var(--navy);
+    }
+    
+    .seminar-card.national:hover::before {
+      width: 6px;
+      background: var(--gold);
+    }
+    
+    .seminar-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .seminar-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+    }
+    
+    .seminar-date {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    
+    .seminar-title {
+      font-family: 'Playfair Display', serif;
       font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    
+    .seminar-speaker {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    
+    .seminar-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Seminars Media Grid */
+    .seminar-media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-content: start;
+      flex: 1.1;
+    }
+    
+    .seminar-media-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .seminar-media-card.span-2 {
+      grid-column: span 2;
+    }
+    
+    .seminar-media-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(200, 150, 42, 0.2);
+    }
+    
+    .seminar-media-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .seminar-media-card.span-2 img {
+      height: 240px;
+    }
+    
+    .seminar-media-card:hover img {
+      transform: scale(1.03);
+    }
+    
+    .seminar-media-caption {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+      padding: 8px 12px;
+      background: var(--white);
+      border-top: 1px solid rgba(11, 31, 58, 0.04);
+      margin-top: auto;
     }
     
     @media (max-width: 992px) {
@@ -359,6 +629,12 @@
       }
       .showcase-media img {
         height: 280px;
+      }
+      .showcase-features {
+        grid-template-columns: 1fr;
+      }
+      .sip-domains-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -527,7 +803,7 @@
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">🏢</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">🏢</span></div>
               <h3>Academic Infrastructure</h3>
             </div>
             <p>
@@ -549,16 +825,16 @@
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">📖</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">📖</span></div>
               <h3>TSBA Knowledge Hub (Library)</h3>
             </div>
             <p>
               The library acts as a core learning repository, housing thousands of physical textbooks, business cases, and references. Students have digital portal subscriptions to leading international management journals, databases, and e-books.
             </p>
             <ul class="showcase-features">
-              <li>Extensive Management Reference Catalog</li>
-              <li>Subscribed International &amp; National Journals</li>
-              <li>Electronic Databases &amp; E-Books Portals</li>
+              <li>Extensive Reference Catalog</li>
+              <li>Subscribed Global Journals</li>
+              <li>Electronic Databases Portals</li>
               <li>Silent Collaborative Study Zone</li>
             </ul>
           </div>
@@ -571,17 +847,17 @@
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">🤝</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">🤝</span></div>
               <h3>Clubs &amp; Recreation</h3>
             </div>
             <p>
               A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the campus.
             </p>
             <ul class="showcase-features">
-              <li>Fintech, BFSI, &amp; Strategy Clubs</li>
-              <li>Business Analytics &amp; Digitalization Clubs</li>
-              <li>Communication &amp; Cultural Activity Hubs</li>
-              <li>Outdoor &amp; Indoor Sports Courts</li>
+              <li>Fintech, BFSI, &amp; Strategy</li>
+              <li>Analytics &amp; Digitalization</li>
+              <li>Communication &amp; Arts Hubs</li>
+              <li>Outdoor &amp; Indoor Courts</li>
             </ul>
           </div>
         </div>
@@ -593,7 +869,7 @@
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">🎉</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">🎉</span></div>
               <h3>Annual Conclaves &amp; Fests</h3>
             </div>
             <p>
@@ -601,9 +877,9 @@
             </p>
             <ul class="showcase-features">
               <li>National Specialization Conclaves</li>
-              <li>Inter B-School Budgeting &amp; Business Contests</li>
-              <li>Creative &amp; Performing Arts Festivals</li>
-              <li>Corporate Expert &amp; Guest Seminars</li>
+              <li>Inter B-School Contests</li>
+              <li>Creative Arts Festivals</li>
+              <li>Corporate Guest Seminars</li>
             </ul>
           </div>
         </div>
@@ -615,21 +891,22 @@
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">🏭</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">🏭</span></div>
               <h3>Industrial Visits</h3>
             </div>
             <p>
               The MBA Department of Trident Academy of Technology regularly organises industrial visits to bridge the gap between classroom learning and real-world business practices. These visits provide students with valuable exposure to corporate operations, manufacturing processes, supply chain management, marketing strategies, and organisational behaviour in action.
             </p>
             <p>
-              As part of the experiential learning approach, students interact with industry experts, observe management practices, and gain insights into operational challenges and strategic decision-making. The visits enhance their understanding of business concepts while developing professional skills such as communication, analytical thinking, and teamwork.
+              As part of the experiential learning approach, students interact with industry experts, observe management practices, and gain insights into operational challenges and strategic decision-making.
             </p>
             <ul class="showcase-features">
-              <li>Real-World Business Practice Exposure</li>
-              <li>Operational &amp; Manufacturing Insight</li>
-              <li>Direct Interaction with Industry Experts</li>
-              <li>Core Component of the 2-Year MBA Program</li>
+              <li>Real-World Practice Exposure</li>
+              <li>Manufacturing Insight</li>
+              <li>Direct Expert Interaction</li>
+              <li>Program Core Component</li>
             </ul>
+          </div>
         </div>
 
         <!-- Summer Internship Programme (SIP) -->
@@ -639,7 +916,7 @@
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">💼</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">💼</span></div>
               <h3>Summer Internship Programme (SIP)</h3>
             </div>
             <p>
@@ -648,104 +925,184 @@
             <p>
               Through SIP, students develop a deeper understanding of customer psychology, market dynamics, corporate culture, and real-time business challenges. Many internships also serve as a gateway to Pre-Placement Offers (PPOs) from reputed organizations.
             </p>
+            
             <div style="margin-top: 10px;">
-              <strong style="color: var(--navy); font-size: 14px;">Key Internship Domains:</strong>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; font-size: 13.5px; font-weight: 500; color: var(--navy);">
-                <span>🎯 Market Research</span>
-                <span>📈 Business Development</span>
-                <span>👥 HR &amp; Talent Acquisition</span>
-                <span>💰 Financial Analysis</span>
-                <span>🚚 Operations &amp; Supply Chain</span>
-                <span>💻 Systems &amp; IT Analytics</span>
+              <strong style="color: var(--navy); font-size: 14.5px;">Key Internship Domains:</strong>
+              <div class="sip-domains-grid">
+                <span class="sip-domain-tag">🎯 Market Research</span>
+                <span class="sip-domain-tag">📈 Business Development</span>
+                <span class="sip-domain-tag">👥 HR &amp; Talent Acquisition</span>
+                <span class="sip-domain-tag">💰 Financial Analysis</span>
+                <span class="sip-domain-tag">🚚 Operations &amp; Supply Chain</span>
+                <span class="sip-domain-tag">💻 Systems &amp; IT Analytics</span>
               </div>
             </div>
-            <div style="margin-top: 16px;">
-              <strong style="color: var(--navy); font-size: 14px;">Esteemed Organizations for SIP:</strong>
-              <p style="font-size: 12.5px; color: var(--muted); line-height: 1.5; margin-top: 4px;">
-                CMPDI, State Bank of India (SBI), HDFC Bank, NALCO, Steel Authority of India Limited (SAIL), Tata Steel, Hindustan Aeronautics Limited (HAL), Odisha Mining Corporation (OMC), TPCODL, ArcelorMittal Nippon Steel India, Emami Paper Mills, TRL KROSAKI Refractories, Exide Industries, Dabur India, Birla Opus, HIL Limited, Mayfair Hotels &amp; Resorts, Smart Acumen Consulting, MetDroid Technologies, JIGYASU, Aditya Motors, and Sagar Business.
-              </p>
+
+            <div style="margin-top: 20px;">
+              <span class="company-chips-title">Esteemed Organizations for SIP:</span>
+              <div class="company-chips-container">
+                <span class="company-chip">CMPDI</span>
+                <span class="company-chip">State Bank of India (SBI)</span>
+                <span class="company-chip">HDFC Bank</span>
+                <span class="company-chip">NALCO</span>
+                <span class="company-chip">Steel Authority of India Limited (SAIL)</span>
+                <span class="company-chip">Tata Steel</span>
+                <span class="company-chip">Hindustan Aeronautics Limited (HAL)</span>
+                <span class="company-chip">Odisha Mining Corporation (OMC)</span>
+                <span class="company-chip">TPCODL</span>
+                <span class="company-chip">ArcelorMittal Nippon Steel India</span>
+                <span class="company-chip">Emami Paper Mills</span>
+                <span class="company-chip">TRL KROSAKI Refractories</span>
+                <span class="company-chip">Exide Industries</span>
+                <span class="company-chip">Dabur India</span>
+                <span class="company-chip">Birla Opus</span>
+                <span class="company-chip">HIL Limited</span>
+                <span class="company-chip">Mayfair Hotels &amp; Resorts</span>
+                <span class="company-chip">Smart Acumen Consulting</span>
+                <span class="company-chip">MetDroid Technologies</span>
+                <span class="company-chip">JIGYASU</span>
+                <span class="company-chip">Aditya Motors</span>
+                <span class="company-chip">Sagar Business</span>
+              </div>
             </div>
-            <ul class="showcase-features" style="margin-top: 16px;">
+
+            <ul class="showcase-features" style="margin-top: 24px;">
               <li>Enhances industry readiness</li>
-              <li>Strengthens analytical &amp; managerial skills</li>
-              <li>Builds corporate networking opportunities</li>
-              <li>Increases employability and PPO opportunities</li>
+              <li>Strengthens analytical skills</li>
+              <li>Builds corporate networks</li>
+              <li>Increases PPO opportunities</li>
             </ul>
           </div>
         </div>
 
         <!-- Seminars & Conferences -->
         <div class="campus-showcase-item">
-          <!-- Left Column: Both Images stacked vertically -->
-          <div class="showcase-media scroll-reveal-scale" style="display: flex; flex-direction: column; gap: 20px; box-shadow: none; border: none; background: transparent;">
-            <div style="box-shadow: var(--shadow); border-radius: 12px; overflow: hidden; border: 2px solid rgba(11,31,58,0.05);">
-              <img src="Public/seminar_conclave.jpg" alt="National Conclave on CSR for Sustainability Stage" style="width: 100%; height: auto; object-fit: contain;">
-              <span style="display: block; font-size: 11px; color: var(--muted); font-weight: 600; text-align: center; padding: 6px; background: var(--white);">National Conclave on CSR for Sustainability (2025)</span>
+          <!-- Left Column: Media Grid -->
+          <div class="seminar-media-grid scroll-reveal-scale">
+            <div class="seminar-media-card span-2">
+              <img src="Public/seminar_conclave.jpg" alt="National Conclave on CSR for Sustainability Stage">
+              <span class="seminar-media-caption">National Conclave on CSR for Sustainability (2025)</span>
             </div>
-            <div style="box-shadow: var(--shadow); border-radius: 12px; overflow: hidden; border: 2px solid rgba(11,31,58,0.05);">
-              <img src="Public/seminar_wealth.jpg" alt="Expert Talk on Wealth Management presentation" style="width: 100%; height: auto; object-fit: contain;">
-              <span style="display: block; font-size: 11px; color: var(--muted); font-weight: 600; text-align: center; padding: 6px; background: var(--white);">Expert Talk on Wealth Management (Dr. Sanat Kumar Mishra)</span>
+            <div class="seminar-media-card">
+              <img src="Public/seminar_cfx.jpg" alt="Expert Talk on CFA Career Pathways">
+              <span class="seminar-media-caption">CFA Career Orientation (Dr. Biswaranjan Mishra)</span>
+            </div>
+            <div class="seminar-media-card">
+              <img src="Public/seminar_microeconomics.jpg" alt="Expert Talk on Microeconomics group photo">
+              <span class="seminar-media-caption">Expert Talk on Microeconomics Group</span>
+            </div>
+            <div class="seminar-media-card">
+              <img src="Public/seminar_sustainability.jpg" alt="National Seminar on Business Strategies and Sustainability stage panel">
+              <span class="seminar-media-caption">National Seminar: Business Strategies &amp; Sustainability</span>
+            </div>
+            <div class="seminar-media-card">
+              <img src="Public/seminar_wealth.jpg" alt="Expert Talk on Wealth Management presentation">
+              <span class="seminar-media-caption">Wealth Management Session (Dr. Sanat Kumar Mishra)</span>
             </div>
           </div>
           
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
-              <span class="showcase-icon">🎤</span>
+              <div class="showcase-icon-wrap"><span class="showcase-icon">🎤</span></div>
               <h3>Seminars, Conferences &amp; Conclaves</h3>
             </div>
             <p>
-              To nurture future-ready managers and equip students with emerging management skills and tools, the Department of Business Administration regularly organizes seminars, conferences, and conclaves. These academic platforms bring together eminent professors, industry leaders, and domain experts who share their valuable insights, practical experiences, and contemporary industry perspectives.
-            </p>
-            <p>
-              Through these initiatives, we explore diverse viewpoints and the latest trends in business and management, inspiring our students towards innovation, leadership, and sustainable growth.
+              To nurture future-ready managers and equip students with emerging management skills and tools, the Department regularly organizes seminars, conferences, and conclaves. These academic platforms bring together eminent professors, industry leaders, and domain experts who share their valuable insights and contemporary perspectives.
             </p>
             
             <!-- In-House Seminars -->
-            <div style="margin-top: 16px;">
-              <strong style="color: var(--navy); font-size: 14.5px;">(A) In-House Departmental Seminars (2025)</strong>
-              <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; font-size: 13px;">
-                <div style="background: rgba(11,31,58,0.02); border-left: 3px solid var(--gold); padding: 8px 12px;">
-                  <strong style="color: var(--navy);">Credit Analysis &amp; Appraisal:</strong> Mr. Pradosh Mohapatra, Retd. GM, Federal Bank, on Retail and Corporate Perspectives (27th Oct 2025).
+            <span class="seminars-section-title">🏫 (A) In-House Departmental Seminars (2025)</span>
+            <div class="seminar-list">
+              <div class="seminar-card in-house">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">In-House Seminar</span>
+                  <span class="seminar-date">27th Oct 2025</span>
                 </div>
-                <div style="background: rgba(11,31,58,0.02); border-left: 3px solid var(--gold); padding: 8px 12px;">
-                  <strong style="color: var(--navy);">Risk Management in Banking:</strong> Mr. Radha Mohan Patnaik, Former GM, Indian Overseas Bank, on Credit Risks and Mitigation Strategies (28th Oct 2025).
+                <h4 class="seminar-title">Credit Analysis &amp; Appraisal in Banking</h4>
+                <div class="seminar-speaker">Speaker: Mr. Pradosh Mohapatra, Retd. GM, Federal Bank Ltd.</div>
+                <p class="seminar-desc">Delivered key insights on retail and corporate credit assessment methodologies, risk valuation, and evaluation strategies in commercial banking.</p>
+              </div>
+              <div class="seminar-card in-house">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">In-House Seminar</span>
+                  <span class="seminar-date">28th Oct 2025</span>
                 </div>
-                <div style="background: rgba(11,31,58,0.02); border-left: 3px solid var(--gold); padding: 8px 12px;">
-                  <strong style="color: var(--navy);">Financial Modeling:</strong> Mr. Bidyut Prakash Ray, Former GM, Punjab National Bank, on Analytical Tools &amp; Corporate Finance (28th Oct 2025).
+                <h4 class="seminar-title">Risk Management in Banking</h4>
+                <div class="seminar-speaker">Speaker: Mr. Radha Mohan Patnaik, Former GM, Indian Overseas Bank</div>
+                <p class="seminar-desc">Focused on credit risk dimensions, banking portfolio threats, and the operational risk mitigation policies required for bank stability.</p>
+              </div>
+              <div class="seminar-card in-house">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">In-House Seminar</span>
+                  <span class="seminar-date">28th Oct 2025</span>
                 </div>
-                <div style="background: rgba(11,31,58,0.02); border-left: 3px solid var(--gold); padding: 8px 12px;">
-                  <strong style="color: var(--navy);">Certified Financial Analyst (CFA) Career Session:</strong> Guidance by Dr. Biswaranjan Mishra from CFX on finance pathways (17th Sept 2025).
+                <h4 class="seminar-title">Financial Modeling</h4>
+                <div class="seminar-speaker">Speaker: Mr. Bidyut Prakash Ray, Former GM, PNB</div>
+                <p class="seminar-desc">Conducted an analytical session covering corporate financial projections, valuation techniques, and strategic corporate financing tools.</p>
+              </div>
+              <div class="seminar-card in-house">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">In-House Seminar</span>
+                  <span class="seminar-date">17th Sept 2025</span>
                 </div>
-                <div style="background: rgba(11,31,58,0.02); border-left: 3px solid var(--gold); padding: 8px 12px;">
-                  <strong style="color: var(--navy);">Wealth Management:</strong> Mr. Sanat Kumar Mishra, Former SBI DGM &amp; Wealth Management Advisor, on Portfolio Strategies (6th Dec 2025).
+                <h4 class="seminar-title">Certified Financial Analyst (CFA) Career Session</h4>
+                <div class="seminar-speaker">Speaker: Dr. Biswaranjan Mishra, CFX</div>
+                <p class="seminar-desc">An orientation session guiding scholars on global investment banking credentials, portfolio management pathways, and market analyst profiles.</p>
+              </div>
+              <div class="seminar-card in-house">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">In-House Seminar</span>
+                  <span class="seminar-date">6th Dec 2025</span>
                 </div>
-                <div style="background: rgba(11,31,58,0.02); border-left: 3px solid var(--gold); padding: 8px 12px;">
-                  <strong style="color: var(--navy);">Banking Interview &amp; Career Success:</strong> Mr. Ajit Sadangi, Regional Head, ICICI Bank, on interview expectations and mantras to succeed (20th Sept 2025).
+                <h4 class="seminar-title">Wealth Management</h4>
+                <div class="seminar-speaker">Speaker: Mr. Sanat Kumar Mishra, Former SBI DGM &amp; Wealth Advisor</div>
+                <p class="seminar-desc">Addressed modern portfolio theory, wealth advisory strategies, client risk profiles, and investment allocation matrices.</p>
+              </div>
+              <div class="seminar-card in-house">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">In-House Seminar</span>
+                  <span class="seminar-date">20th Sept 2025</span>
                 </div>
+                <h4 class="seminar-title">Banking Interview &amp; Career Success</h4>
+                <div class="seminar-speaker">Speaker: Mr. Ajit Sadangi, Regional Head, ICICI Bank</div>
+                <p class="seminar-desc">Shared industry expectations from management graduates, key mock interview pointers, and long-term career mantras for ICICI and private banks.</p>
               </div>
             </div>
 
             <!-- National Seminars -->
-            <div style="margin-top: 24px;">
-              <strong style="color: var(--navy); font-size: 14.5px;">(B) National Conclaves</strong>
-              <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px; font-size: 13px;">
-                <div style="background: rgba(200,150,42,0.05); border-left: 3px solid var(--navy); padding: 10px 12px;">
-                  <strong style="color: var(--navy);">National Conclave on CSR for Sustainability: Action to Impact</strong> (8th–9th Feb 2025). Deliberated on sustainable development, responsible corporate governance, environmental protection, and inclusive growth strategies.
+            <span class="seminars-section-title">🌐 (B) National Conclaves</span>
+            <div class="seminar-list">
+              <div class="seminar-card national">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">National Conclave</span>
+                  <span class="seminar-date">8th–9th Feb 2025</span>
                 </div>
-                <div style="background: rgba(200,150,42,0.05); border-left: 3px solid var(--navy); padding: 10px 12px;">
-                  <strong style="color: var(--navy);">National HR Conclave on Emerging Workforce Strategies in the Digital Era</strong> (10th Dec 2023). Discussed talent management, digital HR transformation, leadership development, and workplace trends.
+                <h4 class="seminar-title">National Conclave on CSR for Sustainability: Action to Impact</h4>
+                <p class="seminar-desc">Deliberated on sustainable development goals (SDGs), responsible corporate governance, environmental preservation, and inclusive community impact programs.</p>
+              </div>
+              <div class="seminar-card national">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">National Conclave</span>
+                  <span class="seminar-date">10th Dec 2023</span>
                 </div>
-                <div style="background: rgba(200,150,42,0.05); border-left: 3px solid var(--navy); padding: 10px 12px;">
-                  <strong style="color: var(--navy);">National Banking &amp; Financial Leadership Conclave</strong> (Oct 2025). Deliberated on strategic innovation, financial innovation, risk leadership, and sustainable business models.
+                <h4 class="seminar-title">National HR Conclave on Emerging Workforce Strategies in the Digital Era</h4>
+                <p class="seminar-desc">Addressed next-generation talent management, digital HR integrations, workplace transformations, and building agile organization models.</p>
+              </div>
+              <div class="seminar-card national">
+                <div class="seminar-meta">
+                  <span class="seminar-tag">National Conclave</span>
+                  <span class="seminar-date">Oct 2025</span>
                 </div>
+                <h4 class="seminar-title">National Banking &amp; Financial Leadership Conclave</h4>
+                <p class="seminar-desc">Focused on financial technology adoption, strategic risk leadership, commercial lending changes, and sustainable digital banking models.</p>
               </div>
             </div>
 
-            <ul class="showcase-features" style="margin-top: 24px;">
-              <li>Eminent corporate speakers &amp; policy makers</li>
-              <li>Contemporary industry perspectives</li>
-              <li>Hands-on workshops &amp; sectoral briefings</li>
-              <li>Strong industry-academia interface</li>
+            <ul class="showcase-features" style="margin-top: 32px;">
+              <li>Eminent corporate speakers</li>
+              <li>Contemporary perspectives</li>
+              <li>Hands-on case briefings</li>
+              <li>Strong industry interface</li>
             </ul>
           </div>
         </div>
