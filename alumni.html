@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teaching Innovation — Academic Excellence — Trident School of Business Administration</title>
+  <title>Alumni Association — TSBA Alumni — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -107,6 +107,9 @@
     .nav-menu>li:hover>a {
       background: var(--navy);
       color: var(--gold-lt);
+    }
+    .nav-menu>li>a.active {
+      color: var(--gold);
     }
     .has-drop>a::after {
       content: ' ▾';
@@ -251,20 +254,20 @@
     /* Layout grid */
     .layout-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1fr 1fr;
       gap: 64px;
       margin-bottom: 64px;
-      align-items: start;
+      align-items: center;
     }
 
-    .innovation-content-box {
+    .alumni-content-box {
       background: transparent !important;
       border: none !important;
       border-radius: 0 !important;
       padding: 16px 0 !important;
       box-shadow: none !important;
     }
-    .innovation-content-box h3 {
+    .alumni-content-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 26px;
       color: var(--navy);
@@ -274,49 +277,54 @@
       display: inline-block;
     }
     
-    .innovation-desc {
+    .alumni-desc {
       font-size: 15px;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    /* Detail blocks */
-    .innovation-blocks {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .innovation-block {
-      background: rgba(11, 31, 58, 0.02);
-      border-left: 4px solid var(--navy);
-      border-radius: 0 12px 12px 0;
+    /* Info cards */
+    .trust-info-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid rgba(11, 31, 58, 0.08);
+      box-shadow: var(--shadow);
       padding: 24px;
-      transition: var(--transition);
+      margin-top: 24px;
     }
-    .innovation-block:hover {
-      transform: translateX(6px);
-      background: rgba(200, 150, 42, 0.05);
-      border-left-color: var(--gold);
-    }
-    .innovation-block h4 {
+    .trust-info-card h4 {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
     }
-    .innovation-block p {
-      font-size: 14px;
+    .trust-meta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13.5px;
+    }
+    .trust-meta-list li {
+      display: flex;
+      justify-content: space-between;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.4;
+    }
+    .trust-meta-list li strong {
+      color: var(--navy);
+      font-weight: 600;
     }
 
-    .innovation-media-box {
+    .alumni-media-box {
       text-align: center;
     }
-    .innovation-img {
+    .alumni-img {
       width: 100%;
-      max-width: 480px;
+      max-width: 520px;
       height: auto;
       border-radius: 20px;
       box-shadow: var(--shadow);
@@ -324,9 +332,206 @@
       display: block;
       margin: 0 auto;
     }
-    .innovation-img:hover {
+    .alumni-img:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
+    }
+
+    /* Full width sections */
+    .full-width-section {
+      width: 100%;
+      margin: 0;
+      padding: 96px 0 128px;
+      position: relative;
+    }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4%;
+    }
+    .shape-slant {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+      padding-bottom: 160px !important;
+    }
+    .shape-chevron {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+      padding-bottom: 150px !important;
+    }
+    .bg-warm { background-color: #faf8f5 !important; }
+    .bg-blue { background-color: #f0f4f8 !important; }
+    .bg-gold { background-color: #fffcf2 !important; }
+    .bg-offwhite { background-color: #fdfdfc !important; }
+    
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 56px;
+    }
+    .section-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+    .section-title span { color: var(--gold); }
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+
+    /* Grid layout for involvement items */
+    .involvement-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .involvement-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .involvement-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-hover);
+    }
+    .involvement-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: rgba(200, 150, 42, 0.25);
+      line-height: 1;
+    }
+    .involvement-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .involvement-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Double columns for Reverence event & Student Interaction */
+    .events-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+    .event-card {
+      background: transparent !important;
+      border: none !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
+    }
+    .event-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .event-card p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .event-objectives {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .event-objectives li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .event-objectives li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .event-media-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .event-media-stack img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .event-media-stack img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Placement section details */
+    .placement-banner-card {
+      background: linear-gradient(120deg, var(--navy) 0%, var(--navy-light) 60%, #1a365d 100%);
+      border-radius: 20px;
+      padding: 48px;
+      color: var(--white);
+      box-shadow: var(--shadow);
+      margin-top: 40px;
+    }
+    .placement-banner-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--gold-soft);
+      margin-bottom: 16px;
+    }
+    .placement-banner-card p {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 20px;
+    }
+    .placement-support-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      list-style: none;
+      margin-top: 24px;
+    }
+    .placement-support-list li {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .placement-support-list li::before {
+      content: '💼';
     }
 
     /* Footer matching index.html */
@@ -347,12 +552,18 @@
         border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
         padding-right: 48px !important;
       }
+      .events-row > div:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
       .layout-grid { grid-template-columns: 1fr; gap: 48px; }
-      .innovation-img { max-width: 400px; }
+      .involvement-grid { grid-template-columns: repeat(2, 1fr); }
+      .events-row { grid-template-columns: 1fr; gap: 48px; }
+      .alumni-img { max-width: 440px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -362,6 +573,9 @@
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
       .section-container { margin: 64px auto; }
+      .involvement-grid { grid-template-columns: 1fr; }
+      .placement-support-list { grid-template-columns: 1fr; }
+      .placement-banner-card { padding: 32px 24px; }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -409,11 +623,11 @@
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
           <li><a href="life-membership.html">Life Membership</a></li>
           <li><a href="nodal-research.html">Nodal Center of Research</a></li>
-          <li><a href="teaching-innovation.html" class="active">Teaching Innovation</a></li>
+          <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
         </ul>
       </li>
       <li><a href="placement.html">Placement</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="alumni.html" class="active">Alumni</a></li>
       <li><a href="campus-life.html">Campus Life</a></li>
     </ul>
 
@@ -447,11 +661,11 @@
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
           <li><a href="life-membership.html">Life Membership</a></li>
           <li><a href="nodal-research.html">Nodal Center of Research</a></li>
-          <li><a href="teaching-innovation.html" class="active">Teaching Innovation</a></li>
+          <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
         </ul>
       </li>
       <li><a href="placement.html">Placement</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="alumni.html" class="active">Alumni</a></li>
       <li><a href="campus-life.html">Campus Life</a></li>
     </ul>
     <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
@@ -460,65 +674,169 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section">
-      <span class="eyebrow">Academic Excellence</span>
-      <h1 class="hero-title">Teaching &amp; <span>Pedagogical Innovation</span></h1>
+      <span class="eyebrow">Global Connections</span>
+      <h1 class="hero-title">TSBA <span>Alumni Association</span></h1>
       <p class="hero-desc">
-        Bridging theoretical frameworks with active corporate application through case-study analyses, fieldwork initiatives, and state-of-the-art resources.
+        Fostering lifelong relationships and corporate synergy with our illustrious network of management graduates worldwide.
       </p>
     </section>
 
-    <!-- CONTENT LAYOUT -->
+    <!-- INTRO/REGISTRATION SECTION -->
     <section class="section-container">
       <div class="layout-grid">
-        <!-- Left Column: Content -->
-        <div class="innovation-content-box scroll-reveal stagger-1">
-          <h3>Teaching Innovations &amp; Pedagogy</h3>
-          <p class="innovation-desc">
-            The MBA Department of Trident Academy of Technology employs several active teaching strategies designed to bridge the gap between classroom concept maps and industry-ready execution.
+        <!-- Left Column: Trust Info -->
+        <div class="alumni-content-box scroll-reveal stagger-1">
+          <h3>Trident MBA Alumni Association Trust</h3>
+          <p class="alumni-desc">
+            The MBA Department hosts a highly active alumni network formalized as the <strong>Trident MBA Alumni Association Trust</strong>. The association plays a vital role in building professional bonds, facilitating industry–academia exchanges, and supporting students through mentoring and career counseling.
           </p>
           
-          <div class="innovation-blocks">
-            <div class="innovation-block">
-              <h4>Case Study Methodology</h4>
-              <p>
-                Classroom theories are applied directly to actual corporate challenges. Using case studies from Harvard Business Publishing, Ivey, and leading national journals, scholars learn critical thinking, corporate analysis, and out-of-the-box business problem-solving.
-              </p>
-            </div>
-            
-            <div class="innovation-block">
-              <h4>Fieldwork &amp; Experiential Projects</h4>
-              <p>
-                Students participate in mandatory summer internships (SIP) and regular industrial visits. The program integrates live industry survey projects where students compile data on local business trends, market behaviors, and SME digitization.
-              </p>
-            </div>
-            
-            <div class="innovation-block">
-              <h4>Instrumented Feedback Systems</h4>
-              <p>
-                Continuous performance monitoring through structured feedback loops, peer performance evaluations, and individual assignments. This ensures tailored developmental support for every scholar.
-              </p>
-            </div>
-
-            <div class="innovation-block">
-              <h4>Co-curricular Action Learning</h4>
-              <p>
-                Active participation in national budget analysis competitions, inter-B-school paper presentations, HR conclaves, and corporate conclave fests to foster team management, communication, and executive execution skills.
-              </p>
-            </div>
+          <div class="trust-info-card">
+            <h4>Registration &amp; Financial Metadata</h4>
+            <ul class="trust-meta-list">
+              <li><span>Formal Registration Year:</span> <strong>2024</strong></li>
+              <li><span>Governing Body:</span> <strong>Section 60, Indian Trust Act</strong></li>
+              <li><span>Registration No. &amp; Date:</span> <strong>No. 41132405570 (Dated 29.06.2024)</strong></li>
+              <li><span>Office Location:</span> <strong>Sub-Registrar, Khandagiri, Odisha</strong></li>
+              <li><span>Trust PAN Number:</span> <strong>AAFTT1849M</strong></li>
+              <li><span>Banker Account:</span> <strong>Union Bank of India, Infocity Branch</strong></li>
+              <li><span>Account Number:</span> <strong>A/C No.: 595102010014610</strong></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Right Column: Media Photo -->
-        <div class="innovation-media-box scroll-reveal stagger-2" style="display: flex; flex-direction: column; gap: 32px;">
-          <div>
-            <img src="Public/campus_building_1.jpg" alt="Trident School of Business Administration Glass Block" class="innovation-img" style="margin-bottom: 8px;">
-            <span style="display: block; font-size: 12px; color: var(--muted); font-weight: 600; text-align: center; letter-spacing: 0.02em;">New-Age Glass-Facade Corporate Block</span>
+        <!-- Right Column: Illustrious Alumni Grid -->
+        <div class="alumni-media-box scroll-reveal stagger-2">
+          <img src="Public/alumni_illustrious.png" alt="Our Illustrious Alumni" class="alumni-img">
+          <span style="display: block; font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 12px;">
+            A snapshot representing our illustrious alumni serving across Fortune 500 companies
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVOLVEMENT SECTION -->
+    <section class="full-width-section bg-warm shape-chevron">
+      <div class="section-inner">
+        <div class="section-header scroll-reveal">
+          <span class="section-subtitle">Collaborative Ecosystem</span>
+          <h2 class="section-title">Active Alumni <span>Involvement</span></h2>
+          <p class="section-desc">
+            With the integration of technology and active social platforms, communication and physical or online engagements have strengthened the academic and professional ecosystem.
+          </p>
+        </div>
+
+        <div class="involvement-grid">
+          <div class="involvement-card scroll-reveal stagger-1">
+            <span class="num">01</span>
+            <h4>Institutional Meets</h4>
+            <p>Participating in annual meets and alumni gatherings to interact with batchmates and faculty.</p>
           </div>
-          <div>
-            <img src="Public/campus_building_2.jpg" alt="Trident School Main Block" class="innovation-img" style="margin-bottom: 8px;">
-            <span style="display: block; font-size: 12px; color: var(--muted); font-weight: 600; text-align: center; letter-spacing: 0.02em;">Academic and Administrative Wing</span>
+
+          <div class="involvement-card scroll-reveal stagger-2">
+            <span class="num">02</span>
+            <h4>Student Interaction</h4>
+            <p>Regular campus visits to share corporate perspectives and mentor young management scholars.</p>
+          </div>
+
+          <div class="involvement-card scroll-reveal stagger-3">
+            <span class="num">03</span>
+            <h4>Curriculum Development</h4>
+            <p>Contributing industry feedback to refine specializations and academic course syllabi.</p>
+          </div>
+
+          <div class="involvement-card scroll-reveal stagger-4">
+            <span class="num">04</span>
+            <h4>Project Guidance</h4>
+            <p>Guiding students on live corporate assignments and academic research projects.</p>
+          </div>
+
+          <div class="involvement-card scroll-reveal stagger-1" style="margin-top: 12px;">
+            <span class="num">05</span>
+            <h4>Venture Incubation</h4>
+            <p>Supporting entrepreneurship development through cell funding, guidance, and networking.</p>
+          </div>
+
+          <div class="involvement-card scroll-reveal stagger-2" style="margin-top: 12px;">
+            <span class="num">06</span>
+            <h4>Career Mentorship</h4>
+            <p>Mentoring students on corporate roles, profile building, and career guidance loops.</p>
+          </div>
+
+          <div class="involvement-card scroll-reveal stagger-3" style="margin-top: 12px;">
+            <span class="num">07</span>
+            <h4>Placement Support</h4>
+            <p>Assisting placement operations, sharing corporate vacancies, and coordinating drives.</p>
+          </div>
+
+          <div class="involvement-card scroll-reveal stagger-4" style="margin-top: 12px;">
+            <span class="num">08</span>
+            <h4>Resource Mobilization</h4>
+            <p>Sponsoring and mobilizing resources to support department infrastructure enhancements.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- EVENTS & VISITS SECTION -->
+    <section class="full-width-section bg-blue shape-slant">
+      <div class="section-inner">
+        <div class="events-row">
+          <!-- Left Column: Reverence Meet -->
+          <div class="event-card scroll-reveal stagger-1">
+            <h3>Alumni Meet – "Reverence"</h3>
+            <p>
+              Trident Academy of Technology proudly hosts its annual alumni event, <strong>"Reverence"</strong>. This special occasion serves as a focal point for graduates across batches to reconnect, share achievements, and relive their memorable academic journeys.
+            </p>
+            <h4 style="font-size: 15px; color: var(--navy); margin-bottom: 12px; font-weight: 700;">Key Objectives:</h4>
+            <ul class="event-objectives">
+              <li>Fostering ongoing communication and trust between the institute and its alumni.</li>
+              <li>Strengthening the Industry-Institute Interface to promote placements and projects.</li>
+              <li>Enhancing educational excellence through joint student, faculty, and alumni collaboration.</li>
+            </ul>
+            <div class="event-media-stack">
+              <img src="Public/alumni_event.jpg" alt="Alumni Reverence Meet Audience">
+            </div>
+          </div>
+
+          <!-- Right Column: Institutional Visits -->
+          <div class="event-card scroll-reveal stagger-2">
+            <h3>Visits &amp; Guest Interactions</h3>
+            <p>
+              The institute invites distinguished alumni from diverse industries and geographical hubs to share real-world perspectives. These engagements occur during induction meets, guest lectures, and transition modules to orient current students.
+            </p>
+            <h4 style="font-size: 15px; color: var(--navy); margin-bottom: 12px; font-weight: 700;">Engagement Goals:</h4>
+            <ul class="event-objectives">
+              <li>Highlighting the achievements and expansion of our alumni network.</li>
+              <li>Facilitating continuous knowledge exchange and corporate readiness workshops.</li>
+              <li>Strengthening collaborative project guidance and mentoring.</li>
+            </ul>
+            
+            <div class="event-media-stack">
+              <img src="Public/alumni_speech.jpg" alt="Alumnus Guest Lecture Speech" style="margin-bottom: 8px;">
+              <img src="Public/alumni_group.jpg" alt="Alumni Group Standing Together">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLACEMENT ASSISTANCE SECTION -->
+    <section class="section-container scroll-reveal">
+      <div class="placement-banner-card">
+        <h3>Placement Assistance &amp; Briefings</h3>
+        <p>
+          TSBA alumni play a crucial role in the placement process. By actively sharing job vacancies and career tracks in their respective firms, they keep the placement cell well-aligned with corporate opportunities.
+        </p>
+        <p>
+          Furthermore, our graduates conduct sectoral briefings, outline industry roles, and hold mock preparation rounds. Their guidance significantly boosts student employability, paving the way for smooth transitions into corporate roles.
+        </p>
+        <ul class="placement-support-list">
+          <li><strong>Direct Vacancy Sharing</strong></li>
+          <li><strong>Industry Sector Briefings</strong></li>
+          <li><strong>Mock Interview Preparation</strong></li>
+          <li><strong>Corporate Referral Programs</strong></li>
+        </ul>
       </div>
     </section>
   </main>
