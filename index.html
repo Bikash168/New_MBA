@@ -851,6 +851,7 @@
       background: linear-gradient(120deg, var(--navy) 0%, #122d50 100%);
       padding: 72px 80px;
       text-align: center;
+      position: relative;
     }
 
     .testi-section .section-title {
@@ -862,27 +863,48 @@
       color: var(--gold-lt);
     }
 
-    .testi-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+    .testi-slider-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 10px 0;
+    }
+
+    .testi-track {
+      display: flex;
+      gap: 24px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      overflow-x: auto;
+      padding: 10px 4px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .testi-track::-webkit-scrollbar {
+      display: none;
     }
 
     .testi-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-md, 12px);
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 280px;
+      height: 380px !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: var(--radius-md, 16px) !important;
       padding: 28px 24px;
       text-align: left;
-      transition: var(--transition-smooth, all 0.3s ease);
+      transition: var(--transition-smooth, all 0.5s cubic-bezier(0.16, 1, 0.3, 1)) !important;
       display: flex;
       flex-direction: column;
+      overflow: hidden !important;
     }
 
     .testi-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateY(-4px);
-      border-color: rgba(200, 150, 42, 0.25);
+      background: rgba(255, 255, 255, 0.07) !important;
+      transform: translateY(-6px) !important;
+      border-color: rgba(200, 150, 42, 0.35) !important;
+      box-shadow: var(--shadow-lg) !important;
     }
 
     .testi-quote {
@@ -899,6 +921,12 @@
       line-height: 1.7;
       margin-bottom: 24px;
       flex-grow: 1;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+
+    .testi-text::-webkit-scrollbar {
+      display: none;
     }
 
     .testi-profile {
@@ -942,6 +970,57 @@
       color: rgba(255, 255, 255, .5);
       margin-top: 2px;
       line-height: 1.3;
+    }
+
+    /* Slider Controls */
+    .testi-nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .testi-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50% !important;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: var(--white);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth, all 0.3s ease);
+    }
+
+    .testi-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .testi-pips {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .testi-pip {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .testi-pip.active {
+      background: var(--gold);
+      transform: scale(1.3);
     }
 
     /* ── ACCREDITATION ── */
@@ -1080,8 +1159,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .testi-cards {
-        grid-template-columns: repeat(2, 1fr);
+      .testi-card {
+        flex: 0 0 calc(50% - 12px);
       }
 
       .stat-item {
@@ -1284,8 +1363,8 @@
         padding: 48px 20px;
       }
 
-      .testi-cards {
-        grid-template-columns: 1fr 1fr;
+      .testi-card {
+        flex: 0 0 100%;
       }
 
       .accred-section {
@@ -1314,10 +1393,6 @@
       }
 
       .programs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testi-cards {
         grid-template-columns: 1fr;
       }
 
@@ -1694,51 +1769,111 @@
   <div class="testi-section">
     <div class="section-tag" style="color:#E8B84B;margin-bottom:10px;">Alumni Voices</div>
     <h2 class="section-title">What Our <span>Graduates</span> Say</h2>
-    <div class="testi-cards">
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">I am extremely grateful for the valuable education and skills developed during my time at Trident, where we celebrated every milestone like family. Securing a placement through the Trident campus drive allowed me to build a fulfilling career in the banking sector as an Assistant Manager with Utkarsh Small Finance Bank.</p>
-        <div class="testi-profile">
-          <img class="testi-avatar" src="Public/alumni_poornima.jpg" alt="Poornima Mohapatra">
-          <div class="testi-meta">
-            <div class="testi-name">Poornima Mohapatra</div>
-            <div class="testi-role">MBA 2019-2021 · Assistant Manager, Utkarsh Small Finance Bank</div>
+    
+    <div class="testi-slider-container">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I am extremely grateful for the valuable education and skills developed during my time at Trident, where we celebrated every milestone like family. Securing a placement through the Trident campus drive allowed me to build a fulfilling career in the banking sector as an Assistant Manager with Utkarsh Small Finance Bank.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_poornima.jpg" alt="Poornima Mohapatra">
+            <div class="testi-meta">
+              <div class="testi-name">Poornima Mohapatra</div>
+              <div class="testi-role">MBA 2019-2021 · Assistant Manager, Utkarsh Small Finance Bank</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">My two years at Trident (MBA Batch 2017-19) were a beautiful journey of personal transformation. I owe my deepest gratitude to the incredible faculty for their thoughtful mentorship, which built the career clarity and communication confidence I rely on today as an Assistant Manager at Medicover Hospital.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_nilesh.jpg" alt="Nilesh Mohanty">
+            <div class="testi-meta">
+              <div class="testi-name">Nilesh Mohanty</div>
+              <div class="testi-role">MBA 2017-2019 · Assistant Manager Digital Marketing, Medicover Hospital</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I am truly proud of my journey with Trident, which played a key role in my career. It gave me the platform to learn, explore, and pursue my goal of becoming an accountant and tax executive. The knowledge gained here helped me secure my current role as an Associate Tax Consultant with BDO India in Hyderabad.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_prabhat.jpg" alt="Mr. Prabhat Panda">
+            <div class="testi-meta">
+              <div class="testi-name">Mr. Prabhat Panda</div>
+              <div class="testi-role">MBA 2017-2019 · Associate Tax Consultant, BDO India</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I extend my deepest gratitude to Trident College for shaping my academic journey and professional values. The unwavering support, personal encouragement, and excellent industry exposure I received during my MBA have significantly contributed to my successful career path as an HR Executive at Impulsions Laser.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_sushree.jpg" alt="Sushree Sangita Beura">
+            <div class="testi-meta">
+              <div class="testi-name">Sushree Sangita Beura</div>
+              <div class="testi-role">MBA 2022-2024 · HR Executive, Impulsions Laser</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I am proud to have completed my BBA and MBA from Trident, a place that shaped both my academic journey and my personal growth. During my time on campus, I had the privilege of being a Sports Champion, representing the institute with passion and dedication throughout my BBA and MBA years. Alongside academics and sports, I also discovered my love for hosting and communication—I served as an anchor at TRIFEST for five years, creating some of my most memorable experiences on stage. Trident has been instrumental in building my confidence, leadership skills, and professional identity. I carry these experiences forward as a proud alumna, grateful for the foundation the institute has given me.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_arpita.jpg" alt="Dr. Arpita Nayak">
+            <div class="testi-meta">
+              <div class="testi-name">Dr. Arpita Nayak</div>
+              <div class="testi-role">BBA &amp; MBA 2018-2020 · Assistant Professor, School of Humanities, KIIT DU</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">My experience in Trident Academy of Technology was a blend of rigorous academics, personal growth, and memorable moments that shaped my professional journey. I am incredibly proud to be an alumnus of Trident Academy of Technology. This institution not only focuses on academic excellence but also provides holistic development of its students. The faculty members are not just teachers; they are mentors who provide constant guidance and encouragement.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_abhisek.jpg" alt="Abhisek Mohanty">
+            <div class="testi-meta">
+              <div class="testi-name">Abhisek Mohanty</div>
+              <div class="testi-role">Batch 2008-2010 · Branch Manager, ICICI Bank</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I’m Laxmikanta Nayak, currently working as Business IT Consultant and applying digital solutions in business operations. My MBA at Trident Academy of Creative Technology played a pivotal role in shaping my professional mindset and industry readiness. I’m genuinely grateful for the learning culture, faculty guidance, and exposure TACT provided—it has been instrumental in my growth and career direction.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_laxmikanta.jpg" alt="Laxmikanta Nayak">
+            <div class="testi-meta">
+              <div class="testi-name">Laxmikanta Nayak</div>
+              <div class="testi-role">MBA 2022-2024 · Business IT Consultant, Agilitz Technologies Limited</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The college offered a disciplined and supportive academic environment throughout my MBA journey. I value the exposure to diverse perspectives and the opportunity to engage in various institutional activities.</p>
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_dipti.jpg" alt="Dipti Modak">
+            <div class="testi-meta">
+              <div class="testi-name">Dipti Modak</div>
+              <div class="testi-role">MBA 2022-2024 · Market Analyst, CSM</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">My two years at Trident (MBA Batch 2017-19) were a beautiful journey of personal transformation. I owe my deepest gratitude to the incredible faculty for their thoughtful mentorship, which built the career clarity and communication confidence I rely on today as an Assistant Manager at Medicover Hospital.</p>
-        <div class="testi-profile">
-          <img class="testi-avatar" src="Public/alumni_nilesh.jpg" alt="Nilesh Mohanty">
-          <div class="testi-meta">
-            <div class="testi-name">Nilesh Mohanty</div>
-            <div class="testi-role">MBA 2017-2019 · Assistant Manager Digital Marketing, Medicover Hospital</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">I am truly proud of my journey with Trident, which played a key role in my career. It gave me the platform to learn, explore, and pursue my goal of becoming an accountant and tax executive. The knowledge gained here helped me secure my current role as an Associate Tax Consultant with BDO India in Hyderabad.</p>
-        <div class="testi-profile">
-          <img class="testi-avatar" src="Public/alumni_prabhat.jpg" alt="Mr. Prabhat Panda">
-          <div class="testi-meta">
-            <div class="testi-name">Mr. Prabhat Panda</div>
-            <div class="testi-role">MBA 2017-2019 · Associate Tax Consultant, BDO India</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">I extend my deepest gratitude to Trident College for shaping my academic journey and professional values. The unwavering support, personal encouragement, and excellent industry exposure I received during my MBA have significantly contributed to my successful career path as an HR Executive at Impulsions Laser.</p>
-        <div class="testi-profile">
-          <img class="testi-avatar" src="Public/alumni_sushree.jpg" alt="Sushree Sangita Beura">
-          <div class="testi-meta">
-            <div class="testi-name">Sushree Sangita Beura</div>
-            <div class="testi-role">MBA 2022-2024 · HR Executive, Impulsions Laser</div>
-          </div>
-        </div>
-      </div>
+    </div>
+
+    <div class="testi-nav-container">
+      <button class="testi-btn" id="testiPrev">&#8592;</button>
+      <div class="testi-pips" id="testiPips"></div>
+      <button class="testi-btn" id="testiNext">&#8594;</button>
     </div>
   </div>
 
@@ -2038,6 +2173,138 @@
         document.body.style.overflow = '';
       });
     });
+  </script>
+
+  <!-- TESTIMONIALS SLIDER JS -->
+  <script>
+    (function () {
+      const track = document.getElementById('testiTrack');
+      if (!track) return;
+      
+      const cards = track.querySelectorAll('.testi-card');
+      const pipsEl = document.getElementById('testiPips');
+      const prevBtn = document.getElementById('testiPrev');
+      const nextBtn = document.getElementById('testiNext');
+      
+      let itemsPerPage = 3;
+      
+      function getItemsPerPage() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+      }
+      
+      itemsPerPage = getItemsPerPage();
+      let totalPages = Math.ceil(cards.length / itemsPerPage);
+      let currentPage = 0;
+      
+      function renderPips() {
+        pipsEl.innerHTML = '';
+        totalPages = Math.ceil(cards.length / itemsPerPage);
+        if (currentPage >= totalPages) {
+          currentPage = Math.max(0, totalPages - 1);
+        }
+        for (let i = 0; i < totalPages; i++) {
+          const pip = document.createElement('button');
+          pip.className = 'testi-pip' + (i === currentPage ? ' active' : '');
+          pip.onclick = () => goToPage(i);
+          pipsEl.appendChild(pip);
+        }
+      }
+      
+      function goToPage(pageIndex) {
+        totalPages = Math.ceil(cards.length / itemsPerPage);
+        if (totalPages === 0) return;
+        currentPage = Math.max(0, Math.min(totalPages - 1, pageIndex));
+        
+        const gap = 24;
+        const cardWidth = cards[0].offsetWidth;
+        const scrollAmount = currentPage * itemsPerPage * (cardWidth + gap);
+        
+        track.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+        
+        const pips = pipsEl.querySelectorAll('.testi-pip');
+        pips.forEach((pip, idx) => {
+          pip.classList.toggle('active', idx === currentPage);
+        });
+      }
+      
+      prevBtn.onclick = () => {
+        if (currentPage === 0) {
+          goToPage(totalPages - 1);
+        } else {
+          goToPage(currentPage - 1);
+        }
+      };
+      
+      nextBtn.onclick = () => {
+        if (currentPage >= totalPages - 1) {
+          goToPage(0);
+        } else {
+          goToPage(currentPage + 1);
+        }
+      };
+      
+      let autoPlayInterval;
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(() => {
+          if (currentPage >= totalPages - 1) {
+            goToPage(0);
+          } else {
+            goToPage(currentPage + 1);
+          }
+        }, 4000);
+      }
+      
+      function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+      }
+      
+      startAutoPlay();
+      
+      const testiSection = document.querySelector('.testi-section');
+      if (testiSection) {
+        testiSection.addEventListener('mouseenter', stopAutoPlay);
+        testiSection.addEventListener('mouseleave', startAutoPlay);
+        testiSection.addEventListener('touchstart', stopAutoPlay, { passive: true });
+      }
+      
+      // Scroll listener to update pips on manual swipe
+      let isScrolling;
+      track.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          const gap = 24;
+          const cardWidth = cards[0].offsetWidth;
+          const scrollLeft = track.scrollLeft;
+          const pageWidth = itemsPerPage * (cardWidth + gap);
+          
+          const pageIndex = Math.round(scrollLeft / pageWidth);
+          if (pageIndex !== currentPage && pageIndex < totalPages) {
+            currentPage = pageIndex;
+            const pips = pipsEl.querySelectorAll('.testi-pip');
+            pips.forEach((pip, idx) => {
+              pip.classList.toggle('active', idx === currentPage);
+            });
+          }
+        }, 150);
+      }, { passive: true });
+      
+      window.addEventListener('resize', () => {
+        const prevItemsPerPage = itemsPerPage;
+        itemsPerPage = getItemsPerPage();
+        if (prevItemsPerPage !== itemsPerPage) {
+          renderPips();
+          goToPage(currentPage);
+        }
+      });
+      
+      renderPips();
+    })();
   </script>
 </body>
 
