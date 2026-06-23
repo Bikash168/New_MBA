@@ -503,34 +503,58 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    .stat-item {
-      padding: 16px 32px;
+    .logo-item {
+      padding: 12px 24px;
       text-align: center;
       border-right: 1px solid rgba(255, 255, 255, .1);
       flex: 1;
-      min-width: 120px;
+      min-width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.3s;
     }
 
-    .stat-item:last-child {
+    .logo-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .logo-item:last-child {
       border-right: none;
     }
 
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(18px, 2.2vw, 28px);
-      font-weight: 700;
-      color: var(--gold-lt);
-      display: block;
+    .logo-badge-wrap {
+      background: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      width: 100%;
+      max-width: 120px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .stat-label {
-      font-size: 10px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, .65);
-      letter-spacing: .08em;
+    .logo-item:hover .logo-badge-wrap {
+      transform: scale(1.05);
+    }
+
+    .logo-badge-wrap img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .logo-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
       text-transform: uppercase;
-      margin-top: 3px;
-      display: block;
+      letter-spacing: 0.05em;
     }
 
     /* Dots */
@@ -1255,9 +1279,20 @@
         justify-content: flex-start;
       }
 
-      .stat-item {
-        min-width: 110px;
-        padding: 12px 14px;
+      .logo-item {
+        min-width: 130px;
+        padding: 10px 12px;
+        gap: 6px;
+      }
+
+      .logo-badge-wrap {
+        height: 38px;
+        max-width: 90px;
+        padding: 4px 8px;
+      }
+
+      .logo-label {
+        font-size: 9.5px;
       }
 
       .arrow-prev {
@@ -1530,12 +1565,36 @@
 
     <!-- FIX 1: stat-strip is now a direct child of .hero-slider, not inside any .slide -->
     <div class="stat-strip">
-      <div class="stat-item"><span class="stat-num">89%</span><span class="stat-label">Placement Rate</span></div>
-      <div class="stat-item"><span class="stat-num">120+</span><span class="stat-label">Expert Faculty</span></div>
-      <div class="stat-item"><span class="stat-num">35+</span><span class="stat-label">Global Partners</span></div>
-      <div class="stat-item"><span class="stat-num">150+</span><span class="stat-label">Research Papers / yr</span>
+      <div class="logo-item">
+        <div class="logo-badge-wrap">
+          <img src="Public/logo_bput.png" alt="BPUT Odisha">
+        </div>
+        <span class="logo-label">BPUT Affiliated</span>
       </div>
-      <div class="stat-item"><span class="stat-num">₹42L</span><span class="stat-label">Highest Package</span></div>
+      <div class="logo-item">
+        <div class="logo-badge-wrap">
+          <img src="Public/logo_aicte.png" alt="AICTE Approved">
+        </div>
+        <span class="logo-label">AICTE Approved</span>
+      </div>
+      <div class="logo-item">
+        <div class="logo-badge-wrap">
+          <img src="Public/logo_nba.png" alt="NBA Accredited">
+        </div>
+        <span class="logo-label">NBA Accredited</span>
+      </div>
+      <div class="logo-item">
+        <div class="logo-badge-wrap">
+          <img src="Public/logo_naac.png" alt="NAAC Accredited">
+        </div>
+        <span class="logo-label">NAAC Accredited</span>
+      </div>
+      <div class="logo-item">
+        <div class="logo-badge-wrap">
+          <img src="Public/logo_ugc.png" alt="UGC Recognized">
+        </div>
+        <span class="logo-label">UGC Recognized</span>
+      </div>
     </div>
 
     <!-- FIX 2: dots and arrows are now direct children of .hero-slider, not inside any .slide -->
