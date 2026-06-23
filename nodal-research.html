@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nodal Center of Research — Research & Doctoral Programme — Trident School of Business Administration</title>
+  <meta name="description" content="Learn about the BPUT Nodal Center of Research (NCR) at Trident School of Business Administration. Explore our doctoral program, research areas, and scholar seminars.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -247,105 +248,168 @@
       margin: 80px auto;
       padding: 0 4%;
     }
-    
-    /* Layout grid */
-    .layout-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 64px;
-      margin-bottom: 64px;
-      align-items: start;
-    }
 
-    .research-content-box {
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 16px 0 !important;
-      box-shadow: none !important;
+    /* Single-Column Nodal Research Layout */
+    .research-intro-section {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 48px;
     }
-    .research-content-box h3 {
+    .research-intro-section .intro-title {
       font-family: 'Playfair Display', serif;
-      font-size: 26px;
+      font-size: 32px;
       color: var(--navy);
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 8px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      position: relative;
       display: inline-block;
+      padding-bottom: 12px;
     }
-    
-    .research-desc {
-      font-size: 15px;
+    .research-intro-section .intro-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .research-intro-section .intro-text {
+      font-size: 15.5px;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 28px;
     }
 
-    /* Detail blocks */
-    .research-blocks {
+    /* Cards Grid replacing lists */
+    .research-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 72px;
+    }
+    .research-card {
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-top: 3px solid var(--gold) !important;
+      border-radius: 24px 24px 80px 24px / 24px 24px 40px 24px !important;
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth) !important;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 24px;
     }
-    .research-block {
-      background: rgba(11, 31, 58, 0.02);
-      border-left: 4px solid var(--navy);
-      border-radius: 0 12px 12px 0;
-      padding: 24px;
-      transition: var(--transition);
+    .research-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: var(--shadow-md) !important;
+      border-color: rgba(200, 150, 42, 0.3) !important;
     }
-    .research-block:hover {
-      transform: translateX(6px);
-      background: rgba(200, 150, 42, 0.05);
-      border-left-color: var(--gold);
-    }
-    .research-block h4 {
+    .research-card h4 {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 19px;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin-bottom: 14px;
+      font-weight: 700;
     }
-    .research-block p {
+    .research-card p {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.7;
     }
-    .research-block ul {
+    .research-card ul {
       list-style: none;
       margin-top: 10px;
     }
-    .research-block ul li {
+    .research-card ul li {
       position: relative;
       padding-left: 20px;
       font-size: 13.5px;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .research-block ul li::before {
-      content: '•';
+    .research-card ul li::before {
+      content: '✔';
       position: absolute;
       left: 0;
       color: var(--gold);
-      font-size: 18px;
-      line-height: 1;
+      font-weight: 700;
+      font-size: 13px;
     }
 
-    .research-media-box {
+    /* Research Gallery Section */
+    .research-gallery-section {
+      margin-top: 56px;
+    }
+    .gallery-header {
       text-align: center;
+      margin-bottom: 36px;
     }
-    .research-img {
+    .gallery-header .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--navy);
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    .research-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .research-gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      aspect-ratio: 16 / 9; /* landscape wide photos */
+      transition: var(--transition-smooth);
+    }
+    .research-gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 31, 58, 0.65) 0%, transparent 60%);
+      opacity: 0.85;
+      transition: var(--transition-smooth);
+    }
+    .research-gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+    .research-gallery-img {
       width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      display: block;
-      margin: 0 auto;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
     }
-    .research-img:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .research-gallery-item:hover .research-gallery-img {
+      transform: scale(1.05);
+    }
+    .research-gallery-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 10;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      text-align: left;
+    }
+    .research-gallery-caption h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--gold-soft);
+      margin-bottom: 4px;
+    }
+    .research-gallery-caption p {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0;
+      line-height: 1.35;
     }
 
     /* Footer matching index.html */
@@ -360,19 +424,6 @@
       margin-top: 96px;
     }
 
-    /* Desktop column vertical dividers */
-    @media (min-width: 1025px) {
-      .layout-grid > div:first-child {
-        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
-        padding-right: 48px !important;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .layout-grid { grid-template-columns: 1fr; gap: 48px; }
-      .research-img { max-width: 400px; }
-    }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
       .topbar { padding: 8px 24px; }
@@ -380,7 +431,21 @@
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 64px auto; }
+      .section-container { margin: 48px auto; }
+      .research-intro-section .intro-title {
+        font-size: 26px;
+      }
+      .research-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .research-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .gallery-header .gallery-title {
+        font-size: 24px;
+      }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -473,47 +538,75 @@
       </p>
     </section>
 
+    <!-- INTRO SECTION -->
+    <section class="section-container" style="margin-bottom: 0; padding-bottom: 0;">
+      <div class="research-intro-section scroll-reveal stagger-1">
+        <h2 class="intro-title">Research &amp; Doctoral Programme</h2>
+        <p class="intro-text">
+          The MBA Department of Trident Academy of Technology has been officially recognized as a Nodal Center of Research (NCR) by Biju Patnaik University of Technology (BPUT) in 2023. This recognition highlights our focus on facilitating quality doctoral guidance, scholarly research, and academic-industry synergy.
+        </p>
+      </div>
+    </section>
+
     <!-- CONTENT LAYOUT -->
-    <section class="section-container">
-      <div class="layout-grid">
-        <!-- Left Column: Content -->
-        <div class="research-content-box scroll-reveal stagger-1">
-          <h3>Research &amp; Doctoral Programme</h3>
-          <p class="research-desc">
-            The MBA Department of Trident Academy of Technology has been recognized as a Nodal Center of Research (NCR) by Biju Patnaik University of Technology (BPUT) in 2023. This prestigious recognition highlights our commitment to promoting quality research, innovation, and academic excellence in the field of management studies.
-          </p>
-          
-          <div class="research-blocks">
-            <div class="research-block">
-              <h4>Doctoral Scholars Guidance</h4>
-              <p>
-                At present, eight research scholars are actively enrolled in the Ph.D. programme under the guidance of our experienced and qualified faculty members. The center provides a highly supportive academic environment, facilitating structured coursework, review boards, and scholarly mentorship.
-              </p>
-            </div>
-            
-            <div class="research-block">
-              <h4>Research Thrust Areas</h4>
-              <ul>
-                <li>Human Resource Management &amp; Green HR Initiatives</li>
-                <li>Marketing &amp; Digital SME Transformations</li>
-                <li>Corporate Finance &amp; Financial Risk Valuations</li>
-                <li>Operations Strategy &amp; Logistics Management</li>
-                <li>Sustainable Business Practices &amp; Entrepreneurship</li>
-              </ul>
-            </div>
-            
-            <div class="research-block">
-              <h4>Academic Contribution &amp; Industry Alignment</h4>
-              <p>
-                The department actively encourages collaborative research, publications in reputed journals, and paper presentations at national and international conferences. Through these initiatives, the center aims to contribute meaningful business insights for policymakers, researchers, and the corporate community.
-              </p>
-            </div>
-          </div>
+    <section class="section-container" style="margin-top: 0; padding-top: 0;">
+      <div class="research-cards-grid">
+        <!-- Card 1 -->
+        <div class="research-card scroll-reveal stagger-1">
+          <h4>Doctoral Scholars Guidance</h4>
+          <p>At present, eight research scholars are actively enrolled in the Ph.D. programme under the guidance of our experienced and qualified faculty members. The center provides a highly supportive academic environment, facilitating structured coursework, review boards, and scholarly mentorship.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="research-card scroll-reveal stagger-2">
+          <h4>Research Thrust Areas</h4>
+          <ul>
+            <li>Human Resource Management &amp; Green HR</li>
+            <li>Marketing &amp; Digital SME Transformations</li>
+            <li>Corporate Finance &amp; Financial Risk Valuations</li>
+            <li>Operations Strategy &amp; Logistics Management</li>
+            <li>Sustainable Business &amp; Social Innovation</li>
+          </ul>
         </div>
 
-        <!-- Right Column: Media Photo Gallery -->
-        <div class="research-media-box scroll-reveal stagger-2">
-          <img src="Public/research_photos.png" alt="Doctoral Scholar Presentations" class="research-img">
+        <!-- Card 3 -->
+        <div class="research-card scroll-reveal stagger-3">
+          <h4>Academic &amp; Industry Impact</h4>
+          <p>The department actively encourages collaborative research, publications in Scopus and UGC-CARE listed journals, and paper presentations at national conferences. Through these initiatives, the center aims to contribute meaningful business insights for policymakers and the corporate community.</p>
+        </div>
+      </div>
+
+      <!-- PHOTO GALLERY -->
+      <div class="research-gallery-section scroll-reveal stagger-1">
+        <div class="gallery-header">
+          <span class="eyebrow">Highlights &amp; Events</span>
+          <h3 class="gallery-title">Nodal Research Presentations</h3>
+        </div>
+        <div class="research-gallery-grid">
+          <!-- Gallery Item 1 -->
+          <div class="research-gallery-item">
+            <img src="Public/nodal_research_1.jpg" alt="Ph.D. Thesis Topic slide presentation" class="research-gallery-img">
+            <div class="research-gallery-caption">
+              <h4>Research Presentation Topic</h4>
+              <p>Scholar Ph.D. slide: "Impact of Mobile Payment Platform on Financial Behavior of Rural Household" presented by Prasanta Kumar Biswal.</p>
+            </div>
+          </div>
+          <!-- Gallery Item 2 -->
+          <div class="research-gallery-item">
+            <img src="Public/nodal_research_2.jpg" alt="Scholar presenting to BPUT review board" class="research-gallery-img">
+            <div class="research-gallery-caption">
+              <h4>Doctoral Defense Seminar</h4>
+              <p>Ph.D. candidate delivering his thesis findings before the academic review committee at the NCR.</p>
+            </div>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="research-gallery-item">
+            <img src="Public/nodal_research_3.jpg" alt="Interactive scholar panel discussion" class="research-gallery-img">
+            <div class="research-gallery-caption">
+              <h4>Academic Panel Q&amp;A</h4>
+              <p>Research scholar presenting and answering questions from the advisory board during review sessions.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
