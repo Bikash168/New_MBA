@@ -2070,8 +2070,11 @@
         <div class="rec-logo-card"><img src="JK Cement.png" alt="JK Cement"><span>JK Cement</span></div>
         <div class="rec-logo-card"><img src="Loreal.png" alt="L'Oréal"><span>L'Oréal</span></div>
         <div class="rec-logo-card"><img src="Mitsubishi.png" alt="Mitsubishi"><span>Mitsubishi</span></div>
-
-        <!-- add more cards here -->
+        <div class="rec-logo-card"><img src="Accenture.png" alt="Accenture"><span>Accenture</span></div>
+        <div class="rec-logo-card"><img src="Cognizant.png" alt="Cognizant"><span>Cognizant</span></div>
+        <div class="rec-logo-card"><img src="CSM.png" alt="CSM"><span>CSM</span></div>
+        <div class="rec-logo-card"><img src="Federal_Bank.png" alt="Federal Bank"><span>Federal Bank</span></div>
+        <div class="rec-logo-card"><img src="HDFC_Bank.png" alt="HDFC Bank"><span>HDFC Bank</span></div>
       </div>
     </div>
 
@@ -2079,7 +2082,7 @@
       <button class="rec-btn" id="recPrev">&#8592;</button>
       <button class="rec-btn" id="recNext">&#8594;</button>
       <div class="rec-pips" id="recPips"></div>
-      <span class="rec-more">+ 244 more companies</span>
+      <span class="rec-more">+ 239 more companies</span>
     </div>
   </div>
 
@@ -2104,6 +2107,26 @@
       }
       document.getElementById('recPrev').onclick = () => goTo(page - 1);
       document.getElementById('recNext').onclick = () => goTo(page + 1);
+
+      // Autoplay logic
+      let autoPlayInterval;
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(() => {
+          if (page >= pages - 1) {
+            goTo(0);
+          } else {
+            goTo(page + 1);
+          }
+        }, 3000);
+      }
+      function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+      }
+      startAutoPlay();
+      track.addEventListener('mouseenter', stopAutoPlay);
+      track.addEventListener('mouseleave', startAutoPlay);
+      track.addEventListener('touchstart', stopAutoPlay, { passive: true });
     })();
   </script>
 

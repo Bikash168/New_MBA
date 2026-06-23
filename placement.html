@@ -380,9 +380,7 @@
       color: var(--muted);
       font-style: italic;
       margin: 0;
-    }
-
-    /* Recruiter Logos Section - Clean Borderless Layout */
+    }    /* Recruiter Logos Section - Carousel Slider Layout */
     .recruiters-section {
       background: transparent;
       border: none;
@@ -398,36 +396,109 @@
       margin-bottom: 32px;
       text-align: center;
     }
-    .rec-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 20px;
-      align-items: center;
+    .track-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .track-wrap::before,
+    .track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 64px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .track-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--offwhite), transparent);
+    }
+    .track-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--offwhite), transparent);
+    }
+    .rec-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 4px 0 12px;
+      scrollbar-width: none;
+    }
+    .rec-track::-webkit-scrollbar {
+      display: none;
     }
     .rec-logo-card {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      height: 96px;
+      flex: 0 0 160px;
+      height: 88px;
+      background: var(--white);
+      border: 1px solid #e8e2d5;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .rec-logo-card img {
+      height: 36px;
+      object-fit: contain;
+      transition: transform .2s ease-in-out;
+    }
+    .rec-logo-card span {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+    .rec-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .rec-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      border: 1px solid #d0cbbe;
+      background: transparent;
+      color: var(--navy);
+      font-size: 16px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #FFFFFF;
-      transition: var(--transition);
-      padding: 12px;
+      transition: background .15s;
     }
-    .rec-logo-card img {
-      max-height: 48px;
-      max-width: 100%;
-      object-fit: contain;
-      transition: var(--transition);
+    .rec-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
     }
-    .rec-logo-card:hover {
-      border-color: var(--gold-soft);
-      box-shadow: 0 8px 24px rgba(11, 31, 58, 0.08);
-      transform: translateY(-3px);
+    .rec-pips {
+      display: flex;
+      gap: 6px;
+      align-items: center;
     }
-    .rec-logo-card:hover img {
-      transform: scale(1.05);
+    .rec-pip {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #d0cbbe;
+      transition: background .2s, width .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .rec-pip.active {
+      width: 18px;
+      border-radius: 3px;
+      background: var(--gold);
+    }
+    .rec-more {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--muted);
     }
 
     /* Footer matching index.html */
@@ -610,25 +681,27 @@
       <!-- Recruiter Logos Section -->
       <div class="recruiters-section">
         <h3>Our Prominent Recruiter Partners</h3>
-        <div class="rec-grid">
-          <div class="rec-logo-card">
-            <img src="PwC.png" alt="PwC">
+        <div class="track-wrap">
+          <div class="rec-track" id="recTrack">
+            <div class="rec-logo-card"><img src="Haldiram.png" alt="Haldiram's"><span>Haldiram's</span></div>
+            <div class="rec-logo-card"><img src="PwC.png" alt="PwC"><span>PwC</span></div>
+            <div class="rec-logo-card"><img src="ICICI Bank.png" alt="ICICI Bank"><span>ICICI Bank</span></div>
+            <div class="rec-logo-card"><img src="JK Cement.png" alt="JK Cement"><span>JK Cement</span></div>
+            <div class="rec-logo-card"><img src="Loreal.png" alt="L'Oréal"><span>L'Oréal</span></div>
+            <div class="rec-logo-card"><img src="Mitsubishi.png" alt="Mitsubishi"><span>Mitsubishi</span></div>
+            <div class="rec-logo-card"><img src="Accenture.png" alt="Accenture"><span>Accenture</span></div>
+            <div class="rec-logo-card"><img src="Cognizant.png" alt="Cognizant"><span>Cognizant</span></div>
+            <div class="rec-logo-card"><img src="CSM.png" alt="CSM"><span>CSM</span></div>
+            <div class="rec-logo-card"><img src="Federal_Bank.png" alt="Federal Bank"><span>Federal Bank</span></div>
+            <div class="rec-logo-card"><img src="HDFC_Bank.png" alt="HDFC Bank"><span>HDFC Bank</span></div>
           </div>
-          <div class="rec-logo-card">
-            <img src="Loreal.png" alt="Loreal">
-          </div>
-          <div class="rec-logo-card">
-            <img src="ICICI Bank.png" alt="ICICI Bank">
-          </div>
-          <div class="rec-logo-card">
-            <img src="Haldiram.png" alt="Haldiram">
-          </div>
-          <div class="rec-logo-card">
-            <img src="JK Cement.png" alt="JK Cement">
-          </div>
-          <div class="rec-logo-card">
-            <img src="Mitsubishi.png" alt="Mitsubishi">
-          </div>
+        </div>
+
+        <div class="rec-nav">
+          <button class="rec-btn" id="recPrev">&#8592;</button>
+          <button class="rec-btn" id="recNext">&#8594;</button>
+          <div class="rec-pips" id="recPips"></div>
+          <span class="rec-more">+ 239 more companies</span>
         </div>
       </div>
     </section>
@@ -669,6 +742,58 @@
         });
       }
     });
+  </script>
+
+  <!-- RECRUITERS SLIDER JS -->
+  <script>
+    (function () {
+      const track = document.getElementById('recTrack');
+      if (!track) return;
+      
+      const cards = track.querySelectorAll('.rec-logo-card');
+      const pipsEl = document.getElementById('recPips');
+      const visible = 4, pages = Math.ceil(cards.length / visible);
+      let page = 0;
+      
+      for (let i = 0; i < pages; i++) {
+        const p = document.createElement('button');
+        p.className = 'rec-pip' + (i === 0 ? ' active' : '');
+        p.onclick = () => goTo(i);
+        pipsEl.appendChild(p);
+      }
+      
+      function goTo(p) {
+        page = Math.max(0, Math.min(pages - 1, p));
+        const w = cards[0].offsetWidth + 16;
+        track.scrollTo({ left: page * visible * w, behavior: 'smooth' });
+        pipsEl.querySelectorAll('.rec-pip').forEach((el, i) => el.classList.toggle('active', i === page));
+      }
+      
+      document.getElementById('recPrev').onclick = () => goTo(page - 1);
+      document.getElementById('recNext').onclick = () => goTo(page + 1);
+
+      // Autoplay logic
+      let autoPlayInterval;
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(() => {
+          if (page >= pages - 1) {
+            goTo(0);
+          } else {
+            goTo(page + 1);
+          }
+        }, 3000);
+      }
+      
+      function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+      }
+      
+      startAutoPlay();
+      track.addEventListener('mouseenter', stopAutoPlay);
+      track.addEventListener('mouseleave', startAutoPlay);
+      track.addEventListener('touchstart', stopAutoPlay, { passive: true });
+    })();
   </script>
 </body>
 </html>
