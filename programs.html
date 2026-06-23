@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Structure &amp; Curriculum — Trident School of Business Administration</title>
+  <title>Programs &amp; Curriculum — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,12 +65,6 @@
       border-bottom: 3px solid var(--gold);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-    .logo-emblem {
-      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
-      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-lt);
-    }
     .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
     .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
     .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
@@ -278,22 +272,11 @@
       color: var(--gold-soft) !important;
       box-shadow: 0 4px 12px rgba(11, 31, 58, 0.15);
     }
-    /* Disable the line border in tabs-nav since we are using a pill selector */
-    .tab-btn.active::after {
-      display: none !important;
-    }
 
     /* Tab Content Grid Layout */
     .tab-content {
       display: none;
       animation: fadeIn .4s ease;
-      /* Override theme.css global card override */
-      border-radius: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
-      background: transparent !important;
-      overflow: visible !important;
-      padding: 0 !important;
     }
     .tab-content.active {
       display: block;
@@ -332,50 +315,269 @@
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
       color: var(--white) !important;
     }
-    .bg-warm {
-      background-color: #faf8f5 !important;
+    .bg-warm { background-color: #faf8f5 !important; }
+    .bg-blue { background-color: #f0f4f8 !important; }
+    .bg-gold { background-color: #fffcf2 !important; }
+    .bg-gray { background-color: #f4f4f6 !important; }
+    .bg-offwhite { background-color: #fdfdfc !important; }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 56px;
     }
-    .bg-blue {
-      background-color: #f0f4f8 !important;
+    .section-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 12px;
+      display: block;
     }
-    .bg-gold {
-      background-color: #fffcf2 !important;
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
     }
-    .bg-gray {
-      background-color: #f4f4f6 !important;
-    }
-    .bg-offwhite {
-      background-color: #fdfdfc !important;
+    .section-title span { color: var(--gold); }
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.7;
     }
 
-    /* Contrast enhancements on dark background */
-    .bg-navy .section-title {
-      color: var(--white) !important;
+    /* General MBA styling */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
     }
-    .bg-navy .section-title span {
-      color: var(--gold-soft) !important;
+    .vm-card {
+      background: var(--white);
+      border-radius: var(--radius-md) !important;
+      padding: 40px;
+      border: 1px solid rgba(11, 31, 58, 0.05);
+      box-shadow: var(--shadow-sm);
     }
-    .bg-navy .section-subtitle {
-      color: var(--gold-soft) !important;
-    }
-    .bg-navy .section-desc {
-      color: rgba(255, 255, 255, 0.8) !important;
-    }
-
-    .card-title {
+    .vm-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
       color: var(--navy);
-      margin-bottom: 20px;
+      margin: 16px 0 12px;
+    }
+    .vm-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .vm-list li {
+      font-size: 14px;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 20px;
+    }
+    .vm-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .detail-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .detail-card {
+      background: var(--white);
+      border-radius: var(--radius-md) !important;
+      padding: 36px;
+      border: 1px solid rgba(11, 31, 58, 0.05);
+      box-shadow: var(--shadow-sm);
+    }
+    .detail-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .detail-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .po-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .po-card {
+      background: var(--white);
+      border-radius: var(--radius-md) !important;
+      padding: 32px;
+      border-left: 4px solid var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+    .po-card strong {
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .po-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .po-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .cert-card {
+      background: var(--white);
+      border-radius: var(--radius-md) !important;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(11,31,58,0.05);
+    }
+    .cert-icon { font-size: 28px; display: block; margin-bottom: 16px; }
+    .cert-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .cert-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* General Overview Layout & Snapshot */
+    .overview-hero-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      text-align: left;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4%;
+    }
+    .admission-snapshot-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md) !important;
+      padding: 36px;
+      color: var(--white);
+    }
+    .admission-snapshot-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 14px;
+      color: var(--gold-soft);
+    }
+    .snapshot-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .snapshot-item:last-child { border-bottom: none; }
+    .snapshot-item strong { color: var(--gold-soft); }
+
+    /* Specialized MBA (IEV & EM) Styling */
+    .mba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 56px;
+    }
+    .mba-card {
+      background: var(--white);
+      border-radius: var(--radius-md) !important;
+      padding: 40px !important;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(11, 31, 58, 0.05);
+    }
+    .program-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(200, 150, 42, 0.25);
+      line-height: 1;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid var(--line);
-      padding-bottom: 12px;
     }
-    .card-title span { color: var(--gold); }
+    .mba-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .mba-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .prospects-title {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(11, 31, 58, 0.1);
+      padding-bottom: 8px;
+    }
+    .prospects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    .prospects-list li {
+      font-size: 13px;
+      color: var(--muted);
+      position: relative;
+      padding-left: 16px;
+      line-height: 1.4;
+    }
+    .prospects-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
 
-    /* Download/View PDF buttons block */
+    /* PDF Embed & Actions */
     .pdf-actions {
       display: flex;
       gap: 16px;
@@ -419,8 +621,6 @@
       background: rgba(11, 31, 58, 0.05);
       transform: translateY(-2px);
     }
-
-    /* PDF Embed Box */
     .pdf-viewer-container {
       width: 100%;
       height: 600px;
@@ -460,32 +660,28 @@
     }
     .sem-header h4 {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 17px;
       color: var(--navy);
     }
     .sem-credits {
       background: rgba(200, 150, 42, 0.12);
       color: var(--gold);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 4px;
       text-transform: uppercase;
     }
-    .course-list {
-      list-style: none;
-    }
+    .course-list { list-style: none; }
     .course-item {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       padding: 8px 0;
-      font-size: 13.5px;
+      font-size: 13px;
       border-bottom: 1px dashed rgba(90, 99, 120, 0.15);
     }
-    .course-item:last-child {
-      border-bottom: none;
-    }
+    .course-item:last-child { border-bottom: none; }
     .course-details {
       display: flex;
       flex-direction: column;
@@ -504,48 +700,10 @@
       color: var(--muted);
       font-weight: 600;
       white-space: nowrap;
-      font-size: 12px;
+      font-size: 11.5px;
     }
 
-    /* Electives List Styling */
-    .electives-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .elective-card {
-      border: 1px solid var(--line);
-      background: #FDFDFD;
-      border-radius: 8px;
-      padding: 16px;
-    }
-    .elective-card h5 {
-      color: var(--navy);
-      font-size: 14.5px;
-      margin-bottom: 10px;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 4px;
-      display: inline-block;
-    }
-    .elective-sub-list {
-      list-style: none;
-      font-size: 12.5px;
-      color: var(--muted);
-    }
-    .elective-sub-list li {
-      padding: 4px 0;
-      position: relative;
-      padding-left: 12px;
-    }
-    .elective-sub-list li::before {
-      content: '•';
-      color: var(--gold);
-      position: absolute;
-      left: 0;
-    }
-
-    /* Specializations Styling (MBA 2nd year) */
+    /* Elective specialisations styling */
     .spec-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -569,6 +727,22 @@
       color: var(--navy);
       margin-bottom: 12px;
     }
+    .elective-sub-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .elective-sub-list li {
+      padding: 4px 0;
+      position: relative;
+      padding-left: 12px;
+    }
+    .elective-sub-list li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+    }
 
     /* Footer matching index.html */
     .footer {
@@ -584,8 +758,12 @@
 
     /* Responsive adjustments */
     @media (max-width: 1024px) {
+      .overview-hero-container { grid-template-columns: 1fr; }
+      .detail-columns { grid-template-columns: 1fr; }
+      .po-grid { grid-template-columns: 1fr; }
+      .certifications-grid { grid-template-columns: 1fr; }
+      .mba-grid { grid-template-columns: 1fr; }
       .semester-grid { grid-template-columns: 1fr; }
-      .electives-grid { grid-template-columns: 1fr 1fr; }
       .spec-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
@@ -594,10 +772,7 @@
       .nav-menu { display: none; }
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
-      .tab-btn { padding: 12px 14px; font-size: 13.5px; }
-      .electives-grid { grid-template-columns: 1fr; }
-      .pdf-viewer-container { height: 400px; }
-      .content-card { padding: 24px; }
+      .tab-btn { padding: 10px 14px; font-size: 13px; }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -628,13 +803,7 @@
 
     <ul class="nav-menu">
       <li><a href="about.html">About Us</a></li>
-      <li class="has-drop"><a href="#" class="active">Programs</a>
-        <ul class="dropdown">
-          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
-          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
-          <li><a href="curriculum.html" class="active">Structure &amp; Curriculum</a></li>
-        </ul>
-      </li>
+      <li><a href="programs.html" class="active">Programs</a></li>
       <li><a href="admission.html">Admission</a></li>
       <li class="has-drop"><a href="#">Faculty &amp; Research</a>
         <ul class="dropdown">
@@ -664,14 +833,7 @@
   <div class="mobile-nav" id="mobileNav">
     <ul class="mobile-nav-list">
       <li><a href="about.html">About Us</a></li>
-      <li>
-        <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
-        <ul class="mobile-sub" id="sub2">
-          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
-          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
-          <li><a href="curriculum.html" class="active">Structure &amp; Curriculum</a></li>
-        </ul>
-      </li>
+      <li><a href="programs.html" class="active">Programs</a></li>
       <li><a href="admission.html">Admission</a></li>
       <li>
         <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
@@ -697,370 +859,320 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
       <span class="eyebrow">Academic Programs</span>
-      <h1 class="hero-title">Program <span>Structure &amp; Curriculum</span></h1>
+      <h1 class="hero-title">Academic <span>MBA Pathways &amp; Syllabi</span></h1>
       <p class="hero-desc">
-        Explore the rigorous syllabus, course structures, and credit requirements for the BBA and MBA programs at Trident School of Business Administration.
+        Explore our AICTE-approved, industry-connected MBA curriculum structures, specialized streams, learning outcomes, and foundational databases.
       </p>
     </section>
 
     <!-- TABBED CONTENT SECTION -->
     <div class="tab-section">
       <div class="tabs-nav scroll-reveal">
-        <button class="tab-btn active" onclick="switchTab('bba')">BBA Curriculum</button>
-        <button class="tab-btn" onclick="switchTab('mba-1')">MBA First Year</button>
-        <button class="tab-btn" onclick="switchTab('mba-2')">MBA Second Year</button>
+        <button class="tab-btn active" onclick="switchTab(event, 'mba-overview')">MBA General Overview</button>
+        <button class="tab-btn" onclick="switchTab(event, 'specialized-programs')">Specialist MBA Programs</button>
+        <button class="tab-btn" onclick="switchTab(event, 'syllabus-details')">Course Syllabus &amp; Electives</button>
       </div>
 
-      <!-- BBA CURRICULUM TAB -->
-      <div id="bba" class="tab-content active">
-        <!-- Intro / Syllabus Download -->
-        <div class="full-width-section shape-slant bg-warm">
-          <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Undergraduate Program</span>
-              <h2 class="section-title">Bachelor of Business <span>Administration (BBA)</span></h2>
-              <p class="section-desc" style="max-width: 800px; margin: 14px auto 0;">
-                The undergraduate curriculum follows the AICTE Model Syllabus (2024 Guidelines) offering a flexible duration of 3 to 4 years (6 or 8 Semesters) with multiple entry and exit points. A balanced mix of Core, Ability Enhancement, Skill Enhancement, and Discipline Specific Elective courses prepares students for modern corporate challenges.
+      <!-- TAB 1: GENERAL OVERVIEW -->
+      <div id="mba-overview" class="tab-content active">
+        <!-- Overview and Snapshot -->
+        <div class="full-width-section shape-slant bg-navy" style="padding-top: 64px;">
+          <div class="overview-hero-container">
+            <div>
+              <span class="eyebrow" style="background: rgba(200, 150, 42, 0.25); border-color: var(--gold-soft);">Trident School of Business</span>
+              <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Master of Business <span>Administration (MBA)</span></h2>
+              <p style="font-size: 15px; line-height: 1.8; color: rgba(255, 255, 255, 0.85); margin-bottom: 24px;">
+                Established in 2008, the Trident School of Business offers a two-year full-time MBA programme approved by AICTE &amp; Government of Odisha, and affiliated to BPUT. As a premier accredited B-school, we deliver outcome-based management education focused on grooming future business leaders.
               </p>
-            </div>
-            <div class="pdf-actions scroll-reveal" style="justify-content: center;">
-              <a href="BBA New Syllabus 2024.pdf" download class="btn-pdf">
-                <span>📥 Download BBA Syllabus PDF</span>
-              </a>
-              <a href="BBA New Syllabus 2024.pdf" target="_blank" class="btn-pdf-outline">
-                <span>👁️ View PDF In New Tab</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BBA Semesters Grid -->
-        <div class="full-width-section shape-chevron bg-blue">
-          <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Academic Roadmap</span>
-              <h2 class="section-title">Semester-wise <span>Curriculum Structure</span></h2>
-              <p class="section-desc">Course breakdowns for the initial semesters focusing on management foundations and core concepts.</p>
-            </div>
-
-            <div class="semester-grid">
-              <!-- Semester I -->
-              <div class="semester-box scroll-reveal stagger-1">
-                <div class="sem-header">
-                  <h4>Semester I</h4>
-                  <span class="sem-credits">20 Credits</span>
-                </div>
-                <ul class="course-list">
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC101</span>
-                      <span class="course-name">Principles and Practices of Management</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">AEC101</span>
-                      <span class="course-name">Business Communication-I</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC102</span>
-                      <span class="course-name">Financial Accounting</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC103</span>
-                      <span class="course-name">Business Statistics and Logic</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">AEC102</span>
-                      <span class="course-name">General English</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">MDE101</span>
-                      <span class="course-name">Indian Knowledge System</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">VAC101</span>
-                      <span class="course-name">Environmental Science and Sustainability</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Semester II -->
-              <div class="semester-box scroll-reveal stagger-2">
-                <div class="sem-header">
-                  <h4>Semester II</h4>
-                  <span class="sem-credits">20 Credits</span>
-                </div>
-                <ul class="course-list">
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC201</span>
-                      <span class="course-name">Human Behaviour and Organization</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC202</span>
-                      <span class="course-name">Marketing Management</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC203</span>
-                      <span class="course-name">Business Economics</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">SEC201</span>
-                      <span class="course-name">Emerging Technologies and Applications</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">MDE201</span>
-                      <span class="course-name">Media Literacy and Critical Thinking</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">VAC201</span>
-                      <span class="course-name">Indian Constitution</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">AEC201</span>
-                      <span class="course-name">Business Communication-II</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Semester III -->
-              <div class="semester-box scroll-reveal stagger-1">
-                <div class="sem-header">
-                  <h4>Semester III</h4>
-                  <span class="sem-credits">20 Credits</span>
-                </div>
-                <ul class="course-list">
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC301</span>
-                      <span class="course-name">Cost and Management Accounting</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC302</span>
-                      <span class="course-name">Legal and Ethical Issues in Business</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC303</span>
-                      <span class="course-name">Human Resource Management</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">MDE301</span>
-                      <span class="course-name">Indian Systems of Health and Wellness</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">SEC301</span>
-                      <span class="course-name">Management Information System (MIS)</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">VAC301</span>
-                      <span class="course-name">Yoga / Physical Fitness / NCC / NSS</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Semester IV -->
-              <div class="semester-box scroll-reveal stagger-2">
-                <div class="sem-header">
-                  <h4>Semester IV</h4>
-                  <span class="sem-credits">20 Credits</span>
-                </div>
-                <ul class="course-list">
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC401</span>
-                      <span class="course-name">Entrepreneurship and Startup Ecosystem</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC402</span>
-                      <span class="course-name">Operations Management</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC403</span>
-                      <span class="course-name">Financial Management</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC404</span>
-                      <span class="course-name">Business Research Methodology</span>
-                    </div>
-                    <span class="course-credits">4 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">VAC401</span>
-                      <span class="course-name">Business Env. / Enterprise Systems / Geopolitics</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">CC405</span>
-                      <span class="course-name">International Business</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                  <li class="course-item">
-                    <div class="course-details">
-                      <span class="course-code">SEC401</span>
-                      <span class="course-name">Design Thinking and Innovation</span>
-                    </div>
-                    <span class="course-credits">2 Credits</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- BBA Electives Overview & PDF -->
-        <div class="full-width-section bg-gold">
-          <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Specializations</span>
-              <h2 class="section-title">Discipline Specific <span>Electives (DSE)</span></h2>
-              <p class="section-desc">Students select electives starting in Semester V and VI from the following functional streams:</p>
             </div>
             
-            <div class="electives-grid scroll-reveal stagger-1">
-              <div class="elective-card">
-                <h5>Finance</h5>
-                <ul class="elective-sub-list">
-                  <li>International Finance</li>
-                  <li>Banking and Insurance</li>
-                  <li>Financial Markets &amp; Services</li>
-                  <li>Investment &amp; Portfolio Mgmt</li>
-                  <li>Sustainable Finance</li>
-                </ul>
+            <div class="admission-snapshot-box scroll-reveal">
+              <h3>Program Snapshot</h3>
+              <p style="font-size: 13px; opacity: 0.85; margin-bottom: 16px;">Outcome-based education standards affiliated with BPUT and recognized by AICTE.</p>
+              <div class="snapshot-item">
+                <strong>Intake Capacity:</strong> Approved intake of 60 students per batch.
               </div>
-              <div class="elective-card">
-                <h5>Marketing</h5>
-                <ul class="elective-sub-list">
-                  <li>Consumer Behaviour</li>
-                  <li>Digital Marketing</li>
-                  <li>Services Marketing</li>
-                  <li>Retail Marketing</li>
-                  <li>Rural / International Marketing</li>
-                </ul>
+              <div class="snapshot-item">
+                <strong>Duration &amp; Affiliation:</strong> 2-year full-time study, affiliated with Biju Patnaik University of Technology (BPUT).
               </div>
-              <div class="elective-card">
-                <h5>Human Resources</h5>
-                <ul class="elective-sub-list">
-                  <li>HRD - Systems &amp; Strategies</li>
-                  <li>Change Mgmt &amp; OD</li>
-                  <li>Performance &amp; Compensation</li>
-                  <li>Negotiation Skills / Cross Culture</li>
-                  <li>HR Analytics &amp; Team Building</li>
+              <div class="snapshot-item">
+                <strong>Accreditation:</strong> National Board of Accreditation (NBA) accredited program.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vision & Mission -->
+        <div class="full-width-section bg-warm shape-chevron dot-matrix-section">
+          <div class="section-inner">
+            <div class="vm-grid">
+              <div class="vm-card scroll-reveal">
+                <span style="font-size: 32px;">👁️</span>
+                <h3>VISION</h3>
+                <p style="font-size: 14.5px; color: var(--muted); line-height: 1.7;">To be a premier management institute shaping the next generation of impactful business leaders capable of transforming industries for sustainable growth.</p>
+              </div>
+              <div class="vm-card scroll-reveal stagger-1">
+                <span style="font-size: 32px;">🎯</span>
+                <h3>MISSION</h3>
+                <ul class="vm-list">
+                  <li>Empower students to create value for business and society with integrity.</li>
+                  <li>Cultivate management professionals to navigate complexity and drive innovation in a rapidly evolving global economy.</li>
+                  <li>Prepare future leaders who embrace diversity and inspire change for a sustainable future.</li>
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Embed PDF -->
-            <div class="pdf-viewer-container scroll-reveal stagger-2" style="margin-top: 56px;">
-              <iframe src="BBA New Syllabus 2024.pdf" width="100%" height="100%" style="border:none;"></iframe>
+        <!-- Pedagogical Approach -->
+        <div class="full-width-section bg-blue shape-slant">
+          <div class="section-inner">
+            <div class="section-header">
+              <span class="section-subtitle">Academic Architecture</span>
+              <h2 class="section-title">Rigorous &amp; <span>Pedagogical Approach</span></h2>
+              <p class="section-desc">Delivering outcome-based education practices in management studies that align academic rigor with industry standards.</p>
+            </div>
+
+            <div class="detail-columns">
+              <div class="detail-card scroll-reveal">
+                <h3>Centrally Air-Conditioned Campus</h3>
+                <p>The academic environment is strengthened through modern infrastructure, including a centrally air-conditioned academic block with spacious lecture theatres.</p>
+                <p>Each theatre is equipped with advanced audio-visual teaching aids and intranet facilities for seamless access to online learning resources and student portals.</p>
+              </div>
+              <div class="detail-card scroll-reveal stagger-1">
+                <h3>Innovative Pedagogies</h3>
+                <p>To enhance the effectiveness of management education, the MBA programme integrates fieldwork, case study analysis, live projects, internships, and instrumented feedback.</p>
+                <p>Our experienced faculty members actively emphasize both conceptual clarity and practical application to shape competent and ethical management professionals.</p>
+              </div>
+            </div>
+
+            <div class="detail-columns">
+              <div class="detail-card scroll-reveal">
+                <h3>Professional Development</h3>
+                <p>Students actively participate in various co-curricular activities such as Inter B-School competitions, paper presentations, budget analysis contests, and field studies.</p>
+                <p>These exercises develop key leadership qualities, analytical thinking, and managerial competencies beyond the prescribed university curriculum.</p>
+              </div>
+              <div class="detail-card scroll-reveal stagger-1">
+                <h3>Experiential Learning Clubs</h3>
+                <p>The department encourages holistic development through active engagement in student-driven clubs including the Fintech Club, Strategy Club, Business Analytics Club, Communication Club, and Cultural Club.</p>
+                <p>These clubs provide platforms for experiential learning, teamwork, creativity, and leadership enhancement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- POs Section -->
+        <div class="full-width-section bg-gold shape-chevron">
+          <div class="section-inner">
+            <div class="section-header">
+              <span class="section-subtitle">Core Objectives</span>
+              <h2 class="section-title">Program Outcomes <span>(POs)</span></h2>
+              <p class="section-desc">Defining specific professional competencies and targets that graduates will master upon completing the program.</p>
+            </div>
+
+            <div class="po-grid">
+              <div class="po-card scroll-reveal">
+                <strong>PO1 &amp; LO1</strong>
+                <h4>Strategic Leadership</h4>
+                <p>Develop strategic thinking and leadership skills to manage teams and organisations effectively.</p>
+              </div>
+              <div class="po-card scroll-reveal stagger-1">
+                <strong>PO2 &amp; LO2</strong>
+                <h4>Entrepreneurial Drive</h4>
+                <p>Imbibe entrepreneurial competencies to succeed in the start-up ecosystem.</p>
+              </div>
+              <div class="po-card scroll-reveal stagger-2">
+                <strong>PO3 &amp; LO3</strong>
+                <h4>Design Thinking</h4>
+                <p>Cultivate design thinking abilities to address real-world business challenges and drive innovation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Development & Value-Added Certifications -->
+        <div class="full-width-section bg-gray">
+          <div class="section-inner">
+            <div class="section-header">
+              <span class="section-subtitle">Skill Development</span>
+              <h2 class="section-title">Value-Added <span>Professional Certifications</span></h2>
+              <p class="section-desc">To ensure our management graduates are day-one productive in modern corporate roles, we embed structured industry certifications and hands-on laboratory modules into the core MBA experience.</p>
+            </div>
+
+            <div class="certifications-grid">
+              <div class="cert-card scroll-reveal">
+                <span class="cert-icon">📊</span>
+                <h3>SAP ERP Training &amp; Analytics</h3>
+                <p>Hands-on operational training utilizing licensed SAP ERP suites within the Business Analytics Lab to build enterprise planning, database query, and resource scheduling competencies.</p>
+              </div>
+              <div class="cert-card scroll-reveal stagger-1">
+                <span class="cert-icon">📈</span>
+                <h3>Financial Market Analytics</h3>
+                <p>Practical sessions on real-time Koyfin and Trading View terminals inside the Finance Lab, focusing on equity research, corporate valuation, credit analysis, and portfolio modeling.</p>
+              </div>
+              <div class="cert-card scroll-reveal stagger-2">
+                <span class="cert-icon">💬</span>
+                <h3>Corporate Communication Suite</h3>
+                <p>Intensive communication training utilizing specialized WordWorth software packages to master executive presentation delivery, business pitch construction, and group debate formats.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- MBA 1ST YEAR CURRICULUM TAB -->
-      <div id="mba-1" class="tab-content">
-        <!-- Intro / Syllabus Download -->
-        <div class="full-width-section shape-slant bg-warm">
+      <!-- TAB 2: SPECIALIZED PROGRAMS (IEV & EM) -->
+      <div id="specialized-programs" class="tab-content">
+        <!-- Announcements and Salary Box -->
+        <div class="full-width-section shape-slant bg-navy" style="padding-top: 64px;">
           <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Postgraduate Program</span>
-              <h2 class="section-title">MBA - First Year <span>(Core Foundation)</span></h2>
-              <p class="section-desc" style="max-width: 800px; margin: 14px auto 0;">
-                The first year of the MBA programme at TSBA focuses on building a solid managerial foundation. Formulated for the admission batch of 2024-25, the curriculum covers core business functions, quantitative analytics, communication, and basic artificial intelligence skills.
-              </p>
+            <div class="section-header" style="margin-bottom: 40px;">
+              <span class="section-subtitle" style="color: var(--gold-soft);">Next-Gen Offerings</span>
+              <h2 class="section-title" style="color: var(--white);">AICTE Approved <span>Specialist MBA Programs</span></h2>
+              <p class="section-desc" style="color: rgba(255,255,255,0.85);">Choose a dynamic pathway structured for modern venture creation or environmental sustainability.</p>
             </div>
+            
+            <div style="background: rgba(200, 150, 42, 0.12); border: 2px solid var(--gold); border-radius: var(--radius-md) !important; padding: 24px 36px; max-width: 600px; margin: 0 auto; text-align: center; box-shadow: var(--shadow);">
+              <span style="font-size: 28px; display: block; margin-bottom: 8px;">💼</span>
+              <span style="font-size: 13px; font-weight: 700; color: var(--gold-soft); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px;">Industry Starting Salary Range</span>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); font-weight: 700;">Rs. 5 Lakhs to Rs. 10 Lakhs p.a.</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialized Grids -->
+        <div class="full-width-section bg-warm shape-chevron">
+          <div class="section-inner">
+            <div class="mba-grid">
+              <!-- MBA IEV -->
+              <div class="mba-card scroll-reveal">
+                <div class="program-num">01 <span style="font-size: 28px; vertical-align: middle; margin-left: 14px;">🚀</span></div>
+                <h3>MBA IEV (Innovation, Entrepreneurship &amp; Venture Development)</h3>
+                <p>
+                  A 2-year specialized program focusing on innovation methodologies, business startup workflows, and value creation. Ideal for developing leaders capable of launching and running dynamic business ventures or driving corporate change.
+                </p>
+                <div class="prospects-title">Career Prospects</div>
+                <ul class="prospects-list">
+                  <li>New Venture Creation</li>
+                  <li>Innovation Management</li>
+                  <li>Managing Startups</li>
+                  <li>Venture Capital (VC)</li>
+                  <li>Angel Investing</li>
+                  <li>Management Consulting</li>
+                  <li>Corporate Innovation</li>
+                  <li>Product Management</li>
+                </ul>
+
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 16px; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 16px;">IEV Syllabus Overview</h4>
+                <div class="semester-grid" style="grid-template-columns: 1fr; gap: 16px;">
+                  <div class="semester-box" style="padding: 16px;">
+                    <div class="sem-header" style="margin-bottom: 10px; padding-bottom: 4px;">
+                      <h4 style="font-size: 14px;">Year I (Semesters I &amp; II)</h4>
+                      <span class="sem-credits">Foundation</span>
+                    </div>
+                    <ul class="course-list" style="font-size: 12px;">
+                      <li style="padding: 4px 0;">Ideation, Design Thinking &amp; Proof of Concept</li>
+                      <li style="padding: 4px 0;">Legal Ecosystems &amp; IPR Guidelines</li>
+                      <li style="padding: 4px 0;">Venture Validation &amp; Lean Methodologies</li>
+                    </ul>
+                  </div>
+                  <div class="semester-box" style="padding: 16px;">
+                    <div class="sem-header" style="margin-bottom: 10px; padding-bottom: 4px;">
+                      <h4 style="font-size: 14px;">Year II (Semesters III &amp; IV)</h4>
+                      <span class="sem-credits">Launch &amp; Scale</span>
+                    </div>
+                    <ul class="course-list" style="font-size: 12px;">
+                      <li style="padding: 4px 0;">Growth Hacking &amp; Startup Capitalization</li>
+                      <li style="padding: 4px 0;">Venture Financing &amp; Angel Network Pitching</li>
+                      <li style="padding: 4px 0;">Live Venture Sessional &amp; Capstone Launch</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MBA Environmental Management -->
+              <div class="mba-card scroll-reveal stagger-1">
+                <div class="program-num">02 <span style="font-size: 28px; vertical-align: middle; margin-left: 14px;">🌱</span></div>
+                <h3>MBA in Environmental Management (EM)</h3>
+                <p>
+                  A 2-year specialized program designed to integrate social development, environmental risk assessment, and resource management to preserve ecological balance while driving sustainable corporate growth.
+                </p>
+                <div class="prospects-title">Career Prospects</div>
+                <ul class="prospects-list">
+                  <li>Environmental Consulting</li>
+                  <li>Corporate Sustainability</li>
+                  <li>Policy &amp; Advocacy</li>
+                  <li>Compliance Management</li>
+                  <li>Sustainable Development</li>
+                  <li>Renewable Energy</li>
+                  <li>Resource Management</li>
+                  <li>Eco-Education &amp; Outreach</li>
+                </ul>
+
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 16px; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 16px;">EM Syllabus Overview</h4>
+                <div class="semester-grid" style="grid-template-columns: 1fr; gap: 16px;">
+                  <div class="semester-box" style="padding: 16px;">
+                    <div class="sem-header" style="margin-bottom: 10px; padding-bottom: 4px;">
+                      <h4 style="font-size: 14px;">Year I (Semesters I &amp; II)</h4>
+                      <span class="sem-credits">Ecology &amp; Policies</span>
+                    </div>
+                    <ul class="course-list" style="font-size: 12px;">
+                      <li style="padding: 4px 0;">Environmental Ecology &amp; Ecological Science</li>
+                      <li style="padding: 4px 0;">Environmental Policies &amp; Legal Compliances</li>
+                      <li style="padding: 4px 0;">Natural Resource Economics &amp; Auditing</li>
+                    </ul>
+                  </div>
+                  <div class="semester-box" style="padding: 16px;">
+                    <div class="sem-header" style="margin-bottom: 10px; padding-bottom: 4px;">
+                      <h4 style="font-size: 14px;">Year II (Semesters III &amp; IV)</h4>
+                      <span class="sem-credits">ESG &amp; Compliance</span>
+                    </div>
+                    <ul class="course-list" style="font-size: 12px;">
+                      <li style="padding: 4px 0;">Corporate ESG Audit &amp; Sustainability Reporting</li>
+                      <li style="padding: 4px 0;">Clean Technologies &amp; Green Supply Chains</li>
+                      <li style="padding: 4px 0;">SDG Integration &amp; Capstone Thesis Project</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: SYLLABUS & ELECTIVES -->
+      <div id="syllabus-details" class="tab-content">
+        <!-- Intro / Syllabus Downloads -->
+        <div class="full-width-section shape-slant bg-navy" style="padding-top: 64px;">
+          <div class="section-inner">
+            <div class="section-header">
+              <span class="section-subtitle" style="color: var(--gold-soft);">Course Blueprint</span>
+              <h2 class="section-title" style="color: var(--white);">Core Curriculum <span>&amp; Syllabus Matrices</span></h2>
+              <p class="section-desc" style="color: rgba(255, 255, 255, 0.8);">Download official syllabus documents and explore detailed Semester grids.</p>
+            </div>
+            
             <div class="pdf-actions scroll-reveal" style="justify-content: center;">
               <a href="MB01(1st year).pdf" download class="btn-pdf">
-                <span>📥 Download MBA 1st Year PDF</span>
+                <span>📥 Download MBA 1st Year Syllabus (PDF)</span>
               </a>
-              <a href="MB01(1st year).pdf" target="_blank" class="btn-pdf-outline">
-                <span>👁️ View PDF In New Tab</span>
+              <a href="MB01-(2nd-yr-3rd-sem).pdf" download class="btn-pdf-outline" style="border-color: var(--gold-soft); color: var(--gold-soft);">
+                <span>📥 Download MBA 2nd Year Syllabus (PDF)</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- MBA Semesters Grid -->
+        <!-- Core Semesters Grid (1st Year) -->
         <div class="full-width-section shape-chevron bg-blue">
           <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Academic Roadmap</span>
-              <h2 class="section-title">Semester-wise <span>Curriculum Structure</span></h2>
-              <p class="section-desc">Detailed syllabus modules spanning across Core business courses and foundational computer tools.</p>
+            <div class="section-header">
+              <span class="section-subtitle">MBA Year I Roadmap</span>
+              <h2 class="section-title">First Year <span>Core Syllabus</span></h2>
+              <p class="section-desc">Course breakdowns for initial semesters establishing essential business skills.</p>
             </div>
 
             <div class="semester-grid">
               <!-- Semester I -->
-              <div class="semester-box scroll-reveal stagger-1">
+              <div class="semester-box scroll-reveal">
                 <div class="sem-header">
                   <h4>MBA Semester I</h4>
                   <span class="sem-credits">29 Credits</span>
@@ -1147,7 +1259,7 @@
               </div>
 
               <!-- Semester II -->
-              <div class="semester-box scroll-reveal stagger-2">
+              <div class="semester-box scroll-reveal stagger-1">
                 <div class="sem-header">
                   <h4>MBA Semester II</h4>
                   <span class="sem-credits">22 Credits</span>
@@ -1229,56 +1341,16 @@
           </div>
         </div>
 
-        <!-- MBA PDF View -->
-        <div class="full-width-section bg-gold">
+        <!-- Sessional & Electives (2nd Year) -->
+        <div class="full-width-section shape-slant bg-gold">
           <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Syllabus Preview</span>
-              <h2 class="section-title">MBA 1st Year <span>Official Document</span></h2>
-              <p class="section-desc">Interactive reader showing detailed credit matrix guidelines and rules.</p>
-            </div>
-            
-            <!-- Embed PDF -->
-            <div class="pdf-viewer-container scroll-reveal">
-              <iframe src="MB01(1st year).pdf" width="100%" height="100%" style="border:none;"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MBA 2ND YEAR CURRICULUM TAB -->
-      <div id="mba-2" class="tab-content">
-        <!-- Intro / Syllabus Download -->
-        <div class="full-width-section shape-slant bg-warm">
-          <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Specialized Electives</span>
-              <h2 class="section-title">MBA - Second Year <span>(Specializations)</span></h2>
-              <p class="section-desc" style="max-width: 800px; margin: 14px auto 0;">
-                The Second Year (Semester III) is primarily dedicated to elective specializations. Students must choose any **two** specializations from the specified groups. In addition, students complete the Summer Internship Project sessional practical.
-              </p>
-            </div>
-            <div class="pdf-actions scroll-reveal" style="justify-content: center;">
-              <a href="MB01-(2nd-yr-3rd-sem).pdf" download class="btn-pdf">
-                <span>📥 Download MBA 2nd Year PDF</span>
-              </a>
-              <a href="MB01-(2nd-yr-3rd-sem).pdf" target="_blank" class="btn-pdf-outline">
-                <span>👁️ View PDF In New Tab</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Practical & Specialization Electives -->
-        <div class="full-width-section shape-chevron bg-blue">
-          <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Core Sessional</span>
-              <h2 class="section-title">Summer Internship <span>&amp; Elective Streams</span></h2>
-              <p class="section-desc">Sessional modules and advanced management focus areas chosen for business specializations.</p>
+            <div class="section-header">
+              <span class="section-subtitle">MBA Year II Roadmap</span>
+              <h2 class="section-title">Sessional &amp; <span>Specialization Electives</span></h2>
+              <p class="section-desc">Overview of second-year practical sessions and functional management tracks.</p>
             </div>
 
-            <div class="semester-box scroll-reveal stagger-1" style="max-width: 600px; margin: 0 auto 48px;">
+            <div class="semester-box scroll-reveal" style="max-width: 600px; margin: 0 auto 48px;">
               <div class="sem-header">
                 <h4>MBA Semester III Sessional / Practical</h4>
                 <span class="sem-credits">6 Credits</span>
@@ -1294,9 +1366,10 @@
               </ul>
             </div>
 
-            <h4 class="scroll-reveal stagger-2" style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 24px; text-align: center; font-size: 20px;">Specialization Electives (Theory - 3 Credits each)</h4>
+            <h4 style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 24px; text-align: center; font-size: 20px;">Specialization Electives (Theory - 3 Credits each)</h4>
             
-            <div class="spec-grid scroll-reveal stagger-3">
+            <div class="spec-grid scroll-reveal">
+              <!-- Marketing -->
               <div class="spec-box">
                 <h4>Marketing Specialization</h4>
                 <ul class="elective-sub-list">
@@ -1306,6 +1379,7 @@
                   <li>MBPC3004: Services Marketing</li>
                 </ul>
               </div>
+              <!-- Finance -->
               <div class="spec-box">
                 <h4>Finance Specialization</h4>
                 <ul class="elective-sub-list">
@@ -1315,6 +1389,7 @@
                   <li>MBPC3008: Project Appraisal and Financing</li>
                 </ul>
               </div>
+              <!-- HR -->
               <div class="spec-box">
                 <h4>Human Resources Specialization</h4>
                 <ul class="elective-sub-list">
@@ -1324,15 +1399,7 @@
                   <li>MBPC3012: Industrial Relations and Labour Legislations</li>
                 </ul>
               </div>
-              <div class="spec-box">
-                <h4>Operations Specialization</h4>
-                <ul class="elective-sub-list">
-                  <li>MBPC3013: Supply Chain Management &amp; Logistics</li>
-                  <li>MBPC3014: Project Management</li>
-                  <li>MBPC3015: Operations Strategy</li>
-                  <li>MBPC3016: Total Quality Management</li>
-                </ul>
-              </div>
+              <!-- Systems -->
               <div class="spec-box">
                 <h4>System Management Specialization</h4>
                 <ul class="elective-sub-list">
@@ -1342,48 +1409,23 @@
                   <li>MBPC3020: Managing Digital Platforms</li>
                 </ul>
               </div>
-              <div class="spec-box">
-                <h4>Logistics &amp; Supply Chain Management</h4>
-                <ul class="elective-sub-list">
-                  <li>MBPC3037: Logistics Management</li>
-                  <li>MBPC3038: International Logistics</li>
-                  <li>MBPC3039: Retail Supply Chain Management</li>
-                  <li>MBPC3040: Procurement, Storage and Warehouse Management</li>
-                </ul>
-              </div>
-              <div class="spec-box">
+              <!-- International Business -->
+              <div class="spec-box" style="grid-column: span 2;">
                 <h4>International Business Specialization</h4>
-                <ul class="elective-sub-list">
+                <ul class="elective-sub-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                   <li>MBPC3029: International Business</li>
                   <li>MBPC3030: International Finance</li>
                   <li>MBPC3031: International HRM</li>
                   <li>MBPC3032: International Marketing</li>
                 </ul>
               </div>
-              <div class="spec-box">
-                <h4>Retail Management Specialization</h4>
-                <ul class="elective-sub-list">
-                  <li>MBPC3033: Retail Marketing Management</li>
-                  <li>MBPC3034: Retail Integrated Communications</li>
-                  <li>MBPC3035: Visual Merchandising</li>
-                  <li>MBPC3036: Inventory &amp; Logistic Management</li>
-                </ul>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- MBA PDF View -->
-        <div class="full-width-section bg-gold">
-          <div class="section-inner">
-            <div class="section-header scroll-reveal">
-              <span class="section-subtitle">Syllabus Preview</span>
-              <h2 class="section-title">MBA 2nd Year <span>Official Document</span></h2>
-              <p class="section-desc">Interactive reader showing elective descriptions and project templates.</p>
+            <!-- PDF Viewer Grids -->
+            <div class="pdf-viewer-container scroll-reveal" style="margin-top: 56px;">
+              <iframe src="MB01(1st year).pdf" width="100%" height="100%" style="border:none;"></iframe>
             </div>
-            
-            <!-- Embed PDF -->
-            <div class="pdf-viewer-container scroll-reveal">
+            <div class="pdf-viewer-container scroll-reveal" style="margin-top: 24px;">
               <iframe src="MB01-(2nd-yr-3rd-sem).pdf" width="100%" height="100%" style="border:none;"></iframe>
             </div>
           </div>
@@ -1399,7 +1441,7 @@
 
   <script>
     // Tab switching logic
-    function switchTab(tabId) {
+    function switchTab(event, tabId) {
       // Deactivate all tabs
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));

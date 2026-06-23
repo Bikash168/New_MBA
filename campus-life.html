@@ -564,13 +564,29 @@
       line-height: 1.6;
     }
 
-    /* Seminars Media Grid */
+    /* Seminars & SIP Media Columns */
+    .seminar-media-column,
+    .sip-media-column {
+      flex: 1.1;
+    }
     .seminar-media-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       align-content: start;
-      flex: 1.1;
+    }
+    
+    @media (min-width: 993px) {
+      .campus-showcase-item.seminars-item,
+      .campus-showcase-item.sip-item {
+        align-items: flex-start;
+      }
+      .seminar-media-column,
+      .sip-media-column {
+        position: sticky;
+        top: calc(var(--nav-h) + 32px);
+        align-self: flex-start;
+      }
     }
     
     .seminar-media-card {
@@ -718,13 +734,7 @@
 
     <ul class="nav-menu">
       <li><a href="about.html">About Us</a></li>
-      <li class="has-drop"><a href="#">Programs</a>
-        <ul class="dropdown">
-          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
-          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
-          <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
-        </ul>
-      </li>
+      <li><a href="programs.html">Programs</a></li>
       <li><a href="admission.html">Admission</a></li>
       <li class="has-drop"><a href="#">Faculty &amp; Research</a>
         <ul class="dropdown">
@@ -754,14 +764,7 @@
   <div class="mobile-nav" id="mobileNav">
     <ul class="mobile-nav-list">
       <li><a href="about.html">About Us</a></li>
-      <li>
-        <div class="mn-row"><a href="#">Programs</a><button class="mobile-toggle" data-target="sub2">+</button></div>
-        <ul class="mobile-sub" id="sub2">
-          <li><a href="mba-fulltime.html">MBA Full Time</a></li>
-          <li><a href="bba-fulltime.html">BBA Full Time</a></li>
-          <li><a href="curriculum.html">Structure &amp; Curriculum</a></li>
-        </ul>
-      </li>
+      <li><a href="programs.html">Programs</a></li>
       <li><a href="admission.html">Admission</a></li>
       <li>
         <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
@@ -910,9 +913,12 @@
         </div>
 
         <!-- Summer Internship Programme (SIP) -->
-        <div class="campus-showcase-item reverse">
-          <div class="showcase-media scroll-reveal-scale">
-            <img src="Public/sip_internship.jpg" alt="Summer Internship Programme (SIP) Student at BirlaNu">
+        <div class="campus-showcase-item reverse sip-item">
+          <!-- Right Column: Media Column -->
+          <div class="sip-media-column">
+            <div class="showcase-media scroll-reveal-scale">
+              <img src="Public/sip_internship.jpg" alt="Summer Internship Programme (SIP) Student at BirlaNu">
+            </div>
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
@@ -976,28 +982,31 @@
         </div>
 
         <!-- Seminars & Conferences -->
-        <div class="campus-showcase-item">
-          <!-- Left Column: Media Grid -->
-          <div class="seminar-media-grid scroll-reveal-scale">
-            <div class="seminar-media-card span-2">
-              <img src="Public/seminar_conclave.jpg" alt="National Conclave on CSR for Sustainability Stage">
-              <span class="seminar-media-caption">National Conclave on CSR for Sustainability (2025)</span>
-            </div>
-            <div class="seminar-media-card">
-              <img src="Public/seminar_cfx.jpg" alt="Expert Talk on CFA Career Pathways">
-              <span class="seminar-media-caption">CFA Career Orientation (Dr. Biswaranjan Mishra)</span>
-            </div>
-            <div class="seminar-media-card">
-              <img src="Public/seminar_microeconomics.jpg" alt="Expert Talk on Microeconomics group photo">
-              <span class="seminar-media-caption">Expert Talk on Microeconomics Group</span>
-            </div>
-            <div class="seminar-media-card">
-              <img src="Public/seminar_sustainability.jpg" alt="National Seminar on Business Strategies and Sustainability stage panel">
-              <span class="seminar-media-caption">National Seminar: Business Strategies &amp; Sustainability</span>
-            </div>
-            <div class="seminar-media-card">
-              <img src="Public/seminar_wealth.jpg" alt="Expert Talk on Wealth Management presentation">
-              <span class="seminar-media-caption">Wealth Management Session (Dr. Sanat Kumar Mishra)</span>
+        <div class="campus-showcase-item seminars-item">
+          <!-- Left Column: Media Column -->
+          <div class="seminar-media-column">
+            <!-- Media Grid -->
+            <div class="seminar-media-grid scroll-reveal-scale">
+              <div class="seminar-media-card span-2">
+                <img src="Public/seminar_conclave.jpg" alt="National Conclave on CSR for Sustainability Stage">
+                <span class="seminar-media-caption">National Conclave on CSR for Sustainability (2025)</span>
+              </div>
+              <div class="seminar-media-card">
+                <img src="Public/seminar_cfx.jpg" alt="Expert Talk on CFA Career Pathways">
+                <span class="seminar-media-caption">CFA Career Orientation (Dr. Biswaranjan Mishra)</span>
+              </div>
+              <div class="seminar-media-card">
+                <img src="Public/seminar_microeconomics.jpg" alt="Expert Talk on Microeconomics group photo">
+                <span class="seminar-media-caption">Expert Talk on Microeconomics Group</span>
+              </div>
+              <div class="seminar-media-card">
+                <img src="Public/seminar_sustainability.jpg" alt="National Seminar on Business Strategies and Sustainability stage panel">
+                <span class="seminar-media-caption">National Seminar: Business Strategies &amp; Sustainability</span>
+              </div>
+              <div class="seminar-media-card">
+                <img src="Public/seminar_wealth.jpg" alt="Expert Talk on Wealth Management presentation">
+                <span class="seminar-media-caption">Wealth Management Session (Dr. Sanat Kumar Mishra)</span>
+              </div>
             </div>
           </div>
           
