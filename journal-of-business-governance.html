@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Membership — Professional Memberships — Trident School of Business Administration</title>
-  <meta name="description" content="Learn about the professional Life Memberships held by Trident School of Business Administration, including AIMS, NHRDN, and ISTD, supporting academic excellence.">
+  <title>Journal of Business Governance — Trident School of Business Administration</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -66,14 +65,11 @@
       border-bottom: 3px solid var(--gold);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-    .logo-img {
-      height: 52px;
-      width: auto;
-      object-fit: contain;
-      transition: var(--transition);
-    }
-    .nav-logo:hover .logo-img {
-      transform: scale(1.05);
+    .logo-emblem {
+      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
+      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-lt);
     }
     .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
     .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
@@ -199,7 +195,7 @@
     .mobile-toggle { background: none; border: none; color: var(--gold-lt); font-size: 22px; line-height: 1; cursor: pointer; padding: 10px 8px; }
     .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
     .mobile-sub.open { display: block; }
-    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255, 255, 255, .75); text-decoration: none; touch-action: manipulation; }
+    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255,255,255,.75); text-decoration: none; touch-action: manipulation; }
     .mobile-sub li a:hover { color: var(--gold-lt); }
     .mobile-sub li a.active { color: var(--gold-lt); font-weight: 700; }
     .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
@@ -229,7 +225,7 @@
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 4.5vw, 54px);
+      font-size: clamp(30px, 4vw, 50px);
       line-height: 1.15;
       font-weight: 800;
     }
@@ -248,162 +244,166 @@
       margin: 80px auto;
       padding: 0 4%;
     }
-
-    /* Single-Column Membership Layout */
-    .membership-intro-section {
+    .section-header {
       text-align: center;
-      max-width: 850px;
-      margin: 0 auto 48px;
+      max-width: 700px;
+      margin: 0 auto 56px;
     }
-    .membership-intro-section .intro-title {
+    .section-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 32px;
       color: var(--navy);
-      margin-bottom: 18px;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 12px;
+      margin-bottom: 16px;
     }
-    .membership-intro-section .intro-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-    .membership-intro-section .intro-text {
-      font-size: 15.5px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    /* Cards List Stack */
-    .membership-list-container {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      margin-bottom: 80px;
-    }
-    .membership-row-card {
-      background: var(--white);
-      border: 1px solid rgba(11, 31, 58, 0.06);
-      border-left: 4px solid var(--gold) !important;
-      border-radius: var(--radius-md) !important;
-      padding: 28px 36px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition-smooth) !important;
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-    .membership-row-card:hover {
-      transform: translateX(8px) !important;
-      box-shadow: var(--shadow-md) !important;
-      border-left-color: var(--navy) !important;
-    }
-    
-    .membership-card-logo-container {
-      width: 100px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--white);
-      border-radius: 50%;
-      border: 1px solid rgba(11, 31, 58, 0.06);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      transition: var(--transition-smooth) !important;
-      padding: 10px;
-      flex-shrink: 0;
-    }
-    .membership-row-card:hover .membership-card-logo-container {
-      transform: scale(1.06);
-      border-color: var(--gold);
-    }
-    .membership-card-logo {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-    .membership-card-text {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      text-align: left;
-    }
-    .membership-card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px;
-      color: var(--navy);
-      font-weight: 700;
-      line-height: 1.3;
-    }
-    .membership-card-desc {
+    .section-title span { color: var(--gold); }
+    .section-desc {
       font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
-    /* Logos Row Banner */
-    .membership-logos-banner {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 48px 32px;
-      border: 1px solid rgba(11, 31, 58, 0.05);
-      text-align: center;
-      margin-top: 40px;
-      box-shadow: var(--shadow-sm);
+    /* Layout grid */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 64px;
+      margin-bottom: 64px;
+      align-items: start;
     }
-    .membership-logos-banner .banner-title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
+
+    .editorial-card {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
       margin-bottom: 32px;
     }
-    .membership-logos-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-      gap: 36px;
-      max-width: 100%;
-      padding: 12px 0;
+    .editorial-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
     }
-    .logo-wrap {
+    .editorial-card p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .highlights-box {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 0 !important;
+      box-shadow: none !important;
+    }
+    .highlights-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .highlight-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+    }
+    .highlight-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .highlight-num {
+      width: 32px;
+      height: 32px;
+      background: rgba(200, 150, 42, 0.1);
+      border-radius: 50%;
+      color: var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 90px;
-      width: 190px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .highlight-text h4 {
+      font-size: 14.5px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .highlight-text p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* PDF Viewer section */
+    .pdf-viewer-section {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 48px 0 !important;
+      box-shadow: none !important;
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .pdf-viewer-container {
+      width: 100%;
+      height: 720px;
+      margin: 28px 0;
+      border-radius: 12px;
+      border: 3px solid var(--gold);
+      box-shadow: var(--shadow);
       background: var(--white);
-      border: 1px solid rgba(11, 31, 58, 0.06);
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow-sm);
-      padding: 14px;
-      transition: var(--transition-smooth);
+      overflow: hidden;
     }
-    .logo-wrap:hover {
-      transform: translateY(-4px) scale(1.03) !important;
-      box-shadow: var(--shadow-md);
-      border-color: var(--gold);
+    .btn-download {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .05em;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(200, 150, 42, 0.2);
+      transition: var(--transition);
     }
-    .logo-wrap img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      opacity: 0.95;
-      transition: var(--transition-smooth);
+    .btn-download:hover {
+      background: var(--navy);
+      color: var(--gold-soft);
+      box-shadow: 0 4px 15px rgba(11, 31, 58, 0.2);
+      transform: translateY(-2px);
     }
-    .logo-wrap:hover img {
-      opacity: 1;
+
+    /* Desktop column vertical dividers */
+    @media (min-width: 1025px) {
+      .layout-grid > div:first-child {
+        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
+        padding-right: 48px !important;
+      }
     }
 
     /* Footer matching index.html */
@@ -418,6 +418,10 @@
       margin-top: 96px;
     }
 
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .layout-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
       .topbar { padding: 8px 24px; }
@@ -425,37 +429,9 @@
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 48px auto; }
-      .membership-intro-section .intro-title {
-        font-size: 26px;
-      }
-      .membership-row-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 16px;
-        padding: 30px 24px;
-      }
-      .membership-card-text {
-        text-align: center;
-      }
-      .membership-logos-row {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding: 12px 4px;
-        gap: 16px;
-        scrollbar-width: none;
-      }
-      .membership-logos-row::-webkit-scrollbar {
-        display: none;
-      }
-      .logo-wrap {
-        height: 72px;
-        width: 140px;
-        padding: 8px;
-        border-radius: var(--radius-sm);
-        flex-shrink: 0;
-      }
+      .section-container { margin: 64px auto; }
+      .pdf-viewer-section { padding: 32px 20px; }
+      .pdf-viewer-container { height: 500px; }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -477,10 +453,10 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section">
-      <span class="eyebrow">Professional Connect</span>
-      <h1 class="hero-title">Professional <span>Life Memberships</span></h1>
+      <span class="eyebrow">TSBA Publications</span>
+      <h1 class="hero-title">Journal of Business <span>Governance Insights</span></h1>
       <p class="hero-desc">
-        Connecting our academic programs, students, and faculty with leading national management associations to drive leadership and institutional excellence.
+        A peer-reviewed management journal by Trident School of Business Administration showcasing cutting-edge research in corporate governance, financial systems, ethical leadership, and development models.
       </p>
     </section>
 
@@ -502,10 +478,10 @@
         <ul class="dropdown">
           <li><a href="faculty.html">Faculty</a></li>
           <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
-          <li><a href="journal-of-business-governance.html">Journal of Business Governance</a></li>
+          <li><a href="journal-of-business-governance.html" class="active">Journal of Business Governance</a></li>
           <li><a href="mou.html">MOU</a></li>
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
-          <li><a href="life-membership.html" class="active">Life Membership</a></li>
+          <li><a href="life-membership.html">Life Membership</a></li>
           <li><a href="nodal-research.html">Nodal Center of Research</a></li>
           <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
         </ul>
@@ -533,10 +509,10 @@
         <ul class="mobile-sub" id="sub4">
           <li><a href="faculty.html">Faculty</a></li>
           <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
-          <li><a href="journal-of-business-governance.html">Journal of Business Governance</a></li>
+          <li><a href="journal-of-business-governance.html" class="active">Journal of Business Governance</a></li>
           <li><a href="mou.html">MOU</a></li>
           <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
-          <li><a href="life-membership.html" class="active">Life Membership</a></li>
+          <li><a href="life-membership.html">Life Membership</a></li>
           <li><a href="nodal-research.html">Nodal Center of Research</a></li>
           <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
         </ul>
@@ -549,61 +525,95 @@
   </div>
 
 
-    <!-- INTRO SECTION -->
-    <section class="section-container" style="margin-bottom: 0; padding-bottom: 0;">
-      <div class="membership-intro-section scroll-reveal stagger-1">
-        <h2 class="intro-title">Professional Life Memberships</h2>
-        <p class="intro-text">
-          The MBA Department is a life member of prestigious national and international professional bodies. These affiliations establish direct pathways for industry networking, institutional benchmarking, learning resource sharing, and professional certifications.
-        </p>
-      </div>
-    </section>
-
     <!-- CONTENT LAYOUT -->
-    <section class="section-container" style="margin-top: 0; padding-top: 0;">
-      <div class="membership-list-container">
-        <!-- Card 1: AIMS -->
-        <div class="membership-row-card scroll-reveal stagger-1">
-          <div class="membership-card-logo-container">
-            <img src="Public/member_aims.jpg" alt="AIMS Logo" class="membership-card-logo">
+    <section class="section-container">
+      <div class="layout-grid">
+        <!-- Left: About & Editorials -->
+        <div>
+          <div class="editorial-card scroll-reveal stagger-1">
+            <h3>About the Journal</h3>
+            <p>
+              The <strong>Journal of Business Governance Insights (JBGI)</strong> is the flagship annual, peer-reviewed academic publication of the Department of Business Administration at the Trident School of Business Administration, Bhubaneswar. 
+            </p>
+            <p>
+              Serving as a high-quality interdisciplinary platform, the journal publishes original research studies, empirical papers, corporate case analyses, and conceptual models. Our core mission is to bridge business theory with corporate governance realities, providing managers, academicians, and policy advocates with actionable insights.
+            </p>
+            <p>
+              The journal enforces a rigorous double-blind peer-review workflow under our dedicated editorial board. We seek to foster thought leadership and provide sustainable answers to corporate, financial, and developmental complexities.
+            </p>
           </div>
-          <div class="membership-card-text">
-            <h3 class="membership-card-title">Association of Indian Management Schools (AIMS)</h3>
-            <p class="membership-card-desc">As one of the largest networking networks of business schools globally, AIMS provides our faculty and students with advanced management research tools, regional case-writing seminars, and access to national management education benchmark standards.</p>
-          </div>
-        </div>
-        
-        <!-- Card 2: NHRDN -->
-        <div class="membership-row-card scroll-reveal stagger-2">
-          <div class="membership-card-logo-container">
-            <img src="Public/member_nhrd.jpg" alt="NHRDN Logo" class="membership-card-logo">
-          </div>
-          <div class="membership-card-text">
-            <h3 class="membership-card-title">National Human Resource Development Network (NHRDN)</h3>
-            <p class="membership-card-desc">The premier national body committed to grooming human capital leaders in India. Our partnership offers direct interaction with corporate directors, local HR chapter workshops, and leadership development programs to keep our students aligned with global talent trends.</p>
+
+          <div class="editorial-card scroll-reveal stagger-2">
+            <h3>Editorial Leadership</h3>
+            <p>
+              Our editorial desk is guided by experienced management administrators and academic mentors.
+            </p>
+            <p style="margin-bottom: 8px;">
+              <strong>Editor-in-Chief:</strong><br>
+              <strong>Dr. Pravat Kumar Mohanty</strong> (Professor &amp; Dean, School of Business, TSBA; Former Head of MBA, Utkal University &amp; Director BPUT)
+            </p>
+            <p>
+              <strong>Associate Editor:</strong><br>
+              <strong>Dr. Munmun Mohanty</strong> (Professor &amp; Head of Department, MBA, TSBA)
+            </p>
           </div>
         </div>
 
-        <!-- Card 3: ISTD -->
-        <div class="membership-row-card scroll-reveal stagger-3">
-          <div class="membership-card-logo-container">
-            <img src="Public/member_istd.jpg" alt="ISTD Logo" class="membership-card-logo">
+        <!-- Right: Journal Focus Areas -->
+        <div class="highlights-box scroll-reveal stagger-3">
+          <h3>Thematic Focus Areas</h3>
+          
+          <div class="highlight-item">
+            <div class="highlight-num">1</div>
+            <div class="highlight-text">
+              <h4>Corporate Governance &amp; Ethics</h4>
+              <p>Research on board oversight models, transparency indexes, executive rewards, shareholder activation, and business ethics.</p>
+            </div>
           </div>
-          <div class="membership-card-text">
-            <h3 class="membership-card-title">Indian Society for Training &amp; Development (ISTD)</h3>
-            <p class="membership-card-desc">ISTD serves as the national forum for HR trainers and learning coordinators. Membership provides our faculty with advanced pedagogical training resources, and opens exclusive pathways for students to obtain diplomas in training and development.</p>
+
+          <div class="highlight-item">
+            <div class="highlight-num">2</div>
+            <div class="highlight-text">
+              <h4>ESG &amp; Sustainability Audits</h4>
+              <p>Analyses of corporate environmental stewardship, social accountability standards, and sustainable business models.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-num">3</div>
+            <div class="highlight-text">
+              <h4>Financial Regulation &amp; Analytics</h4>
+              <p>Studies investigating credit rating workflows, macroeconomic policies, banking governance, and fiscal stability.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-num">4</div>
+            <div class="highlight-text">
+              <h4>Digital Governance &amp; Policy</h4>
+              <p>Assessing AI governance guidelines, e-governance standards in services, and technology policy for small-scale enterprises.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- LOGOS BANNER -->
-      <div class="membership-logos-banner scroll-reveal stagger-2">
-        <div class="banner-title">Our Affiliations &amp; Credentials</div>
-        <div class="membership-logos-row">
-          <div class="logo-wrap"><img src="Public/member_aims.jpg" alt="AIMS"></div>
-          <div class="logo-wrap"><img src="Public/member_nhrd.jpg" alt="NHRDN"></div>
-          <div class="logo-wrap"><img src="Public/member_istd.jpg" alt="ISTD"></div>
+      <!-- Embedded Flipbook Section -->
+      <div class="pdf-viewer-section scroll-reveal stagger-1">
+        <span class="section-subtitle">Journal Insights Flipbook</span>
+        <h2 class="section-title">Explore the <span>Interactive Journal</span></h2>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto;">
+          Interact with the flipbook below to flip pages, read research summaries, and browse the full publication.
+        </p>
+
+        <!-- Embedded Viewer -->
+        <div class="pdf-viewer-container scroll-reveal stagger-2">
+          <iframe src="https://heyzine.com/flip-book/aac6c65e9b.html" width="100%" height="100%" style="border: none;" allowfullscreen></iframe>
         </div>
+
+        <!-- Action downloads -->
+        <a href="https://heyzine.com/flip-book/aac6c65e9b.html" target="_blank" class="btn-download">
+          <span>📖 Open Flipbook in New Tab</span>
+        </a>
       </div>
     </section>
   </main>
