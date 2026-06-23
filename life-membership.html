@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life Membership — Professional Memberships — Trident School of Business Administration</title>
+  <meta name="description" content="Learn about the professional Life Memberships held by Trident School of Business Administration, including AIMS, NHRDN, and ISTD, supporting academic excellence.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -247,86 +248,162 @@
       margin: 80px auto;
       padding: 0 4%;
     }
-    
-    /* Layout grid */
-    .layout-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 64px;
-      margin-bottom: 64px;
-      align-items: start;
-    }
 
-    .membership-content-box {
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 16px 0 !important;
-      box-shadow: none !important;
+    /* Single-Column Membership Layout */
+    .membership-intro-section {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 48px;
     }
-    .membership-content-box h3 {
+    .membership-intro-section .intro-title {
       font-family: 'Playfair Display', serif;
-      font-size: 26px;
+      font-size: 32px;
       color: var(--navy);
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 8px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      position: relative;
       display: inline-block;
+      padding-bottom: 12px;
     }
-    
-    .membership-desc {
-      font-size: 15px;
+    .membership-intro-section .intro-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .membership-intro-section .intro-text {
+      font-size: 15.5px;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 28px;
     }
 
-    /* Detail blocks */
-    .membership-blocks {
+    /* Cards List Stack */
+    .membership-list-container {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 28px;
+      margin-bottom: 80px;
     }
-    .member-block {
-      background: rgba(11, 31, 58, 0.02);
-      border-left: 4px solid var(--navy);
-      border-radius: 0 12px 12px 0;
-      padding: 24px;
-      transition: var(--transition);
+    .membership-row-card {
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-left: 4px solid var(--gold) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 28px 36px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth) !important;
+      display: flex;
+      align-items: center;
+      gap: 36px;
     }
-    .member-block:hover {
-      transform: translateX(6px);
-      background: rgba(200, 150, 42, 0.05);
-      border-left-color: var(--gold);
+    .membership-row-card:hover {
+      transform: translateX(8px) !important;
+      box-shadow: var(--shadow-md) !important;
+      border-left-color: var(--navy) !important;
     }
-    .member-block h4 {
+    
+    .membership-card-logo-container {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 50%;
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: var(--transition-smooth) !important;
+      padding: 10px;
+      flex-shrink: 0;
+    }
+    .membership-row-card:hover .membership-card-logo-container {
+      transform: scale(1.06);
+      border-color: var(--gold);
+    }
+    .membership-card-logo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .membership-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
+    .membership-card-title {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 19px;
       color: var(--navy);
-      margin-bottom: 8px;
+      font-weight: 700;
+      line-height: 1.3;
     }
-    .member-block p {
-      font-size: 14px;
+    .membership-card-desc {
+      font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    .membership-media-box {
+    /* Logos Row Banner */
+    .membership-logos-banner {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px 32px;
+      border: 1px solid rgba(11, 31, 58, 0.05);
       text-align: center;
+      margin-top: 40px;
+      box-shadow: var(--shadow-sm);
     }
-    .membership-img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      display: block;
-      margin: 0 auto;
+    .membership-logos-banner .banner-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
     }
-    .membership-img:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .membership-logos-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 36px;
+      max-width: 100%;
+      padding: 12px 0;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 90px;
+      width: 190px;
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      padding: 14px;
+      transition: var(--transition-smooth);
+    }
+    .logo-wrap:hover {
+      transform: translateY(-4px) scale(1.03) !important;
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+    .logo-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      opacity: 0.95;
+      transition: var(--transition-smooth);
+    }
+    .logo-wrap:hover img {
+      opacity: 1;
     }
 
     /* Footer matching index.html */
@@ -341,19 +418,6 @@
       margin-top: 96px;
     }
 
-    /* Desktop column vertical dividers */
-    @media (min-width: 1025px) {
-      .layout-grid > div:first-child {
-        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
-        padding-right: 48px !important;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .layout-grid { grid-template-columns: 1fr; gap: 48px; }
-      .membership-img { max-width: 400px; }
-    }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
       .topbar { padding: 8px 24px; }
@@ -361,7 +425,37 @@
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 64px auto; }
+      .section-container { margin: 48px auto; }
+      .membership-intro-section .intro-title {
+        font-size: 26px;
+      }
+      .membership-row-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 30px 24px;
+      }
+      .membership-card-text {
+        text-align: center;
+      }
+      .membership-logos-row {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 12px 4px;
+        gap: 16px;
+        scrollbar-width: none;
+      }
+      .membership-logos-row::-webkit-scrollbar {
+        display: none;
+      }
+      .logo-wrap {
+        height: 72px;
+        width: 140px;
+        padding: 8px;
+        border-radius: var(--radius-sm);
+        flex-shrink: 0;
+      }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -454,43 +548,60 @@
       </p>
     </section>
 
+    <!-- INTRO SECTION -->
+    <section class="section-container" style="margin-bottom: 0; padding-bottom: 0;">
+      <div class="membership-intro-section scroll-reveal stagger-1">
+        <h2 class="intro-title">Professional Life Memberships</h2>
+        <p class="intro-text">
+          The MBA Department is a life member of prestigious national and international professional bodies. These affiliations establish direct pathways for industry networking, institutional benchmarking, learning resource sharing, and professional certifications.
+        </p>
+      </div>
+    </section>
+
     <!-- CONTENT LAYOUT -->
-    <section class="section-container">
-      <div class="layout-grid">
-        <!-- Left Column: Content -->
-        <div class="membership-content-box scroll-reveal stagger-1">
-          <h3>Professional Memberships</h3>
-          <p class="membership-desc">
-            The MBA Department is a life member of the following prestigious professional bodies, establishing direct pathways for industry networking, institutional benchmarking, and professional qualifications.
-          </p>
-          
-          <div class="membership-blocks">
-            <div class="member-block">
-              <h4>Association of Indian Management Schools (AIMS)</h4>
-              <p>
-                AIMS is one of the largest networking organizations of business schools in the world. Life membership provides our students and faculty with resources for management research, regional case-writing seminars, and access to national management education benchmark standards.
-              </p>
-            </div>
-            
-            <div class="member-block">
-              <h4>National Human Resource Development Network (NHRDN)</h4>
-              <p>
-                NHRDN is the premier national body committed to grooming human capital leaders in India. Our partnership offers direct interaction with corporate directors, local HR chapter workshops, and leadership development programs to keep our students aligned with global talent trends.
-              </p>
-            </div>
-            
-            <div class="member-block">
-              <h4>Indian Society for Training &amp; Development (ISTD)</h4>
-              <p>
-                ISTD is the national forum for HR trainers and learning coordinators. Membership provides our faculty with training materials and resources for advanced methodologies, and opens opportunities for students to obtain diplomas in training and development.
-              </p>
-            </div>
+    <section class="section-container" style="margin-top: 0; padding-top: 0;">
+      <div class="membership-list-container">
+        <!-- Card 1: AIMS -->
+        <div class="membership-row-card scroll-reveal stagger-1">
+          <div class="membership-card-logo-container">
+            <img src="Public/member_aims.jpg" alt="AIMS Logo" class="membership-card-logo">
+          </div>
+          <div class="membership-card-text">
+            <h3 class="membership-card-title">Association of Indian Management Schools (AIMS)</h3>
+            <p class="membership-card-desc">As one of the largest networking networks of business schools globally, AIMS provides our faculty and students with advanced management research tools, regional case-writing seminars, and access to national management education benchmark standards.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2: NHRDN -->
+        <div class="membership-row-card scroll-reveal stagger-2">
+          <div class="membership-card-logo-container">
+            <img src="Public/member_nhrd.jpg" alt="NHRDN Logo" class="membership-card-logo">
+          </div>
+          <div class="membership-card-text">
+            <h3 class="membership-card-title">National Human Resource Development Network (NHRDN)</h3>
+            <p class="membership-card-desc">The premier national body committed to grooming human capital leaders in India. Our partnership offers direct interaction with corporate directors, local HR chapter workshops, and leadership development programs to keep our students aligned with global talent trends.</p>
           </div>
         </div>
 
-        <!-- Right Column: Logos Image -->
-        <div class="membership-media-box scroll-reveal stagger-2">
-          <img src="Public/membership_logos.png" alt="Life Membership Organizations" class="membership-img">
+        <!-- Card 3: ISTD -->
+        <div class="membership-row-card scroll-reveal stagger-3">
+          <div class="membership-card-logo-container">
+            <img src="Public/member_istd.jpg" alt="ISTD Logo" class="membership-card-logo">
+          </div>
+          <div class="membership-card-text">
+            <h3 class="membership-card-title">Indian Society for Training &amp; Development (ISTD)</h3>
+            <p class="membership-card-desc">ISTD serves as the national forum for HR trainers and learning coordinators. Membership provides our faculty with advanced pedagogical training resources, and opens exclusive pathways for students to obtain diplomas in training and development.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGOS BANNER -->
+      <div class="membership-logos-banner scroll-reveal stagger-2">
+        <div class="banner-title">Our Affiliations &amp; Credentials</div>
+        <div class="membership-logos-row">
+          <div class="logo-wrap"><img src="Public/member_aims.jpg" alt="AIMS"></div>
+          <div class="logo-wrap"><img src="Public/member_nhrd.jpg" alt="NHRDN"></div>
+          <div class="logo-wrap"><img src="Public/member_istd.jpg" alt="ISTD"></div>
         </div>
       </div>
     </section>

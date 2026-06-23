@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDP — Management Development Programme — Trident School of Business Administration</title>
+  <meta name="description" content="Explore the Management Development Programme (MDP) at Trident School of Business Administration. Learn about our 'Green HR for Sustainable Growth' event.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -248,117 +249,196 @@
       padding: 0 4%;
     }
     
-    /* Layout grid */
-    .layout-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 64px;
-      margin-bottom: 64px;
-      align-items: start;
+    /* Single-Column MDP Layout */
+    .mdp-intro-section {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 48px;
+    }
+    .mdp-intro-section .intro-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 18px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    .mdp-intro-section .intro-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .mdp-intro-section .intro-text {
+      font-size: 15.5px;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    .mdp-content-box {
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 16px 0 !important;
-      box-shadow: none !important;
+    /* Meta Info Panel */
+    .mdp-info-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-left: 4px solid var(--gold) !important;
+      padding: 32px;
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
     }
-    .mdp-content-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: var(--navy);
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 8px;
-      display: inline-block;
-    }
-    .mdp-theme {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    
-    /* Meta details */
-    .mdp-meta-panel {
+    .mdp-info-details {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-      background: rgba(11, 31, 58, 0.03);
-      padding: 20px;
-      border-radius: 12px;
-      border-left: 4px solid var(--navy);
+      gap: 16px;
     }
-    .mdp-meta-item {
+    .mdp-info-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14.5px;
+      gap: 12px;
+      font-size: 15px;
       color: var(--navy);
       font-weight: 600;
     }
-    .mdp-meta-item span.icon {
-      font-size: 18px;
+    .mdp-info-item .icon {
+      font-size: 22px;
+      background: rgba(200, 150, 42, 0.1);
+      color: var(--gold);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
-
-    .mdp-content-box p {
-      font-size: 15px;
+    .mdp-info-desc {
+      font-size: 14.5px;
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 20px;
+      line-height: 1.7;
     }
 
-    /* Organizations tag grid */
-    .org-tag-container {
-      margin-top: 28px;
+    /* Participating Organizations Section */
+    .mdp-orgs-section {
+      background: rgba(11, 31, 58, 0.02);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1px solid rgba(11, 31, 58, 0.05);
+      margin-bottom: 56px;
     }
-    .org-tag-container h4 {
+    .mdp-orgs-section h4 {
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      font-size: 20px;
       color: var(--navy);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .org-tags {
+    .mdp-org-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      justify-content: center;
+      gap: 12px;
     }
-    .org-tag {
-      background: rgba(200, 150, 42, 0.08);
-      border: 1px solid rgba(200, 150, 42, 0.25);
+    .mdp-org-tag {
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.08);
       color: var(--navy);
       font-size: 13.5px;
       font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 20px;
-      transition: var(--transition);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
     }
-    .org-tag:hover {
+    .mdp-org-tag:hover {
       background: var(--navy);
       color: var(--gold-soft);
       border-color: var(--navy);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
     }
 
-    .mdp-media-box {
+    /* Gallery Section */
+    .mdp-gallery-section {
+      margin-top: 40px;
+    }
+    .gallery-header {
       text-align: center;
+      margin-bottom: 36px;
     }
-    .mdp-img {
+    .gallery-header .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--navy);
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    .mdp-gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+    .mdp-gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      aspect-ratio: 4 / 3;
+      transition: var(--transition-smooth);
+    }
+    .mdp-gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 31, 58, 0.6) 0%, transparent 60%);
+      opacity: 0.8;
+      transition: var(--transition-smooth);
+    }
+    .mdp-gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+    .mdp-gallery-img {
       width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      display: block;
-      margin: 0 auto;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
     }
-    .mdp-img:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .mdp-gallery-item:hover .mdp-gallery-img {
+      transform: scale(1.05);
+    }
+    .mdp-gallery-caption {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      z-index: 10;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      text-align: left;
+    }
+    .mdp-gallery-caption h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--gold-soft);
+      margin-bottom: 4px;
+    }
+    .mdp-gallery-caption p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0;
+      line-height: 1.4;
     }
 
     /* Footer matching index.html */
@@ -373,18 +453,8 @@
       margin-top: 96px;
     }
 
-    /* Desktop column vertical dividers */
-    @media (min-width: 1025px) {
-      .layout-grid > div:first-child {
-        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
-        padding-right: 48px !important;
-      }
-    }
-
-    /* Responsive */
     @media (max-width: 1024px) {
-      .layout-grid { grid-template-columns: 1fr; gap: 48px; }
-      .mdp-img { max-width: 400px; }
+      .mdp-gallery-grid { gap: 24px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -393,7 +463,19 @@
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 64px auto; }
+      .section-container { margin: 48px auto; }
+      .mdp-info-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+      }
+      .mdp-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .gallery-header .gallery-title {
+        font-size: 24px;
+      }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -486,58 +568,95 @@
       </p>
     </section>
 
-    <!-- CONTENT LAYOUT -->
-    <section class="section-container">
-      <div class="layout-grid">
-        <!-- Left Column: Content and Grid -->
-        <div class="mdp-content-box scroll-reveal stagger-1">
-          <h3>2-Day Management Development Programme (MDP)</h3>
-          <div class="mdp-theme">GREEN HR FOR SUSTAINABLE GROWTH 🌱</div>
-          
-          <div class="mdp-meta-panel">
-            <div class="mdp-meta-item">
-              <span class="icon">📅</span>
-              <span>Date: 11th–12th July 2025</span>
-            </div>
-            <div class="mdp-meta-item">
-              <span class="icon">📍</span>
-              <span>Venue: School of Business, Trident Academy of Technology, Bhubaneswar</span>
+    <!-- INTRO SECTION -->
+    <section class="section-container" style="margin-bottom: 0; padding-bottom: 0;">
+      <div class="mdp-intro-section scroll-reveal stagger-1">
+        <h2 class="intro-title">2-Day Management Development Programme (MDP)</h2>
+        <div class="mdp-theme">Green HR for Sustainable Growth 🌱</div>
+        <p class="intro-text">
+          A successful convergence of HR professionals, academicians, and industry leaders committed to driving sustainability through innovative human resource practices. The programme was organized by the School of Business, Trident Academy of Technology in collaboration with the National Institute of Personnel Management (NIPM), Utkal Chapter.
+        </p>
+      </div>
+    </section>
+
+    <!-- EVENT INFO & DETAILS -->
+    <section class="section-container" style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">
+      <div class="mdp-info-card scroll-reveal stagger-2">
+        <div class="mdp-info-details">
+          <div class="mdp-info-item">
+            <span class="icon">📅</span>
+            <div>
+              <strong>Programme Dates</strong>
+              <div class="mdp-info-desc">11th – 12th July 2025</div>
             </div>
           </div>
-
-          <p>
-            The Management Development Programme (MDP) was a successful convergence of HR professionals, academicians, and industry leaders committed to driving sustainability through innovative human resource practices.
-          </p>
-          <p>
-            The programme was organized by the School of Business, Trident Academy of Technology in collaboration with the National Institute of Personnel Management (NIPM), Utkal Chapter. The event sparked meaningful discussions and provided practical insights into how HR can champion sustainable development.
-          </p>
-          <p>
-            A total of <strong>21 participants</strong> from <strong>12 leading organizations</strong> attended the intensive training sessions.
-          </p>
-
-          <!-- Participating Organizations tags -->
-          <div class="org-tag-container">
-            <h4>Participating Organizations</h4>
-            <div class="org-tags">
-              <span class="org-tag">PPL</span>
-              <span class="org-tag">Tata Steel</span>
-              <span class="org-tag">OHPC</span>
-              <span class="org-tag">OPTCL</span>
-              <span class="org-tag">Emami Paper</span>
-              <span class="org-tag">AM/NS India</span>
-              <span class="org-tag">NALCO</span>
-              <span class="org-tag">Talcher Fertilizer</span>
-              <span class="org-tag">SAIL – RSP</span>
-              <span class="org-tag">OMC</span>
-              <span class="org-tag">Rungta Sons Pvt. Ltd.</span>
-              <span class="org-tag">IDVB Recycling Operations Pvt. Ltd.</span>
+          <div class="mdp-info-item">
+            <span class="icon">📍</span>
+            <div>
+              <strong>Venue</strong>
+              <div class="mdp-info-desc">School of Business, Trident Academy of Technology, Bhubaneswar</div>
+            </div>
+          </div>
+          <div class="mdp-info-item">
+            <span class="icon">👥</span>
+            <div>
+              <strong>Participation</strong>
+              <div class="mdp-info-desc">21 professional participants from 12 leading national organizations</div>
             </div>
           </div>
         </div>
+        <div class="mdp-info-desc">
+          <p style="margin-bottom: 12px;">This intensive program sparked meaningful discussions and provided practical insights into how modern HR operations can champion sustainable development, waste reduction, green branding, and eco-friendly employee engagement.</p>
+          <p>Participants engaged in collaborative workshops, case study analyses, and expert-led panels, bridging academic theory with corporate sustainability standards.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Right Column: Event Photos Image -->
-        <div class="mdp-media-box scroll-reveal stagger-2">
-          <img src="Public/mdp_photos.png" alt="MDP Event Gallery" class="mdp-img">
+    <!-- PARTICIPATING ORGANIZATIONS -->
+    <section class="section-container" style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0;">
+      <div class="mdp-orgs-section scroll-reveal stagger-3">
+        <h4>Participating Organizations</h4>
+        <div class="mdp-org-tags">
+          <span class="mdp-org-tag">PPL</span>
+          <span class="mdp-org-tag">Tata Steel</span>
+          <span class="mdp-org-tag">OHPC</span>
+          <span class="mdp-org-tag">OPTCL</span>
+          <span class="mdp-org-tag">Emami Paper</span>
+          <span class="mdp-org-tag">AM/NS India</span>
+          <span class="mdp-org-tag">NALCO</span>
+          <span class="mdp-org-tag">Talcher Fertilizer</span>
+          <span class="mdp-org-tag">SAIL – RSP</span>
+          <span class="mdp-org-tag">OMC</span>
+          <span class="mdp-org-tag">Rungta Sons Pvt. Ltd.</span>
+          <span class="mdp-org-tag">IDVB Recycling Operations Pvt. Ltd.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="section-container" style="margin-top: 0; padding-top: 0;">
+      <div class="mdp-gallery-section scroll-reveal stagger-1">
+        <div class="gallery-header">
+          <span class="eyebrow">Highlights &amp; Gallery</span>
+          <h3 class="gallery-title">MDP Event Highlights</h3>
+        </div>
+        <div class="mdp-gallery-grid">
+          <!-- Gallery Item 1 -->
+          <div class="mdp-gallery-item">
+            <img src="Public/mdp_event_1.jpg" alt="Inauguration and Seminar Sessions" class="mdp-gallery-img">
+            <div class="mdp-gallery-caption">
+              <h4>MDP Seminar Session</h4>
+              <p>Inaugural panel discussing strategies for implementing Green HR practices in the industrial sector.</p>
+            </div>
+          </div>
+          <!-- Gallery Item 2 -->
+          <div class="mdp-gallery-item">
+            <img src="Public/mdp_event_2.jpg" alt="Interactive Panel Discussions" class="mdp-gallery-img">
+            <div class="mdp-gallery-caption">
+              <h4>Lamp Lighting Ceremony</h4>
+              <p>Eminent guest speakers, academic directors, and industry leaders during the lamp lighting ceremony.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
