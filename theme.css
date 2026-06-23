@@ -398,9 +398,9 @@ html {
 /* Stat strip rounding styling */
 .stat-strip {
   border-radius: var(--radius-lg) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  backdrop-filter: blur(12px);
-  background: rgba(11, 31, 58, 0.85) !important;
+  border: 1px solid rgba(11, 31, 58, 0.08) !important;
+  background: var(--offwhite) !important;
+  box-shadow: 0 -4px 20px rgba(11, 31, 58, 0.08) !important;
 }
 
 /* Modern responsive styling */
