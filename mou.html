@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MoU — Memorandums of Understanding — Trident School of Business Administration</title>
+  <meta name="description" content="Discover Trident School of Business Administration's strategic Memorandums of Understanding (MoUs) with leading national and regional organizations to drive academic excellence and student success.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -247,82 +248,192 @@
       margin: 80px auto;
       padding: 0 4%;
     }
-    
-    /* Layout grid */
-    .layout-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 64px;
-      margin-bottom: 64px;
-      align-items: center;
-    }
 
-    .mou-content-box {
-      background: transparent !important;
-      border: none !important;
-      border-radius: 0 !important;
-      padding: 16px 0 !important;
-      box-shadow: none !important;
+    /* MOU Intro section */
+    .mou-intro-section {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 56px;
     }
-    .mou-content-box h3 {
+    .mou-intro-section .intro-title {
       font-family: 'Playfair Display', serif;
-      font-size: 26px;
+      font-size: 32px;
       color: var(--navy);
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 8px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      position: relative;
       display: inline-block;
+      padding-bottom: 12px;
     }
-    .mou-content-box p {
-      font-size: 15px;
+    .mou-intro-section .intro-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .mou-intro-section .intro-text {
+      font-size: 15.5px;
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 24px;
     }
 
-    .mou-list {
-      list-style: none;
-      margin-top: 16px;
+    /* Cards Grid */
+    .mou-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 36px;
+      margin-bottom: 80px;
     }
-    .mou-list li {
-      position: relative;
-      padding-left: 28px;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.75;
-      margin-bottom: 16px;
-      transition: var(--transition);
-    }
-    .mou-list li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 16px;
-    }
-    .mou-list li:hover {
-      transform: translateX(4px);
-      color: var(--gold);
-    }
-
-    .mou-media-box {
+    .mou-card {
+      background: var(--white);
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      border-top: 3px solid var(--gold) !important;
+      /* Slanted bottom wave shape */
+      border-radius: 24px 24px 80px 24px / 24px 24px 40px 24px !important;
+      padding: 40px 30px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth) !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
-    .mou-img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      display: block;
-      margin: 0 auto;
+    .mou-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: var(--shadow-lg) !important;
+      border-color: rgba(200, 150, 42, 0.3) !important;
     }
-    .mou-img:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .mou-card-logo-container {
+      width: 110px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border-radius: 50%;
+      border: 1px solid rgba(11, 31, 58, 0.06);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+      overflow: hidden;
+      transition: var(--transition-smooth) !important;
+      padding: 12px;
+    }
+    .mou-card:hover .mou-card-logo-container {
+      transform: scale(1.08);
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(200, 150, 42, 0.15);
+    }
+    .mou-card-logo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* Fallback Seal for ISTD */
+    .mou-logo-seal {
+      width: 100%;
+      height: 100%;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: var(--gold);
+      font-size: 16px;
+      letter-spacing: 1px;
+      border: 2px double var(--gold-soft);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .mou-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .mou-card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Logos Row Banner */
+    .mou-logos-banner {
+      background: rgba(11, 31, 58, 0.02);
+      border-radius: var(--radius-lg);
+      padding: 48px 32px;
+      border: 1px solid rgba(11, 31, 58, 0.05);
+      text-align: center;
+      margin-top: 40px;
+    }
+    .mou-logos-banner .banner-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+    .mou-logos-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px 60px;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      transition: var(--transition-smooth);
+    }
+    .logo-wrap img {
+      max-width: 140px;
+      max-height: 52px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(60%);
+      transition: var(--transition-smooth);
+    }
+    .logo-wrap:hover img {
+      filter: grayscale(0%) opacity(100%);
+      transform: scale(1.08);
+    }
+
+    /* Seal for ISTD in Banner */
+    .logo-seal-sm {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      border-radius: 50%;
+      border: 1.5px double var(--gold);
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+      filter: grayscale(100%) opacity(60%);
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
+    }
+    .logo-wrap:hover .logo-seal-sm {
+      filter: grayscale(0%) opacity(100%);
+      transform: scale(1.08);
+      border-color: var(--gold-soft);
+      color: var(--gold-soft);
+      box-shadow: 0 4px 12px rgba(200, 150, 42, 0.2);
     }
 
     /* Footer matching index.html */
@@ -337,19 +448,6 @@
       margin-top: 96px;
     }
 
-    /* Desktop column vertical dividers */
-    @media (min-width: 1025px) {
-      .layout-grid > div:first-child {
-        border-right: 1px solid rgba(11, 31, 58, 0.12) !important;
-        padding-right: 48px !important;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .layout-grid { grid-template-columns: 1fr; gap: 48px; }
-      .mou-img { max-width: 400px; }
-    }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
       .topbar { padding: 8px 24px; }
@@ -357,7 +455,28 @@
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
       .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 64px auto; }
+      .section-container { margin: 48px auto; }
+      .mou-intro-section .intro-title {
+        font-size: 26px;
+      }
+      .mou-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .mou-logos-row {
+        gap: 28px 40px;
+      }
+      .logo-wrap {
+        height: 48px;
+      }
+      .logo-wrap img {
+        max-height: 40px;
+      }
+      .logo-seal-sm {
+        width: 44px;
+        height: 44px;
+        font-size: 10px;
+      }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
@@ -450,28 +569,84 @@
       </p>
     </section>
 
-    <!-- CONTENT LAYOUT -->
-    <section class="section-container">
-      <div class="layout-grid">
-        <!-- Left Column: Content and List -->
-        <div class="mou-content-box scroll-reveal stagger-1">
-          <h3>Industry &amp; Institutional MoUs</h3>
-          <p>
-            The department has signed Memorandums of Understanding (MoUs) with the following organizations to promote student engagement initiatives, experiential learning opportunities, and faculty development programs.
-          </p>
-          <ul class="mou-list">
-            <li>National Institute of Personnel Management (NIPM)</li>
-            <li>Indian Society for Training and Development (ISTD)</li>
-            <li>FM University, Balasore</li>
-            <li>Centre for Environment and Development (CED)</li>
-            <li>National Buildings Construction Corporation Limited (NBCC)</li>
-            <li>Livelihood Alternatives (LA)</li>
-          </ul>
+    <!-- INTRO SECTION -->
+    <section class="section-container" style="margin-bottom: 0; padding-bottom: 0;">
+      <div class="mou-intro-section scroll-reveal stagger-1">
+        <h2 class="intro-title">Fostering Growth Through Strategic Alliances</h2>
+        <p class="intro-text">
+          Trident School of Business Administration collaborates with leading national institutions, professional societies, and public sector organizations to bridge academic learning with practical industry insights. Our MoUs open avenues for collaborative research, expert-led training, student developmental initiatives, and hands-on internship opportunities.
+        </p>
+      </div>
+    </section>
+
+    <!-- MOU CARDS GRID -->
+    <section class="section-container" style="margin-top: 0; padding-top: 0;">
+      <div class="mou-cards-grid">
+        <!-- Card 1: LA -->
+        <div class="mou-card scroll-reveal stagger-1">
+          <div class="mou-card-logo-container">
+            <img src="Public/mou_la.jpg" alt="Livelihood Alternatives Logo" class="mou-card-logo">
+          </div>
+          <h3 class="mou-card-title">Livelihood Alternatives (LA)</h3>
+          <p class="mou-card-desc">Fostering social entrepreneurship, community development, and rural internships to empower student leaders and build sustainable livelihood models.</p>
+        </div>
+        
+        <!-- Card 2: NBCC -->
+        <div class="mou-card scroll-reveal stagger-2">
+          <div class="mou-card-logo-container">
+            <img src="Public/mou_nbcc.jpg" alt="NBCC Logo" class="mou-card-logo">
+          </div>
+          <h3 class="mou-card-title">National Buildings Construction Corporation (NBCC)</h3>
+          <p class="mou-card-desc">Providing project management exposure, corporate operations training, and industrial project research for our management graduates.</p>
         </div>
 
-        <!-- Right Column: Logos Image -->
-        <div class="mou-media-box scroll-reveal stagger-2">
-          <img src="Public/mou_logos.png" alt="MoU Partner Logos" class="mou-img">
+        <!-- Card 3: FMU -->
+        <div class="mou-card scroll-reveal stagger-3">
+          <div class="mou-card-logo-container">
+            <img src="Public/mou_fmu.jpg" alt="FM University Logo" class="mou-card-logo">
+          </div>
+          <h3 class="mou-card-title">FM University, Balasore</h3>
+          <p class="mou-card-desc">Enabling joint academic research, exchange seminars, curriculum consulting, and institutional resource sharing for collaborative growth.</p>
+        </div>
+
+        <!-- Card 4: CED -->
+        <div class="mou-card scroll-reveal stagger-4">
+          <div class="mou-card-logo-container">
+            <img src="Public/mou_ced.jpg" alt="Centre for Environment and Development Logo" class="mou-card-logo">
+          </div>
+          <h3 class="mou-card-title">Centre for Environment &amp; Development (CED)</h3>
+          <p class="mou-card-desc">Collaborating on sustainability modules, environmental management studies, community-driven eco projects, and policy training.</p>
+        </div>
+
+        <!-- Card 5: NIPM -->
+        <div class="mou-card scroll-reveal stagger-5">
+          <div class="mou-card-logo-container">
+            <img src="Public/mou_nipm.jpg" alt="NIPM Logo" class="mou-card-logo">
+          </div>
+          <h3 class="mou-card-title">National Institute of Personnel Management (NIPM)</h3>
+          <p class="mou-card-desc">Strengthening HR training excellence, student membership chapters, professional network interactions, and corporate readiness initiatives.</p>
+        </div>
+
+        <!-- Card 6: ISTD -->
+        <div class="mou-card scroll-reveal stagger-1">
+          <div class="mou-card-logo-container">
+            <div class="mou-logo-seal">ISTD</div>
+          </div>
+          <h3 class="mou-card-title">Indian Society for Training &amp; Development (ISTD)</h3>
+          <p class="mou-card-desc">Access to trainer certification courses, executive development programs, and regional learning workshops to enhance skill development.</p>
+        </div>
+      </div>
+
+      <!-- LOGOS BANNER -->
+      <div class="mou-logos-banner scroll-reveal stagger-2">
+        <div class="banner-title">Our Strategic Network</div>
+        <div class="mou-logos-row">
+          <div class="logo-wrap"><img src="Public/mou_la.jpg" alt="Livelihood Alternatives"></div>
+          <div class="logo-wrap"><img src="Public/mou_nbcc.jpg" alt="NBCC"></div>
+          <div class="logo-wrap"><img src="Public/mou_ced.jpg" alt="CED"></div>
+          <div class="logo-wrap"><img src="Public/mou_fmu.jpg" alt="FM University"></div>
+          <div class="logo-wrap"><img src="Public/mou_nipm.jpg" alt="NIPM"></div>
+          <div class="logo-wrap"><div class="logo-seal-sm">ISTD</div></div>
         </div>
       </div>
     </section>
