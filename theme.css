@@ -398,7 +398,8 @@ html {
 /* Stat strip rounding styling */
 .stat-strip {
   border-radius: var(--radius-lg) !important;
-  border: 1px solid rgba(11, 31, 58, 0.08) !important;
+  border-top: 3px solid var(--gold) !important;
+  border-bottom: 2px solid var(--gold) !important;
   background: var(--offwhite) !important;
   box-shadow: 0 -4px 20px rgba(11, 31, 58, 0.08) !important;
 }

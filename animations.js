@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Initialize global Apply Now modal form popup
   initGlobalApplyModal();
+
+  // 4. Initialize global Brochure modal popup
+  initGlobalBrochureModal();
 });
 
 /**
@@ -401,4 +404,245 @@ function initGlobalApplyModal() {
 
   // Run hooks again after brief intervals in case dynamic elements load
   setTimeout(hookApplyButtons, 1000);
+}
+
+/**
+ * Injects a global modal popup for "Brochure" image programmatically
+ */
+function initGlobalBrochureModal() {
+  // Check if style already exists, if not inject it
+  if (!document.getElementById('brochure-modal-styles')) {
+    const style = document.createElement('style');
+    style.id = 'brochure-modal-styles';
+    style.textContent = `
+      .brochure-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(11, 31, 58, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 2100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+      .brochure-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .brochure-modal-card {
+        background: transparent;
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0.9);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .brochure-modal-overlay.active .brochure-modal-card {
+        transform: scale(1);
+      }
+      .brochure-modal-close {
+        position: absolute;
+        top: -45px;
+        right: 0;
+        background: none;
+        border: none;
+        font-size: 36px;
+        color: #FFFFFF;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.2s;
+      }
+      .brochure-modal-close:hover {
+        color: var(--gold, #C8962A);
+      }
+      .brochure-modal-img-container {
+        overflow: auto;
+        max-height: 75vh;
+        max-width: 100%;
+        border-radius: 12px;
+        border: 3px solid var(--gold, #C8962A);
+        box-shadow: 0 16px 40px rgba(11, 31, 58, 0.35);
+        background: #FFFFFF;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .brochure-modal-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        cursor: zoom-in;
+        transition: transform 0.25s ease;
+      }
+      .brochure-modal-img.zoomed {
+        max-width: none;
+        cursor: zoom-out;
+        transform: scale(1.5);
+      }
+      .brochure-modal-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .brochure-modal-btn {
+        background: var(--gold, #C8962A);
+        color: var(--navy, #0B1F3A);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 9999px !important;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(200, 150, 42, 0.2);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        font-family: 'DM Sans', sans-serif;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .brochure-modal-btn:hover {
+        background: var(--navy, #0B1F3A);
+        color: var(--gold-soft, #E8B84B);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(11, 31, 58, 0.3);
+      }
+      .brochure-modal-btn-outline {
+        background: transparent;
+        border: 2px solid #FFFFFF;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 10px 22px;
+        border-radius: 9999px !important;
+        text-decoration: none;
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .brochure-modal-btn-outline:hover {
+        border-color: var(--gold, #C8962A);
+        color: var(--gold, #C8962A);
+        background: rgba(255, 255, 255, 0.08);
+      }
+      @media (max-width: 768px) {
+        .brochure-modal-close {
+          top: -36px;
+          font-size: 30px;
+        }
+        .brochure-modal-actions {
+          margin-top: 14px;
+          gap: 10px;
+        }
+        .brochure-modal-btn, .brochure-modal-btn-outline {
+          font-size: 12px;
+          padding: 10px 18px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Create Modal Element
+  const modalHtml = `
+    <div class="brochure-modal-overlay" id="brochureModalOverlay">
+      <div class="brochure-modal-card">
+        <button class="brochure-modal-close" id="brochureModalClose" aria-label="Close brochure">&times;</button>
+        
+        <div class="brochure-modal-img-container">
+          <img class="brochure-modal-img" id="brochureModalImg" src="Public/brochure.png" alt="MBA Program Brochure">
+        </div>
+
+        <div class="brochure-modal-actions">
+          <a class="brochure-modal-btn" href="Public/brochure.png" download="TSBA-MBA-Brochure.png">Download Brochure</a>
+          <button class="brochure-modal-btn-outline" id="brochureModalApplyBtn">Apply Now</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Inject to Body
+  const container = document.createElement('div');
+  container.innerHTML = modalHtml;
+  document.body.appendChild(container.firstElementChild);
+
+  const overlay = document.getElementById('brochureModalOverlay');
+  const closeBtn = document.getElementById('brochureModalClose');
+  const modalImg = document.getElementById('brochureModalImg');
+  const applyBtn = document.getElementById('brochureModalApplyBtn');
+
+  // Show Modal Function
+  function openBrochure(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Lock scrolling
+  }
+
+  // Close Modal Function
+  function closeBrochure() {
+    overlay.classList.remove('active');
+    modalImg.classList.remove('zoomed');
+    document.body.style.overflow = ''; // Unlock scrolling
+  }
+
+  // Click-to-Zoom functionality for image readability
+  modalImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    modalImg.classList.toggle('zoomed');
+  });
+
+  // Event Listeners
+  closeBtn.addEventListener('click', closeBrochure);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeBrochure();
+  });
+
+  // Hook apply now button in brochure to open apply now modal
+  applyBtn.addEventListener('click', (e) => {
+    closeBrochure();
+    const applyModal = document.getElementById('applyModalOverlay');
+    if (applyModal) {
+      const navApply = document.querySelector('.nav-apply') || document.querySelector('.mobile-apply');
+      if (navApply) {
+        navApply.click();
+      }
+    }
+  });
+
+  // Target all "Brochure" buttons and redirect their click events
+  function hookBrochureButtons() {
+    const buttons = document.querySelectorAll('a, button');
+    buttons.forEach(btn => {
+      const text = btn.textContent.trim().toLowerCase();
+      
+      // If button text contains "brochure"
+      if (text === 'brochure') {
+        btn.addEventListener('click', openBrochure);
+      }
+    });
+  }
+
+  // Run hooks initially
+  hookBrochureButtons();
+
+  // Run hooks again after brief intervals in case dynamic elements load
+  setTimeout(hookBrochureButtons, 1000);
 }
