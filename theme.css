@@ -659,6 +659,7 @@ img {
     align-items: center !important;
     width: 100% !important;
   }
+  .mobile-nav-list > li > a,
   .mobile-nav-list > li > .mn-row > a {
     display: flex !important;
     align-items: center !important;
@@ -671,6 +672,7 @@ img {
     letter-spacing: 0.02em !important;
     transition: color 0.25s, transform 0.25s !important;
   }
+  .mobile-nav-list > li > a:hover,
   .mobile-nav-list > li > .mn-row > a:hover {
     color: var(--gold-soft) !important;
     transform: translateX(4px) !important;
