@@ -257,7 +257,7 @@
     /* Layout grid */
     .layout-grid {
       display: grid;
-      grid-template-columns: 43% 57%;
+      grid-template-columns: 35% 65%;
       gap: 48px;
       margin-bottom: 64px;
       align-items: center;
@@ -327,13 +327,14 @@
     }
     .alumni-img {
       width: 100%;
-      max-width: 720px;
+      max-width: 1200px;
       height: auto;
-      border-radius: 20px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
       transition: var(--transition);
       display: block;
       margin: 0 auto;
+      cursor: zoom-in;
     }
     .alumni-img:hover {
       transform: translateY(-4px);
@@ -565,7 +566,7 @@
       .layout-grid { grid-template-columns: 1fr; gap: 48px; }
       .involvement-grid { grid-template-columns: repeat(2, 1fr); }
       .events-row { grid-template-columns: 1fr; gap: 48px; }
-      .alumni-img { max-width: 640px; }
+      .alumni-img { max-width: 100%; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -673,35 +674,34 @@
 
     <!-- INTRO/REGISTRATION SECTION -->
     <section class="section-container alumni-intro">
-      <div class="layout-grid">
-        <!-- Left Column: Trust Info -->
-        <div class="alumni-content-box scroll-reveal stagger-1">
-          <h3>Trident MBA Alumni Association Trust</h3>
-          <p class="alumni-desc">
-            The MBA Department hosts a highly active alumni network formalized as the <strong>Trident MBA Alumni Association Trust</strong>. The association plays a vital role in building professional bonds, facilitating industry–academia exchanges, and supporting students through mentoring and career counseling.
-          </p>
-          
-          <div class="trust-info-card">
-            <h4>Registration &amp; Financial Metadata</h4>
-            <ul class="trust-meta-list">
-              <li><span>Formal Registration Year:</span> <strong>2024</strong></li>
-              <li><span>Governing Body:</span> <strong>Section 60, Indian Trust Act</strong></li>
-              <li><span>Registration No. &amp; Date:</span> <strong>No. 41132405570 (Dated 29.06.2024)</strong></li>
-              <li><span>Office Location:</span> <strong>Sub-Registrar, Khandagiri, Odisha</strong></li>
-              <li><span>Trust PAN Number:</span> <strong>AAFTT1849M</strong></li>
-              <li><span>Banker Account:</span> <strong>Union Bank of India, Infocity Branch</strong></li>
-              <li><span>Account Number:</span> <strong>A/C No.: 595102010014610</strong></li>
-            </ul>
-          </div>
+      <!-- Trust Info (Centered Layout) -->
+      <div class="alumni-content-box scroll-reveal" style="max-width: 900px; margin: 0 auto 56px; text-align: center;">
+        <h3>Trident MBA Alumni Association Trust</h3>
+        <p class="alumni-desc" style="max-width: 780px; margin: 0 auto 24px;">
+          The MBA Department hosts a highly active alumni network formalized as the <strong>Trident MBA Alumni Association Trust</strong>. The association plays a vital role in building professional bonds, facilitating industry–academia exchanges, and supporting students through mentoring and career counseling.
+        </p>
+        
+        <div class="trust-info-card" style="text-align: left; max-width: 600px; margin: 24px auto 0;">
+          <h4>Registration &amp; Financial Metadata</h4>
+          <ul class="trust-meta-list">
+            <li><span>Formal Registration Year:</span> <strong>2024</strong></li>
+            <li><span>Governing Body:</span> <strong>Section 60, Indian Trust Act</strong></li>
+            <li><span>Registration No. &amp; Date:</span> <strong>No. 41132405570 (Dated 29.06.2024)</strong></li>
+            <li><span>Office Location:</span> <strong>Sub-Registrar, Khandagiri, Odisha</strong></li>
+            <li><span>Trust PAN Number:</span> <strong>AAFTT1849M</strong></li>
+            <li><span>Banker Account:</span> <strong>Union Bank of India, Infocity Branch</strong></li>
+            <li><span>Account Number:</span> <strong>A/C No.: 595102010014610</strong></li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Right Column: Illustrious Alumni Grid -->
-        <div class="alumni-media-box scroll-reveal stagger-2">
-          <img src="Public/alumni_illustrious.png" alt="Our Illustrious Alumni" class="alumni-img">
-          <span style="display: block; font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 12px;">
-            A snapshot representing our illustrious alumni serving across Fortune 500 companies
-          </span>
-        </div>
+      <!-- Illustrious Alumni Banner (Full-Width) -->
+      <div class="alumni-media-box scroll-reveal" style="margin-top: 64px; text-align: center; width: 100%;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--navy); margin-bottom: 24px; border-bottom: 2px solid var(--gold); padding-bottom: 8px; display: inline-block;">Our Illustrious Alumni</h3>
+        <img src="Public/alumni_illustrious.png" alt="Our Illustrious Alumni" class="alumni-img">
+        <span style="display: block; font-size: 13px; color: var(--muted); font-weight: 500; margin-top: 16px;">
+          💡 Tip: Click on the image to open full-screen lightbox zoom.
+        </span>
       </div>
     </section>
 
@@ -868,6 +868,49 @@
         });
       }
     });
-  </script>
+
+    // Click to zoom illustrious alumni image
+    const alumniImg = document.querySelector('.alumni-img');
+    if (alumniImg) {
+      // Create overlay dynamically
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.inset = '0';
+      overlay.style.background = 'rgba(11, 31, 58, 0.9)';
+      overlay.style.backdropFilter = 'blur(8px)';
+      overlay.style.webkitBackdropFilter = 'blur(8px)';
+      overlay.style.zIndex = '2200';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.opacity = '0';
+      overlay.style.visibility = 'hidden';
+      overlay.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+      
+      const zoomedImg = document.createElement('img');
+      zoomedImg.src = alumniImg.src;
+      zoomedImg.style.maxWidth = '95vw';
+      zoomedImg.style.maxHeight = '95vh';
+      zoomedImg.style.objectFit = 'contain';
+      zoomedImg.style.borderRadius = '12px';
+      zoomedImg.style.border = '3px solid var(--gold)';
+      zoomedImg.style.boxShadow = '0 24px 60px rgba(0,0,0,0.3)';
+      zoomedImg.style.cursor = 'zoom-out';
+      
+      overlay.appendChild(zoomedImg);
+      document.body.appendChild(overlay);
+      
+      alumniImg.addEventListener('click', () => {
+        overlay.style.opacity = '1';
+        overlay.style.visibility = 'visible';
+        document.body.style.overflow = 'hidden';
+      });
+      
+      overlay.addEventListener('click', () => {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+        document.body.style.overflow = '';
+      });
+    }  </script>
 </body>
 </html>
