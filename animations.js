@@ -575,7 +575,7 @@ function initGlobalBrochureModal() {
         </div>
 
         <div class="brochure-modal-actions">
-          <a class="brochure-modal-btn" href="Public/brochure.png" download="TSBA-MBA-Brochure.png">Download Brochure</a>
+          <a class="brochure-modal-btn" href="Public/brochure.png" download="Trident School of Business-MBA-Brochure.png">Download Brochure</a>
           <button class="brochure-modal-btn-outline" id="brochureModalApplyBtn">Apply Now</button>
         </div>
       </div>
@@ -693,4 +693,5 @@ function setupCustomLogoStyle() {
     `;
   });
 }
+
 

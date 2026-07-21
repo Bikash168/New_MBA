@@ -1052,7 +1052,7 @@ body:has(.mobile-nav.open) nav {
   font-size: 22px !important; /* scaled down to prevent menu crowding */
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
-  color: #000000 !important; /* Black solid text */
+  color: var(--navy) !important; /* same brand Navy Blue */
   text-transform: uppercase !important;
   line-height: 1 !important;
   display: inline-block !important;
