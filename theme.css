@@ -1099,4 +1099,33 @@ body:has(.mobile-nav.open) nav {
   }
 }
 
+/* Fix for slider navigation arrows color contrast */
+.slider-arrow {
+  background: var(--navy) !important;
+  border-color: var(--white) !important;
+  color: var(--white) !important;
+}
+.slider-arrow:hover {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+/* Keep outline buttons on dark slides/sections clean and high-contrast white */
+.slide .btn-outline,
+.hero-slider .btn-outline,
+.testi-section .btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.75) !important;
+  color: var(--white) !important;
+  background: transparent !important;
+}
+.slide .btn-outline:hover,
+.hero-slider .btn-outline:hover,
+.testi-section .btn-outline:hover {
+  background: var(--white) !important;
+  color: var(--navy) !important;
+  border-color: var(--white) !important;
+}
+
+
 
