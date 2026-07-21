@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Setup custom logo layout matching user screenshot
+  setupCustomLogoStyle();
+
   // 1. Programmatically apply reveal animations to existing containers and lists
   setupDynamicAnimations();
 
@@ -674,3 +677,20 @@ function replaceAmpersands() {
     }
   });
 }
+
+/**
+ * Programmatically transforms the navigation header logo layout
+ * to match the horizontal serif TRIDENT | School of Business layout.
+ */
+function setupCustomLogoStyle() {
+  const logoTexts = document.querySelectorAll('.nav-logo .logo-text');
+  logoTexts.forEach(el => {
+    el.className = 'logo-text logo-layout-new';
+    el.innerHTML = `
+      <span class="logo-trident">TRIDENT</span>
+      <span class="logo-divider">|</span>
+      <span class="logo-school">School of Business</span>
+    `;
+  });
+}
+

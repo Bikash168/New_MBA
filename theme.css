@@ -1027,3 +1027,76 @@ body:has(.mobile-nav.open) nav {
   line-height: 1.6 !important;
 }
 
+/* ==========================================================================
+   4. NEW LOGO LAYOUT & STYLING (MATCHING DESIGN REFERENCE)
+   ========================================================================== */
+.logo-layout-new {
+  display: flex !important;
+  flex-direction: row !important; /* Horizontal inline styling */
+  align-items: center !important;
+  gap: 8px !important;
+  margin-right: 36px !important; /* Force a healthy separation between logo and nav items */
+}
+
+.logo-trident {
+  font-family: Georgia, 'Times New Roman', Times, serif !important; /* Serif bold for TRIDENT */
+  font-size: 22px !important; /* scaled down to prevent menu crowding */
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  color: #000000 !important; /* Black solid text */
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+.logo-divider {
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 20px !important;
+  color: #CCCCCC !important; /* Crisp gray divider line */
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  margin: 0 2px !important;
+}
+
+.logo-school {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important; /* Sans-serif for School of Business */
+  font-size: 17px !important; /* scaled down to prevent menu crowding */
+  font-weight: 500 !important;
+  color: #1C3E6E !important; /* Brand Blue */
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+/* Force high-contrast white text for crimson action buttons to fix navy text contrast issue */
+.btn-primary,
+.nav-apply,
+.mobile-apply,
+.rec-btn,
+.view-syll-btn {
+  color: var(--white) !important;
+}
+
+/* Adjust size for mobile navbar fit */
+@media (max-width: 768px) {
+  .logo-trident {
+    font-size: 18px !important;
+  }
+  .logo-divider {
+    font-size: 18px !important;
+    margin: 0 2px !important;
+  }
+  .logo-school {
+    font-size: 15px !important;
+  }
+  .nav-logo {
+    gap: 8px !important;
+    margin-right: 0 !important;
+  }
+  .logo-img {
+    height: 38px !important;
+  }
+}
+
+
