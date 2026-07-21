@@ -15,8 +15,9 @@
 
 /* Typography Core Overrides */
 :root {
-  --font-serif: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
-  --font-heading: 'Playfair Display', Georgia, Cambria, serif;
+  --font-serif: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-size-body: 18px;
 }
 
@@ -97,30 +98,31 @@ h6, .h6 {
 
 /* Modern visual variables and tokens */
 :root {
-  --navy: #0B1F3A;
-  --navy-light: #152E4D;
-  --gold: #C8962A;
-  --gold-soft: #E8B84B;
-  --gold-lt: #E8B84B;
+  --navy: #1C3E6E;         /* Academic Navy Blue */
+  --navy-light: #2A528A;   /* Lighter Academic Blue */
+  --gold: #A51C30;         /* Harvard Crimson Red */
+  --gold-soft: #C02C3F;    /* Crimson Soft */
+  --gold-lt: #D9384C;      /* Crimson Light */
+  --blue: #1C3E6E;
+  --blue-light: #2A528A;
   --white: #FFFFFF;
-  --offwhite: #F5F3EE;
-  --text: #1A1A2E;
-  --muted: #5A6378;
-  --line: #E5DED0;
+  --offwhite: #FAF8F6;     /* Clean Ivory / Sand */
+  --text: #222222;         /* Dark text */
+  --muted: #666666;        /* Muted gray text */
+  --line: #E8E5DF;         /* Crisp light border lines */
 
-  
   /* Modern soft shadows */
-  --shadow-sm: 0 4px 12px rgba(11, 31, 58, 0.03);
-  --shadow-md: 0 12px 32px rgba(11, 31, 58, 0.05);
-  --shadow-lg: 0 24px 60px rgba(11, 31, 58, 0.1);
-  --shadow-hover: 0 32px 80px rgba(200, 150, 42, 0.12);
+  --shadow-sm: 0 4px 12px rgba(30, 30, 30, 0.03);
+  --shadow-md: 0 12px 32px rgba(30, 30, 30, 0.05);
+  --shadow-lg: 0 24px 60px rgba(30, 30, 30, 0.1);
+  --shadow-hover: 0 32px 80px rgba(165, 28, 48, 0.12);
 
-  /* Modern rounded corners (Replacing sharp rectangles) */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 36px;
-  --radius-pill: 9999px;
+  /* Modern rounded corners (standardized for academic theme) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 4px;
 
   /* Smooth bezier transitions */
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -136,7 +138,7 @@ html {
    1. GLOBAL COMPONENT SHAPE OVERRIDES
    ========================================================================== */
 
-/* Universal Pill Shapes for Buttons & Action links */
+/* Universal Shapes for Buttons & Action links */
 .btn-primary,
 .btn-secondary,
 .btn-outline,
@@ -156,16 +158,102 @@ html {
   gap: 8px;
 }
 
-.btn-primary:hover,
-.nav-button:hover,
-.nav-apply:hover,
-.mobile-apply:hover,
-.btn-download:hover {
+/* Button text color contrast fixes for Crimson background */
+.btn-primary, .nav-apply, .mobile-apply, .rec-btn, .view-syll-btn {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+.btn-primary:hover, .nav-apply:hover, .mobile-apply:hover, .rec-btn:hover, .view-syll-btn:hover {
+  background: var(--gold-lt) !important;
+  color: var(--white) !important;
   transform: translateY(-2px) !important;
   box-shadow: var(--shadow-md) !important;
 }
 
-/* 1. Portrait Arch / Portal Shape (framing media/profile containers) */
+/* Secondary and download button styles using Crimson & Charcoal HKS colors */
+.btn-secondary, .btn-download, .rec-btn-alt {
+  background: var(--navy) !important;
+  color: var(--white) !important;
+}
+.btn-secondary:hover, .btn-download:hover, .rec-btn-alt:hover {
+  background: var(--navy-light) !important;
+  color: var(--white) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.btn-outline {
+  border: 1.5px solid var(--gold) !important;
+  color: var(--gold) !important;
+}
+.btn-outline:hover {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+/* Layout tags / badges / slider arrows using Crimson & Charcoal HKS colors */
+.slide-tag, .badge-float, .badge {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+.section-tag, .eyebrow {
+  color: var(--gold) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+.slider-arrow {
+  background: var(--navy) !important;
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+.slider-arrow:hover {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+.tab-btn.active {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+/* Testimonials / Alumni voices dark blue theme section background */
+.testi-section {
+  background: var(--blue) !important; /* solid brand Navy Blue background */
+  padding: 72px 80px !important;
+  overflow: hidden !important;
+}
+
+/* Style the tag inside testimonials as a full-width header banner matching screenshot */
+.testi-section .section-tag {
+  background: rgba(0, 0, 0, 0.15) !important; /* Slightly darker overlay */
+  color: var(--white) !important;
+  font-family: var(--font-serif) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 12px 24px !important;
+  margin: -72px -80px 48px -80px !important; /* Touch edges of section */
+  display: block !important;
+  width: auto !important;
+}
+
+@media (max-width: 767px) {
+  .testi-section {
+    padding: 48px 24px !important;
+  }
+  .testi-section .section-tag {
+    margin: -48px -24px 36px -24px !important;
+  }
+}
+
+/* 1. Portrait Arch / Portal Shape (Standardized to Clean Cards) */
 .faculty-card,
 .infrastructure-card,
 .club-card,
@@ -173,9 +261,9 @@ html {
 .sports-card,
 .fest-card,
 .gallery-card {
-  border-radius: 120px 120px 24px 24px !important;
+  border-radius: var(--radius-md) !important;
   overflow: hidden;
-  border: 1px solid rgba(11, 31, 58, 0.07) !important;
+  border: 1px solid var(--line) !important;
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth) !important;
 }
@@ -277,7 +365,7 @@ html {
 .strengths-grid > div:hover .strength-icon {
   transform: scale(1.15) translateY(-4px);
 }
-/* 4. Slanted Bottom Wave Shape (for text-rich panels, notice boards, and curriculums) */
+/* 4. Slanted Bottom Wave Shape (Standardized to Clean Cards) */
 .notice-card,
 .admission-card,
 .contact-card,
@@ -288,16 +376,16 @@ html {
 .hero-stat-card,
 .program-card,
 .tab-content {
-  border-radius: 24px 24px 80px 24px / 24px 24px 40px 24px !important;
+  border-radius: var(--radius-md) !important;
   overflow: hidden;
-  border: 1px solid rgba(11, 31, 58, 0.07) !important;
+  border: 1px solid var(--line) !important;
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth) !important;
 }
 
-/* Recruiter cards custom soft asymmetry */
+/* Recruiter cards custom soft asymmetry (Standardized to Clean Cards) */
 .rec-logo-card {
-  border-radius: 20px 8px 20px 8px !important;
+  border-radius: var(--radius-sm) !important;
 }
 
 /* ==========================================================================
@@ -718,7 +806,7 @@ img {
     display: block !important;
     position: fixed !important;
     inset: 0 !important;
-    background: linear-gradient(135deg, rgba(11, 31, 58, 0.98) 0%, rgba(21, 46, 77, 0.99) 100%) !important;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     z-index: 1050 !important;
@@ -861,3 +949,81 @@ body:has(.mobile-nav.open) nav {
   right: 0 !important;
   width: 100% !important;
 }
+
+/* ==========================================================================
+   3. NAVIGATION, BUTTONS, & ACCENT TYPOGRAPHY UPGRADES
+   ========================================================================== */
+
+/* Set font-family to sans-serif globally for all navigation and link structures */
+.nav-menu > li > a,
+.dropdown li a,
+.mobile-nav-list a,
+.mobile-nav-list .mn-row a,
+.topbar a,
+.topbar span,
+.footer a,
+.footer p,
+.footer span,
+.footer li,
+.tab-btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-download,
+.nav-button,
+.nav-apply,
+.mobile-apply,
+.slider-arrow,
+.rec-btn,
+.view-syll-btn {
+  font-family: var(--font-sans) !important;
+}
+
+/* Main Navigation Menu links (desktop) */
+.nav-menu > li > a {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Dropdown Menu links */
+.dropdown li a {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile Navigation Drawer links */
+.mobile-nav-list > li > a,
+.mobile-nav-list > li > .mn-row > a {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+.mobile-sub li a {
+  font-size: 15px !important;
+}
+
+/* Topbar contact items */
+.topbar, .topbar a, .topbar span {
+  font-size: 13.5px !important;
+}
+
+/* Action buttons size & weight scale up */
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-download,
+.nav-button,
+.nav-apply,
+.mobile-apply,
+.rec-btn,
+.view-syll-btn {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+/* Footer elements */
+.footer a, .footer p, .footer span, .footer li {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
