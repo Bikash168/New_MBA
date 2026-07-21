@@ -576,6 +576,15 @@ html {
 .slide.active .slide-content {
   animation: slideUpFade 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+.slide-content {
+  bottom: 180px !important;
+}
+@media (max-width: 768px) {
+  .slide-content {
+    bottom: 100px !important;
+  }
+}
+
 
 /* Stat strip rounding styling */
 .stat-strip {
