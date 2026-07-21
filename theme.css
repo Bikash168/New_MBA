@@ -4,6 +4,15 @@
    Trident School of Business Administration — Modern Design System (theme.css)
    ========================================================================== */
 
+/* Styling wrapper to enforce clean, standard sans-serif ampersands globally */
+.normal-amp {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+
+
 /* Typography Core Overrides */
 :root {
   --font-serif: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
@@ -22,6 +31,24 @@ h1, h2, h3, h4, h5, h6,
 .school-name, .logo-emblem {
   font-family: var(--font-heading) !important;
 }
+
+/* Ensure child elements inside headings inherit the heading font family */
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+.h1 *, .h2 *, .h3 *, .h4 *, .h5 *, .h6 *,
+.section-title *, .slide-title *, .banner-title *,
+.school-name * {
+  font-family: inherit !important;
+}
+
+/* Specific override for span tags inside headings to use a modern sans-serif font */
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
+.h1 span, .h2 span, .h3 span, .h4 span, .h5 span, .h6 span,
+.section-title span, .slide-title span, .banner-title span,
+.school-name span {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+}
+
+
 
 /* Body / normal text size override */
 body, p, li, td, th,

@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Initialize global Brochure modal popup
   initGlobalBrochureModal();
+
+  // 5. Replace ampersands with styled span elements globally
+  replaceAmpersands();
 });
 
 /**
@@ -645,4 +648,29 @@ function initGlobalBrochureModal() {
 
   // Run hooks again after brief intervals in case dynamic elements load
   setTimeout(hookBrochureButtons, 1000);
+}
+
+/**
+ * Traverses text nodes in layout elements and wraps ampersand (&) characters
+ * in a styled span to enforce a standard sans-serif ampersand representation.
+ */
+function replaceAmpersands() {
+  const elements = document.querySelectorAll(
+    'h1, h2, h3, h4, h5, h6, p, li, a, .section-title, .slide-title, .banner-title, .logo-label, .logo-text span, .school-name, .logo-emblem, .section-tag'
+  );
+  elements.forEach(el => {
+    if (!el.querySelector('.normal-amp')) {
+      const childNodes = Array.from(el.childNodes);
+      childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.textContent;
+          if (text.includes('&')) {
+            const span = document.createElement('span');
+            span.innerHTML = text.replace(/&/g, '<span class="normal-amp">&</span>');
+            node.replaceWith(...span.childNodes);
+          }
+        }
+      });
+    }
+  });
 }
