@@ -208,14 +208,20 @@ html {
   gap: 8px;
 }
 
-/* Button text color contrast fixes for Crimson background */
-.btn-primary, .nav-apply, .mobile-apply, .rec-btn, .view-syll-btn {
+/* Button text color contrast fixes for Crimson background -> PURE WHITE TEXT ALWAYS */
+.btn-primary, .nav-apply, .mobile-apply, .rec-btn, .view-syll-btn, .btn-apply, .btn-gold,
+a.btn-primary, a.nav-apply, a.mobile-apply, button.btn-primary, .slide-tag, .badge-float, .badge {
   background: var(--gold) !important;
-  color: var(--white) !important;
+  color: #ffffff !important;
 }
+
+.btn-primary *, .nav-apply *, .mobile-apply *, .rec-btn *, .view-syll-btn * {
+  color: #ffffff !important;
+}
+
 .btn-primary:hover, .nav-apply:hover, .mobile-apply:hover, .rec-btn:hover, .view-syll-btn:hover {
   background: #7A1221 !important; /* Deep Red on hover */
-  color: var(--white) !important;
+  color: #ffffff !important;
   transform: translateY(-2px) !important;
   box-shadow: var(--shadow-md) !important;
 }
