@@ -659,22 +659,21 @@ function initGlobalBrochureModal() {
  */
 function replaceAmpersands() {
   const elements = document.querySelectorAll(
-    'h1, h2, h3, h4, h5, h6, p, li, a, .section-title, .slide-title, .banner-title, .logo-label, .logo-text span, .school-name, .logo-emblem, .section-tag'
+    'h1, h2, h3, h4, h5, h6, p, li, a, span, .section-title, .slide-title, .banner-title, .logo-label, .school-name, .logo-emblem, .section-tag'
   );
   elements.forEach(el => {
-    if (!el.querySelector('.normal-amp')) {
-      const childNodes = Array.from(el.childNodes);
-      childNodes.forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          const text = node.textContent;
-          if (text.includes('&')) {
-            const span = document.createElement('span');
-            span.innerHTML = text.replace(/&/g, '<span class="normal-amp">&</span>');
-            node.replaceWith(...span.childNodes);
-          }
+    if (el.classList.contains('normal-amp')) return;
+    const childNodes = Array.from(el.childNodes);
+    childNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent;
+        if (text.includes('&')) {
+          const span = document.createElement('span');
+          span.innerHTML = text.replace(/&/g, '<span class="normal-amp">&amp;</span>');
+          node.replaceWith(...span.childNodes);
         }
-      });
-    }
+      }
+    });
   });
 }
 

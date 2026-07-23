@@ -366,8 +366,8 @@
     .hero-slider {
       position: relative;
       width: 100%;
-      height: calc(100vh - var(--nav-h) - 36px);
-      min-height: 400px;
+      height: clamp(620px, 80vh, 820px);
+      min-height: 600px;
       overflow: hidden;
     }
 
@@ -401,16 +401,16 @@
 
     .slide-content {
       position: absolute;
-      top: 0;
+      top: 40px;
       left: 0;
       right: 0;
-      bottom: 120px;
+      bottom: 130px;
       z-index: 3;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 0 80px;
-      max-width: 780px;
+      max-width: 820px;
     }
 
     .slide-tag {
@@ -423,29 +423,29 @@
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 2px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       width: fit-content;
     }
 
     .slide-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4.5vw, 58px);
+      font-size: clamp(24px, 3.2vw, 46px);
       font-weight: 800;
       color: var(--white);
-      line-height: 1.15;
+      line-height: 1.18;
       margin-bottom: 16px;
     }
 
     .slide-title span {
-      color: var(--gold-lt);
+      color: inherit !important;
     }
 
     .slide-desc {
-      font-size: clamp(13px, 1.5vw, 15px);
-      color: rgba(255, 255, 255, .82);
-      line-height: 1.65;
-      margin-bottom: 28px;
-      max-width: 520px;
+      font-size: clamp(13px, 1.3vw, 15px);
+      color: rgba(255, 255, 255, .85);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 580px;
     }
 
     .slide-btns {
@@ -468,7 +468,7 @@
     }
 
     .btn-primary:hover {
-      background: var(--gold-lt);
+      background: #7A1221 !important;
       transform: translateY(-2px);
     }
 
@@ -681,12 +681,12 @@
     }
 
     .section-tag {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--gold);
-      letter-spacing: .16em;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .section-title {
@@ -738,35 +738,38 @@
 
     .badge-float {
       position: absolute;
-      bottom: -18px;
-      right: -18px;
-      width: 100px;
-      height: 100px;
-      background: var(--gold);
+      bottom: 16px;
+      right: 16px;
+      width: 105px;
+      height: 105px;
+      background: #A51C30 !important;
+      border: 3px solid #ffffff;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 28px rgba(200, 150, 42, .4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 10;
     }
 
     .badge-float .b-num {
       font-family: 'Playfair Display', serif;
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 800;
-      color: var(--navy);
+      color: #ffffff !important;
       line-height: 1;
     }
 
     .badge-float .b-text {
-      font-size: 8.5px;
+      font-size: 8px;
       font-weight: 700;
-      color: var(--navy);
+      color: #ffffff !important;
       text-align: center;
       letter-spacing: .05em;
       text-transform: uppercase;
-      padding: 0 8px;
+      padding: 3px 6px 0;
+      line-height: 1.15;
     }
 
     /* ── STATS ROW ── */
@@ -1245,7 +1248,8 @@
       }
 
       .hero-slider {
-        height: clamp(380px, 80svh, 600px);
+        height: clamp(520px, 85svh, 720px);
+        min-height: 520px;
       }
 
       .slide-content {
@@ -1503,6 +1507,61 @@
     }
   </style>
   <link rel="stylesheet" href="theme.css">
+  <!-- Home Page Typography Overrides as per Reference Image -->
+  <style>
+    /* Headings on light backgrounds below navbar */
+    nav ~ .section .section-title,
+    nav ~ .section h2,
+    nav ~ .section h3,
+    nav ~ .notice-section .section-title,
+    nav ~ .rec-section h2 {
+      font-family: 'AmpersandNormal', 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif !important;
+      color: #1a1a1a !important;
+      font-weight: 700 !important;
+    }
+    
+    /* Spans inside headings on light backgrounds (excluding normal-amp) */
+    nav ~ .section .section-title span:not(.normal-amp),
+    nav ~ .section h2 span:not(.normal-amp),
+    nav ~ .section h3 span:not(.normal-amp),
+    nav ~ .notice-section .section-title span:not(.normal-amp),
+    nav ~ .rec-section h2 span:not(.normal-amp) {
+      font-family: inherit !important;
+      color: inherit !important;
+    }
+
+    /* Prevent & symbol from taking red accent color */
+    .normal-amp,
+    span.normal-amp,
+    nav ~ .section .normal-amp,
+    nav ~ .notice-section .normal-amp,
+    nav ~ .rec-section .normal-amp {
+      color: #1a1a1a !important;
+    }
+    
+    /* Headings on dark backgrounds (Testimonials) - All letters pure white */
+    .testi-section .section-title,
+    .testi-section .section-title span,
+    nav ~ .testi-section .section-title,
+    nav ~ .testi-section .section-title span {
+      font-family: 'AmpersandNormal', 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    nav ~ .testi-section .normal-amp {
+      color: var(--white) !important;
+    }
+
+    /* Paragraph write-ups on light backgrounds */
+    nav ~ .section .section-body,
+    nav ~ .section p,
+    nav ~ .notice-section p,
+    nav ~ .rec-section p {
+      font-family: 'AmpersandNormal', 'DM Sans', system-ui, -apple-system, sans-serif !important;
+      color: #2b2b2b !important;
+      line-height: 1.5 !important;
+    }
+  </style>
   <script type="module" src="animations.js"></script>
 </head>
 
@@ -1707,7 +1766,7 @@
   </div>
 
   <!-- ABOUT -->
-  <div class="section" style="background:#F5F3EE;">
+  <div class="section" style="background:#FFFFFF;">
     <div class="section-inner">
       <div>
         <div class="section-tag">Welcome to Trident</div>
@@ -1721,8 +1780,8 @@
         <a href="about.html" class="btn-primary">Know More About Us</a>
       </div>
       <div class="about-img-wrap">
-        <img class="about-img" src="http://tat.ac.in/wp-content/uploads/2026/05/Untitled-design-4.png" alt="Trident School of Business Campus"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <img class="about-img" src="Public/Untitled design (4).png" alt="Trident School of Business Campus"
+          onerror="this.src='http://tat.ac.in/wp-content/uploads/2026/05/Untitled-design-4.png'" />
         <div class="about-img-placeholder" style="display:none;">Trident School of Business</div>
         <div class="badge-float">
           <span class="b-num">NBA</span>
@@ -1739,11 +1798,11 @@
         Leaders</span></h2>
 
     <div style="max-width:900px; margin:0 auto 56px auto; text-align:center;">
-      <p class="section-body" style="font-size:16px; line-height:1.8; color:var(--text); margin-bottom:16px;">
+      <p class="section-body" style="margin-bottom:16px;">
         Our MBA Department is accredited by the Govt of India's <strong>National Board of Accreditation (NBA)</strong>
         for its overall quality of teaching-learning.
       </p>
-      <p class="section-body" style="font-size:15px; line-height:1.75;">
+      <p class="section-body">
         We emphasize a robust industry-focused curriculum, hands-on learning experiences, and engaging club activities
         to groom future business leaders. Our program offers specializations in <strong>Marketing, Finance, Human
           Resources, Systems, International Business,</strong> and <strong>Sustainability Management</strong>.

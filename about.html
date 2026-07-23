@@ -405,14 +405,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(200, 150, 42, 0.15);
-      border: 1px solid rgba(200, 150, 42, 0.3);
-      color: var(--gold-soft);
-      font-size: 11px;
+      background: rgba(255, 255, 255, 0.12) !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+      font-size: 12px !important;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
       margin-bottom: 24px;
     }
@@ -423,11 +423,11 @@
       line-height: 1.15;
       font-weight: 800;
       margin-bottom: 24px;
-      color: var(--white);
+      color: #FFFFFF !important;
     }
 
     .hero-title span {
-      color: var(--gold-soft);
+      color: #FFFFFF !important;
     }
 
     .hero-desc {
@@ -462,15 +462,15 @@
 
     .hero-stat-card:hover {
       background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(200, 150, 42, 0.4);
+      border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-4px);
     }
 
     .hero-stat-card strong {
       display: block;
       font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      color: var(--gold-soft);
+      font-size: 32px;
+      color: #FFFFFF !important;
       margin-bottom: 4px;
     }
 
@@ -517,8 +517,21 @@
       border-radius: 16px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
       max-width: 280px;
-      border-left: 5px solid var(--gold);
+      border-left: 5px solid #1C3E6E !important;
       animation: float 4s ease-in-out infinite;
+    }
+
+    .floating-panel h4 {
+      color: #0B1F3A !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px !important;
+    }
+
+    .floating-panel p {
+      color: #4A5568 !important;
+      font-size: 13px !important;
+      line-height: 1.5 !important;
     }
 
     @keyframes float {

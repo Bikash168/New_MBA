@@ -4,20 +4,41 @@
    Trident School of Business Administration — Modern Design System (theme.css)
    ========================================================================== */
 
-/* Styling wrapper to enforce clean, standard sans-serif ampersands globally */
+/* Global Ampersand Font Override for U+0026 */
+@font-face {
+  font-family: 'AmpersandNormal';
+  src: local('DM Sans'), local('Arial'), local('sans-serif');
+  unicode-range: U+0026;
+}
+
+/* Styling wrapper to enforce clean, standard sans-serif ampersands globally without red accent color */
+span.normal-amp,
 .normal-amp {
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
   font-style: normal !important;
   font-weight: 500 !important;
+  color: #1a1a1a !important;
 }
 
-
+/* On dark background sections, keep ampersand white */
+.testi-section .normal-amp,
+.testi-section span .normal-amp,
+.hero-slider .normal-amp,
+.hero-slider span .normal-amp,
+.bg-navy .normal-amp,
+.bg-navy span .normal-amp,
+nav .normal-amp,
+nav span .normal-amp,
+footer .normal-amp,
+footer span .normal-amp {
+  color: inherit !important;
+}
 
 /* Typography Core Overrides */
 :root {
-  --font-serif: 'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-heading: 'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'AmpersandNormal', 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'AmpersandNormal', 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'AmpersandNormal', 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-size-body: 18px;
 }
 
@@ -33,20 +54,37 @@ h1, h2, h3, h4, h5, h6,
   font-family: var(--font-heading) !important;
 }
 
-/* Ensure child elements inside headings inherit the heading font family */
-h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
-.h1 *, .h2 *, .h3 *, .h4 *, .h5 *, .h6 *,
-.section-title *, .slide-title *, .banner-title *,
-.school-name * {
+/* Ensure child elements inside headings inherit heading font family, excluding normal-amp */
+h1 *:not(.normal-amp), h2 *:not(.normal-amp), h3 *:not(.normal-amp), h4 *:not(.normal-amp), h5 *:not(.normal-amp), h6 *:not(.normal-amp),
+.h1 *:not(.normal-amp), .h2 *:not(.normal-amp), .h3 *:not(.normal-amp), .h4 *:not(.normal-amp), .h5 *:not(.normal-amp), .h6 *:not(.normal-amp),
+.section-title *:not(.normal-amp), .slide-title *:not(.normal-amp), .banner-title *:not(.normal-amp), .hero-title *:not(.normal-amp),
+.school-name *:not(.normal-amp) {
   font-family: inherit !important;
 }
 
-/* Specific override for span tags inside headings to use a modern sans-serif font */
-h1 span, h2 span, h3 span, h4 span, h5 span, h6 span,
-.h1 span, .h2 span, .h3 span, .h4 span, .h5 span, .h6 span,
-.section-title span, .slide-title span, .banner-title span,
-.school-name span {
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+/* Specific override for span tags inside headings -> Inherit parent color (single-tone, no mixed red/white or red/black) */
+h1 span:not(.normal-amp), h2 span:not(.normal-amp), h3 span:not(.normal-amp), h4 span:not(.normal-amp), h5 span:not(.normal-amp), h6 span:not(.normal-amp),
+.h1 span:not(.normal-amp), .h2 span:not(.normal-amp), .h3 span:not(.normal-amp), .h4 span:not(.normal-amp), .h5 span:not(.normal-amp), h6 span:not(.normal-amp),
+.section-title span:not(.normal-amp), .slide-title span:not(.normal-amp), .banner-title span:not(.normal-amp), .hero-title span:not(.normal-amp),
+.school-name span:not(.normal-amp) {
+  color: inherit !important;
+}
+
+/* Global Headings & Spans on Dark Backgrounds -> Solid Pure White (#ffffff) */
+.hero-section .hero-title,
+.hero-section .hero-title span,
+.hero-title,
+.hero-title span,
+.hero-slider .slide-title,
+.hero-slider .slide-title span,
+.testi-section .section-title,
+.testi-section .section-title span,
+.banner-section h1, .banner-section h2, .banner-section h3, .banner-section span,
+.bg-navy h1, .bg-navy h2, .bg-navy h3, .bg-navy span,
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark span,
+.cta-band h2, .cta-band h2 span, .cta-band h2 em,
+header.hero h1, header.hero h2, header.hero span {
+  color: #ffffff !important;
 }
 
 
@@ -164,7 +202,7 @@ html {
   color: var(--white) !important;
 }
 .btn-primary:hover, .nav-apply:hover, .mobile-apply:hover, .rec-btn:hover, .view-syll-btn:hover {
-  background: var(--gold-lt) !important;
+  background: #7A1221 !important; /* Deep Red on hover */
   color: var(--white) !important;
   transform: translateY(-2px) !important;
   box-shadow: var(--shadow-md) !important;
@@ -203,6 +241,10 @@ html {
   padding: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
 }
 
 
