@@ -236,15 +236,23 @@ html {
 }
 
 .section-tag, .eyebrow {
-  color: var(--gold) !important;
-  background: transparent !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  color: #1a1a1a !important;
+  background: transparent;
   font-size: 14px !important;
   font-weight: 700 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
+}
+
+/* Eyebrows & Section tags on Dark Hero Backgrounds -> Pure White */
+.hero-section .eyebrow,
+.hero-section .section-tag,
+.hero .eyebrow,
+.hero .section-tag,
+.bg-navy .eyebrow,
+.bg-navy .section-tag,
+.testi-section .section-tag {
+  color: #ffffff !important;
 }
 
 
