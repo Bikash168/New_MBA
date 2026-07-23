@@ -83,7 +83,8 @@ h1 span:not(.normal-amp), h2 span:not(.normal-amp), h3 span:not(.normal-amp), h4
 .bg-navy h1, .bg-navy h2, .bg-navy h3, .bg-navy span,
 .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark span,
 .cta-band h2, .cta-band h2 span, .cta-band h2 em,
-header.hero h1, header.hero h2, header.hero span {
+header.hero h1, header.hero h2, header.hero span,
+.callout-box h3, .callout-box h3 span {
   color: #ffffff !important;
 }
 
