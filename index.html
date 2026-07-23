@@ -830,7 +830,7 @@
     .notice-dot {
       width: 8px;
       height: 8px;
-      background: var(--gold);
+      background: #ffffff !important;
       border-radius: 50%;
       flex-shrink: 0;
     }
@@ -1530,13 +1530,13 @@
       color: inherit !important;
     }
 
-    /* Prevent & symbol from taking red accent color */
+    /* Ampersand symbol inherits parent text color cleanly */
     .normal-amp,
     span.normal-amp,
     nav ~ .section .normal-amp,
     nav ~ .notice-section .normal-amp,
     nav ~ .rec-section .normal-amp {
-      color: #1a1a1a !important;
+      color: inherit !important;
     }
     
     /* Headings on dark backgrounds (Testimonials) - All letters pure white */

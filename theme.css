@@ -11,27 +11,25 @@
   unicode-range: U+0026;
 }
 
-/* Styling wrapper to enforce clean, standard sans-serif ampersands globally without red accent color */
+/* Styling wrapper to enforce clean, standard sans-serif ampersands globally inheriting parent text color */
 span.normal-amp,
-.normal-amp {
+.normal-amp,
+h1 .normal-amp,
+h2 .normal-amp,
+h3 .normal-amp,
+h4 .normal-amp,
+h5 .normal-amp,
+h6 .normal-amp,
+.section-title .normal-amp,
+.notice-card-head .normal-amp {
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
   font-style: normal !important;
-  font-weight: 500 !important;
-  color: #1a1a1a !important;
+  font-weight: inherit !important;
+  color: inherit !important;
 }
 
-/* On dark background sections, keep ampersand white */
-.testi-section .normal-amp,
-.testi-section span .normal-amp,
-.hero-slider .normal-amp,
-.hero-slider span .normal-amp,
-.bg-navy .normal-amp,
-.bg-navy span .normal-amp,
-nav .normal-amp,
-nav span .normal-amp,
-footer .normal-amp,
-footer span .normal-amp {
-  color: inherit !important;
+.notice-dot {
+  background: #ffffff !important;
 }
 
 /* Typography Core Overrides */
