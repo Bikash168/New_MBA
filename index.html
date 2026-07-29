@@ -497,7 +497,8 @@
       left: 0;
       right: 0;
       z-index: 4;
-      background: var(--offwhite) !important; /* Solid light warm brown / sand */
+      background: var(--offwhite) !important;
+      /* Solid light warm brown / sand */
       border-top: 3px solid var(--gold);
       border-bottom: 2px solid var(--gold);
       box-shadow: 0 -4px 20px rgba(11, 31, 58, 0.08);
@@ -533,7 +534,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 64px; /* significantly larger! */
+      height: 64px;
+      /* significantly larger! */
       width: auto;
       max-width: 100%;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -552,7 +554,8 @@
     .logo-label {
       font-size: 11px;
       font-weight: 700;
-      color: var(--navy); /* Navy text color on white background */
+      color: var(--navy);
+      /* Navy text color on white background */
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -1510,22 +1513,22 @@
   <!-- Home Page Typography Overrides as per Reference Image -->
   <style>
     /* Headings on light backgrounds below navbar */
-    nav ~ .section .section-title,
-    nav ~ .section h2,
-    nav ~ .section h3,
-    nav ~ .notice-section .section-title,
-    nav ~ .rec-section h2 {
+    nav~.section .section-title,
+    nav~.section h2,
+    nav~.section h3,
+    nav~.notice-section .section-title,
+    nav~.rec-section h2 {
       font-family: 'AmpersandNormal', 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif !important;
       color: #1a1a1a !important;
       font-weight: 700 !important;
     }
-    
+
     /* Spans inside headings on light backgrounds (excluding normal-amp) */
-    nav ~ .section .section-title span:not(.normal-amp),
-    nav ~ .section h2 span:not(.normal-amp),
-    nav ~ .section h3 span:not(.normal-amp),
-    nav ~ .notice-section .section-title span:not(.normal-amp),
-    nav ~ .rec-section h2 span:not(.normal-amp) {
+    nav~.section .section-title span:not(.normal-amp),
+    nav~.section h2 span:not(.normal-amp),
+    nav~.section h3 span:not(.normal-amp),
+    nav~.notice-section .section-title span:not(.normal-amp),
+    nav~.rec-section h2 span:not(.normal-amp) {
       font-family: inherit !important;
       color: inherit !important;
     }
@@ -1533,30 +1536,31 @@
     /* Ampersand symbol inherits parent text color cleanly */
     .normal-amp,
     span.normal-amp,
-    nav ~ .section .normal-amp,
-    nav ~ .notice-section .normal-amp,
-    nav ~ .rec-section .normal-amp {
+    nav~.section .normal-amp,
+    nav~.notice-section .normal-amp,
+    nav~.rec-section .normal-amp {
       color: inherit !important;
     }
-    
+
     /* Headings on dark backgrounds (Testimonials) - All letters pure white */
     .testi-section .section-title,
     .testi-section .section-title span,
-    nav ~ .testi-section .section-title,
-    nav ~ .testi-section .section-title span {
+    nav~.testi-section .section-title,
+    nav~.testi-section .section-title span {
       font-family: 'AmpersandNormal', 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif !important;
       color: #ffffff !important;
       font-weight: 700 !important;
     }
-    nav ~ .testi-section .normal-amp {
+
+    nav~.testi-section .normal-amp {
       color: var(--white) !important;
     }
 
     /* Paragraph write-ups on light backgrounds */
-    nav ~ .section .section-body,
-    nav ~ .section p,
-    nav ~ .notice-section p,
-    nav ~ .rec-section p {
+    nav~.section .section-body,
+    nav~.section p,
+    nav~.notice-section p,
+    nav~.rec-section p {
       font-family: 'AmpersandNormal', 'DM Sans', system-ui, -apple-system, sans-serif !important;
       color: #2b2b2b !important;
       line-height: 1.5 !important;
@@ -1571,12 +1575,12 @@
   <div class="hero-slider" id="slider">
 
     <div class="slide active">
-      <img class="slide-bg" src="http://tat.ac.in/wp-content/uploads/2026/05/Untitled-design-3.png" alt="Campus" />
+      <img class="slide-bg" src="Public/campus_building_1.jpg" alt="Modern Glass Facade Block" />
       <div class="slide-content">
-        <span class="slide-tag">Best B-School · Odisha 2025</span>
-        <h1 class="slide-title">Shape the <span>Leaders</span><br>of Tomorrow</h1>
-        <p class="slide-desc">Trident School of Business Administration offers world-class management education rooted
-          in values, innovation, and industry relevance — empowering graduates to excel globally.</p>
+        <span class="slide-tag">State-of-the-Art Facilities</span>
+        <h1 class="slide-title">World-Class <span>Infrastructure</span><br>&amp; Digital Classrooms</h1>
+        <p class="slide-desc">Experience learning in centrally air-conditioned lecture theatres equipped with advanced
+          audio-visual aids and digital collaboration spaces.</p>
         <div class="slide-btns">
           <a href="#" class="btn-primary">Apply Now</a>
           <a href="Public/brochure.png" target="_blank" class="btn-outline">Brochure</a>
@@ -1613,38 +1617,12 @@
     </div>
 
     <div class="slide">
-      <img class="slide-bg" src="http://tat.ac.in/wp-content/uploads/2026/05/Untitled-design-2.png" alt="Library" />
+      <img class="slide-bg" src="http://tat.ac.in/wp-content/uploads/2026/05/Untitled-design-3.png" alt="Campus" />
       <div class="slide-content">
-        <span class="slide-tag">Research &amp; Innovation</span>
-        <h1 class="slide-title">Driving <span>Knowledge</span><br>&amp; Innovation</h1>
-        <p class="slide-desc">Our faculty publish in globally reputed journals. The Trident School of Business Research Centre fosters thought
-          leadership, policy research, and management consulting.</p>
-        <div class="slide-btns">
-          <a href="#" class="btn-primary">Apply Now</a>
-          <a href="Public/brochure.png" target="_blank" class="btn-outline">Brochure</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img class="slide-bg" src="Public/campus_building_1.jpg" alt="Modern Glass Facade Block" />
-      <div class="slide-content">
-        <span class="slide-tag">State-of-the-Art Facilities</span>
-        <h1 class="slide-title">World-Class <span>Infrastructure</span><br>&amp; Digital Classrooms</h1>
-        <p class="slide-desc">Experience learning in centrally air-conditioned lecture theatres equipped with advanced audio-visual aids and digital collaboration spaces.</p>
-        <div class="slide-btns">
-          <a href="#" class="btn-primary">Apply Now</a>
-          <a href="Public/brochure.png" target="_blank" class="btn-outline">Brochure</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img class="slide-bg" src="Public/campus_building_2.jpg" alt="Academic and Administrative wing" />
-      <div class="slide-content">
-        <span class="slide-tag">Vibrant Academic Hub</span>
-        <h1 class="slide-title">Broaden Your <span>Horizons</span><br>At Trident School of Business Campus</h1>
-        <p class="slide-desc">Our expansive campus offers a supportive and vibrant environment featuring multimedia auditoriums, computing centers, and active student-driven spaces.</p>
+        <span class="slide-tag">Best B-School · Odisha 2025</span>
+        <h1 class="slide-title">Shape the <span>Leaders</span><br>of Tomorrow</h1>
+        <p class="slide-desc">Trident School of Business Administration offers world-class management education rooted
+          in values, innovation, and industry relevance — empowering graduates to excel globally.</p>
         <div class="slide-btns">
           <a href="#" class="btn-primary">Apply Now</a>
           <a href="Public/brochure.png" target="_blank" class="btn-outline">Brochure</a>
@@ -1692,8 +1670,6 @@
       <button class="dot" onclick="goTo(1)"></button>
       <button class="dot" onclick="goTo(2)"></button>
       <button class="dot" onclick="goTo(3)"></button>
-      <button class="dot" onclick="goTo(4)"></button>
-      <button class="dot" onclick="goTo(5)"></button>
     </div>
 
     <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">&#8592;</button>
@@ -1868,7 +1844,8 @@
         <ul class="notice-list">
           <li><span class="notice-date">30 Apr</span><span class="notice-text"><a href="#">MBA 2025–27 Admissions —
                 Final Call for Applications</a></span></li>
-          <li><span class="notice-date">25 Apr</span><span class="notice-text"><a href="#">Trident School of Business Scholarship Examination
+          <li><span class="notice-date">25 Apr</span><span class="notice-text"><a href="#">Trident School of Business
+                Scholarship Examination
                 Schedule Released</a></span></li>
           <li><span class="notice-date">18 Apr</span><span class="notice-text"><a href="#">MBA 2026 Merit List — First
                 Round Allotment</a></span></li>
@@ -1903,12 +1880,15 @@
   <div class="testi-section">
     <div class="section-tag" style="color:#E8B84B;margin-bottom:10px;">Alumni Voices</div>
     <h2 class="section-title">What Our <span>Graduates</span> Say</h2>
-    
+
     <div class="testi-slider-container">
       <div class="testi-track" id="testiTrack">
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">I am extremely grateful for the valuable education and skills developed during my time at Trident, where we celebrated every milestone like family. Securing a placement through the Trident campus drive allowed me to build a fulfilling career in the banking sector as an Assistant Manager with Utkarsh Small Finance Bank.</p>
+          <p class="testi-text">I am extremely grateful for the valuable education and skills developed during my time
+            at Trident, where we celebrated every milestone like family. Securing a placement through the Trident campus
+            drive allowed me to build a fulfilling career in the banking sector as an Assistant Manager with Utkarsh
+            Small Finance Bank.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_poornima.jpg" alt="Poornima Mohapatra">
             <div class="testi-meta">
@@ -1917,10 +1897,13 @@
             </div>
           </div>
         </div>
-        
+
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">My two years at Trident (MBA Batch 2017-19) were a beautiful journey of personal transformation. I owe my deepest gratitude to the incredible faculty for their thoughtful mentorship, which built the career clarity and communication confidence I rely on today as an Assistant Manager at Medicover Hospital.</p>
+          <p class="testi-text">My two years at Trident (MBA Batch 2017-19) were a beautiful journey of personal
+            transformation. I owe my deepest gratitude to the incredible faculty for their thoughtful mentorship, which
+            built the career clarity and communication confidence I rely on today as an Assistant Manager at Medicover
+            Hospital.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_nilesh.jpg" alt="Nilesh Mohanty">
             <div class="testi-meta">
@@ -1929,10 +1912,13 @@
             </div>
           </div>
         </div>
-        
+
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">I am truly proud of my journey with Trident, which played a key role in my career. It gave me the platform to learn, explore, and pursue my goal of becoming an accountant and tax executive. The knowledge gained here helped me secure my current role as an Associate Tax Consultant with BDO India in Hyderabad.</p>
+          <p class="testi-text">I am truly proud of my journey with Trident, which played a key role in my career. It
+            gave me the platform to learn, explore, and pursue my goal of becoming an accountant and tax executive. The
+            knowledge gained here helped me secure my current role as an Associate Tax Consultant with BDO India in
+            Hyderabad.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_prabhat.jpg" alt="Mr. Prabhat Panda">
             <div class="testi-meta">
@@ -1941,10 +1927,13 @@
             </div>
           </div>
         </div>
-        
+
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">I extend my deepest gratitude to Trident College for shaping my academic journey and professional values. The unwavering support, personal encouragement, and excellent industry exposure I received during my MBA have significantly contributed to my successful career path as an HR Executive at Impulsions Laser.</p>
+          <p class="testi-text">I extend my deepest gratitude to Trident College for shaping my academic journey and
+            professional values. The unwavering support, personal encouragement, and excellent industry exposure I
+            received during my MBA have significantly contributed to my successful career path as an HR Executive at
+            Impulsions Laser.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_sushree.jpg" alt="Sushree Sangita Beura">
             <div class="testi-meta">
@@ -1956,7 +1945,13 @@
 
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">I am proud to have completed my MBA from Trident, a place that shaped both my academic journey and my personal growth. During my time on campus, I had the privilege of being a Sports Champion, representing the institute with passion and dedication throughout my MBA years. Alongside academics and sports, I also discovered my love for hosting and communication—I served as an anchor at TRIFEST for five years, creating some of my most memorable experiences on stage. Trident has been instrumental in building my confidence, leadership skills, and professional identity. I carry these experiences forward as a proud alumna, grateful for the foundation the institute has given me.</p>
+          <p class="testi-text">I am proud to have completed my MBA from Trident, a place that shaped both my academic
+            journey and my personal growth. During my time on campus, I had the privilege of being a Sports Champion,
+            representing the institute with passion and dedication throughout my MBA years. Alongside academics and
+            sports, I also discovered my love for hosting and communication—I served as an anchor at TRIFEST for five
+            years, creating some of my most memorable experiences on stage. Trident has been instrumental in building my
+            confidence, leadership skills, and professional identity. I carry these experiences forward as a proud
+            alumna, grateful for the foundation the institute has given me.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_arpita.jpg" alt="Dr. Arpita Nayak">
             <div class="testi-meta">
@@ -1968,7 +1963,11 @@
 
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">My experience in Trident Academy of Technology was a blend of rigorous academics, personal growth, and memorable moments that shaped my professional journey. I am incredibly proud to be an alumnus of Trident Academy of Technology. This institution not only focuses on academic excellence but also provides holistic development of its students. The faculty members are not just teachers; they are mentors who provide constant guidance and encouragement.</p>
+          <p class="testi-text">My experience in Trident Academy of Technology was a blend of rigorous academics,
+            personal growth, and memorable moments that shaped my professional journey. I am incredibly proud to be an
+            alumnus of Trident Academy of Technology. This institution not only focuses on academic excellence but also
+            provides holistic development of its students. The faculty members are not just teachers; they are mentors
+            who provide constant guidance and encouragement.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_abhisek.jpg" alt="Abhisek Mohanty">
             <div class="testi-meta">
@@ -1980,7 +1979,10 @@
 
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">I’m Laxmikanta Nayak, currently working as Business IT Consultant and applying digital solutions in business operations. My MBA at Trident Academy of Creative Technology played a pivotal role in shaping my professional mindset and industry readiness. I’m genuinely grateful for the learning culture, faculty guidance, and exposure TACT provided—it has been instrumental in my growth and career direction.</p>
+          <p class="testi-text">I’m Laxmikanta Nayak, currently working as Business IT Consultant and applying digital
+            solutions in business operations. My MBA at Trident Academy of Creative Technology played a pivotal role in
+            shaping my professional mindset and industry readiness. I’m genuinely grateful for the learning culture,
+            faculty guidance, and exposure TACT provided—it has been instrumental in my growth and career direction.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_laxmikanta.jpg" alt="Laxmikanta Nayak">
             <div class="testi-meta">
@@ -1992,7 +1994,9 @@
 
         <div class="testi-card">
           <div class="testi-quote">"</div>
-          <p class="testi-text">The college offered a disciplined and supportive academic environment throughout my MBA journey. I value the exposure to diverse perspectives and the opportunity to engage in various institutional activities.</p>
+          <p class="testi-text">The college offered a disciplined and supportive academic environment throughout my MBA
+            journey. I value the exposure to diverse perspectives and the opportunity to engage in various institutional
+            activities.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_dipti.jpg" alt="Dipti Modak">
             <div class="testi-meta">
@@ -2337,24 +2341,24 @@
     (function () {
       const track = document.getElementById('testiTrack');
       if (!track) return;
-      
+
       const cards = track.querySelectorAll('.testi-card');
       const pipsEl = document.getElementById('testiPips');
       const prevBtn = document.getElementById('testiPrev');
       const nextBtn = document.getElementById('testiNext');
-      
+
       let itemsPerPage = 3;
-      
+
       function getItemsPerPage() {
         if (window.innerWidth <= 768) return 1;
         if (window.innerWidth <= 1024) return 2;
         return 3;
       }
-      
+
       itemsPerPage = getItemsPerPage();
       let totalPages = Math.ceil(cards.length / itemsPerPage);
       let currentPage = 0;
-      
+
       function renderPips() {
         pipsEl.innerHTML = '';
         totalPages = Math.ceil(cards.length / itemsPerPage);
@@ -2368,27 +2372,27 @@
           pipsEl.appendChild(pip);
         }
       }
-      
+
       function goToPage(pageIndex) {
         totalPages = Math.ceil(cards.length / itemsPerPage);
         if (totalPages === 0) return;
         currentPage = Math.max(0, Math.min(totalPages - 1, pageIndex));
-        
+
         const gap = 24;
         const cardWidth = cards[0].offsetWidth;
         const scrollAmount = currentPage * itemsPerPage * (cardWidth + gap);
-        
+
         track.scrollTo({
           left: scrollAmount,
           behavior: 'smooth'
         });
-        
+
         const pips = pipsEl.querySelectorAll('.testi-pip');
         pips.forEach((pip, idx) => {
           pip.classList.toggle('active', idx === currentPage);
         });
       }
-      
+
       prevBtn.onclick = () => {
         if (currentPage === 0) {
           goToPage(totalPages - 1);
@@ -2396,7 +2400,7 @@
           goToPage(currentPage - 1);
         }
       };
-      
+
       nextBtn.onclick = () => {
         if (currentPage >= totalPages - 1) {
           goToPage(0);
@@ -2404,7 +2408,7 @@
           goToPage(currentPage + 1);
         }
       };
-      
+
       let autoPlayInterval;
       function startAutoPlay() {
         stopAutoPlay();
@@ -2416,20 +2420,20 @@
           }
         }, 4000);
       }
-      
+
       function stopAutoPlay() {
         clearInterval(autoPlayInterval);
       }
-      
+
       startAutoPlay();
-      
+
       const testiSection = document.querySelector('.testi-section');
       if (testiSection) {
         testiSection.addEventListener('mouseenter', stopAutoPlay);
         testiSection.addEventListener('mouseleave', startAutoPlay);
         testiSection.addEventListener('touchstart', stopAutoPlay, { passive: true });
       }
-      
+
       // Scroll listener to update pips on manual swipe
       let isScrolling;
       track.addEventListener('scroll', () => {
@@ -2439,7 +2443,7 @@
           const cardWidth = cards[0].offsetWidth;
           const scrollLeft = track.scrollLeft;
           const pageWidth = itemsPerPage * (cardWidth + gap);
-          
+
           const pageIndex = Math.round(scrollLeft / pageWidth);
           if (pageIndex !== currentPage && pageIndex < totalPages) {
             currentPage = pageIndex;
@@ -2450,7 +2454,7 @@
           }
         }, 150);
       }, { passive: true });
-      
+
       window.addEventListener('resize', () => {
         const prevItemsPerPage = itemsPerPage;
         itemsPerPage = getItemsPerPage();
@@ -2459,11 +2463,10 @@
           goToPage(currentPage);
         }
       });
-      
+
       renderPips();
     })();
   </script>
 </body>
 
 </html>
-
