@@ -922,11 +922,11 @@
     .testi-card {
       flex: 0 0 calc(33.333% - 16px);
       min-width: 280px;
-      height: 380px !important;
+      height: 410px !important;
       background: rgba(255, 255, 255, 0.04) !important;
       border: 1px solid rgba(255, 255, 255, 0.08) !important;
       border-radius: var(--radius-md, 16px) !important;
-      padding: 28px 24px;
+      padding: 24px 22px;
       text-align: left;
       transition: var(--transition-smooth, all 0.5s cubic-bezier(0.16, 1, 0.3, 1)) !important;
       display: flex;
@@ -941,48 +941,30 @@
       box-shadow: var(--shadow-lg) !important;
     }
 
-    .testi-quote {
-      font-size: 34px;
-      color: var(--gold);
-      font-family: Georgia, serif;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .testi-text {
-      font-size: 13px;
-      color: rgba(255, 255, 255, .75);
-      line-height: 1.7;
-      margin-bottom: 24px;
-      flex-grow: 1;
-      overflow-y: auto;
-      scrollbar-width: none;
-    }
-
-    .testi-text::-webkit-scrollbar {
-      display: none;
-    }
-
     .testi-profile {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-top: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
+      gap: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 14px;
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
     }
 
     .testi-avatar {
-      width: 44px;
-      height: 44px;
+      width: 64px;
+      height: 64px;
       border-radius: 50% !important;
       object-fit: cover;
-      border: 2px solid var(--gold-lt);
+      border: 2.5px solid var(--gold);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--navy);
       background: var(--gold-lt);
@@ -995,15 +977,38 @@
 
     .testi-name {
       font-weight: 700;
-      font-size: 13px;
-      color: var(--gold-lt);
+      font-size: 15px;
+      color: #ffffff;
+      line-height: 1.3;
     }
 
     .testi-role {
-      font-size: 11px;
-      color: rgba(255, 255, 255, .5);
-      margin-top: 2px;
-      line-height: 1.3;
+      font-size: 11.5px;
+      color: var(--gold-lt);
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    .testi-quote {
+      font-size: 28px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .testi-text {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .8);
+      line-height: 1.65;
+      margin-bottom: 0;
+      flex-grow: 1;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+
+    .testi-text::-webkit-scrollbar {
+      display: none;
     }
 
     /* Slider Controls */
@@ -1884,11 +1889,6 @@
     <div class="testi-slider-container">
       <div class="testi-track" id="testiTrack">
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I am extremely grateful for the valuable education and skills developed during my time
-            at Trident, where we celebrated every milestone like family. Securing a placement through the Trident campus
-            drive allowed me to build a fulfilling career in the banking sector as an Assistant Manager with Utkarsh
-            Small Finance Bank.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_poornima.jpg" alt="Poornima Mohapatra">
             <div class="testi-meta">
@@ -1896,14 +1896,14 @@
               <div class="testi-role">MBA 2019-2021 · Assistant Manager, Utkarsh Small Finance Bank</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I am extremely grateful for the valuable education and skills developed during my time
+            at Trident, where we celebrated every milestone like family. Securing a placement through the Trident campus
+            drive allowed me to build a fulfilling career in the banking sector as an Assistant Manager with Utkarsh
+            Small Finance Bank.</p>
         </div>
 
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">My two years at Trident (MBA Batch 2017-19) were a beautiful journey of personal
-            transformation. I owe my deepest gratitude to the incredible faculty for their thoughtful mentorship, which
-            built the career clarity and communication confidence I rely on today as an Assistant Manager at Medicover
-            Hospital.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_nilesh.jpg" alt="Nilesh Mohanty">
             <div class="testi-meta">
@@ -1911,14 +1911,14 @@
               <div class="testi-role">MBA 2017-2019 · Assistant Manager Digital Marketing, Medicover Hospital</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">My two years at Trident (MBA Batch 2017-19) were a beautiful journey of personal
+            transformation. I owe my deepest gratitude to the incredible faculty for their thoughtful mentorship, which
+            built the career clarity and communication confidence I rely on today as an Assistant Manager at Medicover
+            Hospital.</p>
         </div>
 
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I am truly proud of my journey with Trident, which played a key role in my career. It
-            gave me the platform to learn, explore, and pursue my goal of becoming an accountant and tax executive. The
-            knowledge gained here helped me secure my current role as an Associate Tax Consultant with BDO India in
-            Hyderabad.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_prabhat.jpg" alt="Mr. Prabhat Panda">
             <div class="testi-meta">
@@ -1926,14 +1926,14 @@
               <div class="testi-role">MBA 2017-2019 · Associate Tax Consultant, BDO India</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I am truly proud of my journey with Trident, which played a key role in my career. It
+            gave me the platform to learn, explore, and pursue my goal of becoming an accountant and tax executive. The
+            knowledge gained here helped me secure my current role as an Associate Tax Consultant with BDO India in
+            Hyderabad.</p>
         </div>
 
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I extend my deepest gratitude to Trident College for shaping my academic journey and
-            professional values. The unwavering support, personal encouragement, and excellent industry exposure I
-            received during my MBA have significantly contributed to my successful career path as an HR Executive at
-            Impulsions Laser.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_sushree.jpg" alt="Sushree Sangita Beura">
             <div class="testi-meta">
@@ -1941,9 +1941,21 @@
               <div class="testi-role">MBA 2022-2024 · HR Executive, Impulsions Laser</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I extend my deepest gratitude to Trident College for shaping my academic journey and
+            professional values. The unwavering support, personal encouragement, and excellent industry exposure I
+            received during my MBA have significantly contributed to my successful career path as an HR Executive at
+            Impulsions Laser.</p>
         </div>
 
         <div class="testi-card">
+          <div class="testi-profile">
+            <img class="testi-avatar" src="Public/alumni_arpita.jpg" alt="Dr. Arpita Nayak">
+            <div class="testi-meta">
+              <div class="testi-name">Dr. Arpita Nayak</div>
+              <div class="testi-role">MBA 2018-2020 · Assistant Professor, School of Humanities, KIIT DU</div>
+            </div>
+          </div>
           <div class="testi-quote">"</div>
           <p class="testi-text">I am proud to have completed my MBA from Trident, a place that shaped both my academic
             journey and my personal growth. During my time on campus, I had the privilege of being a Sports Champion,
@@ -1952,22 +1964,9 @@
             years, creating some of my most memorable experiences on stage. Trident has been instrumental in building my
             confidence, leadership skills, and professional identity. I carry these experiences forward as a proud
             alumna, grateful for the foundation the institute has given me.</p>
-          <div class="testi-profile">
-            <img class="testi-avatar" src="Public/alumni_arpita.jpg" alt="Dr. Arpita Nayak">
-            <div class="testi-meta">
-              <div class="testi-name">Dr. Arpita Nayak</div>
-              <div class="testi-role">MBA 2018-2020 · Assistant Professor, School of Humanities, KIIT DU</div>
-            </div>
-          </div>
         </div>
 
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">My experience in Trident Academy of Technology was a blend of rigorous academics,
-            personal growth, and memorable moments that shaped my professional journey. I am incredibly proud to be an
-            alumnus of Trident Academy of Technology. This institution not only focuses on academic excellence but also
-            provides holistic development of its students. The faculty members are not just teachers; they are mentors
-            who provide constant guidance and encouragement.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_abhisek.jpg" alt="Abhisek Mohanty">
             <div class="testi-meta">
@@ -1975,14 +1974,15 @@
               <div class="testi-role">Batch 2008-2010 · Branch Manager, ICICI Bank</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">My experience in Trident Academy of Technology was a blend of rigorous academics,
+            personal growth, and memorable moments that shaped my professional journey. I am incredibly proud to be an
+            alumnus of Trident Academy of Technology. This institution not only focuses on academic excellence but also
+            provides holistic development of its students. The faculty members are not just teachers; they are mentors
+            who provide constant guidance and encouragement.</p>
         </div>
 
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I’m Laxmikanta Nayak, currently working as Business IT Consultant and applying digital
-            solutions in business operations. My MBA at Trident Academy of Creative Technology played a pivotal role in
-            shaping my professional mindset and industry readiness. I’m genuinely grateful for the learning culture,
-            faculty guidance, and exposure TACT provided—it has been instrumental in my growth and career direction.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_laxmikanta.jpg" alt="Laxmikanta Nayak">
             <div class="testi-meta">
@@ -1990,13 +1990,14 @@
               <div class="testi-role">MBA 2022-2024 · Business IT Consultant, Agilitz Technologies Limited</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I’m Laxmikanta Nayak, currently working as Business IT Consultant and applying digital
+            solutions in business operations. My MBA at Trident Academy of Creative Technology played a pivotal role in
+            shaping my professional mindset and industry readiness. I’m genuinely grateful for the learning culture,
+            faculty guidance, and exposure TACT provided—it has been instrumental in my growth and career direction.</p>
         </div>
 
         <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">The college offered a disciplined and supportive academic environment throughout my MBA
-            journey. I value the exposure to diverse perspectives and the opportunity to engage in various institutional
-            activities.</p>
           <div class="testi-profile">
             <img class="testi-avatar" src="Public/alumni_dipti.jpg" alt="Dipti Modak">
             <div class="testi-meta">
@@ -2004,6 +2005,10 @@
               <div class="testi-role">MBA 2022-2024 · Market Analyst, CSM</div>
             </div>
           </div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The college offered a disciplined and supportive academic environment throughout my MBA
+            journey. I value the exposure to diverse perspectives and the opportunity to engage in various institutional
+            activities.</p>
         </div>
       </div>
     </div>
