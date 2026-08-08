@@ -571,11 +571,11 @@ function initGlobalBrochureModal() {
         <button class="brochure-modal-close" id="brochureModalClose" aria-label="Close brochure">&times;</button>
         
         <div class="brochure-modal-img-container">
-          <img class="brochure-modal-img" id="brochureModalImg" src="Public/brochure.png" alt="MBA Program Brochure">
+          <img class="brochure-modal-img" id="brochureModalImg" src="Public/admission_flyer.jpg" alt="MBA Program Admission Flyer">
         </div>
 
         <div class="brochure-modal-actions">
-          <a class="brochure-modal-btn" href="Public/brochure.png" download="Trident School of Business-MBA-Brochure.png">Download Brochure</a>
+          <a class="brochure-modal-btn" href="Public/admission_flyer.jpg" download="Trident-MBA-Admission-Flyer.jpg">Download Flyer / Brochure</a>
           <button class="brochure-modal-btn-outline" id="brochureModalApplyBtn">Apply Now</button>
         </div>
       </div>
@@ -633,15 +633,15 @@ function initGlobalBrochureModal() {
     }
   });
 
-  // Target all "Brochure" buttons and redirect their click events
+  // Target all "Brochure" and "Admission Flyer" buttons and redirect their click events
   function hookBrochureButtons() {
     const buttons = document.querySelectorAll('a, button');
     buttons.forEach(btn => {
       const text = btn.textContent.trim().toLowerCase();
       
-      // If button text contains "brochure"
-      if (text === 'brochure') {
-        btn.addEventListener('click', openBrochure);
+      // If button text contains "brochure" or "flyer" (excluding modal action buttons)
+      if ((text.includes('brochure') || text.includes('admission flyer')) && !btn.classList.contains('brochure-modal-btn')) {
+        btn.onclick = openBrochure;
       }
     });
   }
