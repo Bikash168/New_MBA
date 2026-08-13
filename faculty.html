@@ -227,12 +227,103 @@
     }
     .section { width:min(1180px,92%); margin:36px auto }
     .section-head h2 { font-family:'Playfair Display',serif; font-size:28px; color:var(--navy); margin-bottom:8px }
-    .faculty-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-    .faculty-card { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px; box-shadow:var(--shadow) }
-    .faculty-photo { width:100%; height:180px; background:linear-gradient(135deg,#0f2852,#163154); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--white); font-family:'Playfair Display',serif; font-size:28px }
-    .faculty-name { font-weight:700; margin-top:12px }
-    .faculty-role { color:var(--muted); font-size:13px; margin-top:6px }
-    .faculty-bio { color:var(--muted); margin-top:10px; font-size:14px; line-height:1.6 }
+    
+    /* ── FACULTY CARDS DESIGN (Matching Design Specs) ── */
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 75px 24px;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+    .faculty-card-v2 {
+      position: relative;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 85px 20px 26px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+      text-align: center;
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 1px solid rgba(229, 222, 208, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .faculty-card-v2:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(11, 31, 58, 0.12);
+      border-color: var(--gold);
+    }
+    .faculty-avatar-container {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      padding: 4px;
+      background: #ffffff;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      z-index: 2;
+    }
+    .faculty-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .faculty-avatar-initials {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a8a 100%);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .faculty-card-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .faculty-card-role {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #4B5563;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .faculty-card-dept {
+      font-size: 12.5px;
+      color: #6B7280;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .faculty-card-bput {
+      margin-top: auto;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      background: #F3F4F6;
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.02em;
+    }
     
     /* Tab controls & directory tables */
     .tab-btn {
@@ -401,228 +492,394 @@
   </div>
 
 
-    <!-- MBA DEPARTMENT -->
-      <section class="section">
-        <div class="section-head">
-          <h2>MBA Department Senior Faculty</h2>
-          <p style="color:var(--muted)">Our senior MBA leadership bringing extensive research, policy guidance, and academic administration experience.</p>
-        </div>
-        <div class="faculty-grid">
-          <div class="faculty-card" style="border: 2px solid var(--gold);">
-            <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">PM</div>
-            <div class="faculty-name">Dr. Pravat Kumar Mohanty</div>
-            <div class="faculty-role">Professor &amp; Dean SOB</div>
-            <div class="faculty-bio">
-              <strong>BPUT ID:</strong> T250626604 | <strong>Joined:</strong> 15/12/2022<br>
-              Former Head of the Dept of MBA, Utkal University &amp; Director (CD) BPUT. Qualification: Ph.D. Guides academic standards and research.
-            </div>
-          </div>
-          <div class="faculty-card" style="border: 2px solid var(--gold);">
-            <div class="faculty-photo" style="background: linear-gradient(135deg, var(--navy), var(--gold));">MM</div>
-            <div class="faculty-name">Dr. Munmun Mohanty</div>
-            <div class="faculty-role">Professor &amp; HOD</div>
-            <div class="faculty-bio">
-              <strong>BPUT ID:</strong> T250626605 | <strong>Joined:</strong> 31/08/2024<br>
-              Leading the MBA department. Qualification: Ph.D (MBA). Directs specialization tracks, academic delivery, and student mentoring.
-            </div>
-          </div>
-          <div class="faculty-card">
-            <div class="faculty-photo">NB</div>
-            <div class="faculty-name">Dr. Nargis Begum</div>
-            <div class="faculty-role">Associate Professor</div>
-            <div class="faculty-bio">
-              <strong>BPUT ID:</strong> T106326601 | <strong>Joined:</strong> 08/09/2009<br>
-              Academic mentor. Qualification: Ph.D. Focuses on marketing and management fundamentals.
-            </div>
-          </div>
-          <div class="faculty-card">
-            <div class="faculty-photo">SD</div>
-            <div class="faculty-name">Dr. Sabyasachi Dey</div>
-            <div class="faculty-role">Associate Professor</div>
-            <div class="faculty-bio">
-              <strong>BPUT ID:</strong> T230626607 | <strong>Joined:</strong> 06/06/2023<br>
-              Specialises in supply chain analytics and quantitative methods. Qualification: Ph.D.
-            </div>
-          </div>
-          <div class="faculty-card">
-            <div class="faculty-photo">DS</div>
-            <div class="faculty-name">Dr. Dipti Mayee Sahoo</div>
-            <div class="faculty-role">Associate Professor</div>
-            <div class="faculty-bio">
-              <strong>BPUT ID:</strong> T126726601 | <strong>Joined:</strong> 05/01/2012<br>
-              Guides corporate valuations, banking analytics, and finance courses. Qualification: Ph.D.
-            </div>
-          </div>
-        </div>
-      </section>
+    <!-- MBA DEPARTMENT FACULTY GRID -->
+    <section class="section" style="margin-top: 40px;">
+      <div class="section-head" style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <span style="display:inline-block;background:rgba(200,150,42,0.12);padding:5px 14px;border-radius:999px;color:var(--gold);font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.12em;margin-bottom:10px;">Our Academic Team</span>
+        <h2 style="font-family:'Playfair Display',serif; font-size:32px; color:var(--navy);">Faculty Members</h2>
+        <p style="color:var(--muted); font-size:14px; margin-top:8px;">Distinguished academicians and experienced mentors driving excellence in business education and research.</p>
+      </div>
 
-      <!-- MBA Full Faculty Directory Table -->
-      <section class="section" style="margin-top: 56px;">
-        <div class="section-head">
-          <h2>MBA Faculty Directory</h2>
-          <p style="color:var(--muted)">Complete register of the MBA department academic members.</p>
+      <div class="faculty-grid">
+        <!-- Card 1 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/DR-PRAVAT-KUMAR-MOHANTY-144x144.jpg" alt="DR. PRAVAT KUMAR MOHANTY" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">PM</div>
+          </div>
+          <div class="faculty-card-name">DR PRAVAT KUMAR MOHANTY</div>
+          <div class="faculty-card-role">Professor</div>
+          <div class="faculty-card-dept">Ph.D · Faculty of Management Studies</div>
         </div>
-        <div class="table-responsive">
-          <table class="faculty-table">
-            <thead>
-              <tr>
-                <th>Sl. No.</th>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Date of Joining</th>
-                <th>Qualification</th>
-                <th>BPUT ID</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td><strong>Dr. Pravat Kumar Mohanty</strong></td>
-                <td>Professor</td>
-                <td>15/12/2022</td>
-                <td>Ph.D</td>
-                <td><code>T250626604</code></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><strong>Dr. Munmun Mohanty</strong></td>
-                <td>Professor &amp; HOD</td>
-                <td>31/08/2024</td>
-                <td>Ph.D</td>
-                <td><code>T250626605</code></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><strong>Dr. Nargis Begum</strong></td>
-                <td>Associate Professor</td>
-                <td>08/09/2009</td>
-                <td>Ph.D</td>
-                <td><code>T106326601</code></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td><strong>Dr. Sabyasachi Dey</strong></td>
-                <td>Associate Professor</td>
-                <td>06/06/2023</td>
-                <td>Ph.D</td>
-                <td><code>T230626607</code></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><strong>Dr. Dipti Mayee Sahoo</strong></td>
-                <td>Associate Professor</td>
-                <td>05/01/2012</td>
-                <td>Ph.D</td>
-                <td><code>T126726601</code></td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td><strong>Mrs. Evani Pattnaik</strong></td>
-                <td>Assistant Professor</td>
-                <td>08/02/2009</td>
-                <td>MBA</td>
-                <td><code>T096226601</code></td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td><strong>Mrs. Chandramalli Mishra</strong></td>
-                <td>Assistant Professor</td>
-                <td>10/08/2022</td>
-                <td>MBA</td>
-                <td><code>T106126601</code></td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td><strong>Mr. Soumyakanta Samantasinghar</strong></td>
-                <td>Assistant Professor</td>
-                <td>11/04/2012</td>
-                <td>M.Phil</td>
-                <td><code>T130526601</code></td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td><strong>Mrs. Bandita Swain</strong></td>
-                <td>Assistant Professor</td>
-                <td>09/01/2020</td>
-                <td>MBA</td>
-                <td><code>T240626602</code></td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td><strong>Mr. Ashok Kumar Sarangi</strong></td>
-                <td>Assistant Professor</td>
-                <td>10/11/2020</td>
-                <td>MBA</td>
-                <td><code>T240626603</code></td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td><strong>Mr. Srichandan Swain</strong></td>
-                <td>Assistant Professor</td>
-                <td>05/12/2022</td>
-                <td>MBA</td>
-                <td><code>T230626605</code></td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td><strong>Mr. Tushar Ranjan Panda</strong></td>
-                <td>Assistant Professor</td>
-                <td>05/02/2023</td>
-                <td>MBA</td>
-                <td><code>T230626601</code></td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td><strong>Mr. Bikash Jethy</strong></td>
-                <td>Assistant Professor</td>
-                <td>29/08/2024</td>
-                <td>MBA</td>
-                <td><code>T240626609</code></td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td><strong>Mr. Sarbeswar Panda</strong></td>
-                <td>Assistant Professor</td>
-                <td>26/09/2024</td>
-                <td>MBA</td>
-                <td><code>T250626601</code></td>
-              </tr>
-              <tr>
-                <td>15</td>
-                <td><strong>Mr. Rudra Pratap Mohanty</strong></td>
-                <td>Assistant Professor</td>
-                <td>03/10/2024</td>
-                <td>PGDM</td>
-                <td><code>T250626602</code></td>
-              </tr>
-              <tr>
-                <td>16</td>
-                <td><strong>Ms. Nang Trishangi Chanmai</strong></td>
-                <td>Assistant Professor</td>
-                <td>30/09/2024</td>
-                <td>MBA</td>
-                <td><code>T250626603</code></td>
-              </tr>
-              <tr>
-                <td>17</td>
-                <td><strong>Mr. Susil Kumar Mohanty</strong></td>
-                <td>Assistant Professor</td>
-                <td>31/12/2025</td>
-                <td>MBA</td>
-                <td><code>T250626606</code></td>
-              </tr>
-              <tr>
-                <td>18</td>
-                <td><strong>Mr. Umesh Kumar Parimanik</strong></td>
-                <td>Assistant Professor</td>
-                <td>18/04/2026</td>
-                <td>MBA</td>
-                <td><code>T250626607</code></td>
-              </tr>
-            </tbody>
-          </table>
+
+        <!-- Card 2 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/MUNMUN-150x150.jpg" alt="DR. MUNMUN MOHANTY" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">MM</div>
+          </div>
+          <div class="faculty-card-name">DR. MUNMUN MOHANTY</div>
+          <div class="faculty-card-role">Professor</div>
+          <div class="faculty-card-dept">Ph.D · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T240626607</div>
         </div>
-      </section>
+
+        <!-- Card 3 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Nargis-Begam-263x263.jpg" alt="DR. NARGIS BEGUM" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">NB</div>
+          </div>
+          <div class="faculty-card-name">DR. NARGIS BEGUM</div>
+          <div class="faculty-card-role">Associate Professor</div>
+          <div class="faculty-card-dept">Ph.D · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T106326601</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Dr.-Sabyasachi-dey-263x263.jpeg" alt="DR. SABYASACHI DEY" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">SD</div>
+          </div>
+          <div class="faculty-card-name">DR. SABYASACHI DEY</div>
+          <div class="faculty-card-role">Associate Professor</div>
+          <div class="faculty-card-dept">Ph.D · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T230626607</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Dipti-Mayee-Sahoo-Photo2-261x263.jpg" alt="DR. DIPTI MAYEE SAHOO" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">DS</div>
+          </div>
+          <div class="faculty-card-name">DR. DIPTI MAYEE SAHOO</div>
+          <div class="faculty-card-role">Associate Professor</div>
+          <div class="faculty-card-dept">Ph.D · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T126726601</div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/evani-263x263.jpg" alt="MRS. EVANI PATTNAIK" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">EP</div>
+          </div>
+          <div class="faculty-card-name">MRS. EVANI PATTNAIK</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T096226601</div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Chandramali-Mishra-263x263.jpeg" alt="MRS. CHANDRAMALLI MISHRA" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">CM</div>
+          </div>
+          <div class="faculty-card-name">MRS. CHANDRAMALLI MISHRA</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T106126601</div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Soumyakanta-Samanta-singhar-263x263.jpg" alt="MR. SOUMYAKANTA SAMANTASINGHAR" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">SS</div>
+          </div>
+          <div class="faculty-card-name">MR. SOUMYAKANTA SAMANTASINGHAR</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">M.Phil · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T130526601</div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Bandita-Swain-263x263.jpg" alt="MRS. BANDITA SWAIN" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">BS</div>
+          </div>
+          <div class="faculty-card-name">MRS. BANDITA SWAIN</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T240626602</div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Ashok-Sarangi-263x263.jpg" alt="MR. ASHOK KUMAR SARANGI" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">AS</div>
+          </div>
+          <div class="faculty-card-name">MR. ASHOK KUMAR SARANGI</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T240626603</div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/Srichandan-Swain-263x263.jpeg" alt="MR. SRICHANDAN SWAIN" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">SS</div>
+          </div>
+          <div class="faculty-card-name">MR. SRICHANDAN SWAIN</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T230626605</div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <div class="faculty-avatar-initials">TP</div>
+          </div>
+          <div class="faculty-card-name">MR. TUSHAR RANJAN PANDA</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T230626601</div>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/MR.-BIKASH-JETHY-263x263.jpg" alt="MR. BIKASH JETHY" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">BJ</div>
+          </div>
+          <div class="faculty-card-name">MR. BIKASH JETHY</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T240626609</div>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/MR.-SARBESWAR-PANDA-263x263.jpg" alt="MR. SARBESWAR PANDA" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">SP</div>
+          </div>
+          <div class="faculty-card-name">MR. SARBESWAR PANDA</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T250626601</div>
+        </div>
+
+        <!-- Card 15 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/MR.-RUDRA-PRATAP-MOHANTY-263x263.jpg" alt="MR. RUDRA PRATAP MOHANTY" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">RM</div>
+          </div>
+          <div class="faculty-card-name">MR. RUDRA PRATAP MOHANTY</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">PGDM · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T250626602</div>
+        </div>
+
+        <!-- Card 16 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <img src="Public/Faculty/MS.-NANG-TRISHANGI-CHANMAI-263x263.jpg" alt="MS. NANG TRISHANGI CHANMAI" class="faculty-avatar-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="faculty-avatar-initials" style="display:none;">NC</div>
+          </div>
+          <div class="faculty-card-name">MS. NANG TRISHANGI CHANMAI</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: T250626603</div>
+        </div>
+
+        <!-- Card 17 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <div class="faculty-avatar-initials">BM</div>
+          </div>
+          <div class="faculty-card-name">Mr. BIMAL PRASAD MOHAPATRA</div>
+          <div class="faculty-card-role">Associate Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: 1-3646226281</div>
+        </div>
+
+        <!-- Card 18 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <div class="faculty-avatar-initials">AR</div>
+          </div>
+          <div class="faculty-card-name">Dr. ASHOK KUMAR RATH</div>
+          <div class="faculty-card-role">Associate Professor</div>
+          <div class="faculty-card-dept">Ph.D · Faculty of Management Studies</div>
+          <div class="faculty-card-bput">BPUT ID: 1-3388621533</div>
+        </div>
+
+        <!-- Card 19 -->
+        <div class="faculty-card-v2">
+          <div class="faculty-avatar-container">
+            <div class="faculty-avatar-initials">AN</div>
+          </div>
+          <div class="faculty-card-name">MS. ANKITA NAYAK</div>
+          <div class="faculty-card-role">Assistant Professor</div>
+          <div class="faculty-card-dept">MBA · Faculty of Management Studies</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MBA Full Faculty Directory Table -->
+    <section class="section" style="margin-top: 64px;">
+      <div class="section-head">
+        <h2>MBA Faculty Directory</h2>
+        <p style="color:var(--muted)">Complete register of the MBA department academic members.</p>
+      </div>
+      <div class="table-responsive">
+        <table class="faculty-table">
+          <thead>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Qualification</th>
+              <th>BPUT ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>DR PRAVAT KUMAR MOHANTY</strong></td>
+              <td>Professor</td>
+              <td>Ph.D</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>DR. MUNMUN MOHANTY</strong></td>
+              <td>Professor</td>
+              <td>Ph.D</td>
+              <td><code>T240626607</code></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>DR. NARGIS BEGUM</strong></td>
+              <td>Associate Professor</td>
+              <td>Ph.D</td>
+              <td><code>T106326601</code></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>DR. SABYASACHI DEY</strong></td>
+              <td>Associate Professor</td>
+              <td>Ph.D</td>
+              <td><code>T230626607</code></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>DR. DIPTI MAYEE SAHOO</strong></td>
+              <td>Associate Professor</td>
+              <td>Ph.D</td>
+              <td><code>T126726601</code></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><strong>MRS. EVANI PATTNAIK</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T096226601</code></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><strong>MRS. CHANDRAMALLI MISHRA</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T106126601</code></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><strong>MR. SOUMYAKANTA SAMANTASINGHAR</strong></td>
+              <td>Assistant Professor</td>
+              <td>M.Phil</td>
+              <td><code>T130526601</code></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><strong>MRS. BANDITA SWAIN</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T240626602</code></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><strong>MR. ASHOK KUMAR SARANGI</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T240626603</code></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td><strong>MR. SRICHANDAN SWAIN</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T230626605</code></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td><strong>MR. TUSHAR RANJAN PANDA</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T230626601</code></td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td><strong>MR. BIKASH JETHY</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T240626609</code></td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td><strong>MR. SARBESWAR PANDA</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T250626601</code></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td><strong>MR. RUDRA PRATAP MOHANTY</strong></td>
+              <td>Assistant Professor</td>
+              <td>PGDM</td>
+              <td><code>T250626602</code></td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td><strong>MS. NANG TRISHANGI CHANMAI</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td><code>T250626603</code></td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td><strong>Mr. BIMAL PRASAD MOHAPATRA</strong></td>
+              <td>Associate Professor</td>
+              <td>MBA</td>
+              <td><code>1-3646226281</code></td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td><strong>Dr. ASHOK KUMAR RATH</strong></td>
+              <td>Associate Professor</td>
+              <td>Ph.D</td>
+              <td><code>1-3388621533</code></td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td><strong>MS. ANKITA NAYAK</strong></td>
+              <td>Assistant Professor</td>
+              <td>MBA</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <!-- Visiting Faculty / Mentors section removed and integrated directly into directories -->
 
