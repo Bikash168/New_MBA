@@ -940,11 +940,22 @@ img {
   .spec-box {
     grid-column: span 1 !important;
   }
+  .vm-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
 }
 
 @media (max-width: 768px) {
   .vm-divider-line {
     display: none !important;
+  }
+  .vm-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .vm-card {
+    padding: 24px 20px !important;
   }
   .rec-section {
     padding: 48px 20px !important;
