@@ -1257,9 +1257,13 @@ html, body {
   overflow-x: hidden !important;
 }
 
-img, video, iframe, embed, object {
+img, video {
   max-width: 100% !important;
   height: auto;
+}
+
+iframe, embed, object {
+  max-width: 100% !important;
 }
 
 /* Container Fluidity */
@@ -1306,13 +1310,31 @@ table.responsive-table {
 
 /* Universal PDF & Embedded Document Responsive Viewer */
 .pdf-viewer-container,
-.pdf-container,
-iframe[src*=".pdf"],
-object[type="application/pdf"] {
+.pdf-container {
   width: 100% !important;
   max-width: 100% !important;
+  height: 750px !important;
+  min-height: 500px;
   border-radius: var(--radius-md, 8px) !important;
   box-sizing: border-box !important;
+  background: #ffffff !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.pdf-viewer-container iframe,
+.pdf-container iframe,
+iframe[src*=".pdf"],
+iframe[src*="heyzine"],
+object[type="application/pdf"],
+embed[type="application/pdf"] {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  border: none !important;
+  border-radius: var(--radius-md, 8px) !important;
+  box-sizing: border-box !important;
+  display: block !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1446,10 +1468,12 @@ object[type="application/pdf"] {
   }
 
   /* PDF Viewers on Tablet */
+  .pdf-viewer-container,
+  .pdf-container,
   .pdf-viewer-container iframe,
   iframe[src*=".pdf"],
   object[type="application/pdf"] {
-    height: 520px !important;
+    height: 540px !important;
   }
 }
 
@@ -1544,10 +1568,12 @@ object[type="application/pdf"] {
   }
 
   /* PDF Viewers on Mobile */
+  .pdf-viewer-container,
+  .pdf-container,
   .pdf-viewer-container iframe,
   iframe[src*=".pdf"],
   object[type="application/pdf"] {
-    height: 420px !important;
+    height: 440px !important;
   }
 
   /* Modals on Mobile */
@@ -1605,10 +1631,12 @@ object[type="application/pdf"] {
   }
 
   /* PDF Viewers on Small Mobile */
+  .pdf-viewer-container,
+  .pdf-container,
   .pdf-viewer-container iframe,
   iframe[src*=".pdf"],
   object[type="application/pdf"] {
-    height: 360px !important;
+    height: 380px !important;
   }
 }
 
