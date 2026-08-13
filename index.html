@@ -2939,33 +2939,6 @@
       const diff = touchX - e.changedTouches[0].screenX;
       if (Math.abs(diff) > 40) changeSlide(diff > 0 ? 1 : -1);
     }, { passive: true });
-
-    /* ── Hamburger ── */
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-
-    hamburger.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-
-    document.querySelectorAll('.mobile-toggle').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault(); e.stopPropagation();
-        const sub = document.getElementById(btn.dataset.target);
-        const isOpen = sub.classList.toggle('open');
-        btn.textContent = isOpen ? '−' : '+';
-      });
-    });
-
-    document.querySelectorAll('.mobile-nav a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
   </script>
 
   <!-- TESTIMONIALS SLIDER JS -->

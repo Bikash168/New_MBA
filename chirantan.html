@@ -609,39 +609,6 @@
   <footer class="footer">
     © 2026 Trident School of Business Administration · Bhubaneswar, Odisha
   </footer>
-
-  <script>
-    /* Mobile nav triggers */
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-
-    hamburger.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-
-    document.querySelectorAll('.mobile-toggle, .mn-row > a[href="#"]').forEach(el => {
-      el.addEventListener('click', e => {
-        e.preventDefault(); e.stopPropagation();
-        const row = el.closest('.mn-row');
-        const btn = row.querySelector('.mobile-toggle');
-        const sub = document.getElementById(btn.dataset.target);
-        const isOpen = sub.classList.toggle('open');
-        btn.textContent = isOpen ? '−' : '+';
-      });
-    });
-
-    document.querySelectorAll('.mobile-nav a').forEach(a => {
-      if (a.getAttribute('href') !== '#') {
-        a.addEventListener('click', () => {
-          mobileNav.classList.remove('open');
-          hamburger.classList.remove('open');
-          document.body.style.overflow = '';
-        });
-      }
-    });
-  </script>
 </body>
 </html>
 

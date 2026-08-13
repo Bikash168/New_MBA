@@ -3,7 +3,7 @@
  * Enables scroll-reveal viewport entries and interactive micro-animations.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initAll() {
   // Setup custom logo layout matching user screenshot
   setupCustomLogoStyle();
 
@@ -33,7 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Replace ampersands with styled span elements globally
   replaceAmpersands();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
+}
 
 /**
  * Automatically applies scroll-reveal styles and staggering delays
