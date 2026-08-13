@@ -1361,6 +1361,24 @@ iframe, embed, object {
   box-sizing: border-box !important;
 }
 
+/* Sticky Media & Photo Sidebars on Desktop */
+@media (min-width: 993px) {
+  .layout-grid,
+  .info-grid,
+  .about-grid {
+    align-items: start !important;
+  }
+
+  .innovation-media-box,
+  .layout-grid > .innovation-media-box,
+  .seminar-media-column,
+  .sip-media-column {
+    position: sticky !important;
+    top: calc(var(--nav-h, 72px) + 32px) !important;
+    align-self: start !important;
+  }
+}
+
 /* Universal Responsive Table System */
 .table-responsive {
   width: 100% !important;
