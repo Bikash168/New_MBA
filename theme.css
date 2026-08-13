@@ -1247,5 +1247,410 @@ body:has(.mobile-nav.open) nav {
   border-color: var(--white) !important;
 }
 
+/* ==========================================================================
+   5. MASTER RESPONSIVE SYSTEM FOR ALL DEVICES (320px to 1400px+)
+   ========================================================================== */
+
+/* Universal Containment & Media Safeguards */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+img, video, iframe, embed, object {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* Container Fluidity */
+.container, .main-container, .page-container, .section-container {
+  width: 100% !important;
+  max-width: 1320px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+}
+
+/* Universal Responsive Table System */
+.table-responsive {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin-bottom: 24px !important;
+  border-radius: var(--radius-md, 8px) !important;
+  box-shadow: 0 2px 12px rgba(11, 31, 58, 0.05) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--line, #E8E5DF) !important;
+}
+
+.table-responsive > table,
+table.responsive-table {
+  width: 100% !important;
+  min-width: 600px;
+  border-collapse: collapse !important;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--gold, #C8962A);
+  border-radius: 4px;
+}
+
+/* Universal PDF & Embedded Document Responsive Viewer */
+.pdf-viewer-container,
+.pdf-container,
+iframe[src*=".pdf"],
+object[type="application/pdf"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: var(--radius-md, 8px) !important;
+  box-sizing: border-box !important;
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT 1: EXTRA LARGE DESKTOPS (>= 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+  .hero-slider, header.hero {
+    min-height: 520px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT 2: LAPTOPS & SMALL DESKTOPS (992px - 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  .container, .main-container, .page-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .nav-logo {
+    margin-right: 16px !important;
+  }
+
+  .nav-menu > li > a {
+    padding: 10px 12px !important;
+    font-size: 13.5px !important;
+  }
+
+  /* Grid scaling */
+  .program-cards, .programs-grid, .curriculum-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .footer-grid, .footer-content {
+    gap: 28px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT 3: TABLETS & IPADS (768px - 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  /* Navigation Drawer Trigger */
+  .nav-menu {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .mobile-nav {
+    display: block !important;
+  }
+  .nav-button {
+    display: none !important;
+  }
+
+  /* Section Padding */
+  section, .section, .hero-section, .about-section, .features-section, .testi-section, .rec-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* Grid Layout Fallbacks to 2 Columns or 1 Column */
+  .notice-grid,
+  .editorial-grid,
+  .highlights-grid,
+  .about-grid,
+  .vision-mission-grid,
+  .leadership-grid,
+  .governing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .faculty-grid,
+  .infrastructure-grid,
+  .club-grid,
+  .sports-grid,
+  .fest-grid,
+  .gallery-grid,
+  .mou-grid,
+  .tile-grid,
+  .snapshot-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .placement-stats-row,
+  .stats-grid,
+  .stat-board-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .recruiter-grid, .logo-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .footer-grid, .footer-content {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
+
+  /* Hero Section adjustments */
+  .hero-content, .slide-content {
+    bottom: 80px !important;
+    padding: 0 24px !important;
+    text-align: left !important;
+  }
+
+  .hero-media-wrap, .about-img-wrap {
+    margin-top: 24px;
+  }
+
+  .floating-panel {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+  }
+
+  /* PDF Viewers on Tablet */
+  .pdf-viewer-container iframe,
+  iframe[src*=".pdf"],
+  object[type="application/pdf"] {
+    height: 520px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT 4: MOBILE DEVICES / SMARTPHONES (576px - 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --nav-h: 64px !important;
+    --font-size-body: 16px !important;
+  }
+
+  nav {
+    padding: 0 16px !important;
+    height: var(--nav-h) !important;
+  }
+
+  .topbar {
+    padding: 6px 16px !important;
+    justify-content: flex-end !important;
+  }
+  .topbar-left {
+    display: none !important;
+  }
+
+  /* Sections Padding */
+  section, .section, .hero-section, .about-section, .features-section, .testi-section, .rec-section {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* All Grids collapse to Single Column on Mobile */
+  .strengths-grid,
+  .program-cards,
+  .programs-grid,
+  .curriculum-grid,
+  .faculty-grid,
+  .infrastructure-grid,
+  .club-grid,
+  .sports-grid,
+  .fest-grid,
+  .gallery-grid,
+  .mou-grid,
+  .tile-grid,
+  .snapshot-grid,
+  .placement-stats-row,
+  .stats-grid,
+  .stat-board-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .recruiter-grid, .logo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .footer-grid, .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: left !important;
+  }
+
+  /* Flex items stack */
+  .btn-group, .hero-actions, .cta-actions, .action-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .btn-group .btn, .btn-group a, .hero-actions a, .action-buttons a, .btn-primary, .btn-secondary, .btn-outline {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Slide Content Scaling */
+  .slide-content {
+    bottom: 60px !important;
+    padding: 0 16px !important;
+  }
+
+  .slide-title, .hero-title, h1, .h1 {
+    font-size: clamp(26px, 7vw, 36px) !important;
+  }
+
+  .slide-desc, .hero-desc, p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* PDF Viewers on Mobile */
+  .pdf-viewer-container iframe,
+  iframe[src*=".pdf"],
+  object[type="application/pdf"] {
+    height: 420px !important;
+  }
+
+  /* Modals on Mobile */
+  .apply-modal-card, .brochure-modal-card {
+    max-width: calc(100vw - 32px) !important;
+    padding: 24px 18px !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT 5: SMALL MOBILE PHONES (376px - 575px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 575px) {
+  .logo-layout-new {
+    gap: 6px !important;
+    margin-right: 0 !important;
+  }
+
+  .logo-trident {
+    font-size: 16px !important;
+  }
+
+  .logo-divider {
+    font-size: 16px !important;
+    margin: 0 1px !important;
+  }
+
+  .logo-school {
+    font-size: 13px !important;
+  }
+
+  .logo-img {
+    height: 34px !important;
+  }
+
+  .hamburger span {
+    width: 22px !important;
+    height: 2px !important;
+  }
+
+  .topbar {
+    display: none !important; /* Hide topbar on very small screens to maximize vertical canvas */
+  }
+
+  .slide-content {
+    bottom: 40px !important;
+  }
+
+  .slider-arrow {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 14px !important;
+  }
+
+  /* PDF Viewers on Small Mobile */
+  .pdf-viewer-container iframe,
+  iframe[src*=".pdf"],
+  object[type="application/pdf"] {
+    height: 360px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT 6: EXTRA SMALL MOBILE PHONES (320px - 375px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 375px) {
+  nav {
+    padding: 0 10px !important;
+  }
+
+  .logo-trident {
+    font-size: 14px !important;
+  }
+
+  .logo-divider {
+    font-size: 14px !important;
+  }
+
+  .logo-school {
+    font-size: 11px !important;
+  }
+
+  .logo-img {
+    height: 28px !important;
+  }
+
+  section, .section, .hero-section, .about-section, .features-section, .testi-section, .rec-section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .apply-modal-card, .brochure-modal-card {
+    max-width: calc(100vw - 16px) !important;
+    padding: 20px 14px !important;
+  }
+
+  .recruiter-grid, .logo-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
 
 

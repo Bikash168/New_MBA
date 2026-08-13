@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Setup custom logo layout matching user screenshot
   setupCustomLogoStyle();
 
+  // Initialize global mobile navigation drawer & toggles
+  initMobileNav();
+
   // 1. Programmatically apply reveal animations to existing containers and lists
   setupDynamicAnimations();
 
@@ -692,5 +695,54 @@ function setupCustomLogoStyle() {
     `;
   });
 }
+
+/**
+ * Initializes global mobile navigation drawer toggle, links auto-closing,
+ * and mobile sub-accordion menus for small device viewports.
+ */
+function initMobileNav() {
+  const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobileNav') || document.querySelector('.mobile-nav');
+
+  if (hamburger && mobileNav) {
+    if (hamburger.dataset.navBound) return;
+    hamburger.dataset.navBound = 'true';
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Close mobile nav when clicking normal navigation links inside
+    const mobileLinks = mobileNav.querySelectorAll('a:not(.mobile-toggle-link)');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Handle mobile submenu accordion toggle (+ / −) buttons
+    const toggles = mobileNav.querySelectorAll('.mobile-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const parentLi = toggle.closest('li');
+        const sub = parentLi ? parentLi.querySelector('.mobile-sub') : null;
+        if (sub) {
+          const isOpen = sub.classList.toggle('open');
+          toggle.textContent = isOpen ? '−' : '+';
+          toggle.style.background = isOpen ? 'var(--gold)' : '';
+          toggle.style.color = isOpen ? 'var(--navy)' : '';
+        }
+      });
+    });
+  }
+}
+
 
 
