@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campus Life — Trident School of Business Administration</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
       --navy: #0B1F3A;
       --navy-light: #152E4D;
@@ -23,15 +33,18 @@
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       --nav-h: 72px;
     }
-    
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
       background: var(--offwhite);
       overflow-x: hidden;
     }
-    
+
     /* Topbar matching index.html */
     .topbar {
       background: var(--navy);
@@ -46,9 +59,22 @@
       gap: 8px;
       flex-wrap: wrap;
     }
-    .topbar-left { display: flex; gap: 16px; }
-    .topbar-right a { color: var(--gold-soft); text-decoration: none; margin-left: 14px; font-weight: 600; }
-    .topbar-right a:hover { color: var(--white); }
+
+    .topbar-left {
+      display: flex;
+      gap: 16px;
+    }
+
+    .topbar-right a {
+      color: var(--gold-soft);
+      text-decoration: none;
+      margin-left: 14px;
+      font-weight: 600;
+    }
+
+    .topbar-right a:hover {
+      color: var(--white);
+    }
 
     /* Sticky Navbar matching index.html */
     nav {
@@ -64,16 +90,51 @@
       box-shadow: 0 2px 18px rgba(11, 31, 58, .12);
       border-bottom: 3px solid var(--gold);
     }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-    .logo-emblem {
-      width: 46px; height: 46px; background: var(--navy); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px;
-      color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px var(--gold-lt);
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
     }
-    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-    .logo-text .school-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
-    .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
+
+    .logo-emblem {
+      width: 46px;
+      height: 46px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--gold);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--gold-lt);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-text .school-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .logo-text .tagline {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
 
     /* Desktop menu */
     .nav-menu {
@@ -82,9 +143,11 @@
       list-style: none;
       gap: 2px;
     }
+
     .nav-menu>li {
       position: relative;
     }
+
     .nav-menu>li>a {
       display: flex;
       align-items: center;
@@ -100,16 +163,19 @@
       transition: var(--transition);
       touch-action: manipulation;
     }
+
     .nav-menu>li>a:hover,
     .nav-menu>li:hover>a {
       background: var(--navy);
       color: var(--gold-lt);
     }
+
     .has-drop>a::after {
       content: ' ▾';
       font-size: 9px;
       opacity: .55;
     }
+
     .dropdown {
       display: none;
       position: absolute;
@@ -124,6 +190,7 @@
       z-index: 200;
       animation: fadeDown .18s ease;
     }
+
     .dropdown::before {
       content: '';
       position: absolute;
@@ -133,13 +200,23 @@
       height: 8px;
       background: transparent;
     }
+
     @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-6px) }
-      to { opacity: 1; transform: none }
+      from {
+        opacity: 0;
+        transform: translateY(-6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
     }
+
     .nav-menu>li:hover .dropdown {
       display: block;
     }
+
     .dropdown li a {
       display: block;
       padding: 14px 18px;
@@ -151,54 +228,165 @@
       transition: var(--transition);
       touch-action: manipulation;
     }
+
     .dropdown li a:hover {
       background: var(--offwhite);
       color: var(--navy);
       padding-left: 22px;
     }
+
     .dropdown li a.active {
       color: var(--gold);
       font-weight: 700;
     }
 
     .nav-button {
-      background: var(--gold) !important; color: #ffffff !important;
-      font-weight: 700 !important; padding: 9px 18px !important;
-      border-radius: 4px !important; letter-spacing: .04em;
-      font-size: 12.5px; text-decoration: none; display: flex; align-items: center;
+      background: var(--gold) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      padding: 9px 18px !important;
+      border-radius: 4px !important;
+      letter-spacing: .04em;
+      font-size: 12.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
       transition: var(--transition);
     }
-    .nav-button:hover { background: var(--navy) !important; color: var(--gold-soft) !important; }
+
+    .nav-button:hover {
+      background: var(--navy) !important;
+      color: var(--gold-soft) !important;
+    }
 
     .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 4px;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
     }
-    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: transform .3s, opacity .3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
 
     /* Mobile Drawer */
     .mobile-nav {
-      display: none; position: fixed; inset: 0;
-      background: var(--navy); z-index: 1050; overflow-y: auto;
-      padding: 80px 24px 40px; transform: translateX(100%);
-      opacity: 0; visibility: hidden;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 1050;
+      overflow-y: auto;
+      padding: 80px 24px 40px;
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
       transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
     }
-    .mobile-nav.open { transform: translateX(0); opacity: 1; visibility: visible; }
-    .mobile-nav-list { list-style: none; }
-    .mobile-nav-list>li { border-bottom: 1px solid rgba(255,255,255,.08); }
-    .mobile-nav-list>li>.mn-row { display: flex; justify-content: space-between; align-items: center; }
-    .mobile-nav-list>li>.mn-row>a { display: flex; align-items: center; width: 100%; padding: 16px 4px; font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; touch-action: manipulation; }
-    .mobile-toggle { background: none; border: none; color: var(--gold-lt); font-size: 22px; line-height: 1; cursor: pointer; padding: 10px 8px; }
-    .mobile-sub { display: none; list-style: none; padding: 0 0 10px 16px; }
-    .mobile-sub.open { display: block; }
-    .mobile-sub li a { display: block; padding: 12px 6px; font-size: 14px; color: rgba(255,255,255,.75); text-decoration: none; touch-action: manipulation; }
-    .mobile-sub li a:hover { color: var(--gold-lt); }
-    .mobile-sub li a.active { color: var(--gold-lt); font-weight: 700; }
-    .mobile-apply { display: block; margin-top: 24px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; text-align: center; padding: 14px; border-radius: 6px; text-decoration: none; }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+    }
+
+    .mobile-nav-list>li {
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .mobile-nav-list>li>.mn-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-nav-list>li>.mn-row>a {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 16px 4px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      touch-action: manipulation;
+    }
+
+    .mobile-toggle {
+      background: none;
+      border: none;
+      color: var(--gold-lt);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 10px 8px;
+    }
+
+    .mobile-sub {
+      display: none;
+      list-style: none;
+      padding: 0 0 10px 16px;
+    }
+
+    .mobile-sub.open {
+      display: block;
+    }
+
+    .mobile-sub li a {
+      display: block;
+      padding: 12px 6px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      text-decoration: none;
+      touch-action: manipulation;
+    }
+
+    .mobile-sub li a:hover {
+      color: var(--gold-lt);
+    }
+
+    .mobile-sub li a.active {
+      color: var(--gold-lt);
+      font-weight: 700;
+    }
+
+    .mobile-apply {
+      display: block;
+      margin-top: 24px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      padding: 14px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
 
     /* Hero Section */
     .hero-section {
@@ -208,6 +396,7 @@
       text-align: center;
       position: relative;
     }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -223,6 +412,7 @@
       border-radius: 20px;
       margin-bottom: 24px;
     }
+
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(34px, 4.5vw, 54px);
@@ -230,7 +420,11 @@
       font-weight: 800;
       margin-bottom: 24px;
     }
-    .hero-title span { color: var(--gold-soft); }
+
+    .hero-title span {
+      color: var(--gold-soft);
+    }
+
     .hero-desc {
       font-size: 15.5px;
       line-height: 1.8;
@@ -253,17 +447,17 @@
       gap: 110px;
       margin-bottom: 96px;
     }
-    
+
     .campus-showcase-item {
       display: flex;
       align-items: center;
       gap: 64px;
     }
-    
+
     .campus-showcase-item.reverse {
       flex-direction: row-reverse;
     }
-    
+
     .showcase-media {
       flex: 1.1;
       position: relative;
@@ -273,7 +467,7 @@
       border: 3px solid rgba(11, 31, 58, 0.05);
       transition: var(--transition-smooth);
     }
-    
+
     .showcase-media::before {
       content: '';
       position: absolute;
@@ -282,7 +476,7 @@
       mix-blend-mode: multiply;
       pointer-events: none;
     }
-    
+
     .showcase-media img {
       width: 100%;
       height: 400px;
@@ -290,11 +484,11 @@
       display: block;
       transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    
+
     .campus-showcase-item:hover .showcase-media img {
       transform: scale(1.03);
     }
-    
+
     .showcase-info {
       flex: 0.9;
       display: flex;
@@ -302,13 +496,13 @@
       gap: 20px;
       text-align: left;
     }
-    
+
     .showcase-header {
       display: flex;
       align-items: center;
       gap: 18px;
     }
-    
+
     .showcase-icon-wrap {
       width: 58px;
       height: 58px;
@@ -322,24 +516,24 @@
       box-shadow: var(--shadow-sm);
       flex-shrink: 0;
     }
-    
+
     .showcase-icon {
       font-size: 28px;
       line-height: 1;
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    
+
     .campus-showcase-item:hover .showcase-icon-wrap {
       background: var(--navy);
       border-color: var(--navy);
       box-shadow: var(--shadow-md);
     }
-    
+
     .campus-showcase-item:hover .showcase-icon {
       transform: scale(1.15) rotate(8deg);
       color: var(--gold-soft);
     }
-    
+
     .showcase-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
@@ -347,14 +541,14 @@
       margin: 0;
       font-weight: 700;
     }
-    
+
     .showcase-info p {
       font-size: 14.5px;
       color: var(--muted);
       line-height: 1.8;
       margin: 0;
     }
-    
+
     /* Showcase Features - Styled Grid of Chips */
     .showcase-features {
       list-style: none;
@@ -363,7 +557,7 @@
       gap: 12px;
       margin-top: 8px;
     }
-    
+
     .showcase-features li {
       font-size: 13px;
       color: var(--navy);
@@ -377,7 +571,7 @@
       border-radius: var(--radius-sm);
       transition: var(--transition-quick);
     }
-    
+
     .showcase-features li::before {
       content: '✓';
       color: var(--gold);
@@ -392,7 +586,7 @@
       border-radius: 50%;
       flex-shrink: 0;
     }
-    
+
     .campus-showcase-item:hover .showcase-features li {
       background: var(--white);
       border-color: rgba(200, 150, 42, 0.2);
@@ -407,7 +601,7 @@
       gap: 10px;
       margin-top: 10px;
     }
-    
+
     .sip-domain-tag {
       display: flex;
       align-items: center;
@@ -422,7 +616,7 @@
       box-shadow: var(--shadow-sm);
       transition: var(--transition-quick);
     }
-    
+
     .sip-domain-tag:hover {
       transform: translateY(-2px);
       border-color: var(--gold);
@@ -438,14 +632,14 @@
       margin-bottom: 10px;
       display: block;
     }
-    
+
     .company-chips-container {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 8px;
     }
-    
+
     .company-chip {
       display: inline-flex;
       align-items: center;
@@ -460,7 +654,7 @@
       box-shadow: var(--shadow-sm);
       cursor: default;
     }
-    
+
     .company-chip:hover {
       background: var(--navy);
       border-color: var(--navy);
@@ -476,7 +670,7 @@
       gap: 14px;
       margin-top: 12px;
     }
-    
+
     .seminar-card {
       background: var(--white);
       border-radius: var(--radius-sm);
@@ -486,40 +680,42 @@
       transition: var(--transition-smooth);
       position: relative;
     }
-    
+
     .seminar-card::before {
       content: '';
       position: absolute;
-      left: 0; top: 0; bottom: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
       width: 4px;
       border-radius: var(--radius-sm) 0 0 var(--radius-sm);
       transition: var(--transition-smooth);
     }
-    
+
     .seminar-card.in-house::before {
       background: var(--gold);
     }
-    
+
     .seminar-card.national::before {
       background: var(--navy);
     }
-    
+
     .seminar-card:hover {
       transform: translateX(6px);
       box-shadow: var(--shadow-md);
       border-color: rgba(200, 150, 42, 0.2);
     }
-    
+
     .seminar-card.in-house:hover::before {
       width: 6px;
       background: var(--navy);
     }
-    
+
     .seminar-card.national:hover::before {
       width: 6px;
       background: var(--gold);
     }
-    
+
     .seminar-meta {
       display: flex;
       justify-content: space-between;
@@ -528,7 +724,7 @@
       flex-wrap: wrap;
       gap: 6px;
     }
-    
+
     .seminar-tag {
       font-size: 11px;
       font-weight: 700;
@@ -536,13 +732,13 @@
       letter-spacing: 0.05em;
       color: var(--gold);
     }
-    
+
     .seminar-date {
       font-size: 11px;
       font-weight: 600;
       color: var(--muted);
     }
-    
+
     .seminar-title {
       font-family: 'Playfair Display', serif;
       font-size: 16px;
@@ -550,14 +746,14 @@
       color: var(--navy);
       margin-bottom: 6px;
     }
-    
+
     .seminar-speaker {
       font-size: 13px;
       font-weight: 600;
       color: var(--text);
       margin-bottom: 4px;
     }
-    
+
     .seminar-desc {
       font-size: 13px;
       color: var(--muted);
@@ -569,18 +765,21 @@
     .sip-media-column {
       flex: 1.1;
     }
+
     .seminar-media-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       align-content: start;
     }
-    
+
     @media (min-width: 993px) {
+
       .campus-showcase-item.seminars-item,
       .campus-showcase-item.sip-item {
         align-items: flex-start;
       }
+
       .seminar-media-column,
       .sip-media-column {
         position: sticky;
@@ -588,7 +787,7 @@
         align-self: flex-start;
       }
     }
-    
+
     .seminar-media-card {
       background: var(--white);
       border-radius: var(--radius-md);
@@ -599,17 +798,17 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     .seminar-media-card.span-2 {
       grid-column: span 2;
     }
-    
+
     .seminar-media-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
       border-color: rgba(200, 150, 42, 0.2);
     }
-    
+
     .seminar-media-card img {
       width: 100%;
       height: 160px;
@@ -617,15 +816,15 @@
       display: block;
       transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    
+
     .seminar-media-card.span-2 img {
       height: 240px;
     }
-    
+
     .seminar-media-card:hover img {
       transform: scale(1.03);
     }
-    
+
     .seminar-media-caption {
       display: block;
       font-size: 11px;
@@ -637,18 +836,23 @@
       border-top: 1px solid rgba(11, 31, 58, 0.04);
       margin-top: auto;
     }
-    
+
     @media (max-width: 992px) {
-      .campus-showcase-item, .campus-showcase-item.reverse {
+
+      .campus-showcase-item,
+      .campus-showcase-item.reverse {
         flex-direction: column;
         gap: 32px;
       }
+
       .showcase-media img {
         height: 280px;
       }
+
       .showcase-features {
         grid-template-columns: 1fr;
       }
+
       .sip-domains-grid {
         grid-template-columns: 1fr;
       }
@@ -665,6 +869,7 @@
       border: 1px solid rgba(200, 150, 42, 0.3);
       margin-bottom: 80px;
     }
+
     .callout-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 24px;
@@ -672,12 +877,13 @@
       font-weight: 700;
       margin-bottom: 12px;
     }
+
     .callout-box p {
       font-size: 14.5px;
       line-height: 1.7;
       max-width: 800px;
       margin: 0 auto;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
     }
 
     /* Footer matching index.html */
@@ -694,22 +900,49 @@
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .campus-grid { grid-template-columns: 1fr; }
+      .campus-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .topbar { padding: 8px 24px; }
-      .nav-menu { display: none; }
-      .hamburger { display: flex; }
-      .mobile-nav { display: block; }
-      .hero-section { padding: 64px 24px 72px; }
-      .section-container { margin: 64px auto; }
-      .campus-card { padding: 32px 24px; }
+      nav {
+        padding: 0 24px;
+      }
+
+      .topbar {
+        padding: 8px 24px;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .hero-section {
+        padding: 64px 24px 72px;
+      }
+
+      .section-container {
+        margin: 64px auto;
+      }
+
+      .campus-card {
+        padding: 32px 24px;
+      }
     }
   </style>
   <link rel="stylesheet" href="theme.css">
   <script type="module" src="animations.js"></script>
 </head>
+
 <body>
 
   <!-- TOPBAR -->
@@ -729,73 +962,75 @@
       <span class="eyebrow">Student Environment</span>
       <h1 class="hero-title">Life at <span>Trident Campus</span></h1>
       <p class="hero-desc">
-        Explore academic resources, centrally air-conditioned spaces, sports platforms, and dynamic student-led conclaves.
+        Explore academic resources, centrally air-conditioned spaces, sports platforms, and dynamic student-led
+        conclaves.
       </p>
     </section>
 
-  <!-- STICKY NAVBAR -->
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Trident School of Business Logo" class="logo-img">
-      <div class="logo-text">
-        <span class="school-name">Trident School of Business</span>
-        <span class="tagline">Administration · Est. 2008</span>
-      </div>
-    </a>
+    <!-- STICKY NAVBAR -->
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Trident School of Business Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="school-name">Trident School of Business</span>
+          <span class="tagline">Administration · Est. 2008</span>
+        </div>
+      </a>
 
-    <ul class="nav-menu">
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="admission.html">Admission</a></li>
-      <li class="has-drop"><a href="#">Faculty &amp; Research</a>
-        <ul class="dropdown">
-          <li><a href="faculty.html">Faculty</a></li>
-          <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
-          <li><a href="journal-of-business-governance.html">Journal of Business Governance</a></li>
-          <li><a href="mou.html">MOU</a></li>
-          <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
-          <li><a href="life-membership.html">Life Membership</a></li>
-          <li><a href="nodal-research.html">Nodal Center of Research</a></li>
-          <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
-        </ul>
-      </li>
-      <li><a href="placement.html">Placement</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="campus-life.html" class="active">Campus Life</a></li>
-    </ul>
+      <ul class="nav-menu">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li class="has-drop"><a href="#">Faculty &amp; Research</a>
+          <ul class="dropdown">
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
+            <li><a href="journal-of-business-governance.html">Journal of Business Governance</a></li>
+            <li><a href="mou.html">MOU</a></li>
+            <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
+            <li><a href="life-membership.html">Life Membership</a></li>
+            <li><a href="nodal-research.html">Nodal Center of Research</a></li>
+            <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
+          </ul>
+        </li>
+        <li><a href="placement.html">Placement</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="campus-life.html" class="active">Campus Life</a></li>
+      </ul>
 
-    <a href="index.html#admissions" class="nav-button">Apply Now</a>
+      <a href="index.html#admissions" class="nav-button">Apply Now</a>
 
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-  <!-- MOBILE NAVIGATION DRAWER -->
-  <div class="mobile-nav" id="mobileNav">
-    <ul class="mobile-nav-list">
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="admission.html">Admission</a></li>
-      <li>
-        <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle" data-target="sub4">+</button></div>
-        <ul class="mobile-sub" id="sub4">
-          <li><a href="faculty.html">Faculty</a></li>
-          <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
-          <li><a href="journal-of-business-governance.html">Journal of Business Governance</a></li>
-          <li><a href="mou.html">MOU</a></li>
-          <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
-          <li><a href="life-membership.html">Life Membership</a></li>
-          <li><a href="nodal-research.html">Nodal Center of Research</a></li>
-          <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
-        </ul>
-      </li>
-      <li><a href="placement.html">Placement</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="campus-life.html" class="active">Campus Life</a></li>
-    </ul>
-    <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
-  </div>
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-nav" id="mobileNav">
+      <ul class="mobile-nav-list">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li>
+          <div class="mn-row"><a href="#">Faculty &amp; Research</a><button class="mobile-toggle"
+              data-target="sub4">+</button></div>
+          <ul class="mobile-sub" id="sub4">
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="chirantan.html">Chirantan – Biannual Newsletter</a></li>
+            <li><a href="journal-of-business-governance.html">Journal of Business Governance</a></li>
+            <li><a href="mou.html">MOU</a></li>
+            <li><a href="mdp.html">Management Development Programme (MDP)</a></li>
+            <li><a href="life-membership.html">Life Membership</a></li>
+            <li><a href="nodal-research.html">Nodal Center of Research</a></li>
+            <li><a href="teaching-innovation.html">Teaching Innovation</a></li>
+          </ul>
+        </li>
+        <li><a href="placement.html">Placement</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="campus-life.html" class="active">Campus Life</a></li>
+      </ul>
+      <a href="index.html#admissions" class="mobile-apply">Apply Now</a>
+    </div>
 
 
     <!-- CAMPUS LIFE GRID -->
@@ -812,7 +1047,9 @@
               <h3>Academic Infrastructure</h3>
             </div>
             <p>
-              Trident features centrally air-conditioned academic blocks and tiered lecture theatres designed for modern pedagogy. Interactive displays, high-speed intranet terminals, and visual aids keep classrooms fully connected for outcome-based studies.
+              Trident features centrally air-conditioned academic blocks and tiered lecture theatres designed for modern
+              pedagogy. Interactive displays, high-speed intranet terminals, and visual aids keep classrooms fully
+              connected for outcome-based studies.
             </p>
             <ul class="showcase-features">
               <li>Centrally Air-Conditioned Blocks</li>
@@ -834,7 +1071,9 @@
               <h3>Trident School of Business Knowledge Hub (Library)</h3>
             </div>
             <p>
-              The library acts as a core learning repository, housing thousands of physical textbooks, business cases, and references. Students have digital portal subscriptions to leading international management journals, databases, and e-books.
+              The library acts as a core learning repository, housing thousands of physical textbooks, business cases,
+              and references. Students have digital portal subscriptions to leading international management journals,
+              databases, and e-books.
             </p>
             <ul class="showcase-features">
               <li>Extensive Reference Catalog</li>
@@ -856,7 +1095,9 @@
               <h3>Clubs &amp; Recreation</h3>
             </div>
             <p>
-              A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the campus.
+              A vibrant student-driven environment supported by 10 specialized business clubs. These clubs promote
+              peer-learning and leadership skills, backed by sports fields and recreational activity spaces across the
+              campus.
             </p>
             <ul class="showcase-features">
               <li>Fintech, BFSI, &amp; Strategy</li>
@@ -878,7 +1119,9 @@
               <h3>Annual Conclaves &amp; Fests</h3>
             </div>
             <p>
-              Students drive major events annually, including National Marketing, HR, and Finance Conclaves. The fests provide platform for creative expressions, budget presentations, inter-institutional games, and cultural performances.
+              Students drive major events annually, including National Marketing, HR, and Finance Conclaves. The fests
+              provide platform for creative expressions, budget presentations, inter-institutional games, and cultural
+              performances.
             </p>
             <ul class="showcase-features">
               <li>National Specialization Conclaves</li>
@@ -900,10 +1143,14 @@
               <h3>Industrial Visits</h3>
             </div>
             <p>
-              The MBA Department of Trident Academy of Technology regularly organises industrial visits to bridge the gap between classroom learning and real-world business practices. These visits provide students with valuable exposure to corporate operations, manufacturing processes, supply chain management, marketing strategies, and organisational behaviour in action.
+              The MBA Department of Trident Academy of Technology regularly organises industrial visits to bridge the
+              gap between classroom learning and real-world business practices. These visits provide students with
+              valuable exposure to corporate operations, manufacturing processes, supply chain management, marketing
+              strategies, and organisational behaviour in action.
             </p>
             <p>
-              As part of the experiential learning approach, students interact with industry experts, observe management practices, and gain insights into operational challenges and strategic decision-making.
+              As part of the experiential learning approach, students interact with industry experts, observe management
+              practices, and gain insights into operational challenges and strategic decision-making.
             </p>
             <ul class="showcase-features">
               <li>Real-World Practice Exposure</li>
@@ -917,18 +1164,23 @@
         <!-- Entrepreneurship, Innovation & Incubation Initiatives -->
         <div class="campus-showcase-item">
           <div class="showcase-media scroll-reveal-scale">
-            <img src="Public/entrepreneurship_incubation.jpg" alt="Entrepreneurship, Innovation and Incubation Initiatives at Trident">
+            <img src="Public/entrepreneurship_incubation.png"
+              alt="Entrepreneurship, Innovation and Incubation Initiatives at Trident">
           </div>
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
               <div class="showcase-icon-wrap"><span class="showcase-icon">🚀</span></div>
               <div>
-                <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; display: block; margin-bottom: 2px;">Entrepreneurship Cell</span>
+                <span
+                  style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; display: block; margin-bottom: 2px;">Entrepreneurship
+                  Cell</span>
                 <h3 style="margin: 0;">Entrepreneurship, Innovation &amp; Incubation Initiatives</h3>
               </div>
             </div>
             <p>
-              The Entrepreneurship Cell at Trident School of Business fosters a culture of innovation, startup creation, and enterprise development among MBA scholars. Supported by state and national incubation frameworks, student founders receive mentorship, prototyping assistance, and investor access.
+              The Entrepreneurship Cell at Trident School of Business fosters a culture of innovation, startup creation,
+              and enterprise development among MBA scholars. Supported by state and national incubation frameworks,
+              student founders receive mentorship, prototyping assistance, and investor access.
             </p>
 
             <div class="seminar-list" style="margin-top: 14px;">
@@ -939,8 +1191,11 @@
                   <span class="seminar-date">Startup Odisha Partner</span>
                 </div>
                 <h4 class="seminar-title" style="font-size: 16px;">Crucible Innovation Forum</h4>
-                <div class="seminar-speaker" style="color: var(--navy); font-weight: 600; font-size: 13px; margin-bottom: 4px;">A recognized Startup Odisha Incubator Cell &amp; a unit of Trident Group of Institutions</div>
-                <p class="seminar-desc">Drives early-stage startup incubation, technology transfer, seed capital advisory, and venture acceleration for student entrepreneurs across Odisha.</p>
+                <div class="seminar-speaker"
+                  style="color: var(--navy); font-weight: 600; font-size: 13px; margin-bottom: 4px;">A recognized
+                  Startup Odisha Incubator Cell &amp; a unit of Trident Group of Institutions</div>
+                <p class="seminar-desc">Drives early-stage startup incubation, technology transfer, seed capital
+                  advisory, and venture acceleration for student entrepreneurs across Odisha.</p>
               </div>
 
               <!-- Trident MSME Incubator Cell -->
@@ -950,8 +1205,11 @@
                   <span class="seminar-date">Government of India MSME</span>
                 </div>
                 <h4 class="seminar-title" style="font-size: 16px;">Trident MSME Incubator Cell</h4>
-                <div class="seminar-speaker" style="color: var(--navy); font-weight: 600; font-size: 13px; margin-bottom: 4px;">Promoting Micro, Small &amp; Medium Enterprise Innovation</div>
-                <p class="seminar-desc">Facilitates industrial prototyping, IP filing support, commercial feasibility studies, and enterprise development guidance for aspiring business founders.</p>
+                <div class="seminar-speaker"
+                  style="color: var(--navy); font-weight: 600; font-size: 13px; margin-bottom: 4px;">Promoting Micro,
+                  Small &amp; Medium Enterprise Innovation</div>
+                <p class="seminar-desc">Facilitates industrial prototyping, IP filing support, commercial feasibility
+                  studies, and enterprise development guidance for aspiring business founders.</p>
               </div>
             </div>
 
@@ -978,12 +1236,16 @@
               <h3>Summer Internship Programme (SIP)</h3>
             </div>
             <p>
-              The Summer Internship Programme (SIP) is an integral part of the MBA curriculum, designed to provide practical exposure through on-the-job training and live project work. The programme enables students to gain hands-on experience in areas such as Marketing, Finance, HR, Operations, and Systems.
+              The Summer Internship Programme (SIP) is an integral part of the MBA curriculum, designed to provide
+              practical exposure through on-the-job training and live project work. The programme enables students to
+              gain hands-on experience in areas such as Marketing, Finance, HR, Operations, and Systems.
             </p>
             <p>
-              Through SIP, students develop a deeper understanding of customer psychology, market dynamics, corporate culture, and real-time business challenges. Many internships also serve as a gateway to Pre-Placement Offers (PPOs) from reputed organizations.
+              Through SIP, students develop a deeper understanding of customer psychology, market dynamics, corporate
+              culture, and real-time business challenges. Many internships also serve as a gateway to Pre-Placement
+              Offers (PPOs) from reputed organizations.
             </p>
-            
+
             <div style="margin-top: 10px;">
               <strong style="color: var(--navy); font-size: 14.5px;">Key Internship Domains:</strong>
               <div class="sip-domains-grid">
@@ -1052,7 +1314,8 @@
                 <span class="seminar-media-caption">Expert Talk on Microeconomics Group</span>
               </div>
               <div class="seminar-media-card">
-                <img src="Public/seminar_sustainability.jpg" alt="National Seminar on Business Strategies and Sustainability stage panel">
+                <img src="Public/seminar_sustainability.jpg"
+                  alt="National Seminar on Business Strategies and Sustainability stage panel">
                 <span class="seminar-media-caption">National Seminar: Business Strategies &amp; Sustainability</span>
               </div>
               <div class="seminar-media-card">
@@ -1061,16 +1324,19 @@
               </div>
             </div>
           </div>
-          
+
           <div class="showcase-info scroll-reveal stagger-1">
             <div class="showcase-header">
               <div class="showcase-icon-wrap"><span class="showcase-icon">🎤</span></div>
               <h3>Seminars, Conferences &amp; Conclaves</h3>
             </div>
             <p>
-              To nurture future-ready managers and equip students with emerging management skills and tools, the Department regularly organizes seminars, conferences, and conclaves. These academic platforms bring together eminent professors, industry leaders, and domain experts who share their valuable insights and contemporary perspectives.
+              To nurture future-ready managers and equip students with emerging management skills and tools, the
+              Department regularly organizes seminars, conferences, and conclaves. These academic platforms bring
+              together eminent professors, industry leaders, and domain experts who share their valuable insights and
+              contemporary perspectives.
             </p>
-            
+
             <!-- In-House Seminars -->
             <span class="seminars-section-title">🏫 (A) In-House Departmental Seminars (2025)</span>
             <div class="seminar-list">
@@ -1081,7 +1347,8 @@
                 </div>
                 <h4 class="seminar-title">Credit Analysis &amp; Appraisal in Banking</h4>
                 <div class="seminar-speaker">Speaker: Mr. Pradosh Mohapatra, Retd. GM, Federal Bank Ltd.</div>
-                <p class="seminar-desc">Delivered key insights on retail and corporate credit assessment methodologies, risk valuation, and evaluation strategies in commercial banking.</p>
+                <p class="seminar-desc">Delivered key insights on retail and corporate credit assessment methodologies,
+                  risk valuation, and evaluation strategies in commercial banking.</p>
               </div>
               <div class="seminar-card in-house">
                 <div class="seminar-meta">
@@ -1090,7 +1357,8 @@
                 </div>
                 <h4 class="seminar-title">Risk Management in Banking</h4>
                 <div class="seminar-speaker">Speaker: Mr. Radha Mohan Patnaik, Former GM, Indian Overseas Bank</div>
-                <p class="seminar-desc">Focused on credit risk dimensions, banking portfolio threats, and the operational risk mitigation policies required for bank stability.</p>
+                <p class="seminar-desc">Focused on credit risk dimensions, banking portfolio threats, and the
+                  operational risk mitigation policies required for bank stability.</p>
               </div>
               <div class="seminar-card in-house">
                 <div class="seminar-meta">
@@ -1099,7 +1367,8 @@
                 </div>
                 <h4 class="seminar-title">Financial Modeling</h4>
                 <div class="seminar-speaker">Speaker: Mr. Bidyut Prakash Ray, Former GM, PNB</div>
-                <p class="seminar-desc">Conducted an analytical session covering corporate financial projections, valuation techniques, and strategic corporate financing tools.</p>
+                <p class="seminar-desc">Conducted an analytical session covering corporate financial projections,
+                  valuation techniques, and strategic corporate financing tools.</p>
               </div>
               <div class="seminar-card in-house">
                 <div class="seminar-meta">
@@ -1108,7 +1377,8 @@
                 </div>
                 <h4 class="seminar-title">Certified Financial Analyst (CFA) Career Session</h4>
                 <div class="seminar-speaker">Speaker: Dr. Biswaranjan Mishra, CFX</div>
-                <p class="seminar-desc">An orientation session guiding scholars on global investment banking credentials, portfolio management pathways, and market analyst profiles.</p>
+                <p class="seminar-desc">An orientation session guiding scholars on global investment banking
+                  credentials, portfolio management pathways, and market analyst profiles.</p>
               </div>
               <div class="seminar-card in-house">
                 <div class="seminar-meta">
@@ -1117,7 +1387,8 @@
                 </div>
                 <h4 class="seminar-title">Wealth Management</h4>
                 <div class="seminar-speaker">Speaker: Mr. Sanat Kumar Mishra, Former SBI DGM &amp; Wealth Advisor</div>
-                <p class="seminar-desc">Addressed modern portfolio theory, wealth advisory strategies, client risk profiles, and investment allocation matrices.</p>
+                <p class="seminar-desc">Addressed modern portfolio theory, wealth advisory strategies, client risk
+                  profiles, and investment allocation matrices.</p>
               </div>
               <div class="seminar-card in-house">
                 <div class="seminar-meta">
@@ -1126,7 +1397,8 @@
                 </div>
                 <h4 class="seminar-title">Banking Interview &amp; Career Success</h4>
                 <div class="seminar-speaker">Speaker: Mr. Ajit Sadangi, Regional Head, ICICI Bank</div>
-                <p class="seminar-desc">Shared industry expectations from management graduates, key mock interview pointers, and long-term career mantras for ICICI and private banks.</p>
+                <p class="seminar-desc">Shared industry expectations from management graduates, key mock interview
+                  pointers, and long-term career mantras for ICICI and private banks.</p>
               </div>
             </div>
 
@@ -1139,7 +1411,8 @@
                   <span class="seminar-date">8th–9th Feb 2025</span>
                 </div>
                 <h4 class="seminar-title">National Conclave on CSR for Sustainability: Action to Impact</h4>
-                <p class="seminar-desc">Deliberated on sustainable development goals (SDGs), responsible corporate governance, environmental preservation, and inclusive community impact programs.</p>
+                <p class="seminar-desc">Deliberated on sustainable development goals (SDGs), responsible corporate
+                  governance, environmental preservation, and inclusive community impact programs.</p>
               </div>
               <div class="seminar-card national">
                 <div class="seminar-meta">
@@ -1147,7 +1420,8 @@
                   <span class="seminar-date">10th Dec 2023</span>
                 </div>
                 <h4 class="seminar-title">National HR Conclave on Emerging Workforce Strategies in the Digital Era</h4>
-                <p class="seminar-desc">Addressed next-generation talent management, digital HR integrations, workplace transformations, and building agile organization models.</p>
+                <p class="seminar-desc">Addressed next-generation talent management, digital HR integrations, workplace
+                  transformations, and building agile organization models.</p>
               </div>
               <div class="seminar-card national">
                 <div class="seminar-meta">
@@ -1155,7 +1429,8 @@
                   <span class="seminar-date">Oct 2025</span>
                 </div>
                 <h4 class="seminar-title">National Banking &amp; Financial Leadership Conclave</h4>
-                <p class="seminar-desc">Focused on financial technology adoption, strategic risk leadership, commercial lending changes, and sustainable digital banking models.</p>
+                <p class="seminar-desc">Focused on financial technology adoption, strategic risk leadership, commercial
+                  lending changes, and sustainable digital banking models.</p>
               </div>
             </div>
 
@@ -1173,7 +1448,9 @@
       <div class="callout-box">
         <h3>A Complete Executive Experience</h3>
         <p>
-          At Trident, campus life is structured to balance conceptual management clarity with actual social, cultural, and leadership development — preparing students to launch successfully in dynamic corporate workspaces globally.
+          At Trident, campus life is structured to balance conceptual management clarity with actual social, cultural,
+          and leadership development — preparing students to launch successfully in dynamic corporate workspaces
+          globally.
         </p>
       </div>
     </section>
@@ -1216,5 +1493,5 @@
     });
   </script>
 </body>
-</html>
 
+</html>
