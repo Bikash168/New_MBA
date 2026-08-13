@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize global mobile navigation drawer & toggles
   initMobileNav();
 
+  // Initialize sticky navbar scroll elevation effect
+  initStickyNavEffect();
+
+  // Initialize animated stat metric counters
+  initMetricCounters();
+
+  // Initialize campus life sticky showcase media observer
+  initStickyShowcase();
+
   // 1. Programmatically apply reveal animations to existing containers and lists
   setupDynamicAnimations();
 
@@ -743,6 +752,113 @@ function initMobileNav() {
     });
   }
 }
+
+/**
+ * Initializes a scroll listener on the top navigation bar to add a glassmorphic
+ * elevation shadow (`nav.scrolled`) when the user scrolls down the page.
+ */
+function initStickyNavEffect() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  function updateNav() {
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+}
+
+/**
+ * Automatically detects numerical statistic badges and metric numbers across pages
+ * and animates them counting up smoothly when scrolled into view.
+ */
+function initMetricCounters() {
+  const statElements = document.querySelectorAll(
+    '.stat-num, .b-num, .metric-number, .stat-item strong, .hero-stat-card strong, .placement-stats-row strong, .b-num'
+  );
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        obs.unobserve(el);
+        animateCounter(el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  statElements.forEach(el => {
+    const text = el.textContent.trim();
+    if (/\d+/.test(text)) {
+      el.dataset.origText = text;
+      observer.observe(el);
+    }
+  });
+}
+
+function animateCounter(el) {
+  const rawText = el.dataset.origText || el.textContent;
+  const match = rawText.match(/(\D*)(\d+)(\D*)/);
+  if (!match) return;
+
+  const prefix = match[1] || '';
+  const targetNum = parseInt(match[2], 10);
+  const suffix = match[3] || '';
+  const duration = 1400;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+    const currentNum = Math.floor(easeProgress * targetNum);
+    el.textContent = `${prefix}${currentNum}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = rawText;
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+/**
+ * Ensures sticky media columns on Campus Life (and other showcase sections)
+ * remain sticky with smooth top offset aligned to the sticky header bar.
+ */
+function initStickyShowcase() {
+  const stickyColumns = document.querySelectorAll('.seminar-media-column, .sip-media-column');
+  if (stickyColumns.length === 0) return;
+
+  function updateStickyTop() {
+    const nav = document.querySelector('nav');
+    const navHeight = nav ? nav.offsetHeight : 72;
+    stickyColumns.forEach(col => {
+      if (window.innerWidth >= 993) {
+        col.style.position = 'sticky';
+        col.style.top = `${navHeight + 24}px`;
+        col.style.alignSelf = 'flex-start';
+      } else {
+        col.style.position = '';
+        col.style.top = '';
+        col.style.alignSelf = '';
+      }
+    });
+  }
+
+  window.addEventListener('resize', updateStickyTop, { passive: true });
+  updateStickyTop();
+}
+
 
 
 
