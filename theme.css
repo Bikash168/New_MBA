@@ -1547,9 +1547,14 @@ embed[type="application/pdf"] {
   }
 
   /* Section Padding */
-  section, .section, .hero-section, .about-section, .features-section, .testi-section, .rec-section {
+  section, .section, .about-section, .features-section, .testi-section, .rec-section {
     padding-top: 48px !important;
     padding-bottom: 48px !important;
+  }
+  .hero-section {
+    padding-top: 64px !important;
+    padding-bottom: 88px !important;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 0 100%) !important;
   }
 
   /* Grid Layout Fallbacks to 2 Columns or 1 Column */
@@ -1653,11 +1658,34 @@ embed[type="application/pdf"] {
   }
 
   /* Sections Padding */
-  section, .section, .hero-section, .about-section, .features-section, .testi-section, .rec-section {
+  section, .section, .about-section, .features-section, .testi-section, .rec-section {
     padding-top: 36px !important;
     padding-bottom: 36px !important;
     padding-left: 16px !important;
     padding-right: 16px !important;
+  }
+  .hero-section {
+    padding-top: 48px !important;
+    padding-bottom: 84px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 0 100%) !important;
+  }
+  .hero-section .hero-title {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-section .hero-desc {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    padding: 0 8px !important;
+    max-width: 100% !important;
+  }
+  .hero-section .eyebrow {
+    margin-bottom: 16px !important;
+    font-size: 10.5px !important;
+    padding: 5px 12px !important;
   }
 
   /* All Grids collapse to Single Column on Mobile */
