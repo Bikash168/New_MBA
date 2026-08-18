@@ -767,6 +767,8 @@
       .mba-grid { grid-template-columns: 1fr; }
       .semester-grid { grid-template-columns: 1fr; }
       .spec-grid { grid-template-columns: 1fr; }
+      .lab-card { grid-template-columns: 1fr !important; }
+      .lab-card > div { order: initial !important; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -879,6 +881,7 @@
         <button class="tab-btn active" onclick="switchTab(event, 'mba-overview')">MBA General Overview</button>
         <button class="tab-btn" onclick="switchTab(event, 'specialized-programs')">Specialist MBA Programs</button>
         <button class="tab-btn" onclick="switchTab(event, 'syllabus-details')">Course Syllabus &amp; Electives</button>
+        <button class="tab-btn" onclick="switchTab(event, 'lab-facilities')">Advanced Laboratory Infrastructure</button>
       </div>
 
       <!-- TAB 1: GENERAL OVERVIEW -->
@@ -1443,6 +1446,71 @@
             </div>
             <div class="pdf-viewer-container scroll-reveal" style="margin-top: 24px;">
               <iframe src="MB01-(2nd-yr-4th-sem).pdf" width="100%" height="100%" style="border:none;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: ADVANCED LABORATORY INFRASTRUCTURE -->
+      <div id="lab-facilities" class="tab-content">
+        <!-- Lab Hero Header -->
+        <div class="full-width-section shape-slant bg-navy" style="padding-top: 64px;">
+          <div class="section-inner">
+            <div class="section-header">
+              <span class="section-subtitle" style="color: var(--gold-soft);">Practical Infrastructure</span>
+              <h2 class="section-title" style="color: var(--white);">Advanced <span>Laboratory Facilities</span></h2>
+              <p class="section-desc" style="color: rgba(255, 255, 255, 0.85);">State-of-the-art specialized laboratories equipped with licensed enterprise software suites, real-time market terminals, and interactive communication technologies.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Labs Showcase Grid -->
+        <div class="full-width-section bg-warm shape-chevron">
+          <div class="section-inner">
+            <div style="display: flex; flex-direction: column; gap: 48px;">
+
+              <!-- Lab 1: SAP ERP Training & Analytics -->
+              <div class="lab-card scroll-reveal" style="background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                  <span style="display: inline-block; background: rgba(200,150,42,0.12); padding: 4px 12px; border-radius: 20px; color: var(--gold); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; width: fit-content; margin-bottom: 12px;">Business Analytics Lab</span>
+                  <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 14px;">SAP ERP Training &amp; Analytics</h3>
+                  <p style="font-size: 14.5px; color: var(--muted); line-height: 1.7;">
+                    Hands-on operational training utilizing licensed SAP ERP suites within the Business Analytics Lab to build enterprise planning, database query, and resource scheduling competencies.
+                  </p>
+                </div>
+                <div style="overflow: hidden;">
+                  <img src="Public/lab_business_analytics.jpg" alt="SAP ERP Training & Analytics Lab" style="width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+              </div>
+
+              <!-- Lab 2: Financial Market Analytics -->
+              <div class="lab-card scroll-reveal stagger-1" style="background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                <div style="overflow: hidden; order: 2;">
+                  <img src="Public/lab_finance_market.jpg" alt="Financial Market Analytics Lab" style="width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center; order: 1;">
+                  <span style="display: inline-block; background: rgba(200,150,42,0.12); padding: 4px 12px; border-radius: 20px; color: var(--gold); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; width: fit-content; margin-bottom: 12px;">Finance Lab</span>
+                  <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 14px;">📈 Financial Market Analytics</h3>
+                  <p style="font-size: 14.5px; color: var(--muted); line-height: 1.7;">
+                    Practical sessions on real-time Koyfin and Trading View terminals inside the Finance Lab, focusing on equity research, corporate valuation, credit analysis, and portfolio modeling.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Lab 3: Corporate Communication Suite -->
+              <div class="lab-card scroll-reveal stagger-2" style="background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                  <span style="display: inline-block; background: rgba(200,150,42,0.12); padding: 4px 12px; border-radius: 20px; color: var(--gold); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; width: fit-content; margin-bottom: 12px;">Language &amp; Executive Suite</span>
+                  <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 14px;">💬 Corporate Communication Suite</h3>
+                  <p style="font-size: 14.5px; color: var(--muted); line-height: 1.7;">
+                    Intensive communication training utilizing specialized WordWorth software packages to master executive presentation delivery, business pitch construction, and group debate formats.
+                  </p>
+                </div>
+                <div style="overflow: hidden;">
+                  <img src="Public/lab_corporate_communication.jpg" alt="Corporate Communication Suite Lab" style="width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
