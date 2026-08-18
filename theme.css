@@ -1285,8 +1285,24 @@ body:has(.mobile-nav.open) nav {
 }
 
 /* Footer elements */
+.footer {
+  background: var(--navy) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding: 24px 20px !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-family: var(--font-sans) !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
 .footer a, .footer p, .footer span, .footer li {
-  font-size: 15px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 14px !important;
   line-height: 1.6 !important;
 }
 
