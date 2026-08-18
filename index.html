@@ -2182,7 +2182,7 @@
       <p class="section-body">
         We emphasize a robust industry-focused curriculum, hands-on learning experiences, and engaging club activities
         to groom future business leaders. Our program offers specializations in <strong>Marketing, Finance, Human
-          Resources, Systems, International Business,</strong> and <strong>Sustainability Management</strong>.
+          Resources, Systems and International Business</strong>.
       </p>
     </div>
 
@@ -2827,7 +2827,8 @@
       <div class="rec-header-left">
         <div class="rec-eyebrow">Our Recruiters</div>
         <h2>Trusted by Our Industry Partners</h2>
-        <p>250+ companies have recruited from Trident School of Business during the last 16 years, many of them being repeat visitors.</p>
+        <p>250+ companies have recruited from Trident School of Business during the last 16 years, many of them being
+          repeat visitors.</p>
       </div>
       <span class="rec-header-right">Placements 2025</span>
     </div>
@@ -2853,274 +2854,274 @@
       <button class="rec-btn" id="recNext">&#8594;</button>
       <div class="rec-pips" id="recPips"></div>
       <span class="rec-more">+ 239 more companies</span>
-  </div>
+    </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    © 2026 Trident School of Business · Bhubaneswar, Odisha
-  </footer>
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2026 Trident School of Business · Bhubaneswar, Odisha
+    </footer>
 
-  <script>
-    (function () {
-      const track = document.getElementById('recTrack');
-      const cards = track.querySelectorAll('.rec-logo-card');
-      const pipsEl = document.getElementById('recPips');
-      const visible = 4, pages = Math.ceil(cards.length / visible);
-      let page = 0;
-      for (let i = 0; i < pages; i++) {
-        const p = document.createElement('button');
-        p.className = 'rec-pip' + (i === 0 ? ' active' : '');
-        p.onclick = () => goTo(i);
-        pipsEl.appendChild(p);
+    <script>
+      (function () {
+        const track = document.getElementById('recTrack');
+        const cards = track.querySelectorAll('.rec-logo-card');
+        const pipsEl = document.getElementById('recPips');
+        const visible = 4, pages = Math.ceil(cards.length / visible);
+        let page = 0;
+        for (let i = 0; i < pages; i++) {
+          const p = document.createElement('button');
+          p.className = 'rec-pip' + (i === 0 ? ' active' : '');
+          p.onclick = () => goTo(i);
+          pipsEl.appendChild(p);
+        }
+        function goTo(p) {
+          page = Math.max(0, Math.min(pages - 1, p));
+          const w = cards[0].offsetWidth + 16;
+          track.scrollTo({ left: page * visible * w, behavior: 'smooth' });
+          pipsEl.querySelectorAll('.rec-pip').forEach((el, i) => el.classList.toggle('active', i === page));
+        }
+        document.getElementById('recPrev').onclick = () => goTo(page - 1);
+        document.getElementById('recNext').onclick = () => goTo(page + 1);
+
+        // Autoplay logic
+        let autoPlayInterval;
+        function startAutoPlay() {
+          stopAutoPlay();
+          autoPlayInterval = setInterval(() => {
+            if (page >= pages - 1) {
+              goTo(0);
+            } else {
+              goTo(page + 1);
+            }
+          }, 3000);
+        }
+        function stopAutoPlay() {
+          clearInterval(autoPlayInterval);
+        }
+        startAutoPlay();
+        track.addEventListener('mouseenter', stopAutoPlay);
+        track.addEventListener('mouseleave', startAutoPlay);
+        track.addEventListener('touchstart', stopAutoPlay, { passive: true });
+      })();
+    </script>
+
+    <script>
+      function scrollLeftFunc() {
+        document.getElementById('logoSlider').scrollBy({ left: -200, behavior: 'smooth' });
       }
-      function goTo(p) {
-        page = Math.max(0, Math.min(pages - 1, p));
-        const w = cards[0].offsetWidth + 16;
-        track.scrollTo({ left: page * visible * w, behavior: 'smooth' });
-        pipsEl.querySelectorAll('.rec-pip').forEach((el, i) => el.classList.toggle('active', i === page));
+      function scrollRightFunc() {
+        document.getElementById('logoSlider').scrollBy({ left: 200, behavior: 'smooth' });
       }
-      document.getElementById('recPrev').onclick = () => goTo(page - 1);
-      document.getElementById('recNext').onclick = () => goTo(page + 1);
+    </script>
 
-      // Autoplay logic
-      let autoPlayInterval;
-      function startAutoPlay() {
-        stopAutoPlay();
-        autoPlayInterval = setInterval(() => {
-          if (page >= pages - 1) {
-            goTo(0);
-          } else {
-            goTo(page + 1);
-          }
-        }, 3000);
+    <script>
+      /* ── Slider ── */
+      let current = 0;
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      let timer;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        resetTimer();
       }
-      function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
+      function changeSlide(dir) { goTo(current + dir); }
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => changeSlide(1), 5000);
       }
-      startAutoPlay();
-      track.addEventListener('mouseenter', stopAutoPlay);
-      track.addEventListener('mouseleave', startAutoPlay);
-      track.addEventListener('touchstart', stopAutoPlay, { passive: true });
-    })();
-  </script>
-
-  <script>
-    function scrollLeftFunc() {
-      document.getElementById('logoSlider').scrollBy({ left: -200, behavior: 'smooth' });
-    }
-    function scrollRightFunc() {
-      document.getElementById('logoSlider').scrollBy({ left: 200, behavior: 'smooth' });
-    }
-  </script>
-
-  <script>
-    /* ── Slider ── */
-    let current = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    let timer;
-
-    function goTo(n) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (n + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
       resetTimer();
-    }
-    function changeSlide(dir) { goTo(current + dir); }
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(() => changeSlide(1), 5000);
-    }
-    resetTimer();
 
-    /* Touch swipe */
-    const sliderEl = document.getElementById('slider');
-    let touchX = 0;
-    sliderEl.addEventListener('touchstart', e => { touchX = e.changedTouches[0].screenX; }, { passive: true });
-    sliderEl.addEventListener('touchend', e => {
-      const diff = touchX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 40) changeSlide(diff > 0 ? 1 : -1);
-    }, { passive: true });
-  </script>
+      /* Touch swipe */
+      const sliderEl = document.getElementById('slider');
+      let touchX = 0;
+      sliderEl.addEventListener('touchstart', e => { touchX = e.changedTouches[0].screenX; }, { passive: true });
+      sliderEl.addEventListener('touchend', e => {
+        const diff = touchX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) changeSlide(diff > 0 ? 1 : -1);
+      }, { passive: true });
+    </script>
 
-  <!-- TESTIMONIALS SLIDER JS -->
-  <script>
-    (function () {
-      const track = document.getElementById('testiTrack');
-      if (!track) return;
+    <!-- TESTIMONIALS SLIDER JS -->
+    <script>
+      (function () {
+        const track = document.getElementById('testiTrack');
+        if (!track) return;
 
-      const cards = track.querySelectorAll('.testi-card');
-      const pipsEl = document.getElementById('testiPips');
-      const prevBtn = document.getElementById('testiPrev');
-      const nextBtn = document.getElementById('testiNext');
+        const cards = track.querySelectorAll('.testi-card');
+        const pipsEl = document.getElementById('testiPips');
+        const prevBtn = document.getElementById('testiPrev');
+        const nextBtn = document.getElementById('testiNext');
 
-      let itemsPerPage = 3;
+        let itemsPerPage = 3;
 
-      function getItemsPerPage() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
-      }
-
-      itemsPerPage = getItemsPerPage();
-      let totalPages = Math.ceil(cards.length / itemsPerPage);
-      let currentPage = 0;
-
-      function renderPips() {
-        pipsEl.innerHTML = '';
-        totalPages = Math.ceil(cards.length / itemsPerPage);
-        if (currentPage >= totalPages) {
-          currentPage = Math.max(0, totalPages - 1);
+        function getItemsPerPage() {
+          if (window.innerWidth <= 768) return 1;
+          if (window.innerWidth <= 1024) return 2;
+          return 3;
         }
-        for (let i = 0; i < totalPages; i++) {
-          const pip = document.createElement('button');
-          pip.className = 'testi-pip' + (i === currentPage ? ' active' : '');
-          pip.onclick = () => goToPage(i);
-          pipsEl.appendChild(pip);
+
+        itemsPerPage = getItemsPerPage();
+        let totalPages = Math.ceil(cards.length / itemsPerPage);
+        let currentPage = 0;
+
+        function renderPips() {
+          pipsEl.innerHTML = '';
+          totalPages = Math.ceil(cards.length / itemsPerPage);
+          if (currentPage >= totalPages) {
+            currentPage = Math.max(0, totalPages - 1);
+          }
+          for (let i = 0; i < totalPages; i++) {
+            const pip = document.createElement('button');
+            pip.className = 'testi-pip' + (i === currentPage ? ' active' : '');
+            pip.onclick = () => goToPage(i);
+            pipsEl.appendChild(pip);
+          }
         }
-      }
 
-      function goToPage(pageIndex) {
-        totalPages = Math.ceil(cards.length / itemsPerPage);
-        if (totalPages === 0) return;
-        currentPage = Math.max(0, Math.min(totalPages - 1, pageIndex));
+        function goToPage(pageIndex) {
+          totalPages = Math.ceil(cards.length / itemsPerPage);
+          if (totalPages === 0) return;
+          currentPage = Math.max(0, Math.min(totalPages - 1, pageIndex));
 
-        const gap = 24;
-        const cardWidth = cards[0].offsetWidth;
-        const scrollAmount = currentPage * itemsPerPage * (cardWidth + gap);
+          const gap = 24;
+          const cardWidth = cards[0].offsetWidth;
+          const scrollAmount = currentPage * itemsPerPage * (cardWidth + gap);
 
-        track.scrollTo({
-          left: scrollAmount,
-          behavior: 'smooth'
-        });
+          track.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
 
-        const pips = pipsEl.querySelectorAll('.testi-pip');
-        pips.forEach((pip, idx) => {
-          pip.classList.toggle('active', idx === currentPage);
-        });
-      }
-
-      prevBtn.onclick = () => {
-        if (currentPage === 0) {
-          goToPage(totalPages - 1);
-        } else {
-          goToPage(currentPage - 1);
+          const pips = pipsEl.querySelectorAll('.testi-pip');
+          pips.forEach((pip, idx) => {
+            pip.classList.toggle('active', idx === currentPage);
+          });
         }
-      };
 
-      nextBtn.onclick = () => {
-        if (currentPage >= totalPages - 1) {
-          goToPage(0);
-        } else {
-          goToPage(currentPage + 1);
-        }
-      };
+        prevBtn.onclick = () => {
+          if (currentPage === 0) {
+            goToPage(totalPages - 1);
+          } else {
+            goToPage(currentPage - 1);
+          }
+        };
 
-      let autoPlayInterval;
-      function startAutoPlay() {
-        stopAutoPlay();
-        autoPlayInterval = setInterval(() => {
+        nextBtn.onclick = () => {
           if (currentPage >= totalPages - 1) {
             goToPage(0);
           } else {
             goToPage(currentPage + 1);
           }
-        }, 4000);
-      }
+        };
 
-      function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-      }
-
-      startAutoPlay();
-
-      const testiSection = document.querySelector('.testi-section');
-      if (testiSection) {
-        testiSection.addEventListener('mouseenter', stopAutoPlay);
-        testiSection.addEventListener('mouseleave', startAutoPlay);
-        testiSection.addEventListener('touchstart', stopAutoPlay, { passive: true });
-      }
-
-      // Scroll listener to update pips on manual swipe
-      let isScrolling;
-      track.addEventListener('scroll', () => {
-        window.clearTimeout(isScrolling);
-        isScrolling = setTimeout(() => {
-          const gap = 24;
-          const cardWidth = cards[0].offsetWidth;
-          const scrollLeft = track.scrollLeft;
-          const pageWidth = itemsPerPage * (cardWidth + gap);
-
-          const pageIndex = Math.round(scrollLeft / pageWidth);
-          if (pageIndex !== currentPage && pageIndex < totalPages) {
-            currentPage = pageIndex;
-            const pips = pipsEl.querySelectorAll('.testi-pip');
-            pips.forEach((pip, idx) => {
-              pip.classList.toggle('active', idx === currentPage);
-            });
-          }
-        }, 150);
-      }, { passive: true });
-
-      window.addEventListener('resize', () => {
-        const prevItemsPerPage = itemsPerPage;
-        itemsPerPage = getItemsPerPage();
-        if (prevItemsPerPage !== itemsPerPage) {
-          renderPips();
-          goToPage(currentPage);
+        let autoPlayInterval;
+        function startAutoPlay() {
+          stopAutoPlay();
+          autoPlayInterval = setInterval(() => {
+            if (currentPage >= totalPages - 1) {
+              goToPage(0);
+            } else {
+              goToPage(currentPage + 1);
+            }
+          }, 4000);
         }
-      });
 
-      renderPips();
-    })();
-  </script>
+        function stopAutoPlay() {
+          clearInterval(autoPlayInterval);
+        }
 
-  <!-- MESSAGE THAT MATTERS & SHORTS JS -->
-  <script>
-    /* ── Leadership Message Slider ── */
-    let currentLeaderSlide = 0;
-    function switchLeaderSlide(index) {
-      const slides = document.querySelectorAll('.leader-slide');
-      const pips = document.querySelectorAll('.leader-pip');
-      if (!slides.length) return;
-      slides.forEach(s => s.classList.remove('active'));
-      pips.forEach(p => p.classList.remove('active'));
-      currentLeaderSlide = index;
-      if (slides[currentLeaderSlide]) slides[currentLeaderSlide].classList.add('active');
-      if (pips[currentLeaderSlide]) pips[currentLeaderSlide].classList.add('active');
-    }
+        startAutoPlay();
 
-    setInterval(() => {
-      const slides = document.querySelectorAll('.leader-slide');
-      if (slides.length) {
-        switchLeaderSlide((currentLeaderSlide + 1) % slides.length);
+        const testiSection = document.querySelector('.testi-section');
+        if (testiSection) {
+          testiSection.addEventListener('mouseenter', stopAutoPlay);
+          testiSection.addEventListener('mouseleave', startAutoPlay);
+          testiSection.addEventListener('touchstart', stopAutoPlay, { passive: true });
+        }
+
+        // Scroll listener to update pips on manual swipe
+        let isScrolling;
+        track.addEventListener('scroll', () => {
+          window.clearTimeout(isScrolling);
+          isScrolling = setTimeout(() => {
+            const gap = 24;
+            const cardWidth = cards[0].offsetWidth;
+            const scrollLeft = track.scrollLeft;
+            const pageWidth = itemsPerPage * (cardWidth + gap);
+
+            const pageIndex = Math.round(scrollLeft / pageWidth);
+            if (pageIndex !== currentPage && pageIndex < totalPages) {
+              currentPage = pageIndex;
+              const pips = pipsEl.querySelectorAll('.testi-pip');
+              pips.forEach((pip, idx) => {
+                pip.classList.toggle('active', idx === currentPage);
+              });
+            }
+          }, 150);
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+          const prevItemsPerPage = itemsPerPage;
+          itemsPerPage = getItemsPerPage();
+          if (prevItemsPerPage !== itemsPerPage) {
+            renderPips();
+            goToPage(currentPage);
+          }
+        });
+
+        renderPips();
+      })();
+    </script>
+
+    <!-- MESSAGE THAT MATTERS & SHORTS JS -->
+    <script>
+      /* ── Leadership Message Slider ── */
+      let currentLeaderSlide = 0;
+      function switchLeaderSlide(index) {
+        const slides = document.querySelectorAll('.leader-slide');
+        const pips = document.querySelectorAll('.leader-pip');
+        if (!slides.length) return;
+        slides.forEach(s => s.classList.remove('active'));
+        pips.forEach(p => p.classList.remove('active'));
+        currentLeaderSlide = index;
+        if (slides[currentLeaderSlide]) slides[currentLeaderSlide].classList.add('active');
+        if (pips[currentLeaderSlide]) pips[currentLeaderSlide].classList.add('active');
       }
-    }, 7000);
 
-    /* ── Shorts Video Modal ── */
-    function openShortModal(url, title) {
-      const modal = document.getElementById('shortModal');
-      const iframe = document.getElementById('shortIframe');
-      const titleEl = document.getElementById('shortModalTitle');
-      if (!modal || !iframe) return;
-      iframe.src = url + "?autoplay=1";
-      if (titleEl) titleEl.textContent = title;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+      setInterval(() => {
+        const slides = document.querySelectorAll('.leader-slide');
+        if (slides.length) {
+          switchLeaderSlide((currentLeaderSlide + 1) % slides.length);
+        }
+      }, 7000);
 
-    function closeShortModal(e) {
-      if (e && e.target !== e.currentTarget && !e.target.classList.contains('short-modal-close')) return;
-      const modal = document.getElementById('shortModal');
-      const iframe = document.getElementById('shortIframe');
-      if (!modal || !iframe) return;
-      iframe.src = '';
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  </script>
+      /* ── Shorts Video Modal ── */
+      function openShortModal(url, title) {
+        const modal = document.getElementById('shortModal');
+        const iframe = document.getElementById('shortIframe');
+        const titleEl = document.getElementById('shortModalTitle');
+        if (!modal || !iframe) return;
+        iframe.src = url + "?autoplay=1";
+        if (titleEl) titleEl.textContent = title;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeShortModal(e) {
+        if (e && e.target !== e.currentTarget && !e.target.classList.contains('short-modal-close')) return;
+        const modal = document.getElementById('shortModal');
+        const iframe = document.getElementById('shortIframe');
+        if (!modal || !iframe) return;
+        iframe.src = '';
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    </script>
 </body>
 
 </html>
